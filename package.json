@@ -1,5 +1,5 @@
 {
-  "name": "shake",
+  "name": "shake.sass",
   "version": "1.0.0",
   "description": "You can use the [editor on GitHub](https://github.com/keeteean/skake/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/keeteean/skake.git"
+    "url": "git+https://github.com/keeteean/skake.sass.git"
   },
   "keywords": [
     "sass",

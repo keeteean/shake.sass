@@ -1,20 +1,17 @@
-# Shake
-It's just a custom fork of (iotacss)[https://www.iotacss.com].
+# Shake.sass
+A small Sass framework for BEM and ITCSS based web projects highly inspired by (iotaCSS)[https://www.iotacss.com].
 
 ## Getting Started
-You can install all Shake modules at once:
+You can install all Shake.sass at once:
 
 ```
-$ yarn add shake --dev
+yarn add shake.sass --dev
 ```
 
-and import them as follows:
+Then import it as follows:
 
 ```scss
-@import "node_modules/shake/1.settings/settings.system";
-@import "node_modules/shake/2.tools/tools.breakpoint";
-
-...
+@import "node_modules/shake.sass/shake";
 ```
 
 ## Documentation
