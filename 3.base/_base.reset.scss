@@ -1,11 +1,21 @@
 /**
  ******************************************************************************
- *** INITIALIZE BASE ***
+ *** BASE RESET ***
  ******************************************************************************
  *
- * Initialize is a modern, elegant and minimal combination of Normalize.css,
- * and CSS Reset.
+ * Improved Normalize.css with some goodness:
+ *   - Sass variables,
+ *   - switchable components:
+ *       - heading font-size reset,
+ *       - form elements,
+ *       - font antialiasing
+ *   - best practices
+ *   - no static values
+ *   - compatible with Stylelint rules.
+ *
  * Compatible with IE10+.
+ *
+ * @see normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
  */
 
 
@@ -65,29 +75,27 @@ $base-html5-form-elements: true !default;
 
 /**
  * 1. Sets box-sizing to border-box by default.
- * 2. Prevent adjustments of font size after orientation changes in IE on
- *    Windows Phone and in iOS.
- * 3. Makes font thickness to look the same in Firefox and Webkit.
- * 4. The browser emphasizes legibility over rendering speed and geometric
+ * 2. The browser emphasizes legibility over rendering speed and geometric
  *    precision. This enables kerning and optional ligatures in Gecko and
  *    Webkit.
- * 5. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ * 3. Prevent adjustments of font size after orientation changes in iOS.
+ * 4. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
  *    navigating between pages that do/do not have enough content to produce
  *    scrollbars naturally.
  *    Ensure the page always fills at least the entire height of the viewport.
+ * 5. Makes font thickness to look the same in Firefox and Webkit.
  */
 
 html {
   box-sizing: border-box; // 1
-  text-rendering: optimizeLegibility;
-  -ms-text-size-adjust: 100%; // 2
-  -webkit-text-size-adjust: 100%; // 2
-  overflow-y: scroll; // 5
-  min-height: 100%; // 5
+  text-rendering: optimizeLegibility; // 2
+  -webkit-text-size-adjust: 100%; // 3
+  overflow-y: scroll; // 4
+  min-height: 100%; // 4
 
   @if ($base-font-antialiasing == true) {
-    -webkit-font-smoothing: antialiased; // 3
-    -moz-osx-font-smoothing: grayscale; // 3
+    -webkit-font-smoothing: antialiased; // 5
+    -moz-osx-font-smoothing: grayscale; // 5
   }
 }
 
@@ -154,9 +162,9 @@ main {
  */
 
 hr {
-  overflow: visible; // 2
   box-sizing: content-box; // 1
   height: 0; // 1
+  overflow: visible; // 2
 }
 
 
@@ -208,6 +216,18 @@ a {
 
 
 /**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: 0; // 1
+  text-decoration: underline; // 2
+  text-decoration: underline dotted; // 2
+}
+
+
+/**
  * Modify default styling of address.
  */
 
@@ -217,15 +237,14 @@ address {
 
 
 /**
- * 1. Prevent the duplicate application of `bolder` by the next rule in Safari 6.
- * 2. Applies a bold font weight to strong instead of the default bolder
+ * Add the correct font weight in Chrome, Edge, and Safari.
  */
 
 b,
 strong {
-  font-weight: inherit; // 1
-  font-weight: bold; // 2
+  font-weight: bolder;
 }
+
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -238,6 +257,15 @@ pre,
 samp {
   font-family: $font-family--monospace; // 1
   font-size: 1em; // 2
+}
+
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
 }
 
 
@@ -360,7 +388,7 @@ svg:not(:root) {
 
 
   /**
-   * 1. Remove the padding in IE 10-.
+   * 1. Remove the padding in IE 10.
    */
 
   [type="checkbox"],
@@ -397,30 +425,47 @@ svg:not(:root) {
 
 
   /**
-   * Change the border, margin, and padding in all browsers (opinionated).
+   * Restore the focus styles unset by the previous rule.
+   */
+
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+
+
+  /**
+   * 1. Change the border, margin, and padding in all browsers (opinionated).
+   * 2. Correct the padding in Firefox.
    */
 
   fieldset {
-    border: 0;
+    border: 0; // 1
+    padding: .35em .75em .625em; // 2
   }
 
 
   /**
    * 1. Correct the text wrapping in Edge and IE.
    * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
    */
 
   legend {
     display: table; // 1
     box-sizing: border-box; // 1
     max-width: 100%; // 1
+    padding: 0; // 3
     white-space: normal; // 1
     color: inherit; // 2
   }
 
 
   /**
-   * Remove the default vertical scrollbar in IE.
+   * Remove the default vertical scrollbar in IE 10+.
    */
 
   textarea {
