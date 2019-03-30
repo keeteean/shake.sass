@@ -1,0 +1,23 @@
+/**
+ ******************************************************************************
+ *** DOES SASS MAP CONTAIN A NULL KEY? ***
+ ******************************************************************************
+ *
+ * Check the given Sass map has a null named key.
+ *
+ * borrowed from iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @type Function
+ *
+ * @parameter {map} $map - The given Sass map.
+ */
+
+@function _map-contains-null($map) {
+  @each $key, $value in $map {
+    @if ($key == null) {
+      @return true;
+    }
+  }
+
+  @return false;
+}

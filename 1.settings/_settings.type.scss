@@ -1,0 +1,221 @@
+/**
+ ******************************************************************************
+ *** TYPE SETTINGS ***
+ ******************************************************************************
+ *
+ * Global typography settings.
+ */
+
+
+/**
+ * Importing Required Tools
+ *
+ * Importing only for calculated settings.
+ */
+
+@import "../2.tools/tools.modularscale";
+
+
+/**
+ * Font family settings
+ */
+
+$font-family--system:
+  -apple-system,
+  system-ui,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji" !default;
+
+$font-family--monospace:
+  SFMono-Regular,
+  Menlo,
+  Monaco,
+  "Segoe UI Mono",
+  Consolas,
+  "Liberation Mono",
+  "Courier New",
+  monospace !default;
+
+
+/**
+ * Font weights
+ */
+
+$font-weight--light:        300 !default;
+$font-weight--normal:       400 !default;
+$font-weight--medium:       500 !default;
+$font-weight--bold:         700 !default;
+$font-weight--black:        900 !default;
+
+
+/**
+ * Line-height
+ */
+
+$global-line-height:         1.2 !default;
+
+
+/**
+* Font size settings
+*
+* We use Modularscale Tool for calculated font sizes.
+* @see https://www.modularscale.com/?12,14,16&px&1.5 for selected Modular
+* Scale table
+*/
+
+$type-12:   ms(0) !default;
+$type-14:   ms(1) !default;
+$type-16:   ms(2) !default;
+$type-18:   ms(3) !default;
+$type-21:   ms(4) !default;
+$type-24:   ms(5) !default;
+$type-27:   ms(6) !default;
+$type-31:   ms(7) !default;
+$type-36:   ms(8) !default;
+$type-40:   ms(9) !default;
+$type-48:   ms(10) !default;
+$type-54:   ms(11) !default;
+$type-60:   ms(12) !default;
+$type-71:   ms(13) !default;
+
+
+/**
+ * Responsive font sizes
+ *
+ * @code
+ *   breakpoint-name: ( font-size, optional-lineheight )
+ * @endcode
+ *
+ * Breakpoint names come from $global-breakpoints declared in
+ * 1.settings/_settings.breakpoints
+ *
+ * 'null' means no breakpoint (default)
+ */
+
+// Base Font-size
+$base-font-size: (
+  null: (
+    $type-14,
+    1.6
+  ),
+  medium: (
+    $type-16
+  )
+) !default;
+
+// Heading Font Sizes
+$heading1-font-size: (
+  null: (
+    $type-40
+  ),
+  medium: (
+    $type-60
+  )
+) !default;
+
+$heading2-font-size: (
+  null: (
+    $type-27
+  ),
+  medium: (
+    $type-54
+  )
+) !default;
+
+$heading3-font-size: (
+  null: (
+    $type-24
+  ),
+  medium: (
+    $type-36
+  )
+) !default;
+
+$heading4-font-size: (
+  null: (
+    $type-21
+  ),
+  medium: (
+    $type-27
+  )
+) !default;
+
+$heading5-font-size: (
+  null: (
+    $type-18
+  ),
+  medium: (
+    $type-24
+  )
+) !default;
+
+$heading6-font-size: $type-12 !default;
+
+// Paragraph Font Size
+$paragraph-font-size: (
+  null: (
+    $type-14,
+    1.71
+  ),
+  medium: (
+    $type-16,
+    2.25
+  )
+) !default;
+
+// Code Font-size
+$code-font-size: (
+  null: (
+    $type-14 2
+  ),
+  medium: (
+    $type-16
+  )
+) !default;
+
+// Form Input Font-size
+$input-font-size: (
+  null: (
+    $type-16 1.5
+  ),
+  medium: (
+    $type-16 1.2
+  )
+) !default;
+
+// Form Label Font-size
+$label-font-size: (
+  null: (
+    $type-14 1.5
+  ),
+  medium: (
+    $type-14 1.2
+  )
+);
+
+
+/**
+ * Text colors
+ *
+ * Assigned colors. We can't use any color tools here.
+ */
+
+$color-brand                : #02baf2 !default;
+$color-primary              : $color-brand !default;
+$color-secondary            : #2ecc71 !default;
+$color-tertiary             : #a88cd5 !default;
+
+$body-color                 : black !default;
+$body-background            : white !default;
+$label-color                : white !default;
+$label-bgcolor              : $color-tertiary !default;
+$link-color                 : $color-primary !default;
+$link-color--accent         : darken($link-color, 15%) !default;

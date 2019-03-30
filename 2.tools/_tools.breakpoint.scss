@@ -1,0 +1,74 @@
+/**
+ ******************************************************************************
+ *** BREAKPOINT TOOL ***
+ ******************************************************************************
+ *
+ * borrowed from iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @link https://www.iotacss.com/docs/tools/breakpoint/
+ *
+ * @require {Map} breakpoint settings <1.settings/_settings.breakpoints.scss>
+ *
+ *
+ * Use it wherever you need it.
+ *
+ * @parameter {map} $breakpoint-size - Size of the breakpoint you want to use from the $breakpoint-sizes map.
+ * @parameter {map} $breakpoint-sizes - A Sass map that contains all the breakpoints
+ *
+ * @example
+ *   @include breakpoint($breakpoint-size, $breakpoint-sizes);
+ *
+ * Examples
+ *
+ * Using the global default $global-breakpoints breakpoints map.
+ * @example
+ *   // 1.settings/_settings.breakpoints.scss
+ *   $global-breakpoints: (
+ *     small  : screen and (min-width: 480px),
+ *     medium : screen and (min-width: 768px),
+ *     large  : screen and (min-width: 1024px),
+ *     xlarge : screen and (min-width: 1200px),
+ *     xxlarge: screen and (min-width: 1400px)
+ *   );
+ *
+ *   // 5 components/_components.header.scss
+ *   .c-header {
+ *      margin-right: 30px;
+ *
+ *      @include breakpoint(small) {
+ *        margin-right: 0;
+ *      }
+ *    }
+ *
+ * Using a custom breakpoints map.
+ * @example
+ *   // 1.settings/_settings.breakpoints.scss
+ *   $my-breakpoints : (
+ *      small: screen and (min-width: 400px),
+ *     xlarge: screen and (min-width: 1280px)
+ *   );
+ *
+ *   // 5 components/_components.header.scss
+ *   .c-header {
+ *      margin-right: 30px;
+ *
+ *      @include breakpoint(xlarge, $my-breakpoints) {
+ *        margin-right: 0;
+ *      }
+ *    }
+ */
+
+
+@mixin _breakpoint($size, $breakpoints: $global-breakpoints) {
+  $breakpoint-found: map-has-key($breakpoints, $size);
+
+  @if ($breakpoint-found == true) {
+    $breakpoint: map-get($breakpoints, $size);
+
+    @media #{$breakpoint} {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint size " + #{$size} + " doesn't exist."
+  }
+}

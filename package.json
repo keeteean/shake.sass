@@ -1,0 +1,35 @@
+{
+  "name": "shake",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/keeteean/skake/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keeteean/skake.git"
+  },
+  "keywords": [
+    "sass",
+    "itcss",
+    "oocss",
+    "bem",
+    "bemit",
+    "utility"
+  ],
+  "author": "Krisztian Pinter <krisz@keeteean.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keeteean/shake/issues"
+  },
+  "homepage": "https://github.com/keeteean/shake#readme",
+  "dependencies": {
+    "modularscale-sass": "^3.0.8"
+  },
+  "devDependencies": {
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^2.1.0",
+    "stylelint-scss": "^3.5.4"
+  }
+}

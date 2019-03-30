@@ -1,0 +1,39 @@
+/**
+ ******************************************************************************
+ *** FORM MIXINS ***
+ ******************************************************************************
+ *
+ * Form related mixins and functions.
+ */
+
+
+/**
+ * Placeholder Mixin
+ *
+ * @example
+ *  @include input-placeholder {
+ *    color: grey;
+ *  }
+ */
+
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}

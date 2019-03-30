@@ -1,0 +1,37 @@
+/**
+ ******************************************************************************
+ *** GENERATE TYPE SIZES ***
+ ******************************************************************************
+ *
+ * Generate responsive font-size and line-height.
+ *
+ * borrowed from iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ *
+ * @type Mixin
+ *
+ * @require {Mixin} extract-type-sizes <2.tools/libraries/_extract-type-sizes.scss>
+ *
+ * @parameter {map | string} $values - font-sizes
+ * @parameter {map} $breakpoints - given breakpoint map
+ */
+
+@mixin _generate-type-sizes($values, $breakpoints) {
+  @if type-of($values) == "map" {
+    @if map-has-key($values, null) {
+      @include _extract-type-sizes(map-get($values, null));
+    }
+
+    @each $breakpoint, $sizes in $values {
+      @if map-has-key($breakpoints, $breakpoint) {
+        @media #{map-get($breakpoints, $breakpoint)} {
+          @include _extract-type-sizes($sizes);
+        }
+      }
+    }
+  }
+
+  @if type-of($values) == "number" or type-of($values) == "list" {
+    @include _extract-type-sizes($values);
+  }
+}

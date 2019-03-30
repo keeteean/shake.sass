@@ -1,0 +1,22 @@
+# EditorConfig is awesome: http://EditorConfig.org
+# Based on Vue-CLI and ESlint configs.
+
+# top-most EditorConfig file
+root = true
+
+# All PHP files MUST use the Unix LF (linefeed) line ending.
+# Code MUST use an indent of 4 spaces, and MUST NOT use tabs for indenting.
+# All PHP files MUST end with a single blank line.
+# There MUST NOT be trailing whitespace at the end of non-blank lines.
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+# editorconfig-tools is unable to ignore longs strings or urls
+max_line_length = off
+
+[*.{js,jsx,ts,tsx,vue}]
+max_line_length = 100

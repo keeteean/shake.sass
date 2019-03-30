@@ -1,0 +1,29 @@
+/**
+ * @file
+ ******************************************************************************
+ *** GRID SETTINGS ***
+ ******************************************************************************
+ */
+
+
+/**
+ * Gutter Sizes
+ */
+
+$gutter--small : 20px;
+$gutter--medium: 30px;
+
+
+/**
+ * Default gutters
+ *
+ * This setting is shared between multiple objects and utilities as the default
+ * value for gutters. You can change it also locally to each module.
+ *
+ * @type Number | List | Map
+ */
+
+$global-gutter-default: (
+  null         : $gutter--small,
+  medium       : $gutter--medium
+);

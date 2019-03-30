@@ -1,0 +1,17 @@
+/**
+ ******************************************************************************
+ *** IS IT A NUMBER? ***
+ ******************************************************************************
+ *
+ * Check the given value's type is number or not.
+ *
+ * borrowed from iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @type Function
+ *
+ * @parameter {string | number | map} $number - The given css value.
+ */
+
+@function _is-number($number) {
+  @return type-of($number) == "number"
+}

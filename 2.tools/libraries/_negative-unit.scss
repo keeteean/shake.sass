@@ -1,0 +1,25 @@
+/**
+ ******************************************************************************
+ *** NEGATIVE UNITS ***
+ ******************************************************************************
+ *
+ * Create negative values from positive ones.
+ *
+ * borrowed from iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @type Function
+ *
+ * @parameter {string | number | map} $values - The given css value.
+ */
+
+@function _negative-unit($values) {
+
+  @if _is-map($values) {
+    @each $key, $value in $values {
+      $values: map-merge($values, ($key: -$value));
+    }
+    @return $values;
+  } @else {
+    @return -$values;
+  }
+}

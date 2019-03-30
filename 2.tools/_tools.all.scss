@@ -1,0 +1,40 @@
+/**
+ ******************************************************************************
+ *** TOOLS ***
+ ******************************************************************************
+ *
+ * Tools are sets of globally used sass mixins and functions. Mixins that are
+ * connected to one and only module are a part of the module itself.
+ * It’s important not to output any CSS in the first 2 layers.
+ */
+
+/**
+ * Helper functions and mixins
+ */
+
+// Import validators
+@import "validators/is-map";
+@import "validators/is-number";
+@import "validators/map-contains-null";
+
+// Import libraries
+@import "libraries/negative-unit";
+@import "libraries/extract-type-sizes";
+@import "libraries/generate-unit";
+@import "libraries/generate-type-sizes";
+
+
+/**
+ * Mixin tools
+ */
+
+// Import tools
+@import "tools.breakpoint";
+@import "tools.clearfix";
+@import "tools.color";
+@import "tools.container";
+@import "tools.form";
+@import "tools.label";
+@import "tools.modularscale";
+@import "tools.text";
+@import "tools.type";

@@ -1,0 +1,30 @@
+/**
+ ******************************************************************************
+ *** TEXT TOOL ***
+ ******************************************************************************
+ *
+ * Text related tools
+ *
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @see 6.utilities/_utilities.text.scss for BEM based class named version
+ */
+
+
+/**
+ * Text-align Mixin
+ *
+ * @parameter {string} $align - Align value ex.: left.
+ * @parameter {string} $last - Optional, align value for justify aligned last line.
+ */
+
+@mixin text-align($align, $last: null) {
+  @if ($last != null) {
+    text-align: $align !important; // for Edge
+    text-align-last: $last !important;
+    hyphens: auto;
+  }
+
+  @else {
+    text-align: $align !important;
+  }
+}

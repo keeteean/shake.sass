@@ -1,0 +1,42 @@
+/**
+ ******************************************************************************
+ *** GENERATE UNIT ***
+ ******************************************************************************
+ *
+ * Generate responsive font-size and line-height.
+ *
+ * borrowed from iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ *
+ * @type Mixin
+ *
+ * @require {Function} _is-number <2.tools/validators/_is-number.scss>
+ * @require {Function} _is-map <2.tools/validators/_is-map.scss>
+ * @require {Function} _map-contains-null <2.tools/validators/_map-contains-null.scss>
+ *
+ * @parameter {string} $property - A css property ex.: padding.
+ * @parameter {string} $suffix - Sub-property of $property, ex.: left.
+ * @parameter {map | number} $units - Values for combined $property and $suffix.
+ */
+
+@mixin _generate-unit($property, $suffix, $units) {
+  $suffix: if($suffix, #{"-" + $suffix}, "");
+
+  @if _is-number($units) {
+    #{$property + $suffix}: $units;
+  }
+
+  @if _is-map($units) {
+    @if _map-contains-null($units) {
+      #{$property + $suffix}: map-get($units, null);
+    }
+
+    @each $breakpoint-name, $gutter-size in $units {
+      @if $breakpoint-name {
+        @include _breakpoint($breakpoint-name) {
+          #{$property + $suffix}: $gutter-size;
+        }
+      }
+    }
+  }
+}

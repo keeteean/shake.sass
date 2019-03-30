@@ -1,0 +1,25 @@
+/**
+ ******************************************************************************
+ *** EXTRACT TYPE SIZE ***
+ ******************************************************************************
+ *
+ * Get font-size and line-height values from $sizes type variable.
+ *
+ * borrowed from iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ *
+ * @type Mixin
+ *
+ * @parameter {Map} $sizes - font-sizes and line-heights
+ */
+
+@mixin _extract-type-sizes($sizes) {
+  @if (length($sizes) == 2) {
+    font-size: nth($sizes, 1);
+    line-height: nth($sizes, 2);
+  }
+
+  @else {
+    font-size: $sizes;
+  }
+}

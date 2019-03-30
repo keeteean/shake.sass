@@ -1,0 +1,66 @@
+/**
+******************************************************************************
+*** CONTAINER TOOL ***
+******************************************************************************
+*
+* The container tool is responsible for creating smart, flexible and responsive containers.
+*
+* Here you can setup the default container with default size (max-with) and paddings. Then you
+* use it as placeholder. But there are some mixins as well for creating custom containers.
+*
+* based on iota.css
+* @author Dimitris Psaropoulos <info@harby.me>
+* @author Krisztian Pinter <krisz@keeteean.com>
+*
+* @require {mixin} _generate-unit <2.tools/libraries/_generate-unit.scss>
+* @see 4.objects/_objects.container.scss for BEM class based default and custom containers
+*/
+
+
+/**
+ * Settings
+ */
+
+/**
+ * Default container gutter
+ *
+ * Allows you to specify the default set of padding left and right of your
+ * container. You can use a map in case you would like to specify responsive
+ * gutter sizes.
+ *
+ * @type Number | List | Map
+ */
+
+$objects-container-gutter-default : $global-gutter-default !default;
+
+
+/**
+ * Default container size
+ *
+ * Allows you to specify the default max-width of your container. You can use a
+ * map in case you would like to specify a responsive size.
+ *
+ * @type String | Map
+ */
+
+$objects-container-size-default   : 1024px !default;
+
+
+// Container padding
+@mixin container-padding($size) {
+  @include _generate-unit("padding", "right", $size);
+  @include _generate-unit("padding", "left", $size);
+}
+
+// Container size
+@mixin container-size($size) {
+  @include _generate-unit("max", "width", $size);
+}
+
+// Default Container Placeholder
+%container {
+  margin-right: auto;
+  margin-left:  auto;
+  @include container-padding($objects-container-gutter-default);
+  @include container-size($objects-container-size-default);
+}

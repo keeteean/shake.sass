@@ -1,0 +1,149 @@
+/**
+ ******************************************************************************
+ *** CONTAINER OBJECT ***
+ ******************************************************************************
+ *
+ * The container object is responsible for creating smart, flexible and responsive containers.
+ *
+ * For default container you can use the %container placeholder from tools.container. Here we add a css class
+ * for that. You can setup here for additional container sizes and paddings.
+ *
+ * based on iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://www.iotacss.com/docs/objects/container
+ *
+ * @require {placeholder} %container <2.tools/_tools.container.scss> - default container
+ * @require {mixin} container-padding <2.tools/_tools.container.scss> - container with custom padding
+ * @require {mixin} container-size <2.tools/_tools.container.scss> - container with custom size (max-width)
+ *
+ *
+ * Examples
+ *
+ * Container with extra gutter sizes
+ * It will create one container named ‘small’ with 10px padding and one container named ‘large’ with 40px padding.
+ *
+ * @example
+ *   $objects-container-gutter-extra: (
+ *     small: 10px,
+ *     large: 40px
+ *   );
+ *
+ * Container with default responsive gutter
+ * It will create a default container with 10px padding in mobile and 20px in tablets and up.
+ *
+ * @example
+ *   $objects-container-gutter-default: (
+ *     null : 10px,
+ *     small: 20px
+ *   );
+ *
+ * Container with extra responsive gutter size
+ * It will create one extra container named ‘large’ that will have 20px padding in mobile and 40px padding in tablets and up.
+ *
+ * @example
+ *   $objects-container-gutter-default: (
+ *     large: (
+ *       null : 20px,
+ *       small: 40px
+ *     )
+ *   );
+ *
+ * Container with responsive size
+ * It will create a container that will have max-width of 320px in mobile and max-width of 1024px in tablets and up.
+ *
+ * @example
+ *   $objects-container-size-default: (
+ *     null : 320px,
+ *     small: 1024px
+ *   );
+ */
+
+
+/**
+ * Settings
+ */
+
+/**
+ * Namespace settings
+ */
+
+$objects-container-class          : "o-container";
+$objects-container-class-mod      : $objects-container-class + "--";
+
+
+/**
+ * Additional container gutters
+ *
+ * Allows you to specify more sets of padding left and right of your container.
+ * You can use a nested map in case you would like to specify responsive gutter
+ * sizes.
+ *
+ * Each gutter size will be available as a BEM modifier that will be named
+ * according to the gutter name.
+ *
+ * Example if '$objects-container-gutter-extra: (large: 30px);'
+ * then '.o-container--large' will be available for use.
+ *
+ * @type Map
+ *
+ * @example
+ *   $objects-container-gutter-extra: (
+ *     large: (
+ *       null : 20px,
+ *       small: 40px
+ *     )
+ *   );
+ *
+ *   .o-container--large
+ */
+
+$objects-container-gutter-extra   : () !default;
+
+
+/**
+ * Additional container sizes
+ *
+ * Allows you to specify more sets of max-width for your container. You can use
+ * a nested map in case you would like to specify a responsive size.
+ *
+ * Each gutter size will be available as a BEM modifier that will be named
+ * according to the container size name.
+ *
+ * Example if '$objects-container-size-extra: (large: 1600px);'
+ * then '.o-container--large' will be available for use.
+ *
+ * @type Map
+ *
+ * @example
+ *   $objects-container-size-extra: (
+ *     large: (
+ *       null : 300px,
+ *       small: 1200px
+ *     )
+ *   );
+ *
+ *   .o-container--large
+ */
+
+$objects-container-size-extra     : () !default;
+
+
+// Default Container Object
+.#{$objects-container-class} {
+  @extend %container;
+}
+
+// Container Object Extra Gutters
+@each $gutter-name, $gutter-size in $objects-container-gutter-extra {
+  .#{$objects-container-class-mod + quote($gutter-name)} {
+    @include container-padding($gutter-size);
+  }
+}
+
+// Container Object Extra Sizes
+@each $size-name, $size-value in $objects-container-size-extra  {
+  .#{$objects-container-class-mod + quote($size-name)} {
+    @include container-size($size-value);
+  }
+}

@@ -1,0 +1,31 @@
+/**
+ ******************************************************************************
+ *** CLEARFIX TOOL ***
+ ******************************************************************************
+ *
+ * The clearfix utility is used on elements that need to automatically clear
+ * their child elements.
+ *
+ * based on iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @see 6.utilities/_utilities.clearfix for BEM css classed version
+ *
+ * Use it wherever you need it.
+ *
+ *
+ * @example
+ *   .o-grid__row {
+ *     @extend %clearfix;
+ *   }
+ */
+
+
+// Clearfix placeholder
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

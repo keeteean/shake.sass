@@ -1,0 +1,23 @@
+/**
+ ******************************************************************************
+ ***** COLOR MIXINS *****
+ ******************************************************************************
+ *
+ * Mixins and functions for color calculations, generations.
+ */
+
+
+/**
+ * Simple color and background color generator
+ *
+ * Add color then background color from SASS variables.
+ *
+ *
+ * @example
+ *  @include colors($body-color, $body-background);
+ */
+
+@mixin colors($color, $bgcolor) {
+  background-color: $bgcolor;
+  color: $color;
+}

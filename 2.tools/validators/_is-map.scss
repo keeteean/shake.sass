@@ -1,0 +1,17 @@
+/**
+ ******************************************************************************
+ *** IS IT A SASS MAP? ***
+ ******************************************************************************
+ *
+ * Check the given value's type is sass map or not.
+ *
+ * borrowed from iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @type Function
+ *
+ * @parameter {string | number | map} $number - The given css value.
+ */
+
+@function _is-map($map) {
+  @return type-of($map) == 'map'
+}

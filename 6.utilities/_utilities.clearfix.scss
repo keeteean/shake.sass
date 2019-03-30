@@ -1,0 +1,27 @@
+/**
+ ******************************************************************************
+ *** CLEARFIX UTILITY ***
+ ******************************************************************************
+ *
+ * The clearfix utility is used on elements that need to automatically clear
+ * their child elements.
+ *
+ * based on iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://www.iotacss.com/docs/utilities/clearfix
+ *
+ * @require {placeholder} %clearfix <2.tools/_clearfix.scss>
+ *
+ *
+ * @example
+ *   <div class="u-clearfix">
+ *    <div>Floated item</div>
+ *    <div>Floated item</div>
+ *  </div>
+*/
+
+
+.u-clearfix {
+  @extend %clearfix;
+}

@@ -1,0 +1,79 @@
+/**
+ ******************************************************************************
+ *** TYPE ELEMENT ***
+ ******************************************************************************
+ *
+ * Text elements.
+ */
+
+
+/**
+ * Base typography
+ */
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+  @include colors($body-color, $body-background);
+  @include type($base-font-size);
+
+  font-weight: $font-weight--normal;
+}
+
+
+/**
+ * Type elements
+ */
+
+p {
+  &:not(:last-of-type) {
+    margin-bottom: 1em;
+  }
+}
+
+pre,
+code {
+  text-align: left;
+  word-spacing: normal;
+  word-wrap: normal;
+  word-break: normal;
+  tab-size: 4;
+  hyphens: none;
+}
+
+a {
+  color: $link-color;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:not(.c-button) {
+    &:focus,
+    &:hover,
+    &:visited,
+    &:active {
+      color: $link-color--accent;
+    }
+  }
+}
+
+/**
+ * Inline code
+ */
+
+code {
+  @include label-base;
+  @include label-variant;
+
+  letter-spacing: .05em;
+  font-size: 90%;
+}
