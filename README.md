@@ -1,11 +1,13 @@
 # Shake.sass
+
 A small Sass framework for BEM and ITCSS based web projects highly inspired by 
 [iotaCSS](https://www.iotacss.com).
 
 ## Getting Started
+
 You can install all Shake.sass at once:
 
-```
+```shell
 yarn add shake.sass --dev
 ```
 
@@ -18,11 +20,18 @@ Then import it to your main sass file as follows:
 @import "your-own-components";
 ```
 
-So first you need to import helpers sass file. This contains all helper sass
+1. So first you need to import helpers sass file. This contains all helper sass
 functions and mixins what required by sass settings/variables.
-Then you import your Shake.sass overrides and custom variables.
-Finally import the whole Shake.sass with default settings where you haven't
+2. Then you import your Shake.sass overrides and custom variables.
+3. Finally import the whole Shake.sass with default settings where you haven't
 override variables.
-Then you can import your other sass files.
+4. Then you can import your other sass files.
+
+_note: If you use [Sass loader](https://github.com/webpack-contrib/sass-loader),
+you can import from node_modules:_
+
+```scss
+@import "~shake.sass/shake";
+```
 
 ## Documentation
