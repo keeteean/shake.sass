@@ -1,5 +1,6 @@
 # Shake.sass
-A small Sass framework for BEM and ITCSS based web projects highly inspired by (iotaCSS)[https://www.iotacss.com].
+A small Sass framework for BEM and ITCSS based web projects highly inspired by 
+[iotaCSS](https://www.iotacss.com).
 
 ## Getting Started
 You can install all Shake.sass at once:
