@@ -17,3 +17,6 @@
 @import "libraries/extract-type-sizes";
 @import "libraries/generate-unit";
 @import "libraries/generate-type-sizes";
+
+// Import settings required mixins
+@import "tools.modularscale";
