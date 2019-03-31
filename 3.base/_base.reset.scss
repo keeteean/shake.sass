@@ -7,6 +7,7 @@
  *   - Sass variables,
  *   - switchable components:
  *       - heading font-size reset,
+ *       - small font-size reset,
  *       - form elements,
  *       - font antialiasing
  *   - best practices
@@ -34,6 +35,19 @@
  */
 
 $base-heading-size: true !default;
+
+
+/**
+ * Small element font size
+ *
+ * Makes small tag to be equal to your body size.
+ * It forces you to use heading tags with focus on your semantics and not on
+ * the way they look.
+ *
+ * @type Boolean
+ */
+
+$base-small-size: true !default;
 
 
 /**
@@ -261,11 +275,19 @@ samp {
 
 
 /**
- * Add the correct font size in all browsers.
+ * 1. Sets small tag's font-size to be equal to the content font-size for
+ *    semantic reasons.
+ * 2. Add the correct font size in all browsers.
  */
 
 small {
-  font-size: 80%;
+  @if ($base-small-size == true) {
+    font-size: inherit; // 1
+  }
+
+  @else {
+    font-size: 80%; // 2
+  }
 }
 
 
