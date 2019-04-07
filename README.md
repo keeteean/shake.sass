@@ -1,17 +1,35 @@
 # Shake.sass
 
-A small Sass framework for BEM and ITCSS based web projects highly inspired by 
-[iotaCSS](https://www.iotacss.com).
+Shake is a small [Sass](http://sass-lang.com) framework what follows the 
+[BEM Methodology](https://en.bem.info) and has inspired by 
+[ITCSS (Inverted Triangle CSS)](https://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731) 
+and [Atomic Design](http://atomicdesign.bradfrost.com). Many techniques has been 
+borrowed from [iotaCSS](https://www.iotacss.com), 
+[Spectre.css](https://picturepan2.github.io) and Zendy framework (private) by 
+Árpi Rucz.
 
 ## Getting Started
 
-You can install all Shake.sass at once:
+### Installation
+
+You can install it easily as node package:
 
 ```shell
 yarn add shake.sass --dev
 ```
 
-Then import it to your main sass file as follows:
+We use yarn as package manager, but you can install it via npm too:
+
+```shell
+npm install --save-dev shake.sass
+```
+
+After installation you can import Shake.sass in three different ways:
+
+### Import all modules
+
+If you want to use all tools, objects, components and utilities import it to
+your main sass file as follows:
 
 ```scss
 @import "node_modules/shake.sass/helpers";
@@ -28,10 +46,57 @@ override variables.
 4. Then you can import your other sass files.
 
 _note: If you use [Sass loader](https://github.com/webpack-contrib/sass-loader),
-you can import from node_modules:_
+you can import from node_modules like:_
 
 ```scss
 @import "~shake.sass/shake";
 ```
+
+### Import all modules then turn off unneeded ones
+
+In this case you need import only helpers sass:
+
+```scss
+@import "node_modules/shake.sass/helpers";
+@import "your-sass-settings";
+```
+
+Then copy the original shake file to your sass files:
+
+```shell
+cp node_modules/shake.sass/shake.scss ./{your-sass-root}
+```
+
+Afterwards you need to modify all paths in this way:
+
+```scss
+// an old path
+@import "2.tools/tools.all";
+
+// replaced with
+@import "node_modules/shake.sass/2.tools/tools.all";
+```
+
+Finally here you can turn off by commented out unneeded modules. But be
+careful, you may need some need modules, like:
+
+- 1.settings/settings.all
+- 2.tools/tools.all
+
+An example main sass file:
+
+```scss
+@import "node_modules/shake.sass/helpers";
+@import "your-sass-settings";
+@import "shake"; // it's your version
+@import "your-own-components";
+```
+
+### Import only needed modules
+
+In this case you will import only required tools and settings, then what
+you really need one-by-one.
+
+_WARNING: this is the cleanest way but needs more manual work!_
 
 ## Documentation
