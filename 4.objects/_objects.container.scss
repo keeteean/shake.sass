@@ -3,10 +3,12 @@
  *** CONTAINER OBJECT ***
  ******************************************************************************
  *
- * The container object is responsible for creating smart, flexible and responsive containers.
+ * The container object is responsible for creating smart, flexible and
+ * responsive containers.
  *
- * For default container you can use the %container placeholder from tools.container. Here we add a css class
- * for that. You can setup here for additional container sizes and paddings.
+ * For default container you can use the %container placeholder from
+ * tools.container. Here we add a css class for that. You can setup here for
+ * additional container sizes and paddings.
  *
  * based on iota.css
  * @author Dimitris Psaropoulos <info@harby.me>
@@ -21,7 +23,8 @@
  * Examples
  *
  * Container with extra gutter sizes
- * It will create one container named ‘small’ with 10px padding and one container named ‘large’ with 40px padding.
+ * It will create one container named ‘small’ with 10px padding and one
+ * container named ‘large’ with 40px padding.
  *
  * @example
  *   $objects-container-gutter-extra: (
@@ -30,7 +33,8 @@
  *   );
  *
  * Container with default responsive gutter
- * It will create a default container with 10px padding in mobile and 20px in tablets and up.
+ * It will create a default container with 10px padding in mobile and 20px in
+ * tablets and up.
  *
  * @example
  *   $objects-container-gutter-default: (
@@ -39,7 +43,8 @@
  *   );
  *
  * Container with extra responsive gutter size
- * It will create one extra container named ‘large’ that will have 20px padding in mobile and 40px padding in tablets and up.
+ * It will create one extra container named ‘large’ that will have 20px padding
+ * in mobile and 40px padding in tablets and up.
  *
  * @example
  *   $objects-container-gutter-default: (
@@ -50,7 +55,8 @@
  *   );
  *
  * Container with responsive size
- * It will create a container that will have max-width of 320px in mobile and max-width of 1024px in tablets and up.
+ * It will create a container that will have max-width of 320px in mobile and
+ * max-width of 1024px in tablets and up.
  *
  * @example
  *   $objects-container-size-default: (
