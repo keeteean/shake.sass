@@ -87,6 +87,24 @@
 
 
 /**
+ * Font Antialiasing
+ *
+ * Makes font thickness to look the same in Firefox and Webkit.
+ * You can set this globally too in `3.base/_base.reset.scss`.
+ *
+ * @example
+ *   h1 {
+ *     @extend %font-smooth;
+ *   }
+ */
+
+%font-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/**
  * Text Overflow behaviors
  *
  * Text Ellipsis
