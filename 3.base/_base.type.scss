@@ -8,6 +8,44 @@
 
 
 /**
+ ** Settings **
+ */
+
+/**
+ * Paragraph margins
+ */
+
+$base-paragraph-margins     : true !default;
+$base-paragraph-margin-size : 1em !default;
+
+
+/**
+ * Inline and Code Blocks
+ */
+
+$base-code-tab-size         : 4 !default;
+$base-code-font-size        : 90% !default;
+$base-code-letter-spacing   : .05em !default;
+
+
+/**
+ * Global Link Element
+ */
+
+// :link, :visited states
+$base-link-color            : $link-color !default;
+
+// :hover, :focus, :active states
+$base-link-color-accent     : $link-color--accent !default;
+
+// underlined links
+$base-link-text-decoration  : none !default;
+
+// outlined links in :focus state
+$base-link-outline          : none !default;
+
+
+/**
  * Base typography
  */
 
@@ -28,11 +66,14 @@ body {
  * Type elements
  */
 
-p {
-  &:not(:last-of-type) {
-    margin-bottom: 1em;
+@if ($base-paragraph-margins == true) {
+  p {
+    &:not(:last-of-type) {
+      margin-bottom: $base-paragraph-margin-size;
+    }
   }
 }
+
 
 pre,
 code {
@@ -40,30 +81,8 @@ code {
   word-spacing: normal;
   word-wrap: normal;
   word-break: normal;
-  tab-size: 4;
+  tab-size: $base-code-tab-size;
   hyphens: none;
-}
-
-a {
-  color: $link-color;
-
-  &:link,
-  &:visited {
-    text-decoration: none;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &:not(.c-button) {
-    &:focus,
-    &:hover,
-    &:visited,
-    &:active {
-      color: $link-color--accent;
-    }
-  }
 }
 
 /**
@@ -74,6 +93,28 @@ code {
   @include label-base;
   @include label-variant;
 
-  letter-spacing: .05em;
-  font-size: 90%;
+  letter-spacing: $base-code-letter-spacing;
+  font-size: $base-code-font-size;
+}
+
+a {
+  color: $base-link-color;
+
+  &:link,
+  &:visited {
+    text-decoration: $base-link-text-decoration;
+  }
+
+  &:focus {
+    outline: $base-link-outline;
+  }
+
+  &:not(.c-button) {
+    &:focus,
+    &:hover,
+    &:visited,
+    &:active {
+      color: $base-link-color-accent;
+    }
+  }
 }
