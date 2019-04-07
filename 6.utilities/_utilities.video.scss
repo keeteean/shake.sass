@@ -1,0 +1,93 @@
+/**
+ ******************************************************************************
+ *** VIDEO UTILITY ***
+ ******************************************************************************
+ *
+ * Video utility includes responsive video classes.
+ * Images, SVGs are responsive by default!
+ *
+ * Borrowed from Spectre.css
+ * @author Yan Zhu <picturepan2@hotmail.com>
+ * @see https://picturepan2.github.io/spectre/elements/media.html
+ *
+ * For responsive video, add a container with the `.u-video-responsive` class.
+ * Insert any YouTube, Vimeo or other iframe/embed video inside the container.
+ * The ratio is 16:9 by default.
+ * You may add `.u-video-responsive--4-3` for 4:3 ratio video container
+ * or `.u-video-responsive--1-1` for 1:1 ratio.
+ *
+ * @example
+ *   <div class="u-video-responsive u-video-responsive--4-3">
+ *     <iframe src="..." width="..." height="..." frameborder="0" allowfullscreen></iframe>
+ *   </div>
+ *
+ * For responsive `<video>` elements, you can add the `.u-video-responsive` class directly.
+ *
+ * @example
+ *   <video class="u-video-responsive" src="...">...</video>
+ */
+
+
+/**
+ * Video responsive
+ *
+ * 1. Default ratio 16:9, you can calculate this value by dividing 9 by 16
+ */
+
+.u-video-responsive {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+
+  &::before {
+    display: block;
+    padding-bottom: 56.25%; // 1.
+    content: "";
+  }
+
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+video.u-video-responsive {
+  max-width: 100%;
+  height: auto;
+
+  &::before {
+    content: none;
+  }
+}
+
+
+/**
+ * Video ratio: 4:3
+ */
+
+.u-video-responsive--4-3 {
+  &::before {
+    padding-bottom: 75%;
+  }
+}
+
+
+/**
+ * Video ratio: 1:1 (square)
+ */
+
+.u-video-responsive--1-1 {
+  &::before {
+    padding-bottom: 100%;
+  }
+}
