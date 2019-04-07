@@ -12,20 +12,29 @@
  */
 
 /**
+ * Global selected text
+ */
+
+$base-selected-text             : true !default;
+$base-selected-text-color       : $selected-text-color !default;
+$base-selected-text-background  : $selected-text-background !default;
+
+
+/**
  * Paragraph margins
  */
 
-$base-paragraph-margins     : true !default;
-$base-paragraph-margin-size : 1em !default;
+$base-paragraph-margins         : true !default;
+$base-paragraph-margin-size     : 1em !default;
 
 
 /**
  * Inline and Code Blocks
  */
 
-$base-code-tab-size         : 4 !default;
-$base-code-font-size        : 90% !default;
-$base-code-letter-spacing   : .05em !default;
+$base-code-tab-size             : 4 !default;
+$base-code-font-size            : 90% !default;
+$base-code-letter-spacing       : .05em !default;
 
 
 /**
@@ -33,16 +42,17 @@ $base-code-letter-spacing   : .05em !default;
  */
 
 // :link, :visited states
-$base-link-color            : $link-color !default;
+$base-link-color                : $link-color !default;
 
 // :hover, :focus, :active states
-$base-link-color-accent     : $link-color--accent !default;
+$base-link-color-accent         : $link-color--accent !default;
 
 // underlined links
-$base-link-text-decoration  : none !default;
+$base-link-text-decoration      : none !default;
 
 // outlined links in :focus state
-$base-link-outline          : none !default;
+$base-link-outline              : none !default;
+
 
 
 /**
