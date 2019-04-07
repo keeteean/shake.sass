@@ -66,6 +66,10 @@ body {
  * Type elements
  */
 
+/**
+ * Paragraph Element
+ */
+
 @if ($base-paragraph-margins == true) {
   p {
     &:not(:last-of-type) {
@@ -74,6 +78,10 @@ body {
   }
 }
 
+
+/**
+ * Code and Preformatted Elements
+ */
 
 pre,
 code {
@@ -85,8 +93,9 @@ code {
   hyphens: none;
 }
 
+
 /**
- * Inline code
+ * Inline Code Element
  */
 
 code {
@@ -97,7 +106,12 @@ code {
   font-size: $base-code-font-size;
 }
 
-a {
+
+/**
+ * Global Link Element
+ */
+
+a:not([class]) {
   color: $base-link-color;
 
   &:link,
@@ -109,12 +123,10 @@ a {
     outline: $base-link-outline;
   }
 
-  &:not(.c-button) {
-    &:focus,
-    &:hover,
-    &:visited,
-    &:active {
-      color: $base-link-color-accent;
-    }
+  &:focus,
+  &:hover,
+  &:visited,
+  &:active {
+    color: $base-link-color-accent;
   }
 }
