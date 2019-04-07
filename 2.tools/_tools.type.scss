@@ -3,6 +3,14 @@
  *** TYPE TOOL ***
  ******************************************************************************
  *
+ * Typography mixins and placeholders from responsive font-sizes to best
+ * practices.
+ */
+
+
+/**
+ * Responsive Type Tool
+ *
  * Type tool contains a mixin that helps you create smart, flexible and
  * responsive typography.
  *
@@ -85,6 +93,11 @@
  *
  * Overflow behavior: display an ellipsis to represent clipped text.
  * Only works on single line text!
+ *
+ * @example
+ *   .article__lead {
+ *     @extend %text-ellipsis;
+ *   }
  */
 
 %text-ellipsis {
@@ -98,6 +111,11 @@
  * Text Clip
  *
  * Overflow behavior: truncate the text.
+ *
+ * @example
+ *   .article__lead {
+ *     @extend %text-clip;
+ *   }
  */
 
 %text-clip {
@@ -111,6 +129,11 @@
  * Text Break
  *
  * Text may be broken at arbitrary points.
+ *
+ * @example
+ *   .article__body {
+ *     @extend %text-break;
+ *   }
  */
 
 %text-break {
