@@ -1,0 +1,43 @@
+/**
+ ******************************************************************************
+ *** BREAKPOINTS ***
+ ******************************************************************************
+ */
+
+
+/**
+ * Default breakpoints
+ *
+ * Default global breakpoints map. These are the default breakpoints map that
+ * will be shared across all shake modules. You can change it also locally to
+ * each module.
+ *
+ * @type Map
+ *
+ * @example
+ *   @include breakpoint(medium) {
+ * }
+ *
+ * @see more examples in 2.tools/_tools.breakpoints.scss
+ */
+
+$global-breakpoints: (
+  small  : "screen and (min-width: 480px)",
+  medium : "screen and (min-width: 768px)",
+  large  : "screen and (min-width: 1024px)",
+  xlarge : "screen and (min-width: 1200px)",
+  xxlarge: "screen and (min-width: 1400px)"
+) !default;
+
+
+/**
+ * Default breakpoint suffix
+ *
+ * Global breakpoint suffix naming setting.
+ * All breakpoint specific styles have a `@breakpointName` suffix by default.
+ * The \ character is used to escape the @ character.
+ *
+ * @type String
+ */
+
+$global-breakpoint-separator: \@ !default;

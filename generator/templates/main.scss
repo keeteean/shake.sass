@@ -1,0 +1,110 @@
+/**
+ ******************************************************************************
+ *** THE MAIN SASS FILE ***
+ ******************************************************************************
+ *
+ * Here we can import and organize all sass files what need all pages.
+ *
+ */
+
+
+/**
+ * Helper Tools
+ *
+ * Required Sass functions and mixins for tools and other sass files.
+ * The must be imported before settings (Sass variables)!
+ */
+
+@import "2.tools/tools.helpers";
+
+
+/**
+ * Settings
+ *
+ * Setting files contain **global** configurations that are shared by more than
+ * one modules.
+ * Settings that are connected to one and only module are a part of the module
+ * itself.
+ * Local configurations should be contained into the modules (objects,
+ * components, etc.) that are related to.
+ */
+
+@import "1.settings/settings.all";
+
+
+/**
+ * Tools
+ *
+ * Globally used mixins and functions.
+ * It’s important not to output any CSS in the first 2 layers.
+ */
+
+@import "2.tools/tools.all";
+
+
+/**
+ * Base
+ *
+ * Base styles are the default styles of base elements. It's a combination of
+ * ITCSS's Generic and Elements layers.
+ *
+ * A Base rule is applied to an element using an element selector, a descendant
+ * selector, or a child selector, along with any pseudo-classes. It doesn’t
+ * include any class or ID selectors. Base styles are related to the basic
+ * styles of an application, like Typography, Reset and styling of global
+ * elements.
+ *
+ * This is the first layer which generates actual CSS.
+ */
+
+@import "3.base/base.reset";
+@import "3.base/base.page";
+@import "3.base/base.type";
+
+
+/**
+ * Objects
+ *
+ * Class-based selectors which define undecorated design patterns,
+ * for example media object known from OOCSS. They provide structure to your
+ * content, do not contain any cosmetic CSS and they should never been directly
+ * overwritten.
+ * This is the first layer in which we find class-based selectors. These are
+ * concerned with styling non-cosmetic design patterns, or 'objects'. Objects
+ * can range from something as simple as a .wrapper element, to layout systems,
+ * through to things.
+ */
+
+@import "4.objects/objects.container";
+@import "4.objects/objects.media";
+
+
+/**
+ * Components
+ *
+ * Specific UI components.
+ * This is where majority of our work takes place and our UI components are
+ * often composed of Objects and Components.
+ * They contain cosmetic CSS and they can be directly overwritten to fit your
+ * UI Kit style.
+ */
+
+//@import "5.components/components.button";
+//@import "5.components/components.form";
+//@import "5.components/components.label";
+//@import "5.components/components.tooltip";
+//@import "5.components/components.type";
+
+
+/**
+ * Utilities
+ *
+ * Utilities and helper classes with ability to override anything which goes
+ * before in the triangle, eg. hide helper class.
+ * They are usually one line of code and have !important to make sure they
+ * override all element styles when used.
+ */
+
+@import "6.utilities/utilities.clearfix";
+@import "6.utilities/utilities.text";
+//@import "6.utilities/utilities.video";

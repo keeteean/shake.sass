@@ -1,0 +1,33 @@
+/**
+ ******************************************************************************
+ *** HELPER TOOLS ***
+ ******************************************************************************
+ *
+ * Required Sass functions and mixins for tools and other sass files.
+ */
+
+
+/**
+ * Import validators from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/2.tools/validators/is-map";
+@import "/node_modules/shake.sass/2.tools/validators/is-number";
+@import "/node_modules/shake.sass/2.tools/validators/map-contains-null";
+
+
+/**
+ * Import libraries from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/2.tools/libraries/negative-unit";
+@import "/node_modules/shake.sass/2.tools/libraries/extract-type-sizes";
+@import "/node_modules/shake.sass/2.tools/libraries/generate-unit";
+@import "/node_modules/shake.sass/2.tools/libraries/generate-type-sizes";
+
+
+/**
+ * Import settings required mixins.
+ */
+
+@import "tools.modularscale";

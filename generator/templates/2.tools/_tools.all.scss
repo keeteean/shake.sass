@@ -1,0 +1,24 @@
+/**
+ ******************************************************************************
+ *** TOOLS ***
+ ******************************************************************************
+ *
+ * Tools are sets of globally used sass mixins and functions. Mixins that are
+ * connected to one and only module are a part of the module itself.
+ * It’s important not to output any CSS in the first 2 layers.
+ */
+
+
+/**
+ * Mixin tools
+ */
+
+// Import tools
+@import "tools.breakpoint";
+@import "tools.clearfix";
+@import "tools.color";
+@import "tools.container";
+@import "tools.form";
+@import "tools.label";
+@import "tools.text";
+@import "tools.type";

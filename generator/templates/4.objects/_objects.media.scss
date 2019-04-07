@@ -1,0 +1,234 @@
+/**
+ ******************************************************************************
+ *** MEDIA OBJECT ***
+ ******************************************************************************
+ *
+ * Media object is responsible for a common design pattern where there is a
+ * fixed and a fluid width column next to each other. It's used to build the
+ * structure of sidebars, comments, avatar and other similar UI components.
+ *
+ * based on iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://www.iotacss.com/docs/objects/media
+ *
+ * @require {mixin} _generate-unit <../2.tools/libraries/_generate-unit.scss>
+ *
+ *
+ * Examples
+ *
+ * Media Object
+ * It creates a default media object
+ *
+ * @example
+ *   <div class="o-media">
+ *     <div class="o-media__fixed">
+ *       Fixed width column
+ *     </div>
+ *
+ *     <div class="o-media__fluid">
+ *       Fluid width column
+ *     </div>
+ *   </div>
+ *
+ * Media Object with responsive gutter size
+ * It creates a default media object with 10px gutter in mobile and 20px in tablets and up.
+ *
+ * @example
+ *   $objects-media-gutter-default: (
+ *     null : 10px,
+ *     small: 20px
+ *   );
+ *
+ *   <div class="o-media">
+ *     <div class="o-media__fixed">
+ *       Fixed width column
+ *     </div>
+ *
+ *     <div class="o-media__fluid">
+ *       Fluid width column
+ *     </div>
+ *   </div>
+ *
+ * Media Object with extra gutter size
+ * It creates a new gutter size named 'small' that will have 5px gutter size.
+ *
+ * @example
+ *   $objects-media-gutter-extra: (
+ *     small: 5px
+ *   );
+ *
+ *   <div class="o-media o-media--small">
+ *     <div class="o-media__fixed">
+ *       Fixed width column
+ *     </div>
+ *
+ *     <div class="o-media__fluid">
+ *       Fluid width column
+ *     </div>
+ *   </div>
+ *
+ * Media Object with extra responsive gutter size
+ * It creates a new gutter size named 'small' that will have 5px gutter size in mobiles and 10px in tablets and up.
+ *
+ * @example
+ *   $objects-media-gutter-extra: (
+ *     small: (
+ *       null : 5px,
+ *       small: 10px
+ *     )
+ *   );
+ *
+ *   <div class="o-media o-media--small">
+ *     <div class="o-media__fixed">
+ *       Fixed width column
+ *     </div>
+ *
+ *     <div class="o-media__fluid">
+ *       Fluid width column
+ *     </div>
+ *   </div>
+ *
+ * Media Object that collapses under 767px width breakpoints
+ * It creates a media object that will automatically collapse in two rows when a max-width of 767px presents.
+ *
+ * @example
+ * $objects-media-collapses-at: 767px; // This is not needed since 767px is the default value
+ * $iota-objs-media-res: true;
+ *
+ *   <div class="o-media o-media--res">
+ *     <div class="o-media__fixed">
+ *       Fixed width column
+ *     </div>
+ *
+ *     <div class="o-media__fluid">
+ *       Fluid width column
+ *     </div>
+ *   </div>
+ *
+ * Media object with reversed columns
+ * It creates a media object that has the fixed part on the right and the fluid on the left.
+ *
+ * @example
+ *   $objects-media-rev: true;
+ *
+ *   <div class="o-media o-media--rev">
+ *     <div class="o-media__fixed">
+ *       Fixed width column on the right
+ *     </div>
+ *
+ *     <div class="o-media__fluid">
+ *       Fluid width column on the left
+ *     </div>
+ *   </div>
+ */
+
+
+/**
+ * Settings
+ */
+
+/**
+ * Namespace classes
+ *
+ * @type String
+ */
+
+$objects-media-fixed                  : "fixed" !default;
+$objects-media-fluid                  : "fluid" !default;
+$objects-media-reversed               : "reversed" !default;
+$objects-media-align-middle           : "middle" !default;
+$objects-media-align-bottom           : "bottom" !default;
+$objects-media-responsive             : "responsive" !default;
+
+$objects-media-class-media            : "o-media";
+$objects-media-class-media-mod        : $objects-media-class-media + "--";
+$objects-media-class-media-fixed      : $objects-media-class-media + "__" + $objects-media-fixed;
+$objects-media-class-media-fluid      : $objects-media-class-media + "__" + $objects-media-fluid;
+
+
+/**
+ * Default gutter size
+ *
+ * Use a number for a single size or a map for a responsive size.
+ *
+ * @type Number | Map
+ */
+
+$objects-media-gutter-default       : $global-gutter-default !default;
+
+
+/**
+ * Extra gutters map
+ *
+ * Each gutter size will be available as a modifier that will be named according
+ * to the gutter name.
+ *
+ * Use a map for a single size or a nested map for a responsive size.
+ *
+ * Example if `$objects-media-gutter-extra: ("compact": "10px");`
+ * then `.o-media--compact` will be available for use.
+ *
+ * @type Map
+ */
+
+$objects-media-gutter-extra         : () !default;
+
+
+/**
+ * Reverse columns order
+ *
+ * Enable / Disable reversed modifier.
+ *
+ * .o-media--rev: Reverse columns order
+ *
+ * @type Boolean
+ */
+
+$objects-media-reversed             : false !default;
+
+
+/**
+ * Alignment
+ *
+ * Enable / Disable alignment modifiers.
+ *
+ * .o-media--middle: Align columns at middle vertically
+ * .o-media--bottom: Align columns at bottom vertically.
+ *
+ * @type Boolean
+ */
+
+$objects-media-aligned              : false !default;
+
+
+/**
+ * Responsive
+ *
+ * Enable / Disable responsive modifier for media object.
+ *
+ * .o-media--res: Collapse fluid section bellow fixed one, at a specific
+ * max-width breakpoint.
+ *
+ * @type Boolean
+ */
+
+$objects-media-responsive           : false !default;
+
+
+/**
+ * Collapsing
+ *
+ * Specify max-width for breakpoint to collapse at.
+ *
+ * @type Number
+ */
+
+$objects-media-collapse-at          : 767px !default;
+
+
+/**
+ * Import Media Object from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/4.objects/objects.media";

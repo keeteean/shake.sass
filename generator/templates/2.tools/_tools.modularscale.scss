@@ -1,0 +1,27 @@
+/**
+ ******************************************************************************
+ *** OFFICIAL MODULAR SCALE TOOL ***
+ ******************************************************************************
+ *
+ * The Modular Scale tool contains a function that helps you create sizes based
+ * on modular scale.
+ *
+ * @link https://www.modularscale.com
+ * @see options: https://github.com/modularscale/modularscale-sass#using-modular-scale
+ *
+ */
+
+
+/**
+ * Settings
+ */
+
+$modularscale-base: 1.2rem 1.4rem 1.6rem !default;
+$modularscale-ratio: 1.5 !default;
+
+
+/**
+ * Import Modularscale Tool from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/2.tools/tools.modularscale";

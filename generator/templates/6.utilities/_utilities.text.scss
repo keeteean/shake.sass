@@ -1,0 +1,55 @@
+/**
+ ******************************************************************************
+ *** TEXT UTILITY ***
+ ******************************************************************************
+ *
+ * The text utility contains helper classes for the CSS text align property.
+ *
+ * based on iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://www.iotacss.com/docs/utilities/text
+ *
+ * @require {map} $global-breakpoints <1.settings/_settings.breakpoints.scss>
+ * @require {string} $global-breakpoint-separator <1.settings/_settings.breakpoints.scss>
+ * @require {mixin} text-align <2.tools/_tools.text-align.scss>
+ *
+ *
+ * Examples
+ *
+ * Class list
+ * @example
+ *   .u-text--left
+ *   .u-text--right
+ *   .u-text--center
+ *   .u-text--justify
+ *   .u-text--justify-left
+ *   .u-text--justify-right
+ *   .u-text--justify-center
+ *
+ * Enable responsive text utilities
+ * By enabling the responsive text utilities, you have access to a set of utility classes which bind to breakpoints.
+ * By default, they bind to the global breakpoints specified in Settings.Breakpoints.
+ *
+ * @example
+ *   $utilities-text-responsive   : true;
+ *
+ *   <h1 class="u-text--center u-text--right@small">
+ *     Heading aligned center on mobile and right on tablets and up.
+ *   </h1>
+ */
+
+
+/**
+ * Settings
+ */
+
+$utilities-text-responsive   : false !default;
+$utilities-text-breakpoints  : $global-breakpoints !default;
+
+
+/**
+ * Import Text Utility from Shake.sass
+ */
+
+@import "/node_modules/shake.sass/6.utilities/utilities.text";

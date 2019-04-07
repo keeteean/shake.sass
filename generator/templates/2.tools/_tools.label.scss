@@ -1,0 +1,23 @@
+/**
+ ******************************************************************************
+ *** LABEL MIXINS ***
+ ******************************************************************************
+ *
+ * Mixins for inline labels.
+ */
+
+
+/**
+ * Settings
+ */
+
+$label-padding: .2rem .4rem !default;
+$label-border-radius: .4rem !default;
+$label-line-height: 1.2 !default;
+
+
+/**
+ * Import Label Tool from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/2.tools/tools.label";

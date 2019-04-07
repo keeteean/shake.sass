@@ -1,0 +1,57 @@
+/**
+ ******************************************************************************
+ *** TYPE ELEMENT ***
+ ******************************************************************************
+ *
+ * Text elements.
+ */
+
+
+/**
+ ** Settings **
+ */
+
+/**
+ * Paragraph margins
+ */
+
+$base-paragraph-margins     : true !default;
+$base-paragraph-margin-size : 1em !default;
+
+
+/**
+ * Inline and Code Blocks
+ */
+
+$base-code-tab-size         : 4 !default;
+$base-code-font-size        : 90% !default;
+$base-code-letter-spacing   : .05em !default;
+
+
+/**
+ * Global Link Element
+ */
+
+// :link, :visited states
+$base-link-color            : $link-color !default;
+
+// :hover, :focus, :active states
+$base-link-color-accent     : $link-color--accent !default;
+
+// underlined links
+$base-link-text-decoration  : none !default;
+
+// outlined links in :focus state
+$base-link-outline          : none !default;
+
+
+/**
+ * Import Type element from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/3.base/base.type";
+
+
+/**
+ * Theming other html elements.
+ */

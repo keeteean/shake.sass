@@ -1,0 +1,24 @@
+/**
+ ******************************************************************************
+ *** FORM TOOL ***
+ ******************************************************************************
+ *
+ * Form related mixins and functions.
+ */
+
+
+/**
+ * Placeholder Mixin
+ *
+ * @example
+ *  @include input-placeholder {
+ *    color: grey;
+ *  }
+ */
+
+
+/**
+ * Import Form Tool from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/2.tools/tools.form";

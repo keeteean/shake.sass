@@ -1,0 +1,128 @@
+/**
+ ******************************************************************************
+ *** TYPE TOOL ***
+ ******************************************************************************
+ *
+ * Typography mixins and placeholders from responsive font-sizes to best
+ * practices.
+ */
+
+
+/**
+ * Responsive Type Tool
+ *
+ * Type tool contains a mixin that helps you create smart, flexible and
+ * responsive typography.
+ *
+ * some parts borrowed from iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://www.iotacss.com/docs/tools/type
+ *
+ * @require {Mixin} generate-type-sizes <2.tools/libraries/_generate-type-sizes.scss>
+ * @require {Mixin} extract-type-sizes <2.tools/libraries/_extract-type-sizes.scss>
+ *
+ *
+ * Use it wherever you need it.
+ *
+ * @example
+ *  @include type($sizes, $breakpoints: $global-breakpoints);
+ *
+ *
+ * Type mixin accepts two parameters:
+ *
+ * @parameter {number | list | map} $sizes
+ * @parameter {map} $breakpoint - A Sass map that contains all the breakpoints. Default value is $global-breakpoints.
+ *
+ *
+ * Syntax:
+ *
+ * Font size typography
+ * It will create a font size on h1 tag that will have 16px font-size.
+ *
+ * @example
+ *   h1 {
+ *     @include type(16px);
+ *   }
+ *
+ * Font size and line height typography
+ * It will create a font size on h1 tag that will have 16px font-size and 20px line-height.
+ *
+ * @example
+ *   h1 {
+ *     @include iota-type(16px 20px);
+ *   }
+ *
+ * Responsive font size typography
+ * It will create a font size on h1 tag that will have 12px font-size on mobiles and 16px on tablets and up.
+ *
+ * @example
+ *   h1 {
+ *     @include type(
+ *       (
+ *         null : 12px,
+ *         small: 16px
+ *        )
+ *     );
+ *   }
+ *
+ * Responsive font size typography with line height
+ * It will create a font size on h1 tag that will have 12px font-size and 16px line-height on
+ * mobiles and 16px font-size and 20px line-height on tablets and up.
+ *
+ * @example
+ *   h1 {
+ *     @include type(
+ *       (
+ *         null : (12px, 16px),
+ *         small: (16px, 20px)
+ *        )
+ *     );
+ *   }
+ */
+
+
+/**
+ * Text Overflow behaviors
+ *
+ * Text Ellipsis
+ *
+ * Overflow behavior: display an ellipsis to represent clipped text.
+ * Only works on single line text!
+ *
+ * @example
+ *   .article__lead {
+ *     @extend %text-ellipsis;
+ *   }
+ */
+
+
+/**
+ * Text Clip
+ *
+ * Overflow behavior: truncate the text.
+ *
+ * @example
+ *   .article__lead {
+ *     @extend %text-clip;
+ *   }
+ */
+
+
+/**
+ * Text Break
+ *
+ * Text may be broken at arbitrary points.
+ *
+ * @example
+ *   .article__body {
+ *     @extend %text-break;
+ *   }
+ */
+
+
+/**
+ * Import Type Tool from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/2.tools/tools.type";
