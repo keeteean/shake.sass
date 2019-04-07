@@ -99,4 +99,20 @@ you really need one-by-one.
 
 _WARNING: this is the cleanest way but needs more manual work!_
 
+For easier importing we provide a `_boilertemplate` directory with all
+required sass files, just copy them to you sass source directory like:
+
+```shell
+cp -a node_modules/shake.sass/_boilertemplate/ ./sass/
+```
+
+This directory contains all modules with documents, but you can drop
+out easily what you don't need. But keep in mind
+`2.tools/_tools.helpers.scss` required by the most tools and settings.
+
+The `1.settings` directory contains all variables so you don't need to
+import them from Shake.sass. `1.settings` contains only global variables
+all local variables should be to other modules. Ex.: Type related
+variables are in `2.tools/_tools.type.scss`.
+
 ## Documentation
