@@ -1,6 +1,6 @@
 {
   "name": "shake.sass",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "You can use the [editor on GitHub](https://github.com/keeteean/skake/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
   "license": "MIT",
   "repository": {
@@ -14,7 +14,7 @@
   "author": {
     "name": "Krisztian Pinter",
     "email": "krisz@keeteean.com",
-    "url": "keeteean.com"
+    "url": "http://keeteean.com"
   },
   "keywords": [
     "bem",
@@ -25,19 +25,8 @@
     "shake.sass",
     "utility"
   ],
-  "bin": "cli.js",
-  "engines": {
-    "node": ">= 4"
-  },
   "dependencies": {
-    "humanize-url": "^2.0.0",
-    "is-scoped": "^2.1.0",
-    "modularscale-sass": "^3.0.8",
-    "normalize-url": "^4.3.0",
-    "superb": "^3.0.0",
-    "underscore.string": "^3.3.5",
-    "yeoman-environment": "^2.3.4",
-    "yeoman-generator": "^3.2.0"
+    "modularscale-sass": "^3.0.8"
   },
   "devDependencies": {
     "stylelint": "^9.10.1",
