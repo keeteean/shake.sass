@@ -59,7 +59,7 @@
  */
 
 
-@mixin _breakpoint($size, $breakpoints: $global-breakpoints) {
+@mixin breakpoint($size, $breakpoints: $global-breakpoints) {
   $breakpoint-found: map-has-key($breakpoints, $size);
 
   @if ($breakpoint-found == true) {

@@ -33,7 +33,7 @@
 
     @each $breakpoint-name, $gutter-size in $units {
       @if $breakpoint-name {
-        @include _breakpoint($breakpoint-name) {
+        @include breakpoint($breakpoint-name) {
           #{$property + $suffix}: $gutter-size;
         }
       }
