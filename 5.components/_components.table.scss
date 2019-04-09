@@ -46,6 +46,8 @@ $components-hover-table-color                 : darken($components-striped-table
  * @see `3.base/_base.table.scss` for base theming `<table>` element.
  * @link https://github.com/filamentgroup/tablesaw
  *
+ * @require {boolean} $base-table-normalize Should be true! <3.base/_base.reset.scss>
+ *
  * @example
  *   <table class="c-table">
  *     <thead>
@@ -202,6 +204,8 @@ $components-hover-table-color                 : darken($components-striped-table
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://picturepan2.github.io/spectre/elements/tables.html#tables-striped
  *
+ * @require {boolean} $base-table-normalize Should be true! <3.base/_base.reset.scss>
+ *
  * Use the `c-table--striped` class to `<table>` to add zebra striped style.
  * For hoverable table rows, you can add the `c-table--hover` class to enable
  * hover style.
@@ -259,6 +263,8 @@ $components-hover-table-color                 : darken($components-striped-table
  * @author Yan Zhu <picturepan2@hotmail.com>
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://picturepan2.github.io/spectre/elements/tables.html#tables-striped
+ *
+ * @require {boolean} $base-table-normalize Should be true! <3.base/_base.reset.scss>
  *
  * @example
  *   <table class="c-table--hover">
