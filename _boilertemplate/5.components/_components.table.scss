@@ -17,7 +17,7 @@
  * Responsive CSS only table component based on Filament Group's Tablesaw.
  * There is no any styling only layout needed properties.
  * @see `3.base/_base.table.scss` for base theming `<table>` element.
- * @see https://github.com/filamentgroup/tablesaw
+ * @link https://github.com/filamentgroup/tablesaw
  *
  * @example
  *   <table class="c-table">
@@ -56,14 +56,15 @@ $components-responsive-table-content-width    : 67% !default;
 /**
  * Striped Table
  *
+ * Based on Spectre.css
+ * @author Yan Zhu <picturepan2@hotmail.com>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://picturepan2.github.io/spectre/elements/tables.html#tables-striped
+ *
  * Use the `c-table--striped` class to `<table>` to add zebra striped style.
  * For hoverable table rows, you can add the `c-table--hover` class to enable
  * hover style.
  * Use the `is-active` class to make `<tr>` element highlighted.
- *
- * Based on Spectre.css
- * @author Yan Zhu <picturepan2@hotmail.com>
- * @see https://picturepan2.github.io/spectre/elements/tables.html#tables-striped
  *
  * @example
  *   <table class="c-table c-table--striped">
@@ -91,6 +92,11 @@ $components-striped-table-color-accent        : $base-table-background-accent !d
 
 /**
  * Hover Table
+ *
+ * Based on Spectre.css
+ * @author Yan Zhu <picturepan2@hotmail.com>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://picturepan2.github.io/spectre/elements/tables.html#tables-striped
  *
  * @example
  *   <table class="c-table--hover">
