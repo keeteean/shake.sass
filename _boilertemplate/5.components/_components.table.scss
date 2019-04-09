@@ -1,0 +1,122 @@
+/**
+ ******************************************************************************
+ *** TABLE COMPONENT ***
+ ******************************************************************************
+ *
+ * CSS class based table themings, like responsive table, striped table.
+ */
+
+
+/**
+ ** Settings **
+ */
+
+/**
+ * Responsive Table Component
+ *
+ * Responsive CSS only table component based on Filament Group's Tablesaw.
+ * There is no any styling only layout needed properties.
+ * @see `3.base/_base.table.scss` for base theming `<table>` element.
+ * @see https://github.com/filamentgroup/tablesaw
+ *
+ * @example
+ *   <table class="c-table">
+ *     <thead>
+ *       <tr>
+ *         <th>name</th>
+ *         <th>genre</th>
+ *         <th>release date</th>
+ *       </tr>
+ *     </thead>
+ *     <tbody>
+ *       <tr>
+ *         <td>
+ *           <b class="c-table__cell-label">name</b>
+ *           <span class="c-table__cell-content">The Shawshank Redemption</b>
+ *         </td>
+ *         <td>
+ *           <b class="c-table__cell-label">genre</b>
+ *           <span class="c-table__cell-content">Crime, Drama</b>
+ *         </td>
+ *         <td>
+ *           <b class="c-table__cell-label">release date</b>
+ *           <span class="c-table__cell-content">14 October 1994</b>
+ *         </td>
+ *       </tr>
+ *     </tbody>
+ *   </table>
+ */
+
+$components-responsive-table                  : true !default;
+$components-responsive-table-label-padding    : 0 .6em 0 0 !default;
+$components-responsive-table-label-width      : 30% !default;
+$components-responsive-table-content-width    : 67% !default;
+
+
+/**
+ * Striped Table
+ *
+ * Use the `c-table--striped` class to `<table>` to add zebra striped style.
+ * For hoverable table rows, you can add the `c-table--hover` class to enable
+ * hover style.
+ * Use the `is-active` class to make `<tr>` element highlighted.
+ *
+ * Based on Spectre.css
+ * @author Yan Zhu <picturepan2@hotmail.com>
+ * @see https://picturepan2.github.io/spectre/elements/tables.html#tables-striped
+ *
+ * @example
+ *   <table class="c-table c-table--striped">
+ *     <thead>
+ *       <tr>
+ *         <th>name</th>
+ *         <th>genre</th>
+ *         <th>release date</th>
+ *       </tr>
+ *     </thead>
+ *     <tbody>
+ *       <tr class="is-active">
+ *         <td>The Shawshank Redemption</td>
+ *         <td>Crime, Drama</td>
+ *         <td>14 October 1994</td>
+ *       </tr>
+ *     </tbody>
+ *   </table>
+ */
+
+$components-striped-table                     : true !default;
+$components-striped-table-color               : $base-table-background !default;
+$components-striped-table-color-accent        : $base-table-background-accent !default; // odd rows (1, 3, 5...)
+
+
+/**
+ * Hover Table
+ *
+ * @example
+ *   <table class="c-table--hover">
+ *     <thead>
+ *       <tr>
+ *         <th>name</th>
+ *         <th>genre</th>
+ *         <th>release date</th>
+ *       </tr>
+ *     </thead>
+ *     <tbody>
+ *       <tr>
+ *         <td>The Shawshank Redemption</td>
+ *         <td>Crime, Drama</td>
+ *         <td>14 October 1994</td>
+ *       </tr>
+ *     </tbody>
+ *   </table>
+ */
+
+$components-hover-table                       : true !default;
+$components-hover-table-color                 : darken($components-striped-table-color-accent, 3%) !default;
+
+
+/**
+ * Import Table Component from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/5.components/components.table";

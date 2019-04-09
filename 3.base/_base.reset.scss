@@ -8,6 +8,7 @@
  *   - switchable components:
  *       - heading font-size reset,
  *       - small font-size reset,
+ *       - table element
  *       - form elements,
  *       - font antialiasing
  *   - best practices
@@ -60,6 +61,13 @@ $base-small-size: true !default;
  */
 
 $base-font-antialiasing: false !default;
+
+
+/**
+ * Table normalizer
+ */
+
+$base-table-normalize: true !default;
 
 
 /**
@@ -319,10 +327,12 @@ sup {
  * 2. Ensure tables fill up as much space as possible.
  */
 
-table {
-  width: 100%; // 2
-  border-spacing: 0; // 1
-  border-collapse: collapse; // 1
+@if ($base-table-normalize == true) {
+  table {
+    width: 100%; // 2
+    border-spacing: 0; // 1
+    border-collapse: collapse; // 1
+  }
 }
 
 

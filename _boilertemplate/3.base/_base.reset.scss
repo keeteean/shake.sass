@@ -8,6 +8,7 @@
  *   - switchable components:
  *       - heading font-size reset,
  *       - small font-size reset,
+ *       - table element
  *       - form elements,
  *       - font antialiasing
  *   - best practices
@@ -54,11 +55,19 @@ $base-small-size: true !default;
  * Font Antialiasing
  *
  * Makes font thickness to look the same in Firefox and Webkit.
+ * You can set it individually too with `%font-smooth` placeholder.
  *
  * @type Boolean
  */
 
 $base-font-antialiasing: false !default;
+
+
+/**
+ * Table normalizer
+ */
+
+$base-table-normalize: true !default;
 
 
 /**
