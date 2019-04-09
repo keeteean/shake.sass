@@ -64,10 +64,10 @@ html {
 }
 
 body {
-  @include colors($body-color, $body-background);
-  @include type($base-font-size);
+  @include type($global-font-size);
 
   font-weight: $font-weight--normal;
+  font-family: $global-font-family;
 }
 
 

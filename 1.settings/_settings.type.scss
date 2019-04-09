@@ -35,23 +35,25 @@ $font-family--monospace:
   "Courier New",
   monospace !default;
 
+$global-font-family         : $font-family--system !default;
+
 
 /**
  * Font weights
  */
 
-$font-weight--light:        300 !default;
-$font-weight--normal:       400 !default;
-$font-weight--medium:       500 !default;
-$font-weight--bold:         700 !default;
-$font-weight--black:        900 !default;
+$font-weight--light         : 300 !default;
+$font-weight--normal        : 400 !default;
+$font-weight--medium        : 500 !default;
+$font-weight--bold          : 700 !default;
+$font-weight--black         : 900 !default;
 
 
 /**
  * Line-height
  */
 
-$global-line-height:         1.2 !default;
+$global-line-height         : 1.2 !default;
 
 
 /**
@@ -62,20 +64,20 @@ $global-line-height:         1.2 !default;
 * Scale table
 */
 
-$type-12:   ms(0) !default;
-$type-14:   ms(1) !default;
-$type-16:   ms(2) !default;
-$type-18:   ms(3) !default;
-$type-21:   ms(4) !default;
-$type-24:   ms(5) !default;
-$type-27:   ms(6) !default;
-$type-31:   ms(7) !default;
-$type-36:   ms(8) !default;
-$type-40:   ms(9) !default;
-$type-48:   ms(10) !default;
-$type-54:   ms(11) !default;
-$type-60:   ms(12) !default;
-$type-71:   ms(13) !default;
+$type-12                    : ms(0) !default;
+$type-14                    : ms(1) !default;
+$type-16                    : ms(2) !default;
+$type-18                    : ms(3) !default;
+$type-21                    : ms(4) !default;
+$type-24                    : ms(5) !default;
+$type-27                    : ms(6) !default;
+$type-31                    : ms(7) !default;
+$type-36                    : ms(8) !default;
+$type-40                    : ms(9) !default;
+$type-48                    : ms(10) !default;
+$type-54                    : ms(11) !default;
+$type-60                    : ms(12) !default;
+$type-71                    : ms(13) !default;
 
 
 /**
@@ -91,8 +93,8 @@ $type-71:   ms(13) !default;
  * 'null' means no breakpoint (default)
  */
 
-// Base Font-size
-$base-font-size: (
+// Body (global) Font-size
+$global-font-size: (
   null: (
     $type-14,
     1.6
