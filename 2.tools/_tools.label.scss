@@ -11,9 +11,11 @@
  * Settings
  */
 
-$label-padding: .2rem .4rem !default;
-$label-border-radius: .4rem !default;
-$label-line-height: 1.2 !default;
+$label-padding              : .2rem .4rem !default;
+$label-border-radius        : .4rem !default;
+$label-line-height          : 1.2 !default;
+$label-color                : white !default;
+$label-background           : $color-tertiary !default;
 
 
 /**
@@ -31,10 +33,10 @@ $label-line-height: 1.2 !default;
  * Label color Mixin
  *
  * @parameter {string} $color - optional foreground color
- * @parameter {string} $bgcolor - optional background color
+ * @parameter {string} $background - optional background color
  */
 
-@mixin label-variant($color: rgba($label-color, .8), $bgcolor: $label-bgcolor) {
+@mixin label-variant($color: rgba($label-color, .8), $background: $label-background) {
   color: $color;
-  background: $bgcolor;
+  background: $background;
 }

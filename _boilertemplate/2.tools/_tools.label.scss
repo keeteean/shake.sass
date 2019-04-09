@@ -11,9 +11,11 @@
  * Settings
  */
 
-$label-padding: .2rem .4rem !default;
-$label-border-radius: .4rem !default;
-$label-line-height: 1.2 !default;
+$label-padding              : .2rem .4rem !default;
+$label-border-radius        : .4rem !default;
+$label-line-height          : 1.2 !default;
+$label-color                : white !default;
+$label-background           : $color-tertiary !default;
 
 
 /**

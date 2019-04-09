@@ -7,11 +7,21 @@
  */
 
 
+/**
+ * Settings
+ */
+
+$body-color                 : $global-color !default;
+$body-background            : $global-background !default;
+
+
 html {
   overflow-x: hidden;
   height: 100%;
 }
 
 body {
+  @include colors($body-color, $body-background);
+
   height: 100%;
 }

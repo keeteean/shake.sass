@@ -16,8 +16,8 @@
  */
 
 $base-selected-text             : true !default;
-$base-selected-text-color       : $selected-text-color !default;
-$base-selected-text-background  : $selected-text-background !default;
+$base-selected-text-color       : white !default;
+$base-selected-text-background  : $color-tertiary !default;
 
 
 /**
@@ -42,10 +42,10 @@ $base-code-letter-spacing       : .05em !default;
  */
 
 // :link, :visited states
-$base-link-color                : $link-color !default;
+$base-link-color                : $color-primary !default;
 
 // :hover, :focus, :active states
-$base-link-color-accent         : $link-color--accent !default;
+$base-link-color-accent         : darken($base-link-color, 15%) !default;
 
 // underlined links
 $base-link-text-decoration      : none !default;

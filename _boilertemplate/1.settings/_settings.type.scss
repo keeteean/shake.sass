@@ -191,24 +191,3 @@ $label-font-size: (
     $type-14 1.2
   )
 );
-
-
-/**
- * Text colors
- *
- * Assigned colors. We can't use any color tools here.
- */
-
-$color-brand                : #02baf2 !default;
-$color-primary              : $color-brand !default;
-$color-secondary            : #2ecc71 !default;
-$color-tertiary             : #a88cd5 !default;
-
-$body-color                 : black !default;
-$body-background            : white !default;
-$label-color                : white !default;
-$label-bgcolor              : $color-tertiary !default;
-$selected-text-color        : white !default;
-$selected-text-background   : $color-tertiary !default;
-$link-color                 : $color-primary !default;
-$link-color--accent         : darken($link-color, 15%) !default;
