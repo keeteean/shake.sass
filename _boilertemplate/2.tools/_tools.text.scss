@@ -11,6 +11,85 @@
 
 
 /**
+ * Text-align Mixin
+ *
+ * @parameter {string} $align - Align value ex.: left.
+ * @parameter {string} $last - Optional, align value for justify aligned last line.
+ *
+ *
+ * Examples
+ *
+ * Simple text align.
+ *
+ * @example
+ *   .c-button {
+ *     @include text-align(center);
+ *   }
+ *
+ * Align last line of a justify text.
+ *
+ * @example
+ *   .section__lead {
+ *     @include text-align(justify, left);
+ *   }
+ */
+
+
+/**
+ * Text Overflow behaviors
+ *
+ * Text Ellipsis
+ *
+ * Overflow behavior: display an ellipsis to represent clipped text.
+ * Only works on single line text!
+ *
+ * Borrowed from Spectre.css
+ * @author Yan Zhu <picturepan2@hotmail.com>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://picturepan2.github.io/spectre/utilities/text.html
+ *
+ * @example
+ *   .article__lead {
+ *     @extend %text-ellipsis;
+ *   }
+ */
+
+
+/**
+ * Text Clip
+ *
+ * Overflow behavior: truncate the text.
+ *
+ * Borrowed from Spectre.css
+ * @author Yan Zhu <picturepan2@hotmail.com>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://picturepan2.github.io/spectre/utilities/text.html
+ *
+ * @example
+ *   .article__lead {
+ *     @extend %text-clip;
+ *   }
+ */
+
+
+/**
+ * Text Break
+ *
+ * Text may be broken at arbitrary points.
+ *
+ * Borrowed from Spectre.css
+ * @author Yan Zhu <picturepan2@hotmail.com>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://picturepan2.github.io/spectre/utilities/text.html
+ *
+ * @example
+ *   .article__body {
+ *     @extend %text-break;
+ *   }
+ */
+
+
+/**
  * Import Text Tool from Shake.sass.
  */
 
