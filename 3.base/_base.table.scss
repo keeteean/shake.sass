@@ -98,7 +98,11 @@ $base-table-footer-border-style : $base-table-border-style !default;
 $base-table-footer-border-width : 0 !default;
 
 
-%base-table {
+/**
+ * Default Table placeholder
+ */
+
+%default-table {
   td {
     background: $base-table-background;
     border-bottom: $base-table-border-width $base-table-border-style $base-table-border-color;
@@ -127,15 +131,19 @@ $base-table-footer-border-width : 0 !default;
 }
 
 
+/**
+ * Global Table
+ */
+
 @if ($base-table-global == true) {
   table {
-    @extend %base-table;
+    @extend %default-table;
   }
 }
 
 @else {
   table:not([class]) {
-    @extend %base-table;
+    @extend %default-table;
   }
 }
 
