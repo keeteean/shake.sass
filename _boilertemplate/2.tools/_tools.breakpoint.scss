@@ -7,7 +7,7 @@
  * @author Dimitris Psaropoulos <info@harby.me>
  * @link https://www.iotacss.com/docs/tools/breakpoint/
  *
- * @require {Map} breakpoint settings <1.settings/_settings.breakpoints.scss>
+ * @require {map} breakpoint settings <1.settings/_settings.breakpoints.scss>
  *
  *
  * Use it wherever you need it.
@@ -22,7 +22,6 @@
  *
  * Using the global default $global-breakpoints breakpoints map.
  * @example
- *   // 1.settings/_settings.breakpoints.scss
  *   $global-breakpoints: (
  *     small  : screen and (min-width: 480px),
  *     medium : screen and (min-width: 768px),
@@ -31,7 +30,6 @@
  *     xxlarge: screen and (min-width: 1400px)
  *   );
  *
- *   // 5 components/_components.header.scss
  *   .c-header {
  *      margin-right: 30px;
  *
@@ -42,13 +40,11 @@
  *
  * Using a custom breakpoints map.
  * @example
- *   // 1.settings/_settings.breakpoints.scss
  *   $my-breakpoints : (
  *      small: screen and (min-width: 400px),
  *     xlarge: screen and (min-width: 1280px)
  *   );
  *
- *   // 5 components/_components.header.scss
  *   .c-header {
  *      margin-right: 30px;
  *

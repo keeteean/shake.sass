@@ -3,7 +3,7 @@
  *** TEXT UTILITY ***
  ******************************************************************************
  *
- * The text utility contains helper classes for the CSS text align property.
+ * The text utility contains helper classes for easier control text blocks.
  *
  * based on iota.css
  * @author Dimitris Psaropoulos <info@harby.me>
@@ -69,7 +69,7 @@ $utilities-text-breakpoints  : $global-breakpoints !default;
 }
 
 .u-text--justify-left {
-  @include text-align(justify, left)
+  @include text-align(justify, left);
 }
 
 .u-text--justify-right {

@@ -3,8 +3,7 @@
  *** TYPE TOOL ***
  ******************************************************************************
  *
- * Typography mixins and placeholders from responsive font-sizes to best
- * practices.
+ * Inline typography related mixins and placeholders.
  */
 
 
@@ -35,7 +34,7 @@
  * @parameter {map} $breakpoint - A Sass map that contains all the breakpoints. Default value is $global-breakpoints.
  *
  *
- * Syntax:
+ * Examples
  *
  * Font size typography
  * It will create a font size on h1 tag that will have 16px font-size.
@@ -50,7 +49,7 @@
  *
  * @example
  *   h1 {
- *     @include iota-type(16px 20px);
+ *     @include type(16px 20px);
  *   }
  *
  * Responsive font size typography

@@ -3,8 +3,7 @@
  *** TYPE TOOL ***
  ******************************************************************************
  *
- * Typography mixins and placeholders from responsive font-sizes to best
- * practices.
+ * Inline typography related mixins and placeholders.
  */
 
 
@@ -35,7 +34,7 @@
  * @parameter {map} $breakpoint - A Sass map that contains all the breakpoints. Default value is $global-breakpoints.
  *
  *
- * Syntax:
+ * Examples
  *
  * Font size typography
  * It will create a font size on h1 tag that will have 16px font-size.
@@ -50,7 +49,7 @@
  *
  * @example
  *   h1 {
- *     @include iota-type(16px 20px);
+ *     @include type(16px 20px);
  *   }
  *
  * Responsive font size typography
@@ -83,40 +82,14 @@
 
 
 /**
- * Text Overflow behaviors
+ * Font Antialiasing
  *
- * Text Ellipsis
- *
- * Overflow behavior: display an ellipsis to represent clipped text.
- * Only works on single line text!
+ * Makes font thickness to look the same in Firefox and Webkit.
+ * You can set this globally too in `3.base/_base.reset.scss`.
  *
  * @example
- *   .article__lead {
- *     @extend %text-ellipsis;
- *   }
- */
-
-
-/**
- * Text Clip
- *
- * Overflow behavior: truncate the text.
- *
- * @example
- *   .article__lead {
- *     @extend %text-clip;
- *   }
- */
-
-
-/**
- * Text Break
- *
- * Text may be broken at arbitrary points.
- *
- * @example
- *   .article__body {
- *     @extend %text-break;
+ *   h1 {
+ *     @extend %font-smooth;
  *   }
  */
 

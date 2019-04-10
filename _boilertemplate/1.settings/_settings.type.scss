@@ -83,12 +83,11 @@ $type-71                    : ms(13) !default;
 /**
  * Responsive font sizes
  *
- * @code
- *   breakpoint-name: ( font-size, optional-lineheight )
- * @endcode
+ * @example
+ *   breakpoint-name: ( font-size, optional-line-height )
  *
  * Breakpoint names come from $global-breakpoints declared in
- * 1.settings/_settings.breakpoints
+ * `1.settings/_settings.breakpoints`.
  *
  * 'null' means no breakpoint (default)
  */

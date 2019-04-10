@@ -1,20 +1,20 @@
 /**
-******************************************************************************
-*** CONTAINER TOOL ***
-******************************************************************************
-*
-* The container tool is responsible for creating smart, flexible and responsive containers.
-*
-* Here you can setup the default container with default size (max-with) and paddings. Then you
-* use it as placeholder. But there are some mixins as well for creating custom containers.
-*
-* based on iota.css
-* @author Dimitris Psaropoulos <info@harby.me>
-* @author Krisztian Pinter <krisz@keeteean.com>
-*
-* @require {mixin} _generate-unit <2.tools/libraries/_generate-unit.scss>
-* @see 4.objects/_objects.container.scss for BEM class based default and custom containers
-*/
+ ******************************************************************************
+ *** CONTAINER TOOL ***
+ ******************************************************************************
+ *
+ * The container tool is responsible for creating smart, flexible and responsive containers.
+ *
+ * Here you can setup the default container with default size (max-with) and paddings. Then you
+ * use it as placeholder. But there are some mixins as well for creating custom containers.
+ *
+ * based on iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ *
+ * @require {mixin} _generate-unit <2.tools/libraries/_generate-unit.scss>
+ * @see 4.objects/_objects.container.scss for BEM class based default and custom containers
+ */
 
 
 /**
