@@ -64,7 +64,9 @@
     @media #{$breakpoint} {
       @content;
     }
-  } @else {
-    @warn "Breakpoint size " + #{$size} + " doesn't exist."
+  }
+
+  @else {
+    @warn "Breakpoint size " + #{$size} + " doesn't exist.";
   }
 }

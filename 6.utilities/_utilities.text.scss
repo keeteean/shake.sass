@@ -73,11 +73,11 @@ $utilities-text-breakpoints  : $global-breakpoints !default;
 }
 
 .u-text--justify-right {
-  @include text-align(justify, right)
+  @include text-align(justify, right);
 }
 
 .u-text--justify-center {
-  @include text-align(justify, center)
+  @include text-align(justify, center);
 }
 
 

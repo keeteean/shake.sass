@@ -31,7 +31,7 @@
  * @type Number | List | Map
  */
 
-$objects-container-gutter-default : $global-gutter-default !default;
+$tools-container-gutter-default   : $global-gutter-default !default;
 
 
 /**
@@ -43,7 +43,7 @@ $objects-container-gutter-default : $global-gutter-default !default;
  * @type String | Map
  */
 
-$objects-container-size-default   : 1024px !default;
+$tools-container-size-default     : 1024px !default;
 
 
 // Container padding
@@ -59,8 +59,9 @@ $objects-container-size-default   : 1024px !default;
 
 // Default Container Placeholder
 %container {
+  @include container-padding($tools-container-gutter-default);
+  @include container-size($tools-container-size-default);
+
   margin-right: auto;
-  margin-left:  auto;
-  @include container-padding($objects-container-gutter-default);
-  @include container-size($objects-container-size-default);
+  margin-left: auto;
 }
