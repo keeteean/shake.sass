@@ -1,0 +1,162 @@
+/**
+ ******************************************************************************
+ *** BUTTON COMPONENT ***
+ ******************************************************************************
+ *
+ * Buttons include simple button styles for actions in different types and
+ * sizes.
+ * It's based on Button Tool, so don't forget to import
+ * that first. Even more that tool provides many configurable options too.
+ *
+ * Based on Spectre.css
+ * @author Yan Zhu <picturepan2@hotmail.com>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://picturepan2.github.io/spectre/elements/buttons.html
+ *
+ * @require {mixin} button-base <2.tools/_tools.button>
+ * @require {mixin} ghost-button <2.tools/_tools.button>
+ */
+
+
+/**
+ ** Settings **
+ */
+
+/**
+ * Button sizes
+ *
+ * The small button uses same font-size as default, but doesn't let grow it's
+ * padding and line-height at larger screens.
+ */
+
+$components-button-font-size--large         : $type-16 !default;
+$components-button-font-size--xlarge        : $type-24 !default;
+
+
+/**
+ * Button types
+ */
+
+// Color of text and border by default then background on hover.
+$components-button-ghost-text-color         : $color-primary !default;
+
+// Color of text on hover.
+$components-button-ghost-text-color-accent  : white !default;
+
+
+/**
+ * Default Button
+ *
+ * For the class based default buttons add the `c-button` class to `<a>`,
+ * `<input>` or `<button>` elements. However if you use Button Element module
+ * from `3.base/_base.button` it doesn't need for html form buttons like
+ * `<input[type="submit"]>` or `<button>`.
+ *
+ * @example
+ *   <button class="c-button>default button</button>
+ *   <a class="c-button>default button</a>
+ */
+
+.c-button {
+  @include default-button;
+}
+
+
+/**
+ ** Button variations **
+ *
+ * Add these css classes additionally to element:
+ *
+ * @example
+ *   <a class="c-button c-button--ghost">ghost button</a>
+ */
+
+
+/**
+ * Button sizes
+ */
+
+.c-button--small {
+  @include breakpoint(medium) {
+    padding: $tools-button-padding;
+    line-height: $tools-button-line-height;
+  }
+}
+
+.c-button--large {
+  font-size: $components-button-font-size--large;
+}
+
+.c-button--xlarge {
+  font-size: $components-button-font-size--xlarge;
+}
+
+
+/**
+ * Button types
+ */
+
+.c-button--ghost {
+  @include ghost-button($components-button-ghost-text-color, $components-button-ghost-text-color-accent);
+}
+
+
+/**
+ * Button groups
+ *
+ * Based on Spectre.css
+ * @author Yan Zhu <picturepan2@hotmail.com>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://picturepan2.github.io/spectre/elements.html#buttons-groups
+ *
+ * If you want to use buttons as a group, add the `c-button__group` class to the
+ * container. You can add the `c-button__group--block` class for a full-width
+ * button group.
+ *
+ * @example
+ *   <div class="c-button__group c-button__group--block">
+ *     <button class="c-button">first button</button>
+ *     <button class="c-button">second button</button>
+ *     <button class="c-button">third button</button>
+ *   </div>
+ */
+
+.c-button__group {
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  &--block {
+    display: flex;
+
+    .c-button {
+      flex: 1 0 0;
+    }
+  }
+
+  .c-button {
+    flex: 1 0 auto;
+
+    &:focus,
+    &:hover,
+    &:active,
+    &.is-active {
+      z-index: 1;
+    }
+
+    &:first-child:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      margin-left: -$tools-button-border-width;
+      border-radius: 0;
+    }
+
+    &:last-child:not(:first-child) {
+      margin-left: -$tools-button-border-width;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
