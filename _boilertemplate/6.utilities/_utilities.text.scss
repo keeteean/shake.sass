@@ -11,8 +11,9 @@
  * @link https://www.iotacss.com/docs/utilities/text
  *
  * @require {map} $global-breakpoints <1.settings/_settings.breakpoints.scss>
- * @require {string} $global-breakpoint-separator <1.settings/_settings.breakpoints.scss>
- * @require {mixin} text-align <2.tools/_tools.text-align.scss>
+ * @require {string} $global-breakpoint-separator
+ * <1.settings/_settings.breakpoints.scss>
+ * @require {mixin} text-align <2.tools/_tools.text.scss>
  *
  *
  * Examples
@@ -28,14 +29,16 @@
  *   .u-text--justify-center
  *
  * Enable responsive text utilities
- * By enabling the responsive text utilities, you have access to a set of utility classes which bind to breakpoints.
- * By default, they bind to the global breakpoints specified in Settings.Breakpoints.
+ * By enabling the responsive text utilities, you have access to a set of
+ * utility classes which bind to breakpoints.
+ * By default, they bind to the global breakpoints specified in
+ * `1.settings/_settings.breakpoints.scss`.
  *
  * @example
  *   $utilities-text-responsive   : true;
  *
  *   <h1 class="u-text--center u-text--right@small">
- *     Heading aligned center on mobile and right on tablets and up.
+ *     Heading will be aligned center on mobile and right on tablets and up.
  *   </h1>
  */
 
