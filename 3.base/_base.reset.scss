@@ -470,13 +470,11 @@ svg:not(:root) {
 
 
   /**
-   * 1. Change the border, margin, and padding in all browsers (opinionated).
-   * 2. Correct the padding in Firefox.
+   * 1. Change the border, margin, and padding in all browsers (opinionated)..
    */
 
   fieldset {
     border: 0; // 1
-    padding: .35em .75em .625em; // 2
   }
 
 
