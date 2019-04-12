@@ -115,19 +115,6 @@ code {
 
 
 /**
- * Inline Code Element
- */
-
-code {
-  @include label-base;
-  @include label-variant;
-
-  letter-spacing: $base-code-letter-spacing;
-  font-size: $base-code-font-size;
-}
-
-
-/**
  * Global Link Element
  */
 

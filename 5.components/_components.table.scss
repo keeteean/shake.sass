@@ -3,7 +3,7 @@
  *** TABLE COMPONENT ***
  ******************************************************************************
  *
- * CSS class based table themings, like responsive table, striped table.
+ * Css class based table themings, like responsive table.
  */
 
 
@@ -19,23 +19,6 @@ $components-responsive-table                  : true !default;
 $components-responsive-table-label-padding    : 0 .6em 0 0 !default;
 $components-responsive-table-label-width      : 30% !default;
 $components-responsive-table-content-width    : 67% !default;
-
-
-/**
- * Striped Table
- */
-
-$components-striped-table                     : true !default;
-$components-striped-table-color               : $base-table-background !default;
-$components-striped-table-color-accent        : $base-table-background-accent !default; // odd rows (1, 3, 5...)
-
-
-/**
- * Hover Table
- */
-
-$components-hover-table                       : true !default;
-$components-hover-table-color                 : darken($components-striped-table-color-accent, 3%) !default;
 
 
 /**
@@ -191,108 +174,6 @@ $components-hover-table-color                 : darken($components-striped-table
 
     .c-table__cell-label {
       display: none !important; // 4.
-    }
-  }
-}
-
-
-/**
- * Striped Table
- *
- * Based on Spectre.css
- * @author Yan Zhu <picturepan2@hotmail.com>
- * @author Krisztian Pinter <krisz@keeteean.com>
- * @link https://picturepan2.github.io/spectre/elements/tables.html#tables-striped
- *
- * @require {boolean} $base-table-normalize Should be true! <3.base/_base.reset.scss>
- *
- * Use the `c-table--striped` class to `<table>` to add zebra striped style.
- * For hoverable table rows, you can add the `c-table--hover` class to enable
- * hover style.
- * Use the `is-active` class to make `<tr>` element highlighted.
- *
- * @example
- *   <table class="c-table c-table--striped">
- *     <thead>
- *       <tr>
- *         <th>name</th>
- *         <th>genre</th>
- *         <th>release date</th>
- *       </tr>
- *     </thead>
- *     <tbody>
- *       <tr class="is-active">
- *         <td>The Shawshank Redemption</td>
- *         <td>Crime, Drama</td>
- *         <td>14 October 1994</td>
- *       </tr>
- *     </tbody>
- *   </table>
- */
-
-@if ($components-striped-table == true) {
-  .c-table,
-  .c-table--striped {
-    tbody {
-      tr {
-        &.is-active {
-          background: $components-striped-table-color-accent;
-        }
-      }
-    }
-  }
-
-  .c-table--striped {
-    tbody {
-      tr {
-        background: $components-striped-table-color;
-
-        &:nth-of-type(odd) {
-          background: $components-striped-table-color-accent;
-        }
-      }
-    }
-  }
-}
-
-
-/**
- * Hover Table
- *
- * Based on Spectre.css
- * @author Yan Zhu <picturepan2@hotmail.com>
- * @author Krisztian Pinter <krisz@keeteean.com>
- * @link https://picturepan2.github.io/spectre/elements/tables.html#tables-striped
- *
- * @require {boolean} $base-table-normalize Should be true! <3.base/_base.reset.scss>
- *
- * @example
- *   <table class="c-table--hover">
- *     <thead>
- *       <tr>
- *         <th>name</th>
- *         <th>genre</th>
- *         <th>release date</th>
- *       </tr>
- *     </thead>
- *     <tbody>
- *       <tr>
- *         <td>The Shawshank Redemption</td>
- *         <td>Crime, Drama</td>
- *         <td>14 October 1994</td>
- *       </tr>
- *     </tbody>
- *   </table>
- */
-
-@if ($components-hover-table == true) {
-  .c-table--hover {
-    tbody {
-      tr {
-        &:hover {
-          background: $components-hover-table-color;
-        }
-      }
     }
   }
 }
