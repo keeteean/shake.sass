@@ -148,7 +148,7 @@ $objects-container-size-extra     : () !default;
 }
 
 // Container Object Extra Sizes
-@each $size-name, $size-value in $objects-container-size-extra  {
+@each $size-name, $size-value in $objects-container-size-extra {
   .#{$objects-container-class-mod + quote($size-name)} {
     @include container-size($size-value);
   }
