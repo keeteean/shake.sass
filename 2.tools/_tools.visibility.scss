@@ -34,3 +34,32 @@
   position: absolute !important;
   width: 1px !important;
 }
+
+
+/**
+ * Focusable Visually hidden
+ *
+ * Use in conjunction with %visually-hidden to only display content when it's focused.
+ * Useful for "Skip to main content" links.
+ * @see https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+ *
+ * borrowed from HTML5 Boilerplate
+ *
+ * @example
+ *   .skip-navigation {
+ *      @extend %visually-hidden;
+ *      @extend %visually-hidden--focusable;
+ *   }
+ */
+
+%visually-hidden--focusable {
+  &:active,
+  &:focus {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+  }
+}

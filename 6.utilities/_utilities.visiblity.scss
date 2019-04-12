@@ -52,19 +52,61 @@ $utilities-visibility-breakpoints         : $global-breakpoints !default;
  * Visibility Utilities
  */
 
+/**
+ * Show
+ */
+
 .u-show {
   visibility: visible !important;
 }
+
+
+/**
+ * Hide
+ */
 
 .u-hide {
   visibility: hidden !important;
 }
 
+
+/**
+ * Hide only visually
+ *
+ * Use visually hide utilities to hide elements on all devices except screen
+ * readers.
+ * Hide an element to all devices except screen readers with .u-visually-hide.
+ *
+ * @example
+ *   <h1 class="page__title u-visually-hide">Page title</h1>
+ */
+
 .u-visually-hide {
   @extend %visually-hidden;
 }
 
-// Visibility Responsive Utilities
+
+/**
+ * Focusable Visually hide
+ *
+ * Combine .u-visually-hide with .u-visually-hide--focusable to show the
+ * element again when it’s focused (e.g. by a keyboard-only user).
+ *
+ * @example
+ *   <a class="u-visually-hide u-visually-hide--focusable" href="#content">
+ *     Skip to main content
+ *   </a>
+ */
+
+.u-visually-hide--focusable {
+  @extend %visually-hidden--focusable;
+}
+
+
+/**
+ * Visibility Responsive Utilities
+ */
+
 @if ($utilities-visibility-responsive == true) {
   @each $breakpoint-name, $breakpoint-size in $utilities-visibility-breakpoints {
     @media #{$breakpoint-size} {
@@ -78,6 +120,10 @@ $utilities-visibility-breakpoints         : $global-breakpoints !default;
 
       .#{"u-visually-hide" + $global-breakpoint-separator + $breakpoint-name} {
         @extend %visually-hidden;
+      }
+
+      .#{"u-visually-hide--focusable" + $global-breakpoint-separator + $breakpoint-name} {
+        @extend %visually-hidden--focusable;
       }
     }
   }
