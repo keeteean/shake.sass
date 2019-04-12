@@ -24,7 +24,6 @@
  *   .u-show
  *   .u-hide
  *   .u-visually-hide
- *   .u-alpha
  *
  * Enable responsive visibility utilities
  * By enabling the responsive visibility utilities, you have access to a set of
@@ -61,8 +60,7 @@ $utilities-visibility-breakpoints         : $global-breakpoints !default;
   visibility: hidden !important;
 }
 
-.u-visually-hide,
-.u-alpha {
+.u-visually-hide {
   @extend %visually-hidden;
 }
 
@@ -79,10 +77,6 @@ $utilities-visibility-breakpoints         : $global-breakpoints !default;
       }
 
       .#{"u-visually-hide" + $global-breakpoint-separator + $breakpoint-name} {
-        @extend %visually-hide;
-      }
-
-      .#{"u-alpha" + $global-breakpoint-separator + $breakpoint-name} {
         @extend %visually-hide;
       }
     }

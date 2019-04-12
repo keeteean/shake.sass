@@ -1,0 +1,30 @@
+@import "helpers";
+@import "shake";
+
+.o-grid {
+  &__row {
+    @extend %clearfix;
+
+    margin: 2rem 0;
+  }
+
+  &__col {
+    float: left;
+    width: 100 / 3 * 1%;
+
+    &--1 {
+      @extend %text-ellipsis;
+
+      font-size: 1.5em;
+    }
+
+    &--2 {
+      @include type(
+        (
+          null: 12px,
+          small: 16px
+        )
+      );
+    }
+  }
+}
