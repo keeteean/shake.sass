@@ -1,0 +1,33 @@
+/**
+ ******************************************************************************
+ *** VISIBILITY TOOL ***
+ ******************************************************************************
+ *
+ * Control the visibility, without modifying the display, of elements with visibility utilities.
+ *
+ * @see 6.utilities/_utilities.visibility.scss for BEM based class named version
+ */
+
+
+/**
+ * Visually Hidden
+ *
+ * Use %visually-hidden placeholder to hide elements on all devices except screen
+ * readers.
+ *
+ * borrowed from iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://www.iotacss.com/docs/utilities/display
+ *
+ * @example
+ *   .page__title {
+ *     @extend %visually-hidden;
+ *   }
+ */
+
+
+/**
+ * Import Visibility Tool from Shake.sass.
+ */
+@import "/node_modules/shake.sass/2.tools/tools.visibility";

@@ -1,0 +1,90 @@
+/**
+ ******************************************************************************
+ *** VISIBILITY UTILITY ***
+ ******************************************************************************
+ *
+ * Control the visibility, without modifying the display, of elements with
+ - visibility utilities.
+ *
+ * based on iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://www.iotacss.com/docs/utilities/display
+ *
+ * @require {map} $global-breakpoints <1.settings/_settings.breakpoints.scss>
+ * @require {string} $global-breakpoint-separator
+ * <1.settings/_settings.breakpoints.scss>
+ * @require {placeholder} %visually-hidden <2.tools/_tools.visibility.scss>
+ *
+ *
+ * Examples
+ *
+ * Class list
+ * @example
+ *   .u-show
+ *   .u-hide
+ *   .u-visually-hide
+ *   .u-alpha
+ *
+ * Enable responsive visibility utilities
+ * By enabling the responsive visibility utilities, you have access to a set of
+ * utility classes which bind to breakpoints.
+ * By default, they bind to the global breakpoints specified in
+ * `1.settings/_settings.breakpoints`.
+ *
+ * @example
+ *   $utilities-visibility-responsive   : true;
+ *
+ *   <h1 class="u-hide@large">
+ *     Heading will be hidden on larger screens.
+ *   </h1>
+ */
+
+
+/**
+ * Settings
+ */
+
+$utilities-visibility-responsive          : false !default;
+$utilities-visibility-breakpoints         : $global-breakpoints !default;
+
+
+/**
+ * Visibility Utilities
+ */
+
+.u-show {
+  visibility: visible !important;
+}
+
+.u-hide {
+  visibility: hidden !important;
+}
+
+.u-visually-hide,
+.u-alpha {
+  @extend %visually-hidden;
+}
+
+// Visibility Responsive Utilities
+@if ($utilities-visibility-responsive == true) {
+  @each $breakpoint-name, $breakpoint-size in $utilities-visibility-breakpoints {
+    @media #{$breakpoint-size} {
+      .#{"u-show" + $global-breakpoint-separator + $breakpoint-name} {
+        visibility: visible !important;
+      }
+
+      .#{"u-hide" + $global-breakpoint-separator + $breakpoint-name} {
+        visibility: hidden !important;
+      }
+
+      .#{"u-visually-hide" + $global-breakpoint-separator + $breakpoint-name} {
+        @extend %visually-hide;
+      }
+
+      .#{"u-alpha" + $global-breakpoint-separator + $breakpoint-name} {
+        @extend %visually-hide;
+      }
+    }
+  }
+}

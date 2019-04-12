@@ -1,0 +1,36 @@
+/**
+ ******************************************************************************
+ *** VISIBILITY TOOL ***
+ ******************************************************************************
+ *
+ * Control the visibility, without modifying the display, of elements with visibility utilities.
+ *
+ * @see 6.utilities/_utilities.visibility.scss for BEM based class named version
+ */
+
+
+/**
+ * Visually Hidden
+ *
+ * Use %visually-hidden placeholder to hide elements on all devices except screen
+ * readers.
+ *
+ * borrowed from iota.css
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ * @link https://www.iotacss.com/docs/utilities/display
+ *
+ * @example
+ *   .page__title {
+ *     @extend %visually-hidden;
+ *   }
+ */
+
+%visually-hidden {
+  clip: rect(1px 1px 1px 1px) !important; /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  width: 1px !important;
+}
