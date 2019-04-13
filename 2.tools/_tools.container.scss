@@ -6,7 +6,7 @@
  * The container tool is responsible for creating smart, flexible and responsive containers.
  *
  * Here you can setup the default container with default size (max-with) and paddings. Then you
- * use it as placeholder. But there are some mixins as well for creating custom containers.
+ * use it as mixin. But there are some mixins as well for creating custom containers.
  *
  * based on iota.css
  * @author Dimitris Psaropoulos <info@harby.me>
@@ -57,8 +57,8 @@ $tools-container-size-default     : 1024px !default;
   @include _generate-unit("max", "width", $size);
 }
 
-// Default Container Placeholder
-%container {
+// Default Container mixin
+@mixin make-container {
   @include container-padding($tools-container-gutter-default);
   @include container-size($tools-container-size-default);
 

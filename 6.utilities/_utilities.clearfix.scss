@@ -11,7 +11,7 @@
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://www.iotacss.com/docs/utilities/clearfix
  *
- * @require {placeholder} %clearfix <2.tools/_clearfix.scss>
+ * @require {mixin} %clearfix <2.tools/_clearfix.scss>
  *
  *
  * @example
@@ -23,5 +23,5 @@
 
 
 .u-clearfix {
-  @extend %clearfix;
+  @include clearfix;
 }

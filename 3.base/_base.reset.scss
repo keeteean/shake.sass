@@ -55,7 +55,7 @@ $base-small-size: true !default;
  * Font Antialiasing
  *
  * Makes font thickness to look the same in Firefox and Webkit.
- * You can set it individually too with `%font-smooth` placeholder.
+ * You can set it individually too with `font-smooth` mixin.
  *
  * @type Boolean
  */

@@ -16,13 +16,13 @@
  *
  * @example
  *   .o-grid__row {
- *     @extend %clearfix;
+ *     @include clearfix;
  *   }
  */
 
 
-// Clearfix placeholder
-%clearfix {
+// Clearfix mixin
+@mixin clearfix {
   &::after {
     content: "";
     display: table;

@@ -14,7 +14,7 @@
  * @require {map} $global-breakpoints <1.settings/_settings.breakpoints.scss>
  * @require {string} $global-breakpoint-separator
  * <1.settings/_settings.breakpoints.scss>
- * @require {placeholder} %visually-hidden <2.tools/_tools.visibility.scss>
+ * @require {mixin} visually-hidden <2.tools/_tools.visibility.scss>
  *
  *
  * Examples
@@ -24,6 +24,7 @@
  *   .u-show
  *   .u-hide
  *   .u-visually-hide
+ *   .u-visually-hide--focusable
  *
  * Enable responsive visibility utilities
  * By enabling the responsive visibility utilities, you have access to a set of

@@ -12,7 +12,7 @@
 /**
  * Visually Hidden
  *
- * Use %visually-hidden placeholder to hide elements on all devices except screen
+ * Use visually-hidden mixin to hide elements on all devices except screen
  * readers.
  *
  * borrowed from iota.css
@@ -22,11 +22,11 @@
  *
  * @example
  *   .page__title {
- *     @extend %visually-hidden;
+ *     @include visually-hidden;
  *   }
  */
 
-%visually-hidden {
+@mixin visually-hidden {
   clip: rect(1px 1px 1px 1px) !important; /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px) !important;
   height: 1px !important;
@@ -47,12 +47,12 @@
  *
  * @example
  *   .skip-navigation {
- *      @extend %visually-hidden;
- *      @extend %visually-hidden--focusable;
+ *      @include visually-hidden;
+ *      @include visually-hidden--focusable;
  *   }
  */
 
-%visually-hidden--focusable {
+@mixin visually-hidden--focusable {
   &:active,
   &:focus {
     position: static !important;

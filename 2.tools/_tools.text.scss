@@ -62,11 +62,11 @@
  *
  * @example
  *   .article__lead {
- *     @extend %text-ellipsis;
+ *     @include text-ellipsis;
  *   }
  */
 
-%text-ellipsis {
+@mixin text-ellipsis {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -85,11 +85,11 @@
  *
  * @example
  *   .article__lead {
- *     @extend %text-clip;
+ *     @include text-clip;
  *   }
  */
 
-%text-clip {
+@mixin text-clip {
   overflow: hidden;
   text-overflow: clip;
   white-space: nowrap;
@@ -108,11 +108,11 @@
  *
  * @example
  *   .article__body {
- *     @extend %text-break;
+ *     @include text-break;
  *   }
  */
 
-%text-break {
+@mixin text-break {
   hyphens: auto;
   word-break: break-word;
   word-wrap: break-word;

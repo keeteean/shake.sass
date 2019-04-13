@@ -3,7 +3,7 @@
  *** TYPE TOOL ***
  ******************************************************************************
  *
- * Inline typography related mixins and placeholders.
+ * Inline typography related mixins.
  */
 
 
@@ -93,11 +93,11 @@
  *
  * @example
  *   h1 {
- *     @extend %font-smooth;
+ *     @include font-smooth;
  *   }
  */
 
-%font-smooth {
+@mixin font-smooth {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

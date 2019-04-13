@@ -50,7 +50,7 @@
  *
  * @example
  *   .article__lead {
- *     @extend %text-ellipsis;
+ *     @include text-ellipsis;
  *   }
  */
 
@@ -67,7 +67,7 @@
  *
  * @example
  *   .article__lead {
- *     @extend %text-clip;
+ *     @include text-clip;
  *   }
  */
 
@@ -84,7 +84,7 @@
  *
  * @example
  *   .article__body {
- *     @extend %text-break;
+ *     @include text-break;
  *   }
  */
 

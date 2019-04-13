@@ -6,16 +6,16 @@
  * The container object is responsible for creating smart, flexible and
  * responsive containers.
  *
- * For default container you can use the %container placeholder from
- * tools.container. Here we add a css class for that. You can setup here for
- * additional container sizes and paddings.
+ * For default container you can use the `make-container` mixin from
+ * `2.tools/_tools.container.scss`. Here we add a css class for that.
+ * You can setup here for additional container sizes and paddings.
  *
  * based on iota.css
  * @author Dimitris Psaropoulos <info@harby.me>
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://www.iotacss.com/docs/objects/container
  *
- * @require {placeholder} %container <2.tools/_tools.container.scss> - default container
+ * @require {mixin} make-container <2.tools/_tools.container.scss> - default container
  * @require {mixin} container-padding <2.tools/_tools.container.scss> - container with custom padding
  * @require {mixin} container-size <2.tools/_tools.container.scss> - container with custom size (max-width)
  *
@@ -137,7 +137,7 @@ $objects-container-size-extra     : () !default;
 
 // Default Container Object
 .#{$objects-container-class} {
-  @extend %container;
+  @include make-container;
 }
 
 // Container Object Extra Gutters
