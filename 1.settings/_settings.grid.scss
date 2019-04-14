@@ -9,8 +9,8 @@
  * Gutter Sizes
  */
 
-$gutter--small : 20px;
-$gutter--medium: 30px;
+$gutter--small : 20px !default;
+$gutter--medium: 30px !default;
 
 
 /**
@@ -25,4 +25,4 @@ $gutter--medium: 30px;
 $global-gutter-default: (
   null         : $gutter--small,
   medium       : $gutter--medium
-);
+) !default;

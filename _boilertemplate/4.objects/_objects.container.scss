@@ -104,7 +104,7 @@ $objects-container-class-mod      : $objects-container-class + "--";
  *   .o-container--large
  */
 
-$objects-container-gutter-extra   : () !default;
+$objects-container-gutter-extra   : ();
 
 
 /**
@@ -132,7 +132,7 @@ $objects-container-gutter-extra   : () !default;
  *   .o-container--large
  */
 
-$objects-container-size-extra     : () !default;
+$objects-container-size-extra     : ();
 
 
 /**

@@ -134,12 +134,12 @@
  * @type String
  */
 
-$objects-media-fixed                  : "fixed" !default;
-$objects-media-fluid                  : "fluid" !default;
-$objects-media-reversed               : "reversed" !default;
-$objects-media-align-middle           : "middle" !default;
-$objects-media-align-bottom           : "bottom" !default;
-$objects-media-responsive             : "responsive" !default;
+$objects-media-fixed                  : "fixed";
+$objects-media-fluid                  : "fluid";
+$objects-media-reversed               : "reversed";
+$objects-media-align-middle           : "middle";
+$objects-media-align-bottom           : "bottom";
+$objects-media-responsive             : "responsive";
 
 $objects-media-class-media            : "o-media";
 $objects-media-class-media-mod        : $objects-media-class-media + "--";
@@ -155,7 +155,7 @@ $objects-media-class-media-fluid      : $objects-media-class-media + "__" + $obj
  * @type Number | Map
  */
 
-$objects-media-gutter-default       : $global-gutter-default !default;
+$objects-media-gutter-default       : $global-gutter-default;
 
 
 /**
@@ -172,7 +172,7 @@ $objects-media-gutter-default       : $global-gutter-default !default;
  * @type Map
  */
 
-$objects-media-gutter-extra         : () !default;
+$objects-media-gutter-extra         : ();
 
 
 /**
@@ -185,7 +185,7 @@ $objects-media-gutter-extra         : () !default;
  * @type Boolean
  */
 
-$objects-media-reversed             : false !default;
+$objects-media-reversed             : false;
 
 
 /**
@@ -199,7 +199,7 @@ $objects-media-reversed             : false !default;
  * @type Boolean
  */
 
-$objects-media-aligned              : false !default;
+$objects-media-aligned              : false;
 
 
 /**
@@ -213,7 +213,7 @@ $objects-media-aligned              : false !default;
  * @type Boolean
  */
 
-$objects-media-responsive           : false !default;
+$objects-media-responsive           : false;
 
 
 /**
@@ -224,7 +224,7 @@ $objects-media-responsive           : false !default;
  * @type Number
  */
 
-$objects-media-collapse-at          : 767px !default;
+$objects-media-collapse-at          : 767px;
 
 
 /**

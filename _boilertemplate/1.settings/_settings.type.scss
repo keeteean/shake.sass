@@ -23,7 +23,7 @@ $font-family--system:
   "Apple Color Emoji",
   "Segoe UI Emoji",
   "Segoe UI Symbol",
-  "Noto Color Emoji" !default;
+  "Noto Color Emoji";
 
 $font-family--monospace:
   SFMono-Regular,
@@ -33,27 +33,27 @@ $font-family--monospace:
   Consolas,
   "Liberation Mono",
   "Courier New",
-  monospace !default;
+  monospace;
 
-$global-font-family         : $font-family--system !default;
+$global-font-family         : $font-family--system;
 
 
 /**
  * Font weights
  */
 
-$font-weight--light         : 300 !default;
-$font-weight--normal        : 400 !default;
-$font-weight--medium        : 500 !default;
-$font-weight--bold          : 700 !default;
-$font-weight--black         : 900 !default;
+$font-weight--light         : 300;
+$font-weight--normal        : 400;
+$font-weight--medium        : 500;
+$font-weight--bold          : 700;
+$font-weight--black         : 900;
 
 
 /**
  * Line-height
  */
 
-$global-line-height         : 1.2 !default;
+$global-line-height         : 1.2;
 
 
 /**
@@ -64,20 +64,20 @@ $global-line-height         : 1.2 !default;
 * Scale table
 */
 
-$type-12                    : ms(0) !default;
-$type-14                    : ms(1) !default;
-$type-16                    : ms(2) !default;
-$type-18                    : ms(3) !default;
-$type-21                    : ms(4) !default;
-$type-24                    : ms(5) !default;
-$type-27                    : ms(6) !default;
-$type-31                    : ms(7) !default;
-$type-36                    : ms(8) !default;
-$type-40                    : ms(9) !default;
-$type-48                    : ms(10) !default;
-$type-54                    : ms(11) !default;
-$type-60                    : ms(12) !default;
-$type-71                    : ms(13) !default;
+$type-12                    : ms(0);
+$type-14                    : ms(1);
+$type-16                    : ms(2);
+$type-18                    : ms(3);
+$type-21                    : ms(4);
+$type-24                    : ms(5);
+$type-27                    : ms(6);
+$type-31                    : ms(7);
+$type-36                    : ms(8);
+$type-40                    : ms(9);
+$type-48                    : ms(10);
+$type-54                    : ms(11);
+$type-60                    : ms(12);
+$type-71                    : ms(13);
 
 
 /**
@@ -101,7 +101,7 @@ $global-font-size: (
   medium: (
     $type-16
   )
-) !default;
+);
 
 // Heading Font Sizes
 $heading1-font-size: (
@@ -111,7 +111,7 @@ $heading1-font-size: (
   medium: (
     $type-60
   )
-) !default;
+);
 
 $heading2-font-size: (
   null: (
@@ -120,7 +120,7 @@ $heading2-font-size: (
   medium: (
     $type-54
   )
-) !default;
+);
 
 $heading3-font-size: (
   null: (
@@ -129,7 +129,7 @@ $heading3-font-size: (
   medium: (
     $type-36
   )
-) !default;
+);
 
 $heading4-font-size: (
   null: (
@@ -138,7 +138,7 @@ $heading4-font-size: (
   medium: (
     $type-27
   )
-) !default;
+);
 
 $heading5-font-size: (
   null: (
@@ -147,9 +147,9 @@ $heading5-font-size: (
   medium: (
     $type-24
   )
-) !default;
+);
 
-$heading6-font-size: $type-12 !default;
+$heading6-font-size: $type-12;
 
 // Paragraph Font Size
 $paragraph-font-size: (
@@ -161,7 +161,7 @@ $paragraph-font-size: (
     $type-16,
     2.25
   )
-) !default;
+);
 
 // Code Font-size
 $code-font-size: (
@@ -171,7 +171,7 @@ $code-font-size: (
   medium: (
     $type-16
   )
-) !default;
+);
 
 // Form Input Font-size
 $input-font-size: (
@@ -181,7 +181,7 @@ $input-font-size: (
   medium: (
     $type-16 1.2
   )
-) !default;
+);
 
 // Form Label Font-size
 $label-font-size: (
