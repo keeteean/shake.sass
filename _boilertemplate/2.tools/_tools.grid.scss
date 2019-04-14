@@ -1,0 +1,254 @@
+/**
+ ******************************************************************************
+ *** GRID TOOL ***
+ ******************************************************************************
+ *
+ * The Grid Tool is responsible for building a smart, flexible and responsive
+ * grid. You can achieve this only by Sass mixins, so you won't need utility
+ * classes for that.
+ *
+ * based on iota.css with some Bootstrap 4 flavour
+ * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ *
+ * We use Flexbox to create grid, so we don't generate too much css here, only
+ * the essential ones. Then you can extend (not @extend) that more properties
+ * as you need, like: `flex-direction`, `justify-content` or vertical spacing.
+ *
+ * Let's see a semantic example for a typical responsive entry lister:
+ *
+ * @example
+ *   <div class="o-container">
+ *     <ul class="entry__list">
+ *       <li class="entry">an entry</li>
+ *       <li class="entry">an entry</li>
+ *       <li class="entry">an entry</li>
+ *       <li class="entry entry--double">an entry</li>
+ *       <li class="entry">an entry</li>
+ *     </ul>
+ *   </div>
+ *
+ *   .entry__list {
+ *     @include make-grid();
+ *     flex-direction: row;
+ *   }
+ *
+ *   .entry {
+ *     @include make-column();
+ *     @include breakpoint(medium) {
+ *       @include column-size(6/12);
+ *     }
+
+ *     @include breakpoint(large) {
+ *       @include column-size(4/12);
+ *     }
+
+ *     &--double {
+ *       @include breakpoint(medium) {
+ *         @include column-size(6/12);
+ *       }
+
+ *       @include breakpoint(large) {
+ *         @include column-size(8/12);
+ *       }
+ *     }
+ */
+
+
+/**
+ * Settings
+ *
+ * We use the default global gutters for gaps between columns. But you can
+ * define additional gutters. There is an empty `$tools-grid-gutter-extra`
+ * Sass map for that, but if you need, you can create more.
+ */
+
+$tools-grid-gutter-default     : $global-gutter-default !default;
+$tools-grid-gutter-extra       : () !default;
+
+
+/**
+ * Create Grid
+ *
+ * With `make-grid` mixin you can create grid element from the parent of
+ * columns element. In the most cases this will be the row element.
+ * It has one parameter: the gutter size. By default this is the global
+ * gutter. But you can add any value. In this way, if you don'§t want any
+ * gutter, just type 0.
+ *
+ * @type Mixin
+ * @parameter {map | number} $gutter - The gutter size between columns.
+ * @require {mixin} _generate-unit <2.tools/libraries/generate-unit>
+ * @require {mixin} _negative-unit <2.tools/libraries/negative-unit>
+ *
+ *
+ * Examples
+ *
+ * Grid with default gutter
+ *
+ * @example
+ *   .entry__list {
+ *     @include make-grid();
+ *   }
+ *
+ * Grid with custom responsive gutters
+ *
+ * @example
+ *   $tools-grid-gutter-extra: (
+ *       null    : 6px,
+ *       medium  : 12px,
+ *       large   : 24px
+ *   );
+ *
+ *   .entry__list {
+ *     @include make-grid($tools-grid-gutter-extra);
+ *   }
+ *
+ * Grid with simple, non responsive gutters
+ *
+ * @example
+ *   .entry__list {
+ *     @include make-grid(15px);
+ *   }
+ *
+ * Grid without any gutters (collapsed)
+ *
+ * @example
+ *   .entry__list {
+ *     @include make-grid(0);
+ *   }
+ */
+
+
+/**
+ * Create Column for Grid
+ *
+ * In the similar way to Grid with `make-column` mixin you can create
+ * columns.
+ * It has one parameter: the gutter size. By default this is the global
+ * gutter. But you can add any value. In this way, if you don'§t want any
+ * gutter, just type 0. You have to you use the same value for gid and
+ * column!
+ *
+ * @type Mixin
+ * @parameter {map | number} $gutter - The gutter size between columns.
+ * @require {mixin} _generate-unit <2.tools/libraries/generate-unit>
+ *
+ *
+ * Examples
+ *
+ * Columns with default gutter
+ *
+ * @example
+ *   .entry {
+ *     @include make-column();
+ *   }
+ *
+ * Columns with custom responsive gutters
+ *
+ * @example
+ *   $tools-grid-gutter-extra: (
+ *       null    : 6px,
+ *       medium  : 12px,
+ *       large   : 24px
+ *   );
+ *
+ *   .entry {
+ *     @include make-column($tools-grid-gutter-extra);
+ *   }
+ *
+ * Columns with simple, non responsive gutters
+ *
+ * @example
+ *   .entry {
+ *     @include make-column(15px);
+ *   }
+ *
+ * Column without any gutters (collapsed)
+ *
+ * @example
+ *   .entry {
+ *     @include make-column(0);
+ *   }
+ */
+
+
+/**
+ * Set Column size
+ *
+ * Use the `column-size` mixin to set the size of columns. We use dedicated
+ * mixin for this, so you can set individually for each columns and different
+ * breakpoints.
+ * It except one parameter: the column size. You can give it in two different
+ * ways:
+ *   - count columns, like: 4/12, this means: four columns of total twelve.
+ *   - simple number, like 3, this means: 100% / 3.
+ *
+ * @type Mixin
+ * @parameter {number} $size - like 4/12 or 3.
+ * @require {function} _calc-column-size
+ *
+ *
+ * Examples
+ *
+ * @example
+ *   .entry {
+ *     @include make-column();
+ *     @include column-size(4/12);
+ *   }
+ *
+ * same results:
+ *
+ * @example
+ *   .entry {
+ *     @include make-column();
+ *     @include column-size(3);
+ *   }
+ */
+
+
+/**
+ * Column offset
+ *
+ * Use the `column-offset` mixin if you want to push or pull a column.
+ * In normal way you can do this easily with custom left or right margins,
+ * but if you want one or more column sized gap between columns, you can do
+ * it easily with this mixin.
+ * It has two parameters: first the size of offset, second is the optionally
+ * position (before or after of column). By default before.
+ *
+ * @type Mixin
+ * @parameter {number} $size - like 4/12 or 3.
+ * @require {function} _calc-column-size
+ *
+ *
+ * Examples
+ *
+ * Push the column on left side
+ *
+ * @example
+ *   .entry {
+ *     @include make-column();
+ *     @include column-size(3/12);
+ *
+ *     &--center {
+ *       @include column-offset(3/12);
+ *     }
+ *   }
+ *
+ * Pull the column on right side
+ *
+ * @example
+ *   .article__column--center {
+ *     @include make-column();
+ *     @include column-size(3/12);
+ *     @include column-offset(3/12, end);
+ *   }
+ */
+
+
+/**
+ * Import Grid Tool from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/2.tools/tools.grid";

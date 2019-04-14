@@ -3,10 +3,12 @@
  *** GENERATE UNIT ***
  ******************************************************************************
  *
- * Generate responsive font-size and line-height.
+ * Generate responsive units like font-sizes or gutters.
+ * Note for gutters we divide them by 2 here!
  *
- * borrowed from iota.css
+ * based on iota.css
  * @author Dimitris Psaropoulos <info@harby.me>
+ * @author Krisztian Pinter <krisz@keeteean.com>
  *
  * @type Mixin
  *
@@ -34,7 +36,7 @@
     @each $breakpoint-name, $gutter-size in $units {
       @if $breakpoint-name {
         @include breakpoint($breakpoint-name) {
-          #{$property + $suffix}: $gutter-size;
+          #{$property + $suffix}: $gutter-size / 2;
         }
       }
     }
