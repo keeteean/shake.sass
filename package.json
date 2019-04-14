@@ -1,7 +1,7 @@
 {
   "name": "shake.sass",
-  "version": "1.0.4",
-  "description": "You can use the [editor on GitHub](https://github.com/keeteean/skake/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
+  "version": "1.0.5",
+  "description": "Shake is a small Sass framework what follows the BEM Methodology and has inspired by ITCSS (Inverted Triangle CSS) and Atomic Design. Many techniques has been borrowed from iotaCSS, Spectre.css, Bootstrap and Árpi Rucz's Zendy framework (private).",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "bem",
     "bemit",
     "itcss",
+    "modularscale",
     "oocss",
     "sass",
     "shake.sass",

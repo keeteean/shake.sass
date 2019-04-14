@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="MarkdownProjectSettings" wasCopied="false">
-    <PreviewSettings splitEditorLayout="SPLIT" splitEditorPreview="PREVIEW" useGrayscaleRendering="false" zoomFactor="1.0" maxImageWidth="0" showGitHubPageIfSynced="false" allowBrowsingInPreview="false" synchronizePreviewPosition="true" highlightPreviewType="LINE" highlightFadeOut="5" highlightOnTyping="true" synchronizeSourcePosition="true" verticallyAlignSourceAndPreviewSyncPosition="true" showSearchHighlightsInPreview="false" showSelectionInPreview="true" openRemoteLinks="true" replaceUnicodeEmoji="false" lastLayoutSetsDefault="false">
+    <PreviewSettings splitEditorLayout="SPLIT" splitEditorPreview="PREVIEW" useGrayscaleRendering="true" zoomFactor="1.0" maxImageWidth="0" showGitHubPageIfSynced="false" allowBrowsingInPreview="false" synchronizePreviewPosition="true" highlightPreviewType="LINE" highlightFadeOut="5" highlightOnTyping="true" synchronizeSourcePosition="true" verticallyAlignSourceAndPreviewSyncPosition="true" showSearchHighlightsInPreview="false" showSelectionInPreview="true" openRemoteLinks="true" replaceUnicodeEmoji="false" lastLayoutSetsDefault="false">
       <PanelProvider>
         <provider providerId="com.vladsch.idea.multimarkdown.editor.javafx.html.panel" providerName="JavaFX WebView" />
       </PanelProvider>
@@ -31,7 +31,7 @@
         <option name="TABLES" value="true" />
         <option name="TASKLISTITEMS" value="true" />
         <option name="TOC" value="false" />
-        <option name="WIKILINKS" value="false" />
+        <option name="WIKILINKS" value="true" />
       </PegdownExtensions>
       <ParserOptions>
         <option name="ADMONITION_EXT" value="false" />
@@ -45,7 +45,7 @@
         <option name="GFM_TABLE_RENDERING" value="true" />
         <option name="GITBOOK_URL_ENCODING" value="false" />
         <option name="GITHUB_LISTS" value="false" />
-        <option name="GITHUB_WIKI_LINKS" value="false" />
+        <option name="GITHUB_WIKI_LINKS" value="true" />
         <option name="GITLAB_EXT" value="false" />
         <option name="GITLAB_MATH_EXT" value="false" />
         <option name="GITLAB_MERMAID_EXT" value="false" />
@@ -69,17 +69,12 @@
       <bodyTop />
       <bodyBottom />
     </HtmlSettings>
-    <CssSettings previewScheme="UI_SCHEME" cssUri="https://gist.githubusercontent.com/MikeMitterer/ff00ad4bb86ccaa4617e963eb0c08cf3/raw/custom-darcula.css" isCssUriEnabled="true" isCssUriSerial="true" isCssTextEnabled="false" isDynamicPageWidth="true">
+    <CssSettings previewScheme="UI_SCHEME" cssUri="https://gist.githubusercontent.com/MikeMitterer/ff00ad4bb86ccaa4617e963eb0c08cf3/raw/custom-darcula.css" isCssUriEnabled="false" isCssUriSerial="true" isCssTextEnabled="false" isDynamicPageWidth="true">
       <StylesheetProvider>
         <provider providerId="com.vladsch.idea.multimarkdown.editor.javafx.html.css" providerName="Default JavaFx Stylesheet" />
       </StylesheetProvider>
       <ScriptProviders>
-        <provider providerId="com.vladsch.idea.multimarkdown.editor.github-collapse-in-comment.html.script" providerName="Details tag opener" />
         <provider providerId="com.vladsch.idea.multimarkdown.editor.hljs.html.script" providerName="HighlightJS Script" />
-        <provider providerId="com.vladsch.idea.multimarkdown.editor.katex.html.script" providerName="Katex Script" />
-        <provider providerId="com.vladsch.idea.multimarkdown.editor.mermaid.html.script" providerName="Mermaid Script" />
-        <provider providerId="com.vladsch.idea.multimarkdown.editor.prismjs.html.script" providerName="Prism.js Script" />
-        <provider providerId="com.vladsch.idea.multimarkdown.editor.github-collapse-markdown.html.script" providerName="GitHub Collapse Markdown" />
       </ScriptProviders>
       <cssText />
       <cssUriHistory>

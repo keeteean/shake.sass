@@ -5,8 +5,22 @@ Shake is a small [Sass](http://sass-lang.com) framework what follows the
 [ITCSS (Inverted Triangle CSS)](https://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731) 
 and [Atomic Design](http://atomicdesign.bradfrost.com). Many techniques has been 
 borrowed from [iotaCSS](https://www.iotacss.com), 
-[Spectre.css](https://picturepan2.github.io) and Zendy framework (private) by 
-Árpi Rucz.
+[Spectre.css](https://picturepan2.github.io), [Bootstrap](https://getbootstrap.com) and Árpi Rucz's Zendy framework (private).
+
+It's a Sass only framework: there are only Sass variables, functions, mixins and very limited amount of css classes.
+
+Some highlighted functions:
+
+- ITCSS file structure
+- Prepaired Sass variables, ex: system font-families
+- Modularscale based responsive font-size and line-height generator
+- Modular and enhanced normalize.css
+- Prepaired document settings, ex: font-size, links
+- Media-query generator
+- Very light grid generator
+- Responsive table
+- Responsive video
+- Responsive media object
 
 ## Getting Started
 
@@ -97,7 +111,7 @@ An example main sass file:
 In this case you will import only required tools and settings, then what
 you really need one-by-one.
 
-_WARNING: this is the cleanest way but needs more manual work!_
+_WARNING: this is the cleanest way but may needs more manual work!_
 
 For easier importing we provide a `_boilertemplate` directory with all
 required sass files, just copy them to you sass source directory like:
@@ -112,7 +126,9 @@ out easily what you don't need. But keep in mind
 
 The `1.settings` directory contains all variables so you don't need to
 import them from Shake.sass. `1.settings` contains only global variables
-all local variables should be to other modules. Ex.: Type related
-variables are in `2.tools/_tools.type.scss`.
+all local variables should be in related modules. Ex.: All Type related
+variables should be in `2.tools/_tools.type.scss`.
 
 ## Documentation
+
+@TODO
