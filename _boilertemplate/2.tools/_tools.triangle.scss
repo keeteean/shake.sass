@@ -1,0 +1,39 @@
+/**
+ ******************************************************************************
+ *** CSS TRIANGLE TOOL ***
+ ******************************************************************************
+ *
+ * Creates a CSS triangle, which can be used for dropdown arrows, dropdown
+ * pips, and more. Use this mixin inside a `&::before` or `&::after` selector,
+ * to attach the triangle to an existing element.
+ *
+ * Borrowed from Zurb Foundation for Sites 6
+ * @link https://foundation.zurb.com/sites/docs/sass-mixins.html#css-triangle
+ *
+ * Include `stretched-link` mixin to a link (`<a>` element) to make its
+ * containing block clickable via a `::after` pseudo element.
+ * In most cases, this means that an element with `position: relative;` that
+ * contains a link with included `stretched-link` mixin is clickable.
+ *
+ * @example
+ *   .button__arrow {
+ *     @include make-triangle(1.5rem, $color-secondary, right);
+ *   }
+ */
+
+
+/**
+ * Make Triangle mixin
+ *
+ * @parameter {number} $triangle-size - Width of the triangle.
+ * @parameter {color} $triangle-color - Color of the triangle.
+ * @param {keyword} $triangle-direction - Direction the triangle points.
+ * Can be `up`, `right`, `down`, or `left`.
+ */
+
+
+/**
+ * Import Css Triangle Tool from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/2.tools/tools.triangle";
