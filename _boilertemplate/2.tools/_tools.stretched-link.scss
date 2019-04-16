@@ -1,0 +1,35 @@
+/**
+ ******************************************************************************
+ *** STRETCHED LINK TOOL ***
+ ******************************************************************************
+ *
+ * Make any HTML element or a component clickable by "stretching" a nested link
+ * via css.
+ *
+ * Borrowed from Bootstrap 4
+ * @link https://getbootstrap.com/docs/4.3/utilities/stretched-link
+ *
+ * Include `stretched-link` mixin to a link (`<a>` element) to make its
+ * containing block clickable via a `::after` pseudo element.
+ * In most cases, this means that an element with `position: relative;` that
+ * contains a link with included `stretched-link` mixin is clickable.
+ *
+ * @example
+ *   .o-media {
+ *     position: relative;
+ *
+ *     &__link {
+ *       @include stretched-link;
+ *     }
+ *   }
+ *
+ * You can use it as utility class too:
+ * @see 6.utilities/_utilities.stretched-link.scss
+ */
+
+
+/**
+ * Import Stretched link from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/2.tools/tools.streched-link";
