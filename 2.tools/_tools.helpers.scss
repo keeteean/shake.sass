@@ -8,6 +8,7 @@
 
 
 // Import validators
+@import "validators/is-color";
 @import "validators/is-map";
 @import "validators/is-number";
 @import "validators/map-contains-null";

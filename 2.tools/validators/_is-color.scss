@@ -1,0 +1,20 @@
+/**
+ ******************************************************************************
+ *** IS IT A COLOR? ***
+ ******************************************************************************
+ *
+ * Check the given value's type is color or not.
+ *
+ * borrowed from bourbon
+ *
+ * @type Function
+ *
+ * @parameter {string | number | map} $color - The given css value.
+ * @return {boolean}
+ * @access private
+ */
+
+
+@function _is-color($color) {
+  @return (type-of($color) == color) or ($color == "currentColor");
+}

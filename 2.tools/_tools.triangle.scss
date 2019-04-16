@@ -3,21 +3,14 @@
  *** CSS TRIANGLE TOOL ***
  ******************************************************************************
  *
- * Creates a CSS triangle, which can be used for dropdown arrows, dropdown
- * pips, and more. Use this mixin inside a `&::before` or `&::after` selector,
- * to attach the triangle to an existing element.
+ * Generates a triangle pointing in a specified direction.
  *
- * Borrowed from Zurb Foundation for Sites 6
- * @link https://foundation.zurb.com/sites/docs/sass-mixins.html#css-triangle
- *
- * Include `stretched-link` mixin to a link (`<a>` element) to make its
- * containing block clickable via a `::after` pseudo element.
- * In most cases, this means that an element with `position: relative;` that
- * contains a link with included `stretched-link` mixin is clickable.
- *
+ * Borrowed from bourbon
+ * @link https://www.bourbon.io/docs/latest#triangle
+ * *
  * @example
  *   .button__arrow {
- *     @include make-triangle(1.5rem, $color-secondary, right);
+ *     @include make-triangle(right, 1.5rem, 1rem, $color-secondary);
  *   }
  */
 
@@ -25,40 +18,77 @@
 /**
  * Make Triangle mixin
  *
- * @parameter {number} $triangle-size - Width of the triangle.
- * @parameter {color} $triangle-color - Color of the triangle.
- * @param {keyword} $triangle-direction - Direction the triangle points.
- * Can be `up`, `right`, `down`, or `left`.
+ * @parameter {string} $direction
+ *   The direction the triangle should point. Accepts `up`, `up-right`,
+ *   `right`, `down-right`, `down`, `down-left`, `left` or `up-left`.
+ *
+ * @parameter {number (with unit)} $width
+ *   Width of the triangle.
+ *
+ * @parameter {number (with unit)} $height
+ *   Height of the triangle.
+ *
+ * @parameter {color} $color
+ *   Color of the triangle.
  */
 
-@mixin make-triangle($triangle-size, $triangle-color, $triangle-direction) {
-  display: block;
-  width: 0;
-  height: 0;
-  border: inset $triangle-size;
-  content: "";
-
-  @if ($triangle-direction == down) {
-    border-bottom-width: 0;
-    border-top-style: solid;
-    border-color: $triangle-color transparent transparent;
+@mixin make-triangle($direction, $width, $height, $color) {
+  @if not index(
+    "up" "up-right" "right" "down-right" "down" "down-left" "left" "up-left",
+    $direction
+  ) {
+    @error "Direction must be `up`, `up-right`, `right`, `down-right`, " +
+      "`down`, `down-left`, `left` or `up-left`.";
   }
 
-  @if ($triangle-direction == up) {
-    border-top-width: 0;
-    border-bottom-style: solid;
-    border-color: transparent transparent $triangle-color;
+  @else if not _is-color($color) {
+    @error "`#{$color}` is not a valid color for the `$color` argument in " +
+      "the `triangle` mixin.";
   }
 
-  @if ($triangle-direction == right) {
-    border-right-width: 0;
-    border-left-style: solid;
-    border-color: transparent transparent transparent $triangle-color;
-  }
+  @else {
+    border-style: solid;
+    height: 0;
+    width: 0;
 
-  @if ($triangle-direction == left) {
-    border-left-width: 0;
-    border-right-style: solid;
-    border-color: transparent $triangle-color transparent transparent;
+    @if $direction == "up" {
+      border-color: transparent transparent $color;
+      border-width: 0 ($width / 2) $height;
+    }
+
+    @else if $direction == "up-right" {
+      border-color: transparent $color transparent transparent;
+      border-width: 0 $width $width 0;
+    }
+
+    @else if $direction == "right" {
+      border-color: transparent transparent transparent $color;
+      border-width: ($height / 2) 0 ($height / 2) $width;
+    }
+
+    @else if $direction == "down-right" {
+      border-color: transparent transparent $color;
+      border-width: 0 0 $width $width;
+    }
+
+    @else if $direction == "down" {
+      border-color: $color transparent transparent;
+      border-width: $height ($width / 2) 0;
+    }
+
+    @else if $direction == "down-left" {
+      border-color: transparent transparent transparent $color;
+      border-width: $width 0 0 $width;
+    }
+
+    @else if $direction == "left" {
+      border-color: transparent $color transparent transparent;
+      border-width: ($height / 2) $width ($height / 2) 0;
+    }
+
+    @else if $direction == "up-left" {
+      border-color: $color transparent transparent;
+      border-width: $width $width 0 0;
+    }
   }
 }

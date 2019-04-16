@@ -3,21 +3,14 @@
  *** CSS TRIANGLE TOOL ***
  ******************************************************************************
  *
- * Creates a CSS triangle, which can be used for dropdown arrows, dropdown
- * pips, and more. Use this mixin inside a `&::before` or `&::after` selector,
- * to attach the triangle to an existing element.
+ * Generates a triangle pointing in a specified direction.
  *
- * Borrowed from Zurb Foundation for Sites 6
- * @link https://foundation.zurb.com/sites/docs/sass-mixins.html#css-triangle
- *
- * Include `stretched-link` mixin to a link (`<a>` element) to make its
- * containing block clickable via a `::after` pseudo element.
- * In most cases, this means that an element with `position: relative;` that
- * contains a link with included `stretched-link` mixin is clickable.
- *
+ * Borrowed from bourbon
+ * @link https://www.bourbon.io/docs/latest#triangle
+ * *
  * @example
  *   .button__arrow {
- *     @include make-triangle(1.5rem, $color-secondary, right);
+ *     @include make-triangle(right, 1.5rem, 1rem, $color-secondary);
  *   }
  */
 
@@ -25,10 +18,18 @@
 /**
  * Make Triangle mixin
  *
- * @parameter {number} $triangle-size - Width of the triangle.
- * @parameter {color} $triangle-color - Color of the triangle.
- * @param {keyword} $triangle-direction - Direction the triangle points.
- * Can be `up`, `right`, `down`, or `left`.
+ * @parameter {string} $direction
+ *   The direction the triangle should point. Accepts `up`, `up-right`,
+ *   `right`, `down-right`, `down`, `down-left`, `left` or `up-left`.
+ *
+ * @parameter {number (with unit)} $width
+ *   Width of the triangle.
+ *
+ * @parameter {number (with unit)} $height
+ *   Height of the triangle.
+ *
+ * @parameter {color} $color
+ *   Color of the triangle.
  */
 
 
