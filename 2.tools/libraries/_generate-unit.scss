@@ -19,6 +19,7 @@
  * @parameter {string} $property - A css property ex.: padding.
  * @parameter {string} $suffix - Sub-property of $property, ex.: left.
  * @parameter {map | number} $units - Values for combined $property and $suffix.
+ * @access private
  */
 
 @mixin _generate-unit($property, $suffix, $units) {

@@ -11,6 +11,7 @@
  * @type Mixin
  *
  * @parameter {Map} $sizes - font-sizes and line-heights
+ * @access private
  */
 
 @mixin _extract-type-sizes($sizes) {

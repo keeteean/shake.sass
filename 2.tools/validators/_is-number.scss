@@ -10,6 +10,7 @@
  * @type Function
  *
  * @parameter {string | number | map} $number - The given css value.
+ * @access private
  */
 
 @function _is-number($number) {
