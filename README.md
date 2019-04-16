@@ -7,7 +7,9 @@ and [Atomic Design](http://atomicdesign.bradfrost.com). Many techniques has been
 borrowed from [iotaCSS](https://www.iotacss.com), 
 [Spectre.css](https://picturepan2.github.io), [Bootstrap](https://getbootstrap.com) and Árpi Rucz's Zendy framework (private).
 
-It's a Sass only framework: there are only Sass variables, functions, mixins and very limited amount of css classes.
+It's a Sass only framework: there are only Sass variables, functions,
+mixins and very limited amount of css classes. It doesn't contains
+any theming rules, only very basics one.
 
 Some highlighted functions:
 
@@ -42,8 +44,9 @@ After installation you can import Shake.sass in three different ways:
 
 ### Import all modules
 
-If you want to use all tools, objects, components and utilities import it to
-your main sass file as follows:
+If you want to use all tools, objects, components and utilities import
+it to your main sass file as follows (some rare needed options turned
+off by default):
 
 ```scss
 @import "node_modules/shake.sass/helpers";
@@ -131,4 +134,5 @@ variables should be in `2.tools/_tools.type.scss`.
 
 ## Documentation
 
-@TODO
+This is only a very high level documentation. All details you can find
+in related Sass files.

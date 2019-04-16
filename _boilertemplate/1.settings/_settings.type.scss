@@ -9,6 +9,9 @@
 
 /**
  * Font family settings
+ *
+ * Recommended to use only system fonts. If you need to use custom webfont you
+ * can use as fallback font-stack.
  */
 
 $font-family--system:
@@ -40,6 +43,10 @@ $global-font-family         : $font-family--system;
 
 /**
  * Font weights
+ *
+ * We store font-weight for global font-family.
+ * Font-weight could be different in each font-families; change it to your
+ * font-family.
  */
 
 $font-weight--light         : 300;

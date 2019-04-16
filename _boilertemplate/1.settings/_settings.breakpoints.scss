@@ -10,7 +10,7 @@
  *
  * Default global breakpoints map. These are the default breakpoints map that
  * will be shared across all shake modules. You can change it also locally to
- * each module.
+ * each module. You have to use pixels or ems here!
  *
  * @type Map
  *
@@ -18,7 +18,6 @@
  *   @include breakpoint(medium) {
  * }
  *
- * @see more examples in 2.tools/_tools.breakpoints.scss
  */
 
 $global-breakpoints: (
@@ -41,3 +40,26 @@ $global-breakpoints: (
  */
 
 $global-breakpoint-separator: \@;
+
+
+/**
+ * Sample for custom breakpoints
+ *
+ * @type Map
+ *
+ * @example
+ *   .c-header {
+ *     margin-right: 3rem;
+ *
+ *     @include breakpoint(large, $my-breakpoints) {
+ *       margin-right: 0;
+ *     }
+ *   }
+ */
+
+/*
+$my-breakpoints : (
+  small : "screen and (min-width: 320px)",
+  large : "screen and (min-width: 960px)"
+);
+*/
