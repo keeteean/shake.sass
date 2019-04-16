@@ -19,7 +19,9 @@
       $values: map-merge($values, ($key: -$value));
     }
     @return $values;
-  } @else {
+  }
+
+  @else {
     @return -$values;
   }
 }

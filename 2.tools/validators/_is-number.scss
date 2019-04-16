@@ -13,5 +13,5 @@
  */
 
 @function _is-number($number) {
-  @return type-of($number) == "number"
+  @return type-of($number) == "number";
 }
