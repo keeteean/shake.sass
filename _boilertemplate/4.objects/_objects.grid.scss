@@ -1,0 +1,60 @@
+/**
+ ******************************************************************************
+ *** GRID OBJECT ***
+ ******************************************************************************
+ *
+ * The Grid Object is responsible for building a smart, flexible and responsive
+ * grid. However you can achieve this only by Sass mixins, so basically you
+ * won'tneed css classes for that, but here in Grid Object the base grid mixins
+ * has already been included from Grid Tool.
+ *
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ *
+ * Use it when you need to use object elements for layout purposes instead of
+ * `@include` grid mixins on semantic elements. There is a `o-grid` class for
+ * the flexbox based grid element (mostly the row layout element) and it's
+ * direct child: `o-grid__item` (mostly the column layout elements).
+ * These elements only contains the base, you still have to write in Sass
+ * the other rules, like `flex-direction` or item sizes.
+ *
+ * @example
+ *   <div class="o-grid">
+ *     <div class="o-grid__item">
+ *       Column
+ *     </div>
+ *
+ *     <div class="o-grid__item">
+ *       Column
+ *     </div>
+ *   </div>
+ *
+ *   .o-grid {
+ *     flex-direction: row;
+ *   }
+ *
+ *   .o-grid__item {
+ *     @include breakpoint(medium) {
+ *       @include column-size(6/12);
+ *     }
+
+ *     @include breakpoint(large) {
+ *       @include column-size(4/12);
+ *     }
+
+ *     &--double {
+ *       @include breakpoint(medium) {
+ *         @include column-size(6/12);
+ *       }
+
+ *       @include breakpoint(large) {
+ *         @include column-size(8/12);
+ *       }
+ *     }
+ */
+
+
+/**
+ * Import Grid Object from Shake.sass.
+ */
+
+@import "/node_modules/shake.sass/4.objects/objects.grid";
