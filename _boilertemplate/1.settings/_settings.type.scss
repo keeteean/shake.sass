@@ -99,7 +99,7 @@ $type-71                    : ms(13);
  * 'null' means no breakpoint (default)
  */
 
-// Body (global) Font-size
+// Body (global) font-size
 $global-font-size: (
   null: (
     $type-14,
@@ -110,7 +110,7 @@ $global-font-size: (
   )
 );
 
-// Heading Font Sizes
+// Heading font sizes
 $heading1-font-size: (
   null: (
     $type-40
@@ -158,7 +158,7 @@ $heading5-font-size: (
 
 $heading6-font-size: $type-12;
 
-// Paragraph Font Size
+// Paragraph font-size
 $paragraph-font-size: (
   null: (
     $type-14,
@@ -170,7 +170,7 @@ $paragraph-font-size: (
   )
 );
 
-// Code Font-size
+// Code font-size
 $code-font-size: (
   null: (
     $type-14 2
@@ -180,7 +180,7 @@ $code-font-size: (
   )
 );
 
-// Form Input Font-size
+// Form input font-size
 $input-font-size: (
   null: (
     $type-16 1.5
@@ -190,7 +190,7 @@ $input-font-size: (
   )
 );
 
-// Form Label Font-size
+// Form label font-size
 $label-font-size: (
   null: (
     $type-14 1.5

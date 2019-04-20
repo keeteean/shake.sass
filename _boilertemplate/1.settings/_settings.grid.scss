@@ -9,8 +9,8 @@
  * Gutter Sizes
  */
 
-$gutter--small : 2rem;
-$gutter--medium: 3rem;
+$gutter--small  : 2rem;
+$gutter--medium : 3rem;
 
 
 /**
@@ -23,6 +23,6 @@ $gutter--medium: 3rem;
  */
 
 $global-gutter-default: (
-  null         : $gutter--small,
-  medium       : $gutter--medium
+  null          : $gutter--small,
+  medium        : $gutter--medium
 );

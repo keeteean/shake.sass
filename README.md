@@ -4,8 +4,8 @@ Shake is a small [Sass](http://sass-lang.com) framework what follows the
 [BEM Methodology](https://en.bem.info) and has inspired by 
 [ITCSS (Inverted Triangle CSS)](https://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731) 
 and [Atomic Design](http://atomicdesign.bradfrost.com). Many techniques has been 
-borrowed from [iotaCSS](https://www.iotacss.com), 
-[Spectre.css](https://picturepan2.github.io), [Bootstrap](https://getbootstrap.com) and Árpi Rucz's Zendy framework (private).
+borrowed from other css frameworks like [iotaCSS](https://www.iotacss.com),
+[Spectre.css](https://picturepan2.github.io) or [Bootstrap](https://getbootstrap.com).
 
 It's a Sass only framework: there are only Sass variables, functions,
 mixins and very limited amount of css classes. It doesn't contains
