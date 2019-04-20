@@ -25,4 +25,4 @@ $modularscale: (
   ratio: $tools-modularscale-ratio
 ) !default;
 
-@import "../node_modules/modularscale-sass/stylesheets/modularscale";
+@import "modules/modularscale";
