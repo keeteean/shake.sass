@@ -180,30 +180,18 @@ $tools-grid-gutter-extra       : ();
  * Use the `column-size` mixin to set the size of columns. We use dedicated
  * mixin for this, so you can set individually for each columns and different
  * breakpoints.
- * It except one parameter: the column size. You can give it in two different
- * ways:
- *   - count columns, like: 4/12, this means: four columns of total twelve.
- *   - simple number, like 3, this means: 100% / 3.
+ * It except one parameter: the column size. You can give it as fraction,like:
+ * `4/12`, this means: four columns of total twelve. (you will get 33.3333%)
  *
  * @type Mixin
- * @parameter {number} $size - like 4/12 or 3.
+ * @parameter {number} $size - like 4/12.
  * @require {function} _calc-column-size
  *
- *
- * Examples
  *
  * @example
  *   .entry {
  *     @include make-column();
  *     @include column-size(4/12);
- *   }
- *
- * same results:
- *
- * @example
- *   .entry {
- *     @include make-column();
- *     @include column-size(3);
  *   }
  */
 
@@ -219,7 +207,7 @@ $tools-grid-gutter-extra       : ();
  * position (before or after of column). By default before.
  *
  * @type Mixin
- * @parameter {number} $size - like 4/12 or 3.
+ * @parameter {number} $size - like 4/12.
  * @require {function} _calc-column-size
  *
  *

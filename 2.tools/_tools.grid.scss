@@ -137,7 +137,7 @@ $tools-grid-gutter-extra       : () !default;
  * In the similar way to Grid with `make-column` mixin you can create
  * columns.
  * It has one parameter: the gutter size. By default this is the global
- * gutter. But you can add any value. In this way, if you don'§t want any
+ * gutter. But you can add any value. In this way, if you don't want any
  * gutter, just type 0. You have to you use the same value for gid and
  * column!
  *
@@ -195,64 +195,29 @@ $tools-grid-gutter-extra       : () !default;
 
 
 /**
- * Calculate Column size
- *
- * With this helper Sass function you can calculate the
- * desired column sizes. Details at `column-size` mixin, but in short:
- * you can calculate the column size in two different ways.
- *
- * @type Function
- * @parameter {number} $size - like 4/12 or 3.
- * @access private
- */
-
-@function _calc-column-size($size) {
-  @if (_is-number(quote($size))) {
-    @return 100 / $size * 1%;
-  }
-
-  @else {
-    @return percentage($size);
-  }
-}
-
-
-/**
  * Set Column size
  *
  * Use the `column-size` mixin to set the size of columns. We use dedicated
  * mixin for this, so you can set individually for each columns and different
  * breakpoints.
- * It except one parameter: the column size. You can give it in two different
- * ways:
- *   - count columns, like: 4/12, this means: four columns of total twelve.
- *   - simple number, like 3, this means: 100% / 3.
+ * It except one parameter: the column size. You can give it as fraction,like:
+ * `4/12`, this means: four columns of total twelve. (you will get 33.3333%)
  *
  * @type Mixin
- * @parameter {number} $size - like 4/12 or 3.
+ * @parameter {number} $size - like 4/12.
  * @require {function} _calc-column-size
  *
- *
- * Examples
  *
  * @example
  *   .entry {
  *     @include make-column();
  *     @include column-size(4/12);
  *   }
- *
- * same results:
- *
- * @example
- *   .entry {
- *     @include make-column();
- *     @include column-size(3);
- *   }
  */
 
 @mixin column-size($size) {
-  flex: 0 0 _calc-column-size($size);
-  min-width: _calc-column-size($size);
+  flex: 0 0 percentage($size);
+  min-width: percentage($size);
 }
 
 
@@ -267,7 +232,7 @@ $tools-grid-gutter-extra       : () !default;
  * position (before or after of column). By default before.
  *
  * @type Mixin
- * @parameter {number} $size - like 4/12 or 3.
+ * @parameter {number} $size - like 4/12.
  * @require {function} _calc-column-size
  *
  *
@@ -297,10 +262,10 @@ $tools-grid-gutter-extra       : () !default;
 
 @mixin column-offset($size, $position: start) {
   @if ($position == start) {
-    margin-left: _calc-column-size($size);
+    margin-left: percentage($size);
   }
 
   @else if($position == end) {
-    margin-right: _calc-column-size($size);
+    margin-right: percentage($size);
   }
 }
