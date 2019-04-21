@@ -55,10 +55,29 @@ $global-breakpoint-separator: \@;
  *       margin-right: 0;
  *     }
  *   }
+ *
+ * Using a custom breakpoints map without size
+ * You can use `null` value for breakpoint without size like orientation only.
+ *
+ * @example
+ *   $portrait: (
+ *     null   : screen and (orientation: portrait),
+ *     small  : screen and (orientation: portrait) and (min-width: 320px),
+ *     xlarge : screen and (orientation: portrait) and (min-width: 1280px)
+ *   );
+ *
+ * @example
+ *   .c-header {
+ *     margin-right: 30px;
+ *
+ *     @include breakpoint($portrait) {
+ *       margin-right: 0;
+ *     }
+ *   }
  */
 
 /*
-$my-breakpoints : (
+$my-breakpoints: (
   small : "screen and (min-width: 320px)",
   large : "screen and (min-width: 960px)"
 );
