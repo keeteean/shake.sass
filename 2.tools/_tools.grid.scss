@@ -78,7 +78,8 @@ $tools-grid-gutter-extra       : () !default;
  * gutter, just type 0.
  *
  * @type Mixin
- * @parameter {map | number} $gutter - The gutter size between columns.
+ * @parameter {map | number} $gutter - The gutter size between columns: with
+ * the last `half` parameter this value will be divide by 2!
  * @require {mixin} _generate-unit <2.tools/libraries/generate-unit>
  * @require {mixin} _negative-unit <2.tools/libraries/negative-unit>
  *
@@ -121,8 +122,8 @@ $tools-grid-gutter-extra       : () !default;
  */
 
 @mixin make-grid($gutter: $tools-grid-gutter-default) {
-  @include _generate-unit("margin", "left", _negative-unit($gutter));
-  @include _generate-unit("margin", "right", _negative-unit($gutter));
+  @include _generate-unit("margin", "left", _negative-unit($gutter), half);
+  @include _generate-unit("margin", "right", _negative-unit($gutter), half);
 
   display: flex;
   flex-wrap: wrap;
@@ -142,7 +143,8 @@ $tools-grid-gutter-extra       : () !default;
  * column!
  *
  * @type Mixin
- * @parameter {map | number} $gutter - The gutter size between columns.
+ * @parameter {map | number} $gutter - The gutter size between columns: with
+ * the last `half` parameter this value will be divide by 2!
  * @require {mixin} _generate-unit <2.tools/libraries/generate-unit>
  *
  *
@@ -184,8 +186,8 @@ $tools-grid-gutter-extra       : () !default;
  */
 
 @mixin make-column($gutter: $tools-grid-gutter-default) {
-  @include _generate-unit("padding", "left", $gutter);
-  @include _generate-unit("padding", "right", $gutter);
+  @include _generate-unit("padding", "left", $gutter, half);
+  @include _generate-unit("padding", "right", $gutter, half);
 
   box-sizing: inherit;
   flex-basis: auto;

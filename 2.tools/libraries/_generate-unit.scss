@@ -19,10 +19,12 @@
  * @parameter {string} $property - A css property ex.: padding.
  * @parameter {string} $suffix - Sub-property of $property, ex.: left.
  * @parameter {map | number} $units - Values for combined $property and $suffix.
+ * @parameter {string} $half - Should divide values from $unites by 2 or not.
+ * Default is `null` (not), if you need this, just type `half` in the end.
  * @access private
  */
 
-@mixin _generate-unit($property, $suffix, $units) {
+@mixin _generate-unit($property, $suffix, $units, $half: null) {
   $suffix: if($suffix, #{"-" + $suffix}, "");
 
   @if _is-number($units) {
@@ -30,15 +32,29 @@
   }
 
   @if _is-map($units) {
-    @if _map-contains-null($units) {
-      #{$property + $suffix}: map-get($units, null);
+    @each $breakpoint-name, $size in $units {
+      @if $breakpoint-name {
+        @if $half == half {
+          @include breakpoint($breakpoint-name) {
+            #{$property + $suffix}: $size / 2;
+          }
+        }
+
+        @else {
+          @include breakpoint($breakpoint-name) {
+            #{$property + $suffix}: $size;
+          }
+        }
+      }
     }
 
-    @each $breakpoint-name, $gutter-size in $units {
-      @if $breakpoint-name {
-        @include breakpoint($breakpoint-name) {
-          #{$property + $suffix}: $gutter-size / 2;
-        }
+    @if _map-contains-null($units) {
+      @if $half == half {
+        #{$property + $suffix}: map-get($units, null) / 2;
+      }
+
+      @else {
+        #{$property + $suffix}: map-get($units, null);
       }
     }
   }

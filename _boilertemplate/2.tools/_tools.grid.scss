@@ -78,7 +78,8 @@ $tools-grid-gutter-extra       : ();
  * gutter, just type 0.
  *
  * @type Mixin
- * @parameter {map | number} $gutter - The gutter size between columns.
+ * @parameter {map | number} $gutter - The gutter size between columns: with
+ * the last `half` parameter this value will be divide by 2!
  * @require {mixin} _generate-unit <2.tools/libraries/generate-unit>
  * @require {mixin} _negative-unit <2.tools/libraries/negative-unit>
  *
@@ -132,7 +133,8 @@ $tools-grid-gutter-extra       : ();
  * column!
  *
  * @type Mixin
- * @parameter {map | number} $gutter - The gutter size between columns.
+ * @parameter {map | number} $gutter - The gutter size between columns: with
+ * the last `half` parameter this value will be divide by 2!
  * @require {mixin} _generate-unit <2.tools/libraries/generate-unit>
  *
  *
