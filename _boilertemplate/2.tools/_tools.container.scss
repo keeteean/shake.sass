@@ -43,7 +43,12 @@ $tools-container-gutter-default   : $global-gutter-default !default;
  * @type String | Map
  */
 
-$tools-container-size-default     : 102.4rem;
+$tools-container-size-default     : (
+  null        : 90%,
+  small       : 91%,
+  medium      : 93%,
+  large       : 129.6rem
+);
 
 
 /**
