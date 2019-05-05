@@ -345,7 +345,7 @@ sup {
  * Opinionated and disabled by default.
  */
 
-@if ($base-list == true) {
+@if ($base-no-list-bullets == true) {
   ul {
     list-style: none;
   }
