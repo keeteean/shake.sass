@@ -8,7 +8,8 @@
  *   - switchable components:
  *       - heading font-size reset,
  *       - small font-size reset,
- *       - table element
+ *       - list bullets remover,
+ *       - table element,
  *       - form elements,
  *       - font antialiasing
  *   - best practices
@@ -64,7 +65,22 @@ $base-font-antialiasing: false !default;
 
 
 /**
+ * List bullets remover
+ *
+ * Remove bullets from HTML unformatted list (`ul`). Encourages the use of `ul`
+ * for any listed elements in any styles, like a navigation menu and not only
+ * for bullet lists.
+ *
+ * @type Boolean
+ */
+
+$base-no-list-bullets: false !default;
+
+
+/**
  * Table normalizer
+ *
+ * @type Boolean
  */
 
 $base-table-normalize: true !default;
@@ -319,6 +335,20 @@ sub {
 
 sup {
   top: -.5em;
+}
+
+
+/**
+ * Remove bullets from HTML unformatted list (`ul`). Encourages the use of `ul`
+ * for any listed elements in any styles, like a navigation menu and not only
+ * for bullet lists.
+ * Opinionated and disabled by default.
+ */
+
+@if ($base-list == true) {
+  ul {
+    list-style: none;
+  }
 }
 
 

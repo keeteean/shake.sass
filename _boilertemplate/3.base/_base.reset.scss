@@ -8,7 +8,8 @@
  *   - switchable components:
  *       - heading font-size reset,
  *       - small font-size reset,
- *       - table element
+ *       - list bullets remover,
+ *       - table element,
  *       - form elements,
  *       - font antialiasing
  *   - best practices
@@ -61,6 +62,19 @@ $base-small-size: true;
  */
 
 $base-font-antialiasing: false;
+
+
+/**
+ * List bullets remover
+ *
+ * Remove bullets from HTML unformatted list (`ul`). Encourages the use of `ul`
+ * for any listed elements in any styles, like a navigation menu and not only
+ * for bullet lists.
+ *
+ * @type Boolean
+ */
+
+$base-no-list-bullets: false;
 
 
 /**

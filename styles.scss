@@ -3,28 +3,66 @@
 
 .o-grid {
   &__row {
-    @extend %clearfix;
+    @include make-grid(15px);
 
     margin: 2rem 0;
   }
 
   &__col {
-    float: left;
-    width: 100 / 3 * 1%;
+    @include make-column(15px);
+    @include column-size(3/12);
 
     &--1 {
-      @extend %text-ellipsis;
+      @include text-ellipsis;
 
       font-size: 1.5em;
     }
 
     &--2 {
+      @include column-offset(3/12, end);
       @include type(
         (
           null: 12px,
           small: 16px
         )
       );
+    }
+  }
+}
+
+
+.entry__list {
+  @include make-grid();
+
+  flex-direction: row;
+  background: antiquewhite;
+}
+
+.entry {
+  @include make-column();
+
+  background: #2ecc71;
+  color: azure;
+  text-align: center;
+  padding: 2rem;
+  font-size: $type-18;
+  border: dashed 1px #2c3e50;
+
+  @include breakpoint(medium) {
+    @include column-size(6/12);
+  }
+
+  @include breakpoint(large) {
+    @include column-size(4/12);
+  }
+
+  &--double {
+    @include breakpoint(medium) {
+      @include column-size(6/12);
+    }
+
+    @include breakpoint(large) {
+      @include column-size(8/12);
     }
   }
 }
