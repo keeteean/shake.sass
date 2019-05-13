@@ -135,4 +135,4 @@ variables should be in `2.tools/_tools.type.scss`.
 ## Documentation
 
 However all Sass files are highly commented, you can find the full
-documentetion in `/docs` directory.
+documentation at [keeteean.github.io/shake.sass](https://keeteean.github.io/shake.sass/) or in `/docs` directory.
