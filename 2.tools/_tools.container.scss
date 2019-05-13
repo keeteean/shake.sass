@@ -51,21 +51,83 @@ $tools-container-size-default     : (
 ) !default;
 
 
-// Container padding
-@mixin container-padding($size) {
+/**
+ * Container padding
+ *
+ * It's calculate the required responsive paddings.
+ *
+ * @type Mixin
+ * @parameter {number | map} $size - Padding values.
+ * @access private
+ */
+
+@mixin _container-padding($size) {
   @include _generate-unit("padding", "right", $size);
   @include _generate-unit("padding", "left", $size);
 }
 
-// Container size
-@mixin container-size($size) {
+
+/**
+ * Container size
+ *
+ * It's calculate the required responsive container size (max-width).
+ *
+ * @type Mixin
+ * @parameter {number | map} $size - Max-width values.
+ * @access private
+ */
+
+@mixin _container-size($size) {
   @include _generate-unit("max", "width", $size);
 }
 
-// Default Container mixin
-@mixin make-container {
-  @include container-padding($tools-container-gutter-default);
-  @include container-size($tools-container-size-default);
+
+/**
+ * Container mixin
+ *
+ * With container mixin you can generate the default and custom sized
+ * containers.
+ *
+ * @type Mixin
+ * @parameter {number | map} $padding - Padding values.
+ * @parameter {number | map} $size - Container size (max-width) values.
+ * @require {mixin} _container-padding
+ * @require {mixin} _container-size
+ *
+ *
+ * Examples
+ *
+ * Default container
+ *
+ * @example
+ *   .section__container {
+ *      @include make-container;
+ *   }
+ *
+ * Custom container
+ *
+ * You can define custom paddings and sizes (widths) but you can use the
+ * default `$tools-container-gutter-default` and
+ * `$tools-container-size-default` ones too.
+ *
+ * @example
+ *   $tools-container-gutter-gallery : (
+ *     null   : 1.2rem,
+ *     medium : 2.4rem
+ *   );
+ *   $tools-container-size-gallery : (
+ *     null   : 100%,
+ *     medium : 102.4rem
+ *   );
+ *
+ *   .gallery__container {
+ *     @include make-container($padding: $tools-container-gutter-gallery, $size: $tools-container-size-gallery)
+ *   }
+ */
+
+@mixin make-container($padding: $tools-container-gutter-default, $size: $tools-container-size-default) {
+  @include _container-padding($padding);
+  @include _container-size($size);
 
   margin-right: auto;
   margin-left: auto;
