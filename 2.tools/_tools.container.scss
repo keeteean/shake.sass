@@ -3,7 +3,8 @@
  *** CONTAINER TOOL ***
  ******************************************************************************
  *
- * The container tool is responsible for creating smart, flexible and responsive containers.
+ * The container tool is responsible for creating smart, flexible and
+ * responsive containers.
  *
  * Here you can setup the default and custom containers with size (`max-with`)
  * and paddings. Then use it as mixin.
@@ -13,7 +14,8 @@
  * @author Krisztian Pinter <krisz@keeteean.com>
  *
  * @require {mixin} _generate-unit <2.tools/libraries/_generate-unit.scss>
- * @see 4.objects/_objects.container.scss for BEM class based default and custom containers
+ * @see 4.objects/_objects.container.scss for BEM class based default and custom
+ * containers
  */
 
 
@@ -121,11 +123,16 @@ $tools-container-size-default     : (
  *   );
  *
  *   .gallery__container {
- *     @include make-container($padding: $tools-container-gutter-gallery, $size: $tools-container-size-gallery)
+ *     @include make-container(
+ *       $padding: $tools-container-gutter-gallery,
+ *       $size: $tools-container-size-gallery
+ *     )
  *   }
  */
 
-@mixin make-container($padding: $tools-container-gutter-default, $size: $tools-container-size-default) {
+@mixin make-container(
+  $padding: $tools-container-gutter-default,
+  $size: $tools-container-size-default) {
   @include _container-padding($padding);
   @include _container-size($size);
 

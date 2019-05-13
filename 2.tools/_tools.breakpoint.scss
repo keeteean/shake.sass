@@ -12,8 +12,11 @@
  *
  * Use it wherever you need it.
  *
- * @parameter {map} $breakpoint-size - Size of the breakpoint you want to use from the $breakpoint-sizes map.
- * @parameter {map} $breakpoint-sizes - A Sass map that contains all the breakpoints
+ * @parameter {map} $breakpoint-size
+ *   Size of the breakpoint you want to use from the $breakpoint-sizes map.
+ *
+ * @parameter {map} $breakpoint-sizes
+ *   A Sass map that contains all the breakpoints
  *
  * @example
  *   @include breakpoint($breakpoint-size, $breakpoint-sizes);
