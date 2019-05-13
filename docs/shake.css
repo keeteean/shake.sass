@@ -1,0 +1,7 @@
+.sidebar li {
+  margin: 0;
+}
+
+.sidebar-nav > ul > li > a {
+  font-weight: 700;
+}

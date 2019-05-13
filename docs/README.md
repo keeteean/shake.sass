@@ -30,13 +30,13 @@ Some highlighted functions:
 
 You can install it easily as node package:
 
-```shell
+```bash
 yarn add shake.sass --dev
 ```
 
 We use yarn as package manager, but you can install it via npm too:
 
-```shell
+```bash
 npm install --save-dev shake.sass
 ```
 
@@ -80,7 +80,7 @@ In this case you need import only helpers sass:
 
 Then copy the original shake file to your sass files:
 
-```shell
+```bash
 cp node_modules/shake.sass/shake.scss ./{your-sass-root}
 ```
 
@@ -119,7 +119,7 @@ _WARNING: this is the cleanest way but may needs more manual work!_
 For easier importing we provide a `_boilertemplate` directory with all
 required sass files, just copy them to you sass source directory like:
 
-```shell
+```bash
 cp -a node_modules/shake.sass/_boilertemplate/ ./sass/
 ```
 
@@ -131,8 +131,3 @@ The `1.settings` directory contains all variables so you don't need to
 import them from Shake.sass. `1.settings` contains only global variables
 all local variables should be in related modules. Ex.: All Type related
 variables should be in `2.tools/_tools.type.scss`.
-
-## Documentation
-
-However all Sass files are highly commented, you can find the full
-documentetion in `/docs` directory.

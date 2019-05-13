@@ -69,7 +69,7 @@
       <bodyTop />
       <bodyBottom />
     </HtmlSettings>
-    <CssSettings previewScheme="UI_SCHEME" cssUri="https://gist.githubusercontent.com/MikeMitterer/ff00ad4bb86ccaa4617e963eb0c08cf3/raw/custom-darcula.css" isCssUriEnabled="false" isCssUriSerial="true" isCssTextEnabled="false" isDynamicPageWidth="true">
+    <CssSettings previewScheme="LIGHT_SCHEME" cssUri="https://gist.githubusercontent.com/MikeMitterer/ff00ad4bb86ccaa4617e963eb0c08cf3/raw/custom-darcula.css" isCssUriEnabled="false" isCssUriSerial="true" isCssTextEnabled="false" isDynamicPageWidth="true">
       <StylesheetProvider>
         <provider providerId="com.vladsch.idea.multimarkdown.editor.javafx.html.css" providerName="Default JavaFx Stylesheet" />
       </StylesheetProvider>
