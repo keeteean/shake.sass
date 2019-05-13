@@ -10,7 +10,7 @@
  *
  * Default global breakpoints map. These are the default breakpoints map that
  * will be shared across all shake modules. You can change it also locally to
- * each module. You have to use pixels or ems here!
+ * each module. Don't forget you have to use only pixels or ems here!
  *
  * @type Map
  *
@@ -33,8 +33,8 @@ $global-breakpoints: (
  * Default breakpoint suffix
  *
  * Global breakpoint suffix naming setting.
- * All breakpoint specific styles have a `@breakpointName` suffix by default.
- * The \ character is used to escape the @ character.
+ * All breakpoint specific styles have a `@breakpoint-name` suffix by default.
+ * The `\` character is used to escape the `@` character.
  *
  * @type String
  */
@@ -68,7 +68,7 @@ $global-breakpoint-separator: \@;
  *
  * @example
  *   .c-header {
- *     margin-right: 30px;
+ *     margin-right: 3rem;
  *
  *     @include breakpoint($portrait) {
  *       margin-right: 0;

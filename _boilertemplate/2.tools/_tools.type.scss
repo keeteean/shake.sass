@@ -31,50 +31,61 @@
  * Type mixin accepts two parameters:
  *
  * @parameter {number | list | map} $sizes
- * @parameter {map} $breakpoint - A Sass map that contains all the breakpoints. Default value is $global-breakpoints.
+ *   A Sass map that contains font sizes and line heights for breakpoints.
+ *
+ * @parameter {map} $breakpoints
+ *   A Sass map that contains all the breakpoints.
+ *   Default value is $global-breakpoints.
  *
  *
  * Examples
  *
  * Font size typography
- * It will create a font size on h1 tag that will have 16px font-size.
+ *
+ * It will create a font size on `<h1>` tag that will have 16px font-size.
  *
  * @example
  *   h1 {
- *     @include type(16px);
+ *     @include type(1.6rem);
  *   }
  *
  * Font size and line height typography
- * It will create a font size on h1 tag that will have 16px font-size and 20px line-height.
+ *
+ * It will create a font size on `<h1>` tag that will have 16px font-size and
+ * 20px line-height.
  *
  * @example
  *   h1 {
- *     @include type(16px 20px);
+ *     @include type(1.6rem 2rem);
  *   }
  *
  * Responsive font size typography
- * It will create a font size on h1 tag that will have 12px font-size on mobiles and 16px on tablets and up.
+ *
+ * It will create a font size on `<h1>` tag that will have 12px font-size on
+ * mobiles and 16px on tablets and up.
  *
  * @example
  *   h1 {
  *     @include type(
  *       (
- *         null : 12px,
- *         small: 16px
+ *         null : 1.2rem,
+ *         small: 1.6rem
  *        )
  *     );
  *   }
  *
  * Responsive font size typography with line height
- * It will create a font size on h1 tag that will have 12px font-size and 16px line-height on
- * mobiles and 16px font-size and 20px line-height on tablets and up.
+ *
+ * It will create a font size on `<h1>` tag that will have 12px font-size and
+ * 16px line-height on mobiles and 16px font-size and 20px line-height on
+ * tablets and up.
  *
  * @example
  *   h1 {
  *     @include type(
  *       (
- *         null : (12px, 16px),
- *         small: (16px, 20px)
+ *         null : (1.2rem, 1.6rem),
+ *         small: (1.6rem, 2rem)
  *        )
  *     );
  *   }

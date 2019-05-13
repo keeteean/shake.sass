@@ -53,6 +53,7 @@
  *         @include column-size(8/12);
  *       }
  *     }
+ *   }
  */
 
 
@@ -74,7 +75,7 @@ $tools-grid-gutter-extra       : () !default;
  * With `make-grid` mixin you can create grid element from the parent of
  * columns element. In the most cases this will be the row element.
  * It has one parameter: the gutter size. By default this is the global
- * gutter. But you can add any value. In this way, if you don'§t want any
+ * gutter. But you can add any value. In this way, if you don't want any
  * gutter, just type 0.
  *
  * @type Mixin
@@ -97,9 +98,9 @@ $tools-grid-gutter-extra       : () !default;
  *
  * @example
  *   $tools-grid-gutter-extra: (
- *       null    : 6px,
- *       medium  : 12px,
- *       large   : 24px
+ *       null    : .6rem,
+ *       medium  : 1.2rem,
+ *       large   : 2.4rem
  *   );
  *
  *   .entry__list {
@@ -110,7 +111,7 @@ $tools-grid-gutter-extra       : () !default;
  *
  * @example
  *   .entry__list {
- *     @include make-grid(15px);
+ *     @include make-grid(1.5rem);
  *   }
  *
  * Grid without any gutters (collapsed)
@@ -133,7 +134,7 @@ $tools-grid-gutter-extra       : () !default;
 
 
 /**
- * Create Column for Grid
+ * Create Columns for Grid
  *
  * In the similar way to Grid with `make-column` mixin you can create
  * columns.
@@ -161,9 +162,9 @@ $tools-grid-gutter-extra       : () !default;
  *
  * @example
  *   $tools-grid-gutter-extra: (
- *       null    : 6px,
- *       medium  : 12px,
- *       large   : 24px
+ *       null    : .6rem,
+ *       medium  : 1.2rem,
+ *       large   : 2.4rem
  *   );
  *
  *   .entry {
@@ -174,10 +175,10 @@ $tools-grid-gutter-extra       : () !default;
  *
  * @example
  *   .entry {
- *     @include make-column(15px);
+ *     @include make-column(1.5rem);
  *   }
  *
- * Column without any gutters (collapsed)
+ * Columns without any gutters (collapsed)
  *
  * @example
  *   .entry {

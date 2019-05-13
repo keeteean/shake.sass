@@ -4,7 +4,7 @@
  ******************************************************************************
  *
  * Control the visibility, without modifying the display, of elements with
- - visibility utilities.
+ * visibility utilities.
  *
  * based on iota.css
  * @author Dimitris Psaropoulos <info@harby.me>
@@ -27,6 +27,7 @@
  *   .u-visually-hide--focusable
  *
  * Enable responsive visibility utilities
+ *
  * By enabling the responsive visibility utilities, you have access to a set of
  * utility classes which bind to breakpoints.
  * By default, they bind to the global breakpoints specified in
@@ -76,10 +77,13 @@ $utilities-visibility-breakpoints         : $global-breakpoints !default;
  *
  * Use visually hide utilities to hide elements on all devices except screen
  * readers.
- * Hide an element to all devices except screen readers with .u-visually-hide.
+ * Hide an element to all devices except screen readers with `.u-visually-hide`
+ * class.
  *
  * @example
- *   <h1 class="page__title u-visually-hide">Page title</h1>
+ *   <h1 class="page__title u-visually-hide">
+ *     Page title
+ *   </h1>
  */
 
 .u-visually-hide {
@@ -90,8 +94,8 @@ $utilities-visibility-breakpoints         : $global-breakpoints !default;
 /**
  * Focusable Visually hide
  *
- * Combine .u-visually-hide with .u-visually-hide--focusable to show the
- * element again when it’s focused (e.g. by a keyboard-only user).
+ * Combine `.u-visually-hide` with `.u-visually-hide--focusable` class to show
+ * the element again when it’s focused (e.g. by a keyboard-only user).
  *
  * @example
  *   <a class="u-visually-hide u-visually-hide--focusable" href="#content">

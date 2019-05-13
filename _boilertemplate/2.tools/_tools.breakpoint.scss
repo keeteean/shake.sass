@@ -12,8 +12,11 @@
  *
  * Use it wherever you need it.
  *
- * @parameter {map} $breakpoint-size - Size of the breakpoint you want to use from the $breakpoint-sizes map.
- * @parameter {map} $breakpoint-sizes - A Sass map that contains all the breakpoints
+ * @parameter {map} $breakpoint-size
+ *   Size of the breakpoint you want to use from the $breakpoint-sizes map.
+ *
+ * @parameter {map} $breakpoint-sizes
+ *   A Sass map that contains all the breakpoints
  *
  * @example
  *   @include breakpoint($breakpoint-size, $breakpoint-sizes);
@@ -54,7 +57,7 @@
  *     }
  *   }
  *
- * Using a custom breakpoints map without size
+ * Using a custom breakpoints map without size.
  * You can use `null` value for breakpoint without size like orientation only.
  *
  * @example

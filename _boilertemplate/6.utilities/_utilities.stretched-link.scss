@@ -1,6 +1,6 @@
 /**
  ******************************************************************************
- *** STRETCHED LINK TOOL ***
+ *** STRETCHED LINK UTILITY ***
  ******************************************************************************
  *
  * Make any HTML element or a component clickable by "stretching" a nested link
@@ -9,13 +9,13 @@
  * Borrowed from Bootstrap 4
  * @link https://getbootstrap.com/docs/4.3/utilities/stretched-link
  *
- * Add .stretched-link to a link (`<a>` element) to make its containing block
+ * Add .u-stretched-link to a link (`<a>` element) to make its containing block
  * clickable via a `::after` pseudo element. In most cases, this means that an
  * element with `position: relative;` that contains a link with the
- * `.stretched-link` class is clickable.
+ * `.u-stretched-link` class is clickable.
  *
  * @example
- *   <div class="o-media position-relative">
+ *   <div class="o-media u-position-relative">
  *     <div class="o-media__fixed">
  *       <img src="..." alt="...">
  *     </div>
@@ -24,11 +24,11 @@
  *       <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
  *       scelerisque ante sollicitudin. Cras purus odio, vestibulum in
  *       vulputate at, tempus viverra turpis.</p>
- *       <a href="#" class="stretched-link">Go somewhere</a>
+ *       <a href="#" class="u-stretched-link">Go somewhere</a>
  *     </div>
  *   </div>
  *
- * Note: There is no `.position-relative` class, it just show witch element has
+ * Note: Shake.sass has not `.u-position-relative` class, it just show witch element has
  * `position: relative;` property.
  *
  * It's built on and you can use it as mixin too:

@@ -13,8 +13,6 @@
  *
  * Setting files contain **global** configurations that are shared by more than
  * one modules.
- * Settings that are connected to one and only module are a part of the module
- * itself.
  * Local configurations should be contained into the modules (objects,
  * components, etc.) that are related to.
  */
@@ -88,9 +86,10 @@
  * Utilities
  *
  * Utilities and helper classes with ability to override anything which goes
- * before in the triangle, eg. hide helper class.
- * They are usually one line of code and have !important to make sure they
- * override all element styles when used.
+ * before in the triangle, ex. hide helper class.
+ * They are usually one line of code and have an `!important` rule to make
+ * sure they override all element styles when used and not be overridden from
+ * other sources.
  */
 
 @import "6.utilities/utilities.clearfix";

@@ -11,9 +11,9 @@
  * @author Krisztian Pinter <krisz@keeteean.com>
  *
  * Use it when you need to use object elements for layout purposes instead of
- * `@include` grid mixins on semantic elements. There is a `o-grid` class for
+ * `@include` grid mixins on semantic elements. There is a `.o-grid` class for
  * the flexbox based grid element (mostly the row layout element) and it's
- * direct child: `o-grid__item` (mostly the column layout elements).
+ * direct child: `.o-grid__item` (mostly the column layout elements).
  * These elements only contains the base, you still have to write in Sass
  * the other rules, like `flex-direction` or item sizes.
  *

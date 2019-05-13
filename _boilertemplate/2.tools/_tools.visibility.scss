@@ -4,7 +4,7 @@
  ******************************************************************************
  *
  * Control the visibility, without modifying the display, of elements with
- * visibility utilities.
+ * visibility tools.
  *
  * @see 6.utilities/_utilities.visibility.scss for BEM based class named version
  */
@@ -31,7 +31,8 @@
 /**
  * Focusable Visually hidden
  *
- * Use in conjunction with %visually-hidden to only display content when it's focused.
+ * Use in conjunction with `visually-hidden` to only display content when it's
+ * focused.
  * Useful for "Skip to main content" links.
  * @see https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
  *

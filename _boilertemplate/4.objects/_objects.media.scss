@@ -18,6 +18,7 @@
  * Examples
  *
  * Media Object
+ *
  * It creates a default media object
  *
  * @example
@@ -32,12 +33,13 @@
  *   </div>
  *
  * Media Object with responsive gutter size
+ *
  * It creates a default media object with 10px gutter in mobile and 20px in tablets and up.
  *
  * @example
  *   $objects-media-gutter-default: (
- *     null : 10px,
- *     small: 20px
+ *     null : 1rem,
+ *     small: 2rem
  *   );
  *
  *   <div class="o-media">
@@ -51,11 +53,12 @@
  *   </div>
  *
  * Media Object with extra gutter size
+ *
  * It creates a new gutter size named 'small' that will have 5px gutter size.
  *
  * @example
  *   $objects-media-gutter-extra: (
- *     small: 5px
+ *     small: .5rem
  *   );
  *
  *   <div class="o-media o-media--small">
@@ -69,13 +72,14 @@
  *   </div>
  *
  * Media Object with extra responsive gutter size
+ *
  * It creates a new gutter size named 'small' that will have 5px gutter size in mobiles and 10px in tablets and up.
  *
  * @example
  *   $objects-media-gutter-extra: (
  *     small: (
- *       null : 5px,
- *       small: 10px
+ *       null : .5rem,
+ *       small: 1rem
  *     )
  *   );
  *
@@ -90,13 +94,14 @@
  *   </div>
  *
  * Media Object that collapses under 767px width breakpoints
+ *
  * It creates a media object that will automatically collapse in two rows when a max-width of 767px presents.
  *
  * @example
  * $objects-media-collapses-at: 767px; // This is not needed since 767px is the default value
- * $objects-media-res: true;
+ * $objects-media-responsive: true;
  *
- *   <div class="o-media o-media--res">
+ *   <div class="o-media o-media--responsive">
  *     <div class="o-media__fixed">
  *       Fixed width column
  *     </div>
@@ -107,12 +112,13 @@
  *   </div>
  *
  * Media object with reversed columns
+ *
  * It creates a media object that has the fixed part on the right and the fluid on the left.
  *
  * @example
- *   $objects-media-rev: true;
+ *   $objects-media-reversed: true;
  *
- *   <div class="o-media o-media--rev">
+ *   <div class="o-media o-media--reversed">
  *     <div class="o-media__fixed">
  *       Fixed width column on the right
  *     </div>
@@ -207,7 +213,7 @@ $objects-media-aligned              : false;
  *
  * Enable / Disable responsive modifier for media object.
  *
- * .o-media--res: Collapse fluid section bellow fixed one, at a specific
+ * .o-media--responsive: Collapse fluid section bellow fixed one, at a specific
  * max-width breakpoint.
  *
  * @type Boolean
