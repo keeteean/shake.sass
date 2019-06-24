@@ -11,6 +11,14 @@
  * Settings
  */
 
+/**
+ * Body colors
+ *
+ * Set text- and background-color to body. Turn this off if you need anything
+ * else background property than background-color, like background-image.
+ */
+
+$base-body-colors           : true;
 $body-color                 : $global-color;
 $body-background            : $global-background;
 

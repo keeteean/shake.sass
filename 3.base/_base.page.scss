@@ -11,8 +11,16 @@
  * Settings
  */
 
+/**
+ * Body colors
+ *
+ * Set text- and background-color to body. Turn this off if you need anything
+ * else background property than background-color, like background-image.
+ */
+
+$base-body-colors           : true !default;
 $body-color                 : $global-color !default;
-$body-background            : $global-background !default;
+$body-background-color      : $global-background !default;
 
 
 html {
@@ -21,7 +29,9 @@ html {
 }
 
 body {
-  @include colors($body-color, $body-background);
-
   height: 100%;
+
+  @if ($base-body-colors == true) {
+    @include colors($body-color, $body-background-color);
+  }
 }

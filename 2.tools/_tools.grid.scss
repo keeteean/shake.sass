@@ -89,6 +89,9 @@ $tools-grid-gutter-extra       : () !default;
  *
  * Grid with default gutter
  *
+ * The default gutter comes from `1.settings/_settings.grid.scss` and here
+ * we divide that by 2 for two sides.
+ *
  * @example
  *   .entry__list {
  *     @include make-grid();
