@@ -191,7 +191,7 @@ $objects-media-gutter-extra         : () !default;
  * @type Boolean
  */
 
-$objects-media-reversed             : false !default;
+$objects-media-is-reversed          : false !default;
 
 
 /**
@@ -205,7 +205,7 @@ $objects-media-reversed             : false !default;
  * @type Boolean
  */
 
-$objects-media-aligned              : false !default;
+$objects-media-is-aligned           : false !default;
 
 
 /**
@@ -219,7 +219,7 @@ $objects-media-aligned              : false !default;
  * @type Boolean
  */
 
-$objects-media-responsive           : false !default;
+$objects-media-is-responsive        : false !default;
 
 
 /**
@@ -247,18 +247,19 @@ $objects-media-collapse-at          : 767px !default;
 }
 
 // Flex Media Object Reversed
-@if ($objects-media-reversed == true) {
+@if ($objects-media-is-reversed == true) {
   .#{$objects-media-class-media-mod + $objects-media-reversed} {
     & > .#{$objects-media-class-media-fixed} {
       @include _generate-unit("padding", "right", 0);
       @include _generate-unit("padding", "left", $objects-media-gutter-default);
+
       order: 1;
     }
   }
 }
 
 // Media Object Aligned
-@if ($objects-media-aligned == true) {
+@if ($objects-media-is-aligned == true) {
   .#{$objects-media-class-media-mod + $objects-media-align-middle} {
     align-items: center;
   }
@@ -268,9 +269,8 @@ $objects-media-collapse-at          : 767px !default;
   }
 }
 
-
 // Responsive Media Object
-@if ($objects-media-responsive == true) {
+@if ($objects-media-is-responsive == true) {
   @media screen and (max-width: $objects-media-collapse-at) {
     .#{$objects-media-class-media-mod + $objects-media-responsive} {
       display: block;
@@ -293,31 +293,27 @@ $objects-media-collapse-at          : 767px !default;
 // Media Object Sizes
 @each $media-gutter-name, $media-gutter-size in $objects-media-gutter-extra {
   .#{$objects-media-class-media-mod + $media-gutter-name} {
-    & > .#{$objects-media-class-media-fixed} {
-      @include _generate-unit("padding", "right", $media-gutter-size);
-    }
-
     // Media Object Responsive
-    @if ($objects-media-responsive == true) {
-      @media screen and ( max-width: $objects-media-collapse-at ) {
+    @if ($objects-media-is-responsive == true) {
+      @media screen and (max-width: $objects-media-collapse-at) {
         &.#{$objects-media-class-media-mod + $objects-media-responsive} {
           display: block;
 
           & > .#{$objects-media-class-media-fixed} {
+            @include _generate-unit("margin", "bottom", $media-gutter-size);
+
             padding-right: 0;
             padding-left: 0;
-            @include _generate-unit("margin", "bottom", $media-gutter-size);
           }
         }
       }
     }
 
     // Media Object Reserved
-    @if ($objects-media-reversed == true) {
+    @if ($objects-media-is-reversed == true) {
       // Media Object Reserved with Extra Sizes
       &.#{$objects-media-class-media-mod + $objects-media-reversed} {
         @media screen and (min-width: ($objects-media-collapse-at + 1)) {
-
           & > .#{$objects-media-class-media-fixed} {
             @include _generate-unit("padding", "right", 0);
             @include _generate-unit("padding", "left", $media-gutter-size);
@@ -325,10 +321,13 @@ $objects-media-collapse-at          : 767px !default;
         }
       }
 
+      & > .#{$objects-media-class-media-fixed} {
+        @include _generate-unit("padding", "right", $media-gutter-size);
+      }
 
       // Media Object Reserved and Responsive with Extra Sizes
       &.#{$objects-media-class-media-mod + $objects-media-reversed + ":not(." + $objects-media-class-media-mod + $objects-media-responsive + ")"} {
-        @media screen and ( max-width: $objects-media-collapse-at ) {
+        @media screen and (max-width: $objects-media-collapse-at) {
           & > .#{$objects-media-class-media-fixed} {
             @include _generate-unit("padding", "right", 0);
             @include _generate-unit("padding", "left", $media-gutter-size);
