@@ -26,15 +26,15 @@
  * Using the global default $global-breakpoints breakpoints map.
  * @example
  *   $global-breakpoints: (
- *     small  : screen and (min-width: 480px),
- *     medium : screen and (min-width: 768px),
- *     large  : screen and (min-width: 1024px),
- *     xlarge : screen and (min-width: 1200px),
- *     xxlarge: screen and (min-width: 1400px)
+ *     small  : "screen and (min-width: 30em)", // 480px
+ *     medium : "screen and (min-width: 48px)", // 768px
+ *     large  : "screen and (min-width: 64px)", // 1024px
+ *     xlarge : "screen and (min-width: 75px)", // 1200px
+ *     xxlarge: "screen and (min-width: 87.5px)" // 1400px
  *   );
  *
  *   .c-header {
- *      margin-right: 30px;
+ *      margin-right: 3rem;
  *
  *      @include breakpoint(small) {
  *        margin-right: 0;
@@ -44,32 +44,32 @@
  * Using a custom breakpoints map.
  * @example
  *   $my-breakpoints : (
- *     small  : screen and (min-width: 320px),
- *     xlarge : screen and (min-width: 1280px)
+ *     small  : screen and (min-width: 20em), // 320px
+ *     xlarge : screen and (min-width: 80em) // 1280px
  *   );
  *
  * @example
  *   .c-header {
- *     margin-right: 30px;
+ *     margin-right: 3rem;
  *
  *     @include breakpoint(xlarge, $my-breakpoints) {
  *       margin-right: 0;
  *     }
  *   }
  *
- * Using a custom breakpoints map without size
+ * Using a custom breakpoints map without size.
  * You can use `null` value for breakpoint without size like orientation only.
  *
  * @example
  *   $portrait : (
  *     null   : screen and (orientation: portrait),
- *     small  : screen and (orientation: portrait) and (min-width: 320px),
- *     xlarge : screen and (orientation: portrait) and (min-width: 1280px)
+ *     small  : screen and (orientation: portrait) and (min-width: 20em), // 320px
+ *     xlarge : screen and (orientation: portrait) and (min-width: 80em) // 1280px
  *   );
  *
  * @example
  *   .c-header {
- *     margin-right: 30px;
+ *     margin-right: 3rem;
  *
  *     @include breakpoint($portrait) {
  *       margin-right: 0;

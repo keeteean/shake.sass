@@ -230,7 +230,7 @@ $objects-media-is-responsive        : false !default;
  * @type Number
  */
 
-$objects-media-collapse-at          : 767px !default;
+$objects-media-collapse-at          : 48em !default; // 767px
 
 
 .#{$objects-media-class-media} {
