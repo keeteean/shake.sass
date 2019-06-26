@@ -14,6 +14,7 @@
  * can use as fallback font-stack.
  */
 
+// System (sans-serif) font-stack
 $font-family--system:
   -apple-system,
   system-ui,
@@ -28,6 +29,7 @@ $font-family--system:
   "Segoe UI Symbol",
   "Noto Color Emoji" !default;
 
+// Monospace font-stack: required by 3.base/_base.reset
 $font-family--monospace:
   SFMono-Regular,
   Menlo,
