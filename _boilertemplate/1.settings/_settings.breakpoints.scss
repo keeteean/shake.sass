@@ -62,8 +62,8 @@ $global-breakpoint-separator: \@;
  * @example
  *   $portrait: (
  *     null   : screen and (orientation: portrait),
- *     small  : screen and (orientation: portrait) and (min-width: 320px),
- *     xlarge : screen and (orientation: portrait) and (min-width: 1280px)
+ *     small  : screen and (orientation: portrait) and (min-width: 20em), // 320px
+ *     xlarge : screen and (orientation: portrait) and (min-width: 80em) // 1280px
  *   );
  *
  * @example
@@ -78,7 +78,7 @@ $global-breakpoint-separator: \@;
 
 /*
 $my-breakpoints: (
-  small : "screen and (min-width: 320px)",
-  large : "screen and (min-width: 960px)"
+  small : "screen and (min-width: 20em)", // 320px
+  large : "screen and (min-width: 60em)" // 960px
 );
 */
