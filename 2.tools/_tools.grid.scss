@@ -223,7 +223,7 @@ $tools-grid-gutter-extra       : () !default;
 
 @mixin column-size($size) {
   flex: 0 0 percentage($size);
-  min-width: percentage($size);
+  max-width: percentage($size);
 }
 
 
