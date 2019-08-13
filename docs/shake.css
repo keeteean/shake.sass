@@ -5,3 +5,7 @@
 .sidebar-nav > ul > li > a {
   font-weight: 700;
 }
+
+.app-name {
+  padding: 0 1em;
+}
