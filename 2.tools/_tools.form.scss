@@ -39,3 +39,24 @@
     @content;
   }
 }
+
+
+/**
+ * Webkit autofill mixin
+ *
+ * With it you can theming autofilled inputs easily.
+ * You must declare the font color, other rules optionally.
+ *
+ * @example
+ *  @include autofill($color-primary) {
+ *    background: lighten($color-primary, 30%);
+ *  }
+ */
+
+@mixin autofill($color) {
+  &:-webkit-autofill {
+    @content;
+
+    -webkit-text-fill-color: $color;
+  }
+}

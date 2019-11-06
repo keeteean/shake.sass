@@ -20,6 +20,19 @@
 
 
 /**
+ * Webkit autofill mixin
+ *
+ * With it you can theming autofilled inputs easily.
+ * You must declare the font color, other rules optionally.
+ *
+ * @example
+ *  @include autofill($color-primary) {
+ *    background: lighten($color-primary, 30%);
+ *  }
+ */
+
+
+/**
  * Import Form Tool from Shake.sass.
  */
 
