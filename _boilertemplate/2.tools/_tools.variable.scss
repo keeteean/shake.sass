@@ -1,0 +1,26 @@
+/**
+ ******************************************************************************
+ *** CSS CUSTOM VARIABLE TOOL ***
+ ******************************************************************************
+ *
+ * To write CSS variables faster in SCSS.
+ */
+
+
+/**
+ * v() function
+ *
+ * @example
+ *  :root {
+ *    --primary: #000;
+ *  }
+ *
+ *  color: v(primary);
+ */
+
+
+/**
+ * Import CSS Custom Variable Tool from Shake.sass.
+ */
+
+@import "node_modules/shake.sass/2.tools/tools.variable";

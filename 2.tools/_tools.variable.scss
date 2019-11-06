@@ -1,0 +1,28 @@
+/**
+ ******************************************************************************
+ *** CSS CUSTOM VARIABLE TOOL ***
+ ******************************************************************************
+ *
+ * To write CSS variables faster in SCSS.
+ */
+
+
+/**
+ * v() function
+ *
+ * @example
+ *  :root {
+ *    --primary: #000;
+ *  }
+ *
+ *  color: v(primary);
+ */
+
+@function v($var, $fallback: null) {
+  @if ($fallback) {
+    @return var(--#{$var}, #{$fallback});
+  }
+  @else {
+    @return var(--#{$var});
+  }
+}
