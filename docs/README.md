@@ -63,7 +63,7 @@ override variables.
 4. Then you can import your other sass files.
 
 _note: If you use [Sass loader](https://github.com/webpack-contrib/sass-loader),
-you can import from `node_modules` like:_
+you can import from `node\_modules` like:_
 
 ```scss
 @import "~shake.sass/shake";
