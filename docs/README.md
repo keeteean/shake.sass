@@ -1,9 +1,9 @@
 # Shake.sass
 
-Shake is a small [Sass](http://sass-lang.com) framework what follows the 
-[BEM Methodology](https://en.bem.info) and has inspired by 
-[ITCSS (Inverted Triangle CSS)](https://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731) 
-and [Atomic Design](http://atomicdesign.bradfrost.com). Many techniques has been 
+Shake is a small [Sass](http://sass-lang.com) framework what follows the
+[BEM Methodology](https://en.bem.info) and has inspired by
+[ITCSS (Inverted Triangle CSS)](https://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731)
+and [Atomic Design](http://atomicdesign.bradfrost.com). Many techniques has been
 borrowed from other css frameworks like [iotaCSS](https://www.iotacss.com),
 [Spectre.css](https://picturepan2.github.io) or [Bootstrap](https://getbootstrap.com).
 
@@ -63,7 +63,7 @@ override variables.
 4. Then you can import your other sass files.
 
 _note: If you use [Sass loader](https://github.com/webpack-contrib/sass-loader),
-you can import from node_modules like:_
+you can import from `node_modules` like:_
 
 ```scss
 @import "~shake.sass/shake";
