@@ -62,8 +62,8 @@ functions and mixins what required by sass settings/variables.
 override variables.
 4. Then you can import your other sass files.
 
-_note: If you use [Sass loader](https://github.com/webpack-contrib/sass-loader),
-you can import from `node\_modules` like:_
+*note: If you use [Sass loader](https://github.com/webpack-contrib/sass-loader),
+you can import from `node_modules` like:*
 
 ```scss
 @import "~shake.sass/shake";
