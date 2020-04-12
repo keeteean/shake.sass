@@ -1,0 +1,24 @@
+/**
+ ******************************************************************************
+ *** INTERNET EXPLORER HACK TOOL ***
+ ******************************************************************************
+ *
+ * Media query only for Microsoft Internet Explorer browsers.
+ */
+
+
+/**
+ * Internet Explorer 10-11 mixin
+ *
+ * @example
+ *  @include ie {
+ *    overflow: visible;
+ *  }
+ */
+
+
+/**
+ * Import Internet Explorer Tool from Shake.sass.
+ */
+
+@import "node_modules/shake.sass/2.tools/tools.ie";
