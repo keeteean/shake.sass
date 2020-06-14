@@ -126,7 +126,7 @@ $objects-grid-gutter-extra    : () !default;
     @include make-grid($gutter-size);
 
     & > &__item {
-      @include make-column;
+      @include make-column($gutter-size);
     }
   }
 }
