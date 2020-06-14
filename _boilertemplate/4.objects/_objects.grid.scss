@@ -57,9 +57,55 @@
 /**
  * Settings
  *
- * All Grid related settings you can find in Grid Tool:
+ * If you want to use from Sass only, all settings found in Grid Tool:
  * @see 2.tools/_tools.grid.scss
  */
+
+/**
+ * Namespace settings
+ */
+
+$objects-grid-class          : "o-grid";
+$objects-grid-class-mod      : $objects-grid-class + "--";
+
+
+/**
+ * Additional grid gutters
+ *
+ * If you use additionally Container object with custom gutters
+ * you have to set custom those custom gutters for Grid object too!
+ *
+ * You can use a nested map in case you would like to specify responsive gutter
+ * sizes.
+ *
+ * Each gutter size will be available as a BEM modifier that will be named
+ * according to the gutter name.
+ *
+ * Example if `$objects-grid-gutter-extra: (large: 30px);`
+ * then `.o-grid--large` will be available for use.
+ *
+ * @type Map
+ *
+ * @example
+ *   $objects-grid-gutter-extra: (
+ *     large: (
+ *       null : 2rem,
+ *       small: 4rem
+ *     )
+ *   );
+ *
+ *   <div class"o-grid--large">
+ *     <div class="o-grid--large__item">
+ *       Column
+ *     </div>
+ *
+ *     <div class="o-grid--large__item">
+ *       Column
+ *     </div>
+ *   </div>
+ */
+
+$objects-grid-gutter-extra    : () !default;
 
 
 /**
