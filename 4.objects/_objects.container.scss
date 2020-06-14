@@ -151,5 +151,8 @@ $objects-container-size-extra     : () !default;
 @each $size-name, $size-value in $objects-container-size-extra {
   .#{$objects-container-class-mod + quote($size-name)} {
     @include _container-size($size-value);
+
+    margin-right: auto;
+    margin-left: auto;
   }
 }
