@@ -143,13 +143,13 @@ $objects-container-size-extra     : () !default;
 // Container Object Extra Gutters
 @each $gutter-name, $gutter-size in $objects-container-gutter-extra {
   .#{$objects-container-class-mod + quote($gutter-name)} {
-    @include container-padding($gutter-size);
+    @include _container-padding($gutter-size);
   }
 }
 
 // Container Object Extra Sizes
 @each $size-name, $size-value in $objects-container-size-extra {
   .#{$objects-container-class-mod + quote($size-name)} {
-    @include container-size($size-value);
+    @include _container-size($size-value);
   }
 }
