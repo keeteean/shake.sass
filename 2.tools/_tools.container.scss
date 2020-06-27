@@ -136,6 +136,7 @@ $tools-container-size-default     : (
   @include _container-padding($padding);
   @include _container-size($size);
 
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
