@@ -14,5 +14,5 @@
  */
 
 @function _is-map($map) {
-  @return type-of($map) == 'map'
+  @return type-of($map) == "map";
 }

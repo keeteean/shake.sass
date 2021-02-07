@@ -279,8 +279,8 @@ $objects-media-collapse-at          : 47.93em !default; // 767px
       & > .#{$objects-media-class-media-fluid} {
         display: block;
         width: 100%;
-        padding-left: 0;
         padding-right: 0;
+        padding-left: 0;
       }
 
       & > .#{$objects-media-class-media-fixed} {
