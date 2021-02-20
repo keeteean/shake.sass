@@ -1,7 +1,9 @@
 /**
  ******************************************************************************
- *** GRID SETTINGS ***
+ *** GRID OBJECT SETTINGS ***
  ******************************************************************************
+ *
+ * See details in 4.objects/_objects.grid.scss
  */
 
 
@@ -26,3 +28,25 @@ $global-gutter-default: (
   null         : $gutter--small,
   medium       : $gutter--medium
 ) !default;
+
+
+/**
+ * Additional grid gutters
+ *
+ * If you use additionally Container object with custom gutters
+ * you have to set custom those custom gutters for Grid object too!
+ *
+ * You can use a nested map in case you would like to specify responsive gutter
+ * sizes.
+ *
+ * @type Map
+ *
+ * @example
+ *   $global-grid-gutter-extra: (
+ *     large: (
+ *       null : 2rem,
+ *       small: 4rem
+ *     )
+ *   );
+ */
+$global-grid-gutter-extra: () !default;

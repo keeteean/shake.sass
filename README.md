@@ -1,9 +1,9 @@
 # Shake.sass
 
-Shake is a small [Sass](http://sass-lang.com) framework what follows the 
-[BEM Methodology](https://en.bem.info) and has inspired by 
-[ITCSS (Inverted Triangle CSS)](https://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731) 
-and [Atomic Design](http://atomicdesign.bradfrost.com). Many techniques has been 
+Shake is a small [Sass](http://sass-lang.com) framework what follows the
+[BEM Methodology](https://en.bem.info) and has inspired by
+[ITCSS (Inverted Triangle CSS)](https://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731)
+and [Atomic Design](http://atomicdesign.bradfrost.com). Many techniques has been
 borrowed from other css frameworks like [iotaCSS](https://www.iotacss.com),
 [Spectre.css](https://picturepan2.github.io) or [Bootstrap](https://getbootstrap.com).
 
@@ -88,7 +88,7 @@ Afterwards you need to modify all paths in this way:
 
 ```scss
 // an old path
-@import "2.tools/tools.all";
+@import "2.tools/tools._all";
 
 // replaced with
 @import "node_modules/shake.sass/2.tools/tools.all";

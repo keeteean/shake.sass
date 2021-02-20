@@ -17,7 +17,7 @@
  * components, etc.) that are related to.
  */
 
-@import "1.settings/settings.all";
+@import "1.settings/settings._all";
 
 
 /**
@@ -27,7 +27,7 @@
  * It’s important not to output any CSS in the first 2 layers.
  */
 
-@import "2.tools/tools.all";
+@import "2.tools/tools._all";
 
 
 /**
