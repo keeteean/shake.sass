@@ -33,7 +33,7 @@
  * @type Number | List | Map
  */
 
-$tools-container-gutter-default   : $global-gutter-default;
+$tools-container-gutter-default   : $global-container-gutter-default;
 
 
 /**
@@ -45,12 +45,7 @@ $tools-container-gutter-default   : $global-gutter-default;
  * @type String | Map
  */
 
-$tools-container-size-default     : (
-  null        : 90%,
-  small       : 91%,
-  medium      : 93%,
-  large       : 129.6rem
-);
+$tools-container-size-default     : $global-container-size-default;
 
 
 /**
