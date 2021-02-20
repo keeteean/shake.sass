@@ -65,8 +65,8 @@
  * Sass map for that, but if you need, you can create more.
  */
 
-$tools-grid-gutter-default     : $global-gutter-default !default;
-$tools-grid-gutter-extra       : () !default;
+$tools-grid-gutter-default     : $global-gutter-default;
+$tools-grid-gutter-extra       : $global-grid-gutter-extra;
 
 
 /**
