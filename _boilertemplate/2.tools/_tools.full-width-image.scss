@@ -5,6 +5,21 @@
  *
  * Apply it to an img element or use Utility version of it.
  * You will need a parent element with relative position.
+ *
+ * @parameter {string} $version Choose basic if you don't use Modernizer (but
+ * may you have problems in Internet Explorer and earlier versions of Microsoft
+ * Edge. Better option if you use Modernizr and enabled objectfit or object-fit.
+ *
+ * @example
+ * .c-slider {
+ *   &__slide {
+ *     position: relative;
+ *
+ *      img {
+ *        @include full-width-image(modernizr);
+ *      }
+ *   }
+ * }
  */
 
 /**

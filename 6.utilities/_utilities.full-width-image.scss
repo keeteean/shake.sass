@@ -4,14 +4,18 @@
  ******************************************************************************
  *
  * For 100% width cover-filled (mostly background) images. Apply it to a parent
- * element if img. This will be the relative item for the image.
+ * element of img. This will be the relative item for the image.
+ *
+ * There are two versions: if you use Modernizr (`objectfit` or `object-fit`
+ * enabled), use the `u-full-width-image--mordernizr`, if you don't use Modernizr,
+ * stay with the basic one: `u-full-width-image`.
  *
  * @require {mixin} <2.tools/_full-width-image.scss>
  *
  * @example
- *   <div class="u-full-width-image">
- *    <img class="i-am-a-cute-cover-image" src="cute-cover-image.jpg">
- *  </div>
+ *   <div class="u-full-width-image--modernizr">
+ *     <img class="i-am-a-cute-cover-image" src="cute-cover-image.jpg">
+ *   </div>
 */
 
 
@@ -29,5 +33,13 @@
 
   img {
     @include full-width-image;
+  }
+}
+
+.u-full-width-image--modernizr {
+  position: relative;
+
+  img {
+    @include full-width-image(modernizr);
   }
 }
