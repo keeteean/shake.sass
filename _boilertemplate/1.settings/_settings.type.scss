@@ -44,21 +44,6 @@ $global-font-family         : $font-family--system;
 
 
 /**
- * Font weights
- *
- * We store font-weight for global font-family.
- * Font-weight could be different in each font-families; change it to your
- * font-family.
- */
-
-$font-weight--light         : 300;
-$font-weight--normal        : 400;
-$font-weight--medium        : 500;
-$font-weight--bold          : 700;
-$font-weight--black         : 900;
-
-
-/**
  * Line-height
  */
 
