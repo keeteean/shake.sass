@@ -37,7 +37,7 @@
     object-position: center;
   }
 
-  @if version == modernizr {
+  @if $version == modernizr {
     width: auto;
     min-width: 100%;
     max-width: none;
