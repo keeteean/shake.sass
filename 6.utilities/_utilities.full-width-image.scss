@@ -1,0 +1,33 @@
+/**
+ ******************************************************************************
+ *** FULL WIDTH IMAGE UTILITY ***
+ ******************************************************************************
+ *
+ * For 100% width cover-filled (mostly background) images. Apply it to a parent
+ * element if img. This will be the relative item for the image.
+ *
+ * @require {mixin} <2.tools/_full-width-image.scss>
+ *
+ * @example
+ *   <div class="u-full-width-image">
+ *    <img class="i-am-a-cute-cover-image" src="cute-cover-image.jpg">
+ *  </div>
+*/
+
+
+/**
+  * Imports
+ */
+@import "../2.tools/tools.full-width-image";
+
+
+/**
+ * Full Width Image Utility
+ */
+.u-full-width-image {
+  position: relative;
+
+  img {
+    @include full-width-image;
+  }
+}
