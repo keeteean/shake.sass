@@ -1,0 +1,42 @@
+/**
+ ******************************************************************************
+ *** CSS BOX-MODEL TOOL ***
+ ******************************************************************************
+ *
+ * CSS Box-model-related mixins.
+ *
+ * @author Krisztian Pinter <krisz@keeteean.com>
+ */
+
+
+/**
+ * Margin mixin
+ *
+ * Use it, when you need similar margin only vertically or horizontally.
+ *
+ * @parameter {string} $direction - Use x for horizontally and y for vertically.
+ * @parameter {string} $value - Amount of desired margin in any unit.
+ *
+ * @example
+ *   @include margin(x, 1.5rem);
+ */
+
+
+/**
+ * Padding mixin
+ *
+ * Use it, when you need similar padding only vertically or horizontally.
+ *
+ * @parameter {string} $direction - Use x for horizontally and y for vertically.
+ * @parameter {string} $value - Amount of desired padding in any unit.
+ *
+ * @example
+ *   @include padding(x, 1.5rem);
+ */
+
+
+/**
+ * Import Clearfix Tool from Shake.sass.
+ */
+
+@import "node_modules/shake.sass/2.tools/tools.box-model";
