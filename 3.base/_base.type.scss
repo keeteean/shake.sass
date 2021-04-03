@@ -101,8 +101,11 @@ body {
  * Code and Preformatted Elements
  */
 
+code,
+kbd,
 pre,
-code {
+samp,
+var {
   text-align: left;
   word-spacing: normal;
   word-wrap: normal;

@@ -291,14 +291,20 @@ strong {
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
+ * 3. Removed italic style from <var>.
  */
 
 code,
 kbd,
 pre,
-samp {
+samp,
+var {
   font-family: $font-family--monospace; // 1
   font-size: 1em; // 2
+}
+
+var {
+  font-style: normal; // 3
 }
 
 
