@@ -138,3 +138,14 @@ a:not([class]) {
     color: $base-link-color-accent;
   }
 }
+
+
+/**
+ * Global List Elements
+ */
+
+ul:not([class]),
+ol:not([class]) {
+  margin: 1em 0;
+  padding-left: 1.1em;
+}

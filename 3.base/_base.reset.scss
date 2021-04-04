@@ -70,9 +70,9 @@ $base-font-antialiasing: false !default;
 /**
  * List bullets remover
  *
- * Remove bullets from HTML unformatted list (`ul`). Encourages the use of `ul`
- * for any listed elements in any styles, like a navigation menu and not only
- * for bullet lists.
+ * Remove bullets from HTML unformatted (`ul`) and ordered (`ol`) lists width
+ * CSS classes. Encourages the use of `ul` or `ol` for any listed elements in
+ * any styles, like a navigation menu and not only for bullet lists.
  *
  * @type Boolean
  */
@@ -348,14 +348,16 @@ sup {
 
 
 /**
- * Remove bullets from HTML unformatted list (`ul`). Encourages the use of `ul`
- * for any listed elements in any styles, like a navigation menu and not only
- * for bullet lists.
+ * Remove bullets from HTML unformatted (`ul`) and ordered (`ol`) lists width
+ * CSS classes. Encourages the use of `ul` or `ol` for any listed elements in
+ * any styles, like a navigation menu and not only for bullet lists.
+ *
  * Opinionated and disabled by default.
  */
 
 @if ($base-no-list-bullets == true) {
-  ul {
+  ul[class],
+  ol[class] {
     list-style: none;
   }
 }
