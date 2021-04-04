@@ -10,6 +10,30 @@
 
 
 /**
+ * Square mixin
+ *
+ * Use it, when you need similar width and height with square shape.
+ *
+ * @parameter {string} $value - Amount of desired width and height in any unit.
+ *
+ * @example
+ *   @include square(6rem);
+ */
+
+
+/**
+ * Circle mixin
+ *
+ * Use it, when you need similar width and height width circle shape.
+ *
+ * @parameter {string} $value - Amount of desired width and height in any unit.
+ *
+ * @example
+ *   @include circle(6rem);
+ */
+
+
+/**
  * Margin mixin
  *
  * Use it, when you need similar margin only vertically or horizontally.
