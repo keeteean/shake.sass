@@ -128,7 +128,7 @@ $components-responsive-table-content-width    : 67% !default;
         max-width: $components-responsive-table-content-width;
 
         @include breakpoint(medium) {
-          display: inherit;
+          display: block;
           max-width: none;
         }
       }
