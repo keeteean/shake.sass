@@ -284,7 +284,13 @@ $objects-media-collapse-at          : 47.93em !default; // 767px
       }
 
       & > .#{$objects-media-class-media-fixed} {
-        @include _generate-unit("margin", "bottom", $objects-media-gutter-default);
+        @if ($objects-media-is-reversed == true) {
+          @include _generate-unit("margin", "top", $objects-media-gutter-default);
+        }
+
+        @else {
+          @include _generate-unit("margin", "bottom", $objects-media-gutter-default);
+        }
       }
     }
   }
