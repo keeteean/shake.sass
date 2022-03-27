@@ -33,6 +33,7 @@
   @if $version == basic {
     width: 100%;
     height: 100%;
+    margin: 0;
     object-fit: cover;
     object-position: center;
   }
@@ -42,6 +43,7 @@
     min-width: 100%;
     max-width: none;
     min-height: 100%;
+    margin: 0;
 
     .objectfit &,
     .object-fit & {
