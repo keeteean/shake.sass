@@ -24,6 +24,7 @@
  * @access private
  */
 
+@use "sass:math";
 @mixin _generate-unit($property, $suffix, $units, $half: null) {
   $suffix: if($suffix, #{"-" + $suffix}, "");
 
@@ -36,7 +37,7 @@
       @if $breakpoint-name {
         @if $half == half {
           @include breakpoint($breakpoint-name) {
-            #{$property + $suffix}: $size / 2;
+            #{$property + $suffix}: $size * .5;
           }
         }
 
@@ -50,7 +51,7 @@
 
     @if _map-contains-null($units) {
       @if $half == half {
-        #{$property + $suffix}: map-get($units, null) / 2;
+        #{$property + $suffix}: map-get($units, null) * .5;
       }
 
       @else {

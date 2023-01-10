@@ -5,7 +5,7 @@
   $diff: ms-unitless($val2) - ms-unitless($val1);
 
   // v1 + (v2 - v1) * ( (100vw - b1) / b2 - b1 )
-  @return calc( #{$val1} + #{ms-unitless($val2) - ms-unitless($val1)} * ( ( 100vw - #{$break1}) / #{ms-unitless($break2) - ms-unitless($break1)} ) );
+  @return calc( #{$val1} + #{ms-unitless($val2) - ms-unitless($val1)} * ( calc(( 100vw - #{$break1}) / #{ms-unitless($break2) - ms-unitless($break1)} )) );
 }
 
 // Main responsive mixin
