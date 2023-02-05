@@ -13,12 +13,16 @@
  * @access private
  */
 
+@use "sass:map";
+
+/* stylelint-disable-next-line scss/at-function-pattern */
 @function _negative-unit($values) {
 
   @if _is-map($values) {
     @each $key, $value in $values {
-      $values: map-merge($values, ($key: -$value));
+      $values: map.merge($values, ($key: ($value * -1)));
     }
+
     @return $values;
   }
 

@@ -112,7 +112,7 @@ $utilities-visibility-breakpoints         : $global-breakpoints !default;
  * Visibility Responsive Utilities
  */
 
-@if ($utilities-visibility-responsive == true) {
+@if $utilities-visibility-responsive == true {
   @each $breakpoint-name, $breakpoint-size in $utilities-visibility-breakpoints {
     @media #{$breakpoint-size} {
       .#{"u-show" + $global-breakpoint-separator + $breakpoint-name} {

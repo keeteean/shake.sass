@@ -15,14 +15,13 @@
  */
 
 // System (sans-serif) font-stack
-$font-family--system:
-  -apple-system,
+$font-family--system: -apple-system,
   system-ui,
-  BlinkMacSystemFont,
+  "BlinkMacSystemFont",
   "Segoe UI",
-  Roboto,
+  "Roboto",
   "Helvetica Neue",
-  Arial,
+  "Arial",
   sans-serif,
   "Apple Color Emoji",
   "Segoe UI Emoji",
@@ -30,17 +29,22 @@ $font-family--system:
   "Noto Color Emoji" !default;
 
 // Monospace font-stack: required by 3.base/_base.reset
-$font-family--monospace:
-  SFMono-Regular,
-  Menlo,
-  Monaco,
+$font-family--monospace: "SFMono-Regular",
+  "Menlo",
+  "Monaco",
   "Segoe UI Mono",
-  Consolas,
+  "Consolas",
   "Liberation Mono",
   "Courier New",
   monospace !default;
 
+
+/**
+ * Font-stacks by functions
+ */
+
 $primary-font-family         : $font-family--system !default;
+$heading-font-family         : $primary-font-family !default;
 
 
 /**
@@ -48,30 +52,6 @@ $primary-font-family         : $font-family--system !default;
  */
 
 $global-line-height         : 1.2 !default;
-
-
-/**
-* Font size settings
-*
-* We use Modularscale Tool for calculated font sizes.
-* @see https://www.modularscale.com/?12,14,16&px&1.5 for selected Modular
-* Scale table
-*/
-
-$type-12                    : ms(0) !default;
-$type-14                    : ms(1) !default;
-$type-16                    : ms(2) !default;
-$type-18                    : ms(3) !default;
-$type-21                    : ms(4) !default;
-$type-24                    : ms(5) !default;
-$type-27                    : ms(6) !default;
-$type-31                    : ms(7) !default;
-$type-36                    : ms(8) !default;
-$type-40                    : ms(9) !default;
-$type-48                    : ms(10) !default;
-$type-54                    : ms(11) !default;
-$type-60                    : ms(12) !default;
-$type-71                    : ms(13) !default;
 
 
 /**
@@ -87,72 +67,84 @@ $type-71                    : ms(13) !default;
  */
 
 // Body (global) Font-size
+// We use this to set the global font size and line-height
+// for the `<body>` element in `3.base/_3.base.type`.
 $global-font-size: (
   null: (
-    $type-14,
+    1.4rem,
     1.6
   ),
   medium: (
-    $type-16
+    1.6rem
   )
 ) !default;
 
-// Heading Font Sizes
+
+/**
+ * Heading Font Sizes
+ */
+
+// H1 Font size
 $heading1-font-size: (
   null: (
-    $type-40
+    4rem
   ),
   medium: (
-    $type-60
+    6rem
   )
 ) !default;
 
+// H2 Font size
 $heading2-font-size: (
   null: (
-    $type-27
+    2.7rem
   ),
   medium: (
-    $type-54
+    5.4rem
   )
 ) !default;
 
+// H3 Font size
 $heading3-font-size: (
   null: (
-    $type-24
+    2.4rem
   ),
   medium: (
-    $type-36
+    3.6rem
   )
 ) !default;
 
+// H4 Font size
 $heading4-font-size: (
   null: (
-    $type-21
+    2.1rem
   ),
   medium: (
-    $type-27
+    2.7rem
   )
 ) !default;
 
+// H5 Font size
 $heading5-font-size: (
   null: (
-    $type-18
+    1.8rem
   ),
   medium: (
-    $type-24
+    2.4rem
   )
 ) !default;
 
-$heading6-font-size: $type-12 !default;
+// H6 Font size
+$heading6-font-size: 1.2rem !default;
 
 // Paragraph Font Size
 $paragraph-font-size: (
   null: (
-    $type-14,
+    1.4rem,
     1.71
   ),
   medium: (
-    $type-16,
+    1.6rem,
     2.25
   )
 ) !default;
@@ -160,29 +152,34 @@ $paragraph-font-size: (
 // Code Font-size
 $code-font-size: (
   null: (
-    $type-14 2
+    1.4rem,
+    2
   ),
   medium: (
-    $type-16
+    1.6rem
   )
 ) !default;
 
 // Form Input Font-size
 $input-font-size: (
   null: (
-    $type-16 1.5
+    1.6rem,
+    1.5
   ),
   medium: (
-    $type-16 1.2
+    1.6rem,
+    1.2
   )
 ) !default;
 
 // Form Label Font-size
 $label-font-size: (
   null: (
-    $type-14 1.5
+    1.4rem,
+    1.5
   ),
   medium: (
-    $type-14 1.2
+    1.4rem,
+    1.2
   )
-);
+) !default;

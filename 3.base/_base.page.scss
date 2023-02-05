@@ -25,13 +25,14 @@ $body-background-color      : $global-background !default;
 
 html {
   overflow-x: hidden;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
-  height: 100%;
+  min-height: 100vh;
 
-  @if ($base-body-colors == true) {
-    @include colors($body-color, $body-background-color);
+  @if $base-body-colors == true {
+    color: $body-color;
+    background-color: $body-background-color;
   }
 }

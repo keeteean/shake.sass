@@ -14,10 +14,13 @@
  * @access private
  */
 
+@use "sass:list";
+
+/* stylelint-disable-next-line scss/at-mixin-pattern */
 @mixin _extract-type-sizes($sizes) {
-  @if (length($sizes) == 2) {
-    font-size: nth($sizes, 1);
-    line-height: nth($sizes, 2);
+  @if length($sizes) == 2 {
+    font-size: list.nth($sizes, 1);
+    line-height: list.nth($sizes, 2);
   }
 
   @else {

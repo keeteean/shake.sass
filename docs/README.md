@@ -13,14 +13,16 @@ Some highlighted functions:
 
 - ITCSS file structure
 - Prepaired Sass variables, ex: system font-families
-- Modularscale based responsive font-size and line-height generator
 - Modular and enhanced normalize.css
 - Prepaired document settings, ex: font-size, links
 - Media-query generator
 - Very light grid generator
 - Responsive table
 - Responsive video
-- Responsive media object
+- Responsive media object (1 fixed and 1 fluid width columns)
+
+!> **Important!** These framework doesn't support old legacy browsers, only the latest versions of the most common browsers.
+No Internet Explorer or old Safari support. If you need that, you can use some postCSS plugins, like [Preset Env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env).
 
 ## Getting Started
 
@@ -112,7 +114,7 @@ An example main sass file:
 In this case you will import only required tools and settings, then what
 you really need one-by-one.
 
-_WARNING: this is the cleanest way but may needs more manual work!_
+_WARNING: this is the cleanest way but may require more manual work!_
 
 For easier importing we provide a `_boilertemplate` directory with all
 required sass files, just copy them to you sass source directory like:

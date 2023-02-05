@@ -27,6 +27,27 @@
 
 
 /**
+ * Rounding mixin
+ *
+ * Use it, when you need to achieve the same four rounded corners.
+ *
+ * @parameter {string} $radius - The radius value for all four corners.
+ *
+ * @example
+ *  input {
+ *    @include round(.4rem);
+ *  }
+ */
+
+@mixin round($radius) {
+  border-start-start-radius: $radius;
+  border-start-end-radius: $radius;
+  border-end-end-radius: $radius;
+  border-end-start-radius: $radius;
+}
+
+
+/**
  * Circle mixin
  *
  * Use it, when you need similar width and height width circle shape.
@@ -40,55 +61,8 @@
 @mixin circle($value) {
   width: $value;
   height: $value;
-  border-radius: calc(#{$value} / 2);
-}
-
-
-/**
- * Margin mixin
- *
- * Use it, when you need similar margin only vertically or horizontally.
- *
- * @parameter {string} $direction - Use x for horizontally and y for vertically.
- * @parameter {string} $value - Amount of desired margin in any unit.
- *
- * @example
- *   @include margin(x, 1.5rem);
- */
-
-@mixin margin($direction, $value) {
-  @if ($direction == "x") {
-    margin-right: $value;
-    margin-left: $value;
-  }
-
-  @if ($direction == "y") {
-    margin-top: $value;
-    margin-bottom: $value;
-  }
-}
-
-
-/**
- * Padding mixin
- *
- * Use it, when you need similar padding only vertically or horizontally.
- *
- * @parameter {string} $direction - Use x for horizontally and y for vertically.
- * @parameter {string} $value - Amount of desired padding in any unit.
- *
- * @example
- *   @include padding(x, 1.5rem);
- */
-
-@mixin padding($direction, $value) {
-  @if ($direction == "x") {
-    padding-right: $value;
-    padding-left: $value;
-  }
-
-  @if ($direction == "y") {
-    padding-top: $value;
-    padding-bottom: $value;
-  }
+  border-start-start-radius: $value * .5;
+  border-start-end-radius: $value * .5;
+  border-end-end-radius: $value * .5;
+  border-end-start-radius: $value * .5;
 }

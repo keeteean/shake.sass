@@ -16,6 +16,11 @@
  * the essential ones. Then you can extend (not @extend) that more properties
  * as you need, like: `flex-direction`, `justify-content` or vertical spacing.
  *
+ * **IMPORTANT!** Don't use grid mixins alone only together, or it will cause
+ * wrong paddings and even broke your layout! So please don't use just
+ * `make-grid` or `make-column` alone only both together. In case of you don't
+ * need the exact column withs (e.x. `25%`), just write custom flexbox rules.
+ *
  * Let's see a semantic example for a typical responsive entry lister:
  *
  * @example
@@ -107,7 +112,7 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  *     @include make-grid($tools-grid-gutter-extra);
  *   }
  *
- * Grid with simple, non responsive gutters
+ * Grid with simple, non-responsive gutters
  *
  * @example
  *   .entry__list {

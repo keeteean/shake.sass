@@ -21,12 +21,12 @@
  */
 
 $global-breakpoints: (
-  small  : "screen and (min-width: 30em)", // 480px
-  medium : "screen and (min-width: 48em)", // 768px
-  large  : "screen and (min-width: 64em)", // 1024px
-  xlarge : "screen and (min-width: 75em)", // 1200px
+  small  : "screen and (min-width: 30em)",  // 480px
+  medium : "screen and (min-width: 48em)",  // 768px
+  large  : "screen and (min-width: 64em)",  // 1024px
+  xlarge : "screen and (min-width: 75em)",  // 1200px
   xxlarge: "screen and (min-width: 87.5em)" // 1400px
-);
+) !default;
 
 
 /**
@@ -39,7 +39,7 @@ $global-breakpoints: (
  * @type String
  */
 
-$global-breakpoint-separator: \@;
+$global-breakpoint-separator: \@ !default;
 
 
 /**

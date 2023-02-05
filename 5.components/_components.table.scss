@@ -67,12 +67,14 @@ $components-responsive-table-content-width    : 67% !default;
  * 6. Hide the labels in each cell.
  */
 
-@if ($components-responsive-table == true) {
+@if $components-responsive-table == true {
   .c-table {
     max-width: 100%;
+    padding-block: 0;
+    padding-inline: 0;
     empty-cells: show;
-    border: 0;
-    padding: 0;
+    border-block: 0;
+    border-inline: 0;
 
     * {
       box-sizing: border-box;
@@ -85,22 +87,11 @@ $components-responsive-table-content-width    : 67% !default;
       }
     }
 
-    tbody {
-      tr {
-        display: block;
-        width: 100%;
-
-        @include breakpoint(medium) {
-          display: table-row;
-        }
-      }
-    }
-
     // Theming table cells.
     td,
     th {
-      text-align: left;
       display: block; // 1.
+      text-align: start;
 
       @include breakpoint(medium) {
         display: table-cell; // 5.
@@ -108,8 +99,9 @@ $components-responsive-table-content-width    : 67% !default;
 
       .c-table__cell-label {
         display: inline-block;
-        padding: $components-responsive-table-label-padding;
         width: $components-responsive-table-label-width; // 2.
+        padding-block: $components-responsive-table-label-padding;
+        padding-inline: $components-responsive-table-label-padding;
         vertical-align: top;
 
         @include breakpoint(medium) {
@@ -119,8 +111,10 @@ $components-responsive-table-content-width    : 67% !default;
 
       .c-table__cell-label--top {
         display: block; // 3.
-        padding: .4em 0; // 3.
-        margin: .4em 0; // 3.
+        margin-block: .4em; // 3.
+        margin-inline: 0; // 3.
+        padding-block: .4em; // 3.
+        padding-inline: 0; // 3.
       }
 
       .c-table__cell-content {
@@ -146,6 +140,15 @@ $components-responsive-table-content-width    : 67% !default;
     }
 
     tbody {
+      tr {
+        display: block;
+        width: 100%;
+
+        @include breakpoint(medium) {
+          display: table-row;
+        }
+      }
+
       th,
       td {
         width: 100%;
@@ -169,7 +172,7 @@ $components-responsive-table-content-width    : 67% !default;
   // Theming table head
   th.c-table__group {
     tbody & {
-      margin-top: -1px; // 4.
+      margin-block-start: -.1rem; // 4.
     }
 
     .c-table__cell-label {

@@ -24,7 +24,9 @@
  * @access private
  */
 
-@use "sass:math";
+@use "sass:map";
+
+/* stylelint-disable-next-line scss/at-mixin-pattern */
 @mixin _generate-unit($property, $suffix, $units, $half: null) {
   $suffix: if($suffix, #{"-" + $suffix}, "");
 
@@ -51,11 +53,11 @@
 
     @if _map-contains-null($units) {
       @if $half == half {
-        #{$property + $suffix}: map-get($units, null) * .5;
+        #{$property + $suffix}: map.get($units, null) * .5;
       }
 
       @else {
-        #{$property + $suffix}: map-get($units, null);
+        #{$property + $suffix}: map.get($units, null);
       }
     }
   }

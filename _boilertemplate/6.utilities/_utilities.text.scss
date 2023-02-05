@@ -20,12 +20,12 @@
  *
  * Class list
  * @example
- *   .u-text--left
- *   .u-text--right
+ *   .u-text--start
+ *   .u-text--end
  *   .u-text--center
  *   .u-text--justify
- *   .u-text--justify-left
- *   .u-text--justify-right
+ *   .u-text--justify-start
+ *   .u-text--justify-end
  *   .u-text--justify-center
  *
  * Enable responsive text utilities
@@ -38,7 +38,7 @@
  * @example
  *   $utilities-text-responsive   : true;
  *
- *   <h1 class="u-text--center u-text--right@small">
+ *   <h1 class="u-text--center u-text--end@small">
  *     Heading will be aligned center on mobile and right on tablets and up.
  *   </h1>
  */

@@ -18,6 +18,6 @@
  */
 
 @mixin colors($color, $bgcolor) {
-  background-color: $bgcolor;
   color: $color;
+  background-color: $bgcolor;
 }

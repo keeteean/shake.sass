@@ -16,6 +16,11 @@
  * the essential ones. Then you can extend (not @extend) that more properties
  * as you need, like: `flex-direction`, `justify-content` or vertical spacing.
  *
+ * **IMPORTANT!** Don't use grid mixins alone only together, or it will cause
+ * wrong paddings and even broke your layout! So please don't use just
+ * `make-grid` or `make-column` alone only both together. In case of you don't
+ * need the exact column withs (e.x. `25%`), just write custom flexbox rules.
+ *
  * Let's see a semantic example for a typical responsive entry lister:
  *
  * @example
@@ -37,20 +42,20 @@
  *   .entry {
  *     @include make-column();
  *     @include breakpoint(medium) {
- *       @include column-size(6/12);
+ *       @include column-size(6,12);
  *     }
 
  *     @include breakpoint(large) {
- *       @include column-size(4/12);
+ *       @include column-size(4,12);
  *     }
 
  *     &--double {
  *       @include breakpoint(medium) {
- *         @include column-size(6/12);
+ *         @include column-size(6,12);
  *       }
 
  *       @include breakpoint(large) {
- *         @include column-size(8/12);
+ *         @include column-size(8,12);
  *       }
  *     }
  *   }
@@ -112,7 +117,7 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  *     @include make-grid($tools-grid-gutter-extra);
  *   }
  *
- * Grid with simple, non responsive gutters
+ * Grid with simple, non-responsive gutters
  *
  * @example
  *   .entry__list {
@@ -128,13 +133,12 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  */
 
 @mixin make-grid($gutter: $tools-grid-gutter-default) {
-  @include _generate-unit("margin", "left", _negative-unit($gutter), half);
-  @include _generate-unit("margin", "right", _negative-unit($gutter), half);
+  @include _generate-unit("margin", "inline", _negative-unit($gutter), half);
 
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
   box-sizing: border-box;
+  list-style: none;
 }
 
 
@@ -192,15 +196,13 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  */
 
 @mixin make-column($gutter: $tools-grid-gutter-default) {
-  @include _generate-unit("padding", "left", $gutter, half);
-  @include _generate-unit("padding", "right", $gutter, half);
+  @include _generate-unit("padding", "inline", $gutter, half);
 
-  box-sizing: inherit;
   flex-basis: auto;
+  box-sizing: inherit;
   width: 100%;
   min-width: 0;
 }
-
 
 /**
  * Set Column size
@@ -226,8 +228,8 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  */
 
 @mixin column-size($column, $all-columns) {
-  flex: 0 0 percentage(math.div($column, $all-columns));
-  max-width: percentage(math.div($column, $all-columns));
+  flex: 0 0 math.percentage(math.div($column, $all-columns));
+  max-width: math.percentage(math.div($column, $all-columns));
 }
 
 
@@ -275,11 +277,11 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  */
 
 @mixin column-offset($column, $all-columns, $position: start) {
-  @if ($position == start) {
-    margin-left: percentage(math.div($column, $all-columns));
+  @if $position == start {
+    margin-inline-start: math.percentage(math.div($column, $all-columns));
   }
 
-  @else if($position == end) {
-    margin-right: percentage(math.div($column, $all-columns));
+  @else if $position == end {
+    margin-inline-end: math.percentage(math.div($column, $all-columns));
   }
 }

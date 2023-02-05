@@ -1,0 +1,105 @@
+/**
+ ******************************************************************************
+ *** LINK TOOL ***
+ ******************************************************************************
+ *
+ * Easily theming anchor elements.
+ *
+ * @parameter {string} $color - Text color of the link.
+ * @parameter {string} $type - The type of the color.
+ *   - Choose `light` if the `$color` is light, and you want it become darker on `:hover`/`:active` state.
+ *   - Choose `dark` if the `$color` is dark, and you want it become lighter on `:hover`/`:active` state.
+ * @parameter {string} $visited - Optionally you can use the same effect for `:visited` state as `:hover`,
+ * `:focus` and `:active` if you use here the `visited` string; default: `none`.
+ * @parameter {string} $text-decoration - Optional text-decoration for `:link` and `:visited` states;
+ * default: `none`.*
+ * @parameter {string} $outline - Optional outline for `:focus` state; default: `initial`.*
+ *
+ * * If you want to change the default value for these optional parameters, you need to explicit write
+ * the default value for the previous optional parameters too.
+ *
+ *
+ * @example
+ * Given a color, use darken effect, use the same `:visited` color as `:link`, use different color
+ * for other states, no `text-decoration`, no `:focus` style:
+ *
+ * a {
+ *    @include link($color-link);
+ * }
+ *
+ *
+ * Given a color, use lighten effect, use the same `:visited` color as for other states, use
+ * `text-decoration: underlined`, no `:focus` style:
+ *
+ * a {
+ *   @include link($color-link, dark, visited, underlined);
+ * }
+ *
+ *
+ * Given a color, use darken effect, use the same `:visited` color as for other states, no
+ * `text-decoration`, given a `:focus` style:
+ *
+ * a {
+ *   @include link($color-link, light, none, none, .8rem solid $color-outline);
+ * }
+ */
+
+
+@use "sass:color";
+
+
+@mixin link(
+  $color,
+  $type: light,
+  $visited: none,
+  $text-decoration: none,
+  $outline: initial,
+) {
+  @include global-transition;
+
+  color: $color;
+
+  @if $outline != initial {
+    &:focus {
+      outline: $outline;
+    }
+  }
+
+  @if $visited == visited {
+    &:focus,
+    &:hover,
+    &:visited,
+    &:active {
+      @if $type == light {
+        color: color.adjust($color, $lightness: -15%);
+      }
+
+      @if $type == dark {
+        color: color.adjust($color, $lightness: 15%);
+      }
+    }
+  }
+
+  @else {
+    &:visited {
+      color: $color;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      @if $type == light {
+        color: color.adjust($color, $lightness: -15%);
+      }
+
+      @if $type == dark {
+        color: color.adjust($color, $lightness: 15%);
+      }
+    }
+  }
+
+  &:link,
+  &:visited {
+    text-decoration: $text-decoration;
+  }
+}

@@ -152,7 +152,6 @@ $objects-container-size-extra     : $global-container-size-extra;
   .#{$objects-container-class-mod + quote($size-name)} {
     @include _container-size($size-value);
 
-    margin-right: auto;
-    margin-left: auto;
+    margin-inline: auto;
   }
 }

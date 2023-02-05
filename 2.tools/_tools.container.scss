@@ -51,16 +51,16 @@ $tools-container-size-default     : $global-container-size-default;
 /**
  * Container padding
  *
- * It's calculate the required responsive paddings.
+ * It's calculate the required responsive padding.
  *
  * @type Mixin
  * @parameter {number | map} $size - Padding values.
  * @access private
  */
 
+/* stylelint-disable-next-line scss/at-mixin-pattern */
 @mixin _container-padding($size) {
-  @include _generate-unit("padding", "right", $size);
-  @include _generate-unit("padding", "left", $size);
+  @include _generate-unit("padding", "inline", $size);
 }
 
 
@@ -74,6 +74,7 @@ $tools-container-size-default     : $global-container-size-default;
  * @access private
  */
 
+/* stylelint-disable-next-line scss/at-mixin-pattern */
 @mixin _container-size($size) {
   @include _generate-unit("max", "width", $size);
 }
@@ -103,7 +104,7 @@ $tools-container-size-default     : $global-container-size-default;
  *
  * Custom container
  *
- * You can define custom paddings and sizes (widths) but you can use the
+ * You can define custom padding and sizes (widths) but you can use the
  * default `$tools-container-gutter-default` and
  * `$tools-container-size-default` ones too.
  *
@@ -132,6 +133,5 @@ $tools-container-size-default     : $global-container-size-default;
   @include _container-size($size);
 
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline: auto;
 }

@@ -35,7 +35,7 @@
  */
 
 @mixin text-align($align, $last: null) {
-  @if ($last != null) {
+  @if $last {
     text-align: $align !important; // for Edge
     text-align-last: $last !important;
     hyphens: auto;
@@ -91,10 +91,9 @@
 
 @mixin text-clip {
   overflow: hidden;
-  text-overflow: clip;
   white-space: nowrap;
+  text-overflow: clip;
 }
-
 
 /**
  * Text Break
@@ -113,7 +112,7 @@
  */
 
 @mixin text-break {
-  hyphens: auto;
-  word-break: break-word;
   word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }

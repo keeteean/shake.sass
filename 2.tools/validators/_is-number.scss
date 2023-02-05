@@ -13,6 +13,7 @@
  * @access private
  */
 
+/* stylelint-disable-next-line scss/at-function-pattern */
 @function _is-number($number) {
   @return type-of($number) == "number";
 }
