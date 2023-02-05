@@ -25,16 +25,21 @@
     "sass",
     "shake.sass",
     "utility"
-  ],"scripts": {
-  "build": "sass  --no-source-map styles.scss:styles.css",
-  "start": "sass  --no-source-map --watch styles.scss:styles.css"
-},
+  ],
+  "scripts": {
+    "build": "sass  --no-source-map styles.scss:styles.css",
+    "start": "sass  --no-source-map --watch styles.scss:styles.css"
+  },
   "devDependencies": {
     "sass": "^1.57.1",
-    "stylelint": "^13.11.0",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.19.0"
+    "stylelint": "^14.9.0",
+    "stylelint-config-property-sort-order-smacss": "^9.0.0",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-standard-scss": "^4.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.2.0",
+    "stylelint-use-logical": "^2.0.0",
+    "yarn": "^1.22.19"
   },
   "dependencies": {
     "docsify-cli": "^4.4.4"
