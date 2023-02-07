@@ -8,36 +8,87 @@
     "stylelint-use-logical"
   ],
   "rules": {
-    "csstools/use-logical": [
+    "alpha-value-notation": "number",
+    "at-rule-empty-line-before": [
       "always",
       {
         "except": [
-          "float"
+          "first-nested",
+          "blockless-after-same-name-blockless"
+        ],
+        "ignore": [
+          "after-comment",
+          "inside-block",
+          "blockless-after-blockless"
         ]
       }
     ],
-    "alpha-value-notation": "number",
-    "color-function-notation": "legacy",
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "each",
+          "else",
+          "extend",
+          "for",
+          "function",
+          "if",
+          "include",
+          "mixin",
+          "return",
+          "use",
+          "warn",
+          "while"
+        ]
+      }
+    ],
+    "color-function-notation": "modern",
     "comment-empty-line-before": null,
     "custom-property-pattern": "^[a-z][-_a-z0-9IE]*$",
     "declaration-block-no-redundant-longhand-properties": null,
+    "declaration-property-value-disallowed-list": {
+      "/^border/": [
+        "none"
+      ]
+    },
     "function-linear-gradient-no-nonstandard-direction": null,
     "function-url-quotes": null,
     "function-whitespace-after": null,
     "hue-degree-notation": "number",
     "import-notation": "string",
+    "max-empty-lines": 2,
+    "max-line-length": [
+      120,
+      {
+        "ignorePattern": [
+          "/^@import\\s+/",
+          "/font-family/"
+        ]
+      }
+    ],
+    "max-nesting-depth": [
+      3,
+      {
+        "ignoreAtRules": [
+          "for",
+          "include",
+          "media"
+        ]
+      }
+    ],
     "media-feature-name-no-unknown": [
       true,
       {
         "ignoreMediaFeatureNames": [
           "prefers-reduced-motion",
-          "min--moz-device-pixel-ratio"
+          "/device-pixel-ratio$/"
         ]
       }
     ],
-    "media-feature-name-no-vendor-prefix": null,
     "number-max-precision": 5,
     "number-leading-zero": "never",
+    "selector-class-pattern": "^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+    "selector-max-id": 0,
     "string-quotes": "double",
     "unit-allowed-list": [
       "ch",
@@ -63,73 +114,14 @@
         ]
       }
     ],
-    "selector-class-pattern": "^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
-    "selector-max-id": 0,
-    "at-rule-no-unknown": [
-      true,
-      {
-        "ignoreAtRules": [
-          "each",
-          "else",
-          "extend",
-          "for",
-          "function",
-          "if",
-          "include",
-          "mixin",
-          "return",
-          "use",
-          "warn",
-          "while"
-        ]
-      }
-    ],
-    "at-rule-empty-line-before": [
+    "csstools/use-logical": [
       "always",
       {
         "except": [
-          "first-nested",
-          "blockless-after-same-name-blockless"
-        ],
-        "ignore": [
-          "after-comment",
-          "inside-block",
-          "blockless-after-blockless"
+          "float"
         ]
       }
     ],
-    "declaration-property-value-disallowed-list": {
-      "/^border/": [
-        "none"
-      ]
-    },
-    "max-empty-lines": 4,
-    "max-line-length": [
-      120,
-      {
-        "ignorePattern": "/^@import\\s+/"
-      }
-    ],
-    "max-nesting-depth": [
-      3,
-      {
-        "ignoreAtRules": [
-          "for",
-          "include",
-          "media"
-        ]
-      }
-    ],
-    "scss/dollar-variable-colon-space-before": null,
-    "scss/dollar-variable-pattern": "^_?[a-z]+[\\w-]*$",
-    "scss/at-extend-no-missing-placeholder": true,
-    "scss/at-import-partial-extension": null,
-    "scss/at-else-empty-line-before": null,
-    "scss/at-if-closing-brace-newline-after": null,
-    "scss/at-if-closing-brace-space-after": null,
-    "scss/at-else-closing-brace-space-after": null,
-    "scss/at-else-closing-brace-newline-after": null,
-    "scss/at-mixin-pattern": "^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
     "order/order": [
       "custom-properties",
       "dollar-variables",
@@ -595,6 +587,16 @@
       "font-emphasize-style",
       "font-smooth",
       "line-height"
-    ]
+    ],
+    "scss/at-else-closing-brace-newline-after": null,
+    "scss/at-else-closing-brace-space-after": null,
+    "scss/at-else-empty-line-before": null,
+    "scss/at-extend-no-missing-placeholder": true,
+    "scss/at-if-closing-brace-newline-after": null,
+    "scss/at-if-closing-brace-space-after": null,
+    "scss/at-import-partial-extension": null,
+    "scss/at-mixin-pattern": "^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+    "scss/dollar-variable-colon-space-before": null,
+    "scss/dollar-variable-pattern": "^_?[a-z]+[\\w-]*$"
   }
 }
