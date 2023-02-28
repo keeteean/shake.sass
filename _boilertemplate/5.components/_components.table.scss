@@ -8,8 +8,24 @@
 
 
 /**
+ * Imports
+ */
+@use "../tools" as *;
+
+
+/**
  ** Settings **
  */
+
+/**
+ * Responsive Table
+ */
+
+$_responsive-table                  : true !default;
+$_responsive-table-label-padding    : 0 .6em 0 0 !default;
+$_responsive-table-label-width      : 30% !default;
+$_responsive-table-content-width    : 67% !default;
+
 
 /**
  * Responsive Table Component
@@ -47,14 +63,9 @@
  *   </table>
  */
 
-$components-responsive-table                  : true;
-$components-responsive-table-label-padding    : 0 .6em 0 0;
-$components-responsive-table-label-width      : 30%;
-$components-responsive-table-content-width    : 67%;
-
 
 /**
  * Import Table Component from Shake.sass.
  */
 
-@import "node_modules/shake.sass/5.components/components.table";
+@use "node_modules/shake.sass/5.components/components.table" as table;

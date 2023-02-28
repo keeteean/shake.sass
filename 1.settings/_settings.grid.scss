@@ -24,7 +24,7 @@ $gutter--medium: 3rem !default;
  * @type Number | List | Map
  */
 
-$global-gutter-default: (
+$gutter-default: (
   null         : $gutter--small,
   medium       : $gutter--medium
 ) !default;
@@ -50,4 +50,4 @@ $global-gutter-default: (
  *   );
  */
 
-$global-grid-gutter-extra: () !default;
+$grid-gutter-extra: () !default;

@@ -6,6 +6,14 @@
  * Theming the main layout element: Page Component.
  */
 
+
+/**
+ * Imports
+ */
+@use "../settings";
+@use "../tools";
+
+
 .c-page {
   position: relative;
   display: flex;

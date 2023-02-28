@@ -36,6 +36,12 @@
  */
 
 
+/**
+ * Imports
+ */
+
+@use "../2.tools/_tools.stretched-link" as *;
+
 .u-stretched-link {
   @include stretched-link;
 }

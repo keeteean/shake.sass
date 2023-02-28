@@ -8,6 +8,14 @@
 
 
 /**
+ * Imports
+ */
+
+@use "libraries";
+@use "../settings";
+
+
+/**
  * Responsive Type Tool
  *
  * Type tool contains a mixin that helps you create smart, flexible and
@@ -25,7 +33,7 @@
  * Use it wherever you need it.
  *
  * @example
- *  @include type($sizes, $breakpoints: $global-breakpoints);
+ *  @include type($sizes, $breakpoints: settings.$breakpoints);
  *
  *
  * Type mixin accepts two parameters:
@@ -35,7 +43,7 @@
  *
  * @parameter {map} $breakpoints
  *   A Sass map that contains all the breakpoints.
- *   Default value is $global-breakpoints.
+ *   Default value is settings.$breakpoints.
  *
  *
  * Examples
@@ -109,4 +117,4 @@
  * Import Type Tool from Shake.sass.
  */
 
-@import "node_modules/shake.sass/2.tools/tools.type";
+@forward "node_modules/shake.sass/2.tools/tools.type";

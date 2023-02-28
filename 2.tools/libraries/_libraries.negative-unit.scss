@@ -13,12 +13,16 @@
  * @access private
  */
 
+
+/**
+ * Imports
+ */
+
 @use "sass:map";
+@use "../validators";
 
-/* stylelint-disable-next-line scss/at-function-pattern */
-@function _negative-unit($values) {
-
-  @if _is-map($values) {
+@function negative-unit($values) {
+  @if validators.is-map($values) {
     @each $key, $value in $values {
       $values: map.merge($values, ($key: ($value * -1)));
     }

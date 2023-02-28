@@ -55,6 +55,13 @@
 
 
 /**
+ * Imports
+ */
+
+@use "../settings";
+
+
+/**
  * Settings
  *
  * If you want to use from Sass only, all settings found in Grid Tool:
@@ -65,8 +72,8 @@
  * Namespace settings
  */
 
-$objects-grid-class          : "o-grid";
-$objects-grid-class-mod      : $objects-grid-class + "--";
+$_grid-class          : "o-grid";
+$_grid-class-mod      : $_grid-class + "--";
 
 
 /**
@@ -81,13 +88,13 @@ $objects-grid-class-mod      : $objects-grid-class + "--";
  * Each gutter size will be available as a BEM modifier that will be named
  * according to the gutter name.
  *
- * Example if `$objects-grid-gutter-extra: (large: 30px);`
+ * Example if `$_grid-gutter-extra: (large: 30px);`
  * then `.o-grid--large` will be available for use.
  *
  * @type Map
  *
  * @example
- *   $objects-grid-gutter-extra: (
+ *   $_grid-gutter-extra: (
  *     large: (
  *       null : 2rem,
  *       small: 4rem
@@ -105,11 +112,11 @@ $objects-grid-class-mod      : $objects-grid-class + "--";
  *   </div>
  */
 
-$objects-grid-gutter-extra    : () !default;
+$_grid-gutter-extra    : settings.$grid-gutter-extra !default;
 
 
 /**
  * Import Grid Object from Shake.sass.
  */
 
-@import "node_modules/shake.sass/4.objects/objects.grid";
+@use "node_modules/shake.sass/4.objects/objects.grid" as grid;

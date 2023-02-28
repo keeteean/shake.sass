@@ -3,8 +3,10 @@
 Setting files contain **global** configurations that are shared by more than
 one module.
 
-Settings that are connected to one and only module are a part of the module
-itself.
+Those settings that are connected to only a specific module they are must
+be a part of that module itself.
 
-Local configurations should be contained into the modules (objects,
-components, etc.) that are related to.
+Local configurations should be contained by the related modules (objects,
+components, etc.) where they are related to.
+
+It’s important not to output any CSS in the first 2 layers.

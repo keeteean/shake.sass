@@ -23,6 +23,13 @@
 
 
 /**
+ * Imports
+ */
+
+@use "../settings";
+
+
+/**
  *** Settings ***
  */
 
@@ -36,7 +43,7 @@
  * @type Boolean
  */
 
-$base-heading-size: true;
+$_heading-size: true;
 
 
 /**
@@ -49,7 +56,7 @@ $base-heading-size: true;
  * @type Boolean
  */
 
-$base-small-size: true;
+$_small-size: true;
 
 
 /**
@@ -61,7 +68,7 @@ $base-small-size: true;
  * @type Boolean
  */
 
-$base-font-antialiasing: false;
+$_font-antialiasing: false;
 
 
 /**
@@ -74,14 +81,14 @@ $base-font-antialiasing: false;
  * @type Boolean
  */
 
-$base-no-list-bullets: false;
+$_no-list-bullets: false;
 
 
 /**
  * Table normalizer
  */
 
-$base-table-normalize: true;
+$_table-normalize: true;
 
 
 /**
@@ -92,7 +99,7 @@ $base-table-normalize: true;
  * @type Boolean
  */
 
-$base-form-elements: true;
+$_form-elements: true;
 
 
 /**
@@ -103,11 +110,11 @@ $base-form-elements: true;
  * @type Boolean
  */
 
-$base-html5-form-elements: true;
+$_html5-form-elements: true;
 
 
 /**
  * Import Base reset from Shake.sass.
  */
 
-@import "node_modules/shake.sass/3.base/base.reset";
+@use "node_modules/shake.sass/3.base/base.reset" as reset;

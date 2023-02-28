@@ -24,17 +24,23 @@
  * @access private
  */
 
-@use "sass:map";
 
-/* stylelint-disable-next-line scss/at-mixin-pattern */
-@mixin _generate-unit($property, $suffix, $units, $half: null) {
+/**
+ * Imports
+ */
+
+@use "sass:map";
+@use "../validators";
+@use "../tools.breakpoint" as *;
+
+@mixin generate-unit($property, $suffix, $units, $half: null) {
   $suffix: if($suffix, #{"-" + $suffix}, "");
 
-  @if _is-number($units) {
+  @if validators.is-number($units) {
     #{$property + $suffix}: $units;
   }
 
-  @if _is-map($units) {
+  @if validators.is-map($units) {
     @each $breakpoint-name, $size in $units {
       @if $breakpoint-name {
         @if $half == half {
@@ -51,7 +57,7 @@
       }
     }
 
-    @if _map-contains-null($units) {
+    @if validators.map-contains-null($units) {
       @if $half == half {
         #{$property + $suffix}: map.get($units, null) * .5;
       }

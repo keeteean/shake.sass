@@ -16,6 +16,13 @@
 
 
 /**
+ * Imports
+ */
+
+@use "validators";
+
+
+/**
  * Make Triangle mixin
  *
  * @parameter {string} $direction
@@ -37,4 +44,4 @@
  * Import Css Triangle Tool from Shake.sass.
  */
 
-@import "node_modules/shake.sass/2.tools/tools.triangle";
+@forward "node_modules/shake.sass/2.tools/tools.triangle";

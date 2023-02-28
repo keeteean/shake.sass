@@ -61,19 +61,26 @@
  *   }
  */
 
+
+/**
+ * Imports
+ */
+
 @use "sass:math";
+@use "libraries";
+@use "../settings";
 
 
 /**
  * Settings
  *
  * We use the default global gutters for gaps between columns. But you can
- * define additional gutters. There is an empty `$tools-grid-gutter-extra`
+ * define additional gutters. There is an empty `$_grid-gutter-extra`
  * Sass map for that, but if you need, you can create more.
  */
 
-$tools-grid-gutter-default     : $global-gutter-default;
-$tools-grid-gutter-extra       : $global-grid-gutter-extra;
+$_grid-gutter-default     : settings.$gutter-default;
+$_grid-gutter-extra       : settings.$grid-gutter-extra;
 
 
 /**
@@ -88,8 +95,8 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  * @type Mixin
  * @parameter {map | number} $gutter - The gutter size between columns: with
  * the last `half` parameter this value will be divide by 2!
- * @require {mixin} _generate-unit <2.tools/libraries/generate-unit>
- * @require {mixin} _negative-unit <2.tools/libraries/negative-unit>
+ * @require {mixin} libraries.generate-unit <2.tools/libraries/generate-unit>
+ * @require {mixin} libraries.negative-unit <2.tools/libraries/negative-unit>
  *
  *
  * Examples
@@ -107,14 +114,14 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  * Grid with custom responsive gutters
  *
  * @example
- *   $tools-grid-gutter-extra: (
+ *   $_grid-gutter-extra: (
  *       null    : .6rem,
  *       medium  : 1.2rem,
  *       large   : 2.4rem
  *   );
  *
  *   .entry__list {
- *     @include make-grid($tools-grid-gutter-extra);
+ *     @include make-grid($_grid-gutter-extra);
  *   }
  *
  * Grid with simple, non-responsive gutters
@@ -132,8 +139,13 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  *   }
  */
 
-@mixin make-grid($gutter: $tools-grid-gutter-default) {
-  @include _generate-unit("margin", "inline", _negative-unit($gutter), half);
+@mixin make-grid($gutter: $_grid-gutter-default) {
+  @include libraries.generate-unit(
+    "margin",
+    "inline",
+    libraries.negative-unit($gutter),
+    half
+  );
 
   display: flex;
   flex-wrap: wrap;
@@ -155,12 +167,15 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  * @type Mixin
  * @parameter {map | number} $gutter - The gutter size between columns: with
  * the last `half` parameter this value will be divide by 2!
- * @require {mixin} _generate-unit <2.tools/libraries/generate-unit>
+ * @require {mixin} libraries.generate-unit <2.tools/libraries/generate-unit>
  *
  *
  * Examples
  *
  * Columns with default gutter
+ *
+ * The default gutter comes from `1.settings/_settings.grid.scss` and here
+ * we divide that by 2 for two sides.
  *
  * @example
  *   .entry {
@@ -170,14 +185,14 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  * Columns with custom responsive gutters
  *
  * @example
- *   $tools-grid-gutter-extra: (
+ *   $_grid-gutter-extra: (
  *       null    : .6rem,
  *       medium  : 1.2rem,
  *       large   : 2.4rem
  *   );
  *
  *   .entry {
- *     @include make-column($tools-grid-gutter-extra);
+ *     @include make-column($_grid-gutter-extra);
  *   }
  *
  * Columns with simple, non responsive gutters
@@ -195,8 +210,8 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  *   }
  */
 
-@mixin make-column($gutter: $tools-grid-gutter-default) {
-  @include _generate-unit("padding", "inline", $gutter, half);
+@mixin make-column($gutter: $_grid-gutter-default) {
+  @include libraries.generate-unit("padding", "inline", $gutter, half);
 
   flex-basis: auto;
   box-sizing: inherit;
@@ -217,7 +232,7 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  * @type Mixin
  * @parameter {number} $column - like 4.
  * @parameter {number} $columns - like 12.
- * @require {function} _calc-column-size
+ * @require {function} calc-column-size
  *
  *
  * @example
@@ -249,7 +264,7 @@ $tools-grid-gutter-extra       : $global-grid-gutter-extra;
  * @parameter {number} $column - like 4.
  * @parameter {number} $columns - like 12.
  * @parameter {string} $position - start or end.
- * @require {function} _calc-column-size
+ * @require {function} calc-column-size
  *
  *
  * Examples

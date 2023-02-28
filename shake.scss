@@ -17,7 +17,7 @@
  * components, etc.) that are related to.
  */
 
-@import "1.settings/settings._all";
+@forward "settings";
 
 
 /**
@@ -27,7 +27,7 @@
  * It’s important not to output any CSS in the first 2 layers.
  */
 
-@import "2.tools/tools._all";
+@forward "tools";
 
 
 /**
@@ -45,10 +45,10 @@
  * This is the first layer which generates actual CSS.
  */
 
-@import "3.base/base.reset";
+@use "3.base/base.reset" as b-reset;
 
-@import "3.base/base.page";
-@import "3.base/base.type";
+@use "3.base/base.page" as b-page;
+@use "3.base/base.type" as b-type;
 
 
 /**
@@ -64,9 +64,9 @@
  * through to things.
  */
 
-@import "4.objects/objects.container";
-@import "4.objects/objects.grid";
-@import "4.objects/objects.media";
+@use "4.objects/objects.container" as o-container;
+@use "4.objects/objects.grid" as o-grid;
+@use "4.objects/objects.media" as o-media;
 
 
 /**
@@ -79,7 +79,9 @@
  * UI Kit style.
  */
 
-@import "5.components/components.table";
+@use "5.components/components.icon" as c-icon;
+@use "5.components/components.page" as c-page;
+@use "5.components/components.table" as c-table;
 
 
 /**
@@ -92,8 +94,9 @@
  * other sources.
  */
 
-@import "6.utilities/utilities.clearfix";
-@import "6.utilities/utilities.stretched-link";
-@import "6.utilities/utilities.text";
-@import "6.utilities/utilities.video";
-@import "6.utilities/utilities.visibility";
+@use "6.utilities/utilities.clearfix" as u-clearfix;
+@use "6.utilities/utilities.full-width-image" as u-full-width-image;
+@use "6.utilities/utilities.stretched-link" as u-stretched-link;
+@use "6.utilities/utilities.text" as u-text;
+@use "6.utilities/utilities.video" as u-video;
+@use "6.utilities/utilities.visibility" as u-visibility;

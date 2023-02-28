@@ -21,7 +21,7 @@
  * @see more examples in 2.tools/_tools.breakpoints.scss
  */
 
-$global-breakpoints: (
+$breakpoints: (
   small  : "screen and (min-width: 30em)",  // 480px
   medium : "screen and (min-width: 48em)",  // 768px
   large  : "screen and (min-width: 64em)",  // 1024px
@@ -35,9 +35,9 @@ $global-breakpoints: (
  *
  * Global breakpoint suffix naming setting.
  * All breakpoint specific styles have a `@breakpointName` suffix by default.
- * The \ character is used to escape the @ character.
+ * The `\` character is used to escape the `@` character.
  *
  * @type String
  */
 
-$global-breakpoint-separator: \@ !default;
+$breakpoint-separator: \@ !default;

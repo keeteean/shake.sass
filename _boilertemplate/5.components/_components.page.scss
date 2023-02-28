@@ -10,4 +10,4 @@
  * Import Page Component from Shake.sass.
  */
 
-@import "node_modules/shake.sass/5.components/components.page";
+@use "node_modules/shake.sass/5.components/components.page" as page;

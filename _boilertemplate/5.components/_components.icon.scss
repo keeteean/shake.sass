@@ -11,4 +11,4 @@
  * Import Icon Component from Shake.sass.
  */
 
-@import "node_modules/shake.sass/5.components/components.icon";
+@use "node_modules/shake.sass/5.components/components.icon" as icon;

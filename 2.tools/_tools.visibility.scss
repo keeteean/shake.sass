@@ -30,10 +30,10 @@
 @mixin visually-hidden {
   position: absolute !important;
   overflow: hidden !important;
-  clip: rect(1px 1px 1px 1px) !important; /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  width: 1px !important;
-  height: 1px !important;
+  clip: rect(.1rem .1rem .1rem .1rem) !important; /* IE6, IE7 */
+  clip: rect(.1rem, .1rem, .1rem, .1rem) !important;
+  width: .1rem !important;
+  height: .1rem !important;
 }
 
 

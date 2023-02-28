@@ -16,12 +16,12 @@
  * only.
  */
 
-$color-dark                 : #000 !default;
-$color-light                : #fff !default;
-$color-black                : #2c3e50 !default;
-$color-blue                 : #02baf2 !default;
-$color-green                : #2ecc71 !default;
-$color-purple               : #a88cd5 !default;
+$dark                 : #000 !default;
+$light                : #fff !default;
+$black                : #2c3e50 !default;
+$blue                 : #02baf2 !default;
+$green                : #2ecc71 !default;
+$purple               : #a88cd5 !default;
 
 
 /**
@@ -31,9 +31,9 @@ $color-purple               : #a88cd5 !default;
  * If possible use colors by functions only.
  */
 
-$color-brand                : $color-blue !default;
-$color-primary              : $color-brand !default;
-$color-secondary            : $color-green !default;
-$color-tertiary             : $color-purple !default;
-$global-color               : $color-black !default;
-$global-background          : $color-light !default;
+$brand                : $blue !default;
+$primary              : $brand !default;
+$secondary            : $green !default;
+$tertiary             : $purple !default;
+$text                 : $black !default;
+$background           : $light !default;

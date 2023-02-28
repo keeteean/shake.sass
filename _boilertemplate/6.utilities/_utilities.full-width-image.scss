@@ -19,4 +19,4 @@
  * Import Full Width Image from Shake.sass.
  */
 
-@import "node_modules/shake.sass/6.utilities/utilities.full-width-image";
+@use "node_modules/shake.sass/6.utilities/utilities.full-width-image" as full-width-image;

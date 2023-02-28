@@ -22,6 +22,11 @@
 */
 
 
+/**
+ * Imports
+ */
+@use "../2.tools/_tools.clearfix" as *;
+
 .u-clearfix {
   @include clearfix;
 }

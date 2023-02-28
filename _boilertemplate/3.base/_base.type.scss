@@ -8,6 +8,15 @@
 
 
 /**
+ * Imports
+ */
+
+@use "sass:color";
+@use "../settings";
+@use "../tools";
+
+
+/**
  ** Settings **
  */
 
@@ -15,24 +24,24 @@
  * Global selected text
  */
 
-$base-selected-text             : true;
-$base-selected-text-color       : white;
-$base-selected-text-background  : $color-tertiary;
+$_selected-text             : true !default;
+$_selected-text-color       : settings.$color-light !default;
+$_selected-text-background  : settings.$color-tertiary !default;
 
 
 /**
  * Paragraph margins
  */
 
-$base-paragraph-margins         : true;
-$base-paragraph-margin-size     : 1em;
+$_paragraph-margins         : true !default;
+$_paragraph-margin-size     : 1em !default;
 
 
 /**
  * Inline and Code Blocks
  */
 
-$base-code-tab-size             : 4;
+$_code-tab-size             : 2 !default;
 
 
 /**
@@ -40,16 +49,19 @@ $base-code-tab-size             : 4;
  */
 
 // :link, :visited states
-$base-link-color                : $color-primary;
+$_link-color                : settings.$color-primary !default;
 
-// :hover, :focus, :active states
-$base-link-color-accent         : darken($base-link-color, 15%);
+// link color type @see link mixin in 2.tools/_link
+$_link-type                 : light !default;
+
+// :visited state effect @see link mixin in 2.tools/_link
+$_link-visited              : visited !default;
 
 // underlined links
-$base-link-text-decoration      : none;
+$_link-text-decoration      : none !default;
 
 // outlined links in :focus state
-$base-link-outline              : none;
+$_link-outline              : none !default;
 
 
 /**
@@ -64,12 +76,11 @@ $base-link-outline              : none;
  */
 
 
-
 /**
  * Import Type element from Shake.sass.
  */
 
-@import "node_modules/shake.sass/3.base/base.type";
+@use "node_modules/shake.sass/3.base/base.type" as type;
 
 
 /**

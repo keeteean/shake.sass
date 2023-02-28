@@ -1,0 +1,13 @@
+/**
+ ******************************************************************************
+ *** INTERNAL VALIDATORS ***
+ ******************************************************************************
+ *
+ * Required Sass property validators for tools or other Sass mixins.
+ */
+
+
+@forward "node_modules/shake.sass/2.tools/validators/validators.is-color";
+@forward "node_modules/shake.sass/2.tools/validators/validators.is-map";
+@forward "node_modules/shake.sass/2.tools/validators/validators.is-number";
+@forward "node_modules/shake.sass/2.tools/validators/validators.map-contains-null";

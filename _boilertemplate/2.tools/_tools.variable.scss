@@ -23,4 +23,4 @@
  * Import CSS Custom Variable Tool from Shake.sass.
  */
 
-@import "node_modules/shake.sass/2.tools/tools.variable";
+@forward "node_modules/shake.sass/2.tools/tools.variable";

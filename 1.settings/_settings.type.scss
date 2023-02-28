@@ -51,7 +51,7 @@ $heading-font-family         : $primary-font-family !default;
  * Line-height
  */
 
-$global-line-height         : 1.2 !default;
+$line-height         : 1.2 !default;
 
 
 /**
@@ -66,10 +66,10 @@ $global-line-height         : 1.2 !default;
  * 'null' means no breakpoint (default)
  */
 
-// Body (global) Font-size
-// We use this to set the global font size and line-height
+// Body (default) Font-size
+// We use this to set the default font size and line-height
 // for the `<body>` element in `3.base/_3.base.type`.
-$global-font-size: (
+$default-font-size: (
   null: (
     1.4rem,
     1.6

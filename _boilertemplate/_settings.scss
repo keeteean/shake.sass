@@ -1,20 +1,12 @@
 /**
  ******************************************************************************
- *** SETTINGS ***
+ *** GLOBAL SETTINGS ***
  ******************************************************************************
  *
  * Setting files contain **global** configurations that are shared by more than
  * one modules.
  * Local configurations should be contained into the modules (objects,
  * components, etc.) that are related to.
- * It’s important not to output any CSS in the first 2 layers.
  */
 
-
-@import "settings.breakpoints";
-@import "settings.grid";
-@import "settings.colors";
-@import "settings.container";
-@import "settings.functions";
-@import "settings.type";
-@import "settings.theme";
+@forward "1.settings";

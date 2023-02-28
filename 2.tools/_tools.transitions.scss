@@ -7,12 +7,19 @@
 
 
 /**
+ * Imports
+ */
+
+@use "../settings";
+
+
+/**
  * Global transition
  */
-@mixin global-transition {
-  transition: $global-transition-property $global-transition-timing $global-transition-easing;
+@mixin global {
+  transition: settings.$transition-property settings.$transition-timing settings.$transition-easing;
 
-  @if $prefers-reduced-motion {
+  @if settings.$prefers-reduced-motion {
     @media screen and (prefers-reduced-motion: reduce) {
       transition: none;
     }

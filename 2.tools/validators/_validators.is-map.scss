@@ -1,9 +1,9 @@
 /**
  ******************************************************************************
- *** IS IT A NUMBER? ***
+ *** IS IT A SASS MAP? ***
  ******************************************************************************
  *
- * Check the given value's type is number or not.
+ * Check the given value's type is sass map or not.
  *
  * borrowed from iota.css
  * @author Dimitris Psaropoulos <info@harby.me>
@@ -13,7 +13,6 @@
  * @access private
  */
 
-/* stylelint-disable-next-line scss/at-function-pattern */
-@function _is-number($number) {
-  @return type-of($number) == "number";
+@function is-map($map) {
+  @return type-of($map) == "map";
 }
