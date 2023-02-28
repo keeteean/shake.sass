@@ -20,6 +20,14 @@
 
 
 /**
+ * Imports
+ */
+
+@use "libraries";
+@use "../settings";
+
+
+/**
  * Settings
  */
 
@@ -33,7 +41,7 @@
  * @type Number | List | Map
  */
 
-$tools-container-gutter-default   : $global-container-gutter-default;
+$tools-container-gutter-default   : settings.$container-gutter-default;
 
 
 /**
@@ -45,7 +53,7 @@ $tools-container-gutter-default   : $global-container-gutter-default;
  * @type String | Map
  */
 
-$tools-container-size-default     : $global-container-size-default;
+$tools-container-size-default     : settings.$container-size-default;
 
 
 /**
@@ -120,4 +128,4 @@ $tools-container-size-default     : $global-container-size-default;
  * Import Container Tool from Shake.sass.
  */
 
-@import "node_modules/shake.sass/2.tools/tools.container";
+@forward "node_modules/shake.sass/2.tools/tools.container";

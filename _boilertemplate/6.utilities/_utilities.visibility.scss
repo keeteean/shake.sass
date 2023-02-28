@@ -27,13 +27,14 @@
  *   .u-visually-hide--focusable
  *
  * Enable responsive visibility utilities
+ *
  * By enabling the responsive visibility utilities, you have access to a set of
  * utility classes which bind to breakpoints.
  * By default, they bind to the global breakpoints specified in
  * `1.settings/_settings.breakpoints`.
  *
  * @example
- *   $utilities-visibility-responsive   : true;
+ *   $_visibility-responsive   : true;
  *
  *   <h1 class="u-hide@large">
  *     Heading will be hidden on larger screens.
@@ -42,11 +43,18 @@
 
 
 /**
+ * Imports
+ */
+
+@use "../settings";
+
+
+/**
  * Settings
  */
 
-$utilities-visibility-responsive          : false;
-$utilities-visibility-breakpoints         : $global-breakpoints;
+$_visibility-responsive          : false !default;
+$_visibility-breakpoints         : settings.$breakpoints !default;
 
 
 /**
@@ -81,4 +89,4 @@ $utilities-visibility-breakpoints         : $global-breakpoints;
  * Import Visibility Utility from Shake.sass.
  */
 
-@import "node_modules/shake.sass/6.utilities/utilities.visibility";
+@use "node_modules/shake.sass/6.utilities/utilities.visibility" as visibility;

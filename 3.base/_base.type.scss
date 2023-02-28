@@ -7,7 +7,13 @@
  */
 
 
+/**
+ * Imports
+ */
+
 @use "sass:color";
+@use "../settings";
+@use "../tools";
 
 
 /**
@@ -18,24 +24,24 @@
  * Global selected text
  */
 
-$base-selected-text             : true !default;
-$base-selected-text-color       : $color-light !default;
-$base-selected-text-background  : $color-tertiary !default;
+$_selected-text             : true !default;
+$_selected-text-color       : settings.$color-light !default;
+$_selected-text-background  : settings.$color-tertiary !default;
 
 
 /**
  * Paragraph margins
  */
 
-$base-paragraph-margins         : true !default;
-$base-paragraph-margin-size     : 1em !default;
+$_paragraph-margins         : true !default;
+$_paragraph-margin-size     : 1em !default;
 
 
 /**
  * Inline and Code Blocks
  */
 
-$base-code-tab-size             : 2 !default;
+$_code-tab-size             : 2 !default;
 
 
 /**
@@ -43,19 +49,19 @@ $base-code-tab-size             : 2 !default;
  */
 
 // :link, :visited states
-$base-link-color                : $color-primary !default;
+$_link-color                : settings.$color-primary !default;
 
 // link color type @see link mixin in 2.tools/_link
-$base-link-type                 : light !default;
+$_link-type                 : light !default;
 
 // :visited state effect @see link mixin in 2.tools/_link
-$base-link-visited              : visited !default;
+$_link-visited              : visited !default;
 
 // underlined links
-$base-link-text-decoration      : none !default;
+$_link-text-decoration      : none !default;
 
 // outlined links in :focus state
-$base-link-outline              : none !default;
+$_link-outline              : none !default;
 
 
 /**
@@ -68,9 +74,9 @@ html {
 }
 
 body {
-  @include type($global-font-size);
+  @include tools.type(settings.$default-font-size);
 
-  font-family: $primary-font-family;
+  font-family: settings.$primary-font-family;
   font-weight: 400;
 }
 
@@ -83,9 +89,9 @@ body {
  * Styling selected text
  */
 
-@if $base-selected-text == true {
+@if $_selected-text == true {
   ::selection {
-    @include colors($base-selected-text-color, $base-selected-text-background);
+    @include tools.colors($_selected-text-color, $_selected-text-background);
   }
 }
 
@@ -94,10 +100,10 @@ body {
  * Paragraph Element
  */
 
-@if $base-paragraph-margins == true {
+@if $_paragraph-margins == true {
   p {
     &:not(:last-child) {
-      margin-block-end: $base-paragraph-margin-size;
+      margin-block-end: $_paragraph-margin-size;
     }
   }
 }
@@ -116,7 +122,7 @@ var {
   word-spacing: normal;
   word-wrap: normal;
   word-break: normal;
-  tab-size: $base-code-tab-size;
+  tab-size: $_code-tab-size;
   hyphens: none;
 }
 
@@ -126,12 +132,12 @@ var {
  */
 
 a:not([class]) {
-  @include link(
-    $base-link-color,
-    $base-link-type,
-    $base-link-visited,
-    $base-link-text-decoration,
-    $base-link-outline
+  @include tools.link(
+    $_link-color,
+    $_link-type,
+    $_link-visited,
+    $_link-text-decoration,
+    $_link-outline
   );
 }
 
@@ -146,31 +152,31 @@ h3:not([class]),
 h4:not([class]),
 h5:not([class]),
 h6:not([class]) {
-  font-family: $heading-font-family;
+  font-family: settings.$heading-font-family;
 }
 
 h1:not([class]) {
-  @include type($heading1-font-size);
+  @include tools.type(settings.$heading1-font-size);
 }
 
 h2:not([class]) {
-  @include type($heading2-font-size);
+  @include tools.type(settings.$heading2-font-size);
 }
 
 h3:not([class]) {
-  @include type($heading3-font-size);
+  @include tools.type(settings.$heading3-font-size);
 }
 
 h4:not([class]) {
-  @include type($heading4-font-size);
+  @include tools.type(settings.$heading4-font-size);
 }
 
 h5:not([class]) {
-  @include type($heading5-font-size);
+  @include tools.type(settings.$heading5-font-size);
 }
 
 h6:not([class]) {
-  @include type($heading6-font-size);
+  @include tools.type(settings.$heading6-font-size);
 }
 
 

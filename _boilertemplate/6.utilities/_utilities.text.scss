@@ -36,7 +36,7 @@
  * `1.settings/_settings.breakpoints.scss`.
  *
  * @example
- *   $utilities-text-responsive   : true;
+ *   $_text-responsive   : true;
  *
  *   <h1 class="u-text--center u-text--end@small">
  *     Heading will be aligned center on mobile and right on tablets and up.
@@ -45,15 +45,22 @@
 
 
 /**
+ * Imports
+ */
+
+@use "../settings";
+
+
+/**
  * Settings
  */
 
-$utilities-text-responsive   : false;
-$utilities-text-breakpoints  : $global-breakpoints;
+$_text-responsive   : false !default;
+$_text-breakpoints  : settings.$breakpoints !default;
 
 
 /**
  * Import Text Utility from Shake.sass
  */
 
-@import "node_modules/shake.sass/6.utilities/utilities.text";
+@use "node_modules/shake.sass/6.utilities/utilities.text" as text;

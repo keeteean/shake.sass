@@ -26,4 +26,4 @@
  * Import Clearfix Utility from Shake.sass.
  */
 
-@import "node_modules/shake.sass/6.utilities/utilities.clearfix";
+@use "node_modules/shake.sass/6.utilities/utilities.clearfix" as clearfix;

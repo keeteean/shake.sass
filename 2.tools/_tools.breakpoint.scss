@@ -23,9 +23,9 @@
  *
  * Examples
  *
- * Using the global default $global-breakpoints breakpoints map.
+ * Using the global default settings.$breakpoints breakpoints map.
  * @example
- *   $global-breakpoints: (
+ *   settings.$breakpoints: (
  *     small  : "screen and (min-width: 30em)", // 480px
  *     medium : "screen and (min-width: 48px)", // 768px
  *     large  : "screen and (min-width: 64px)", // 1024px
@@ -78,9 +78,15 @@
  */
 
 
-@use "sass:map";
+/**
+ * Imports
+ */
 
-@mixin breakpoint($size, $breakpoints: $global-breakpoints) {
+@use "sass:map";
+@use "../settings";
+
+
+@mixin breakpoint($size, $breakpoints: settings.$breakpoints) {
   $breakpoint-found: map.has-key($breakpoints, $size);
 
   @if $breakpoint-found == true {

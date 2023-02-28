@@ -8,6 +8,13 @@
 
 
 /**
+ * Imports
+ */
+
+@use "../settings";
+
+
+/**
  * Settings
  */
 
@@ -18,16 +25,16 @@
  * else background property than background-color, like background-image.
  */
 
-$base-body-colors           : true;
-$body-color                 : $global-color;
-$body-background            : $global-background;
+$_body-colors               : true !default;
+$body-color                 : settings.$color-text !default;
+$body-background-color      : settings.$color-background !default;
 
 
 /**
  * Import Page Element from Shake.sass.
  */
 
-@import "node_modules/shake.sass/3.base/base.page";
+@use "node_modules/shake.sass/3.base/base.page" as page;
 
 
 /**

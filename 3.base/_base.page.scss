@@ -8,6 +8,13 @@
 
 
 /**
+ * Imports
+ */
+
+@use "../settings";
+
+
+/**
  * Settings
  */
 
@@ -18,9 +25,9 @@
  * else background property than background-color, like background-image.
  */
 
-$base-body-colors           : true !default;
-$body-color                 : $global-color !default;
-$body-background-color      : $global-background !default;
+$_body-colors               : true !default;
+$body-color                 : settings.$color-text !default;
+$body-background-color      : settings.$color-background !default;
 
 
 html {
@@ -31,7 +38,7 @@ html {
 body {
   min-height: 100vh;
 
-  @if $base-body-colors == true {
+  @if $_body-colors == true {
     color: $body-color;
     background-color: $body-background-color;
   }

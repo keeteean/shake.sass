@@ -5,7 +5,7 @@
  *
  * The Grid Object is responsible for building a smart, flexible and responsive
  * grid. However you can achieve this only by Sass mixins, so basically you
- * won'tneed css classes for that, but here in Grid Object the base grid mixins
+ * won't need css classes for that, but here in Grid Object the base grid mixins
  * has already been included from Grid Tool.
  *
  * @author Krisztian Pinter <krisz@keeteean.com>
@@ -54,6 +54,14 @@
 
 
 /**
+ * Imports
+ */
+
+@use "../settings";
+@use "../2.tools/tools.grid" as grid;
+
+
+/**
  * Settings
  *
  * If you want to use from Sass only, all settings found in Grid Tool:
@@ -64,8 +72,8 @@
  * Namespace settings
  */
 
-$objects-grid-class          : "o-grid";
-$objects-grid-class-mod      : $objects-grid-class + "--";
+$_grid-class          : "o-grid";
+$_grid-class-mod      : $_grid-class + "--";
 
 
 /**
@@ -80,13 +88,13 @@ $objects-grid-class-mod      : $objects-grid-class + "--";
  * Each gutter size will be available as a BEM modifier that will be named
  * according to the gutter name.
  *
- * Example if `$objects-grid-gutter-extra: (large: 30px);`
+ * Example if `$_grid-gutter-extra: (large: 30px);`
  * then `.o-grid--large` will be available for use.
  *
  * @type Map
  *
  * @example
- *   $objects-grid-gutter-extra: (
+ *   $_grid-gutter-extra: (
  *     large: (
  *       null : 2rem,
  *       small: 4rem
@@ -104,7 +112,7 @@ $objects-grid-class-mod      : $objects-grid-class + "--";
  *   </div>
  */
 
-$objects-grid-gutter-extra    : $global-grid-gutter-extra;
+$_grid-gutter-extra    : settings.$grid-gutter-extra !default;
 
 
 /**
@@ -112,21 +120,21 @@ $objects-grid-gutter-extra    : $global-grid-gutter-extra;
  */
 
 // Default Grid Object
-.#{$objects-grid-class} {
-  @include make-grid;
+.#{$_grid-class} {
+  @include grid.make-grid;
 
   & > &__item {
-    @include make-column;
+    @include grid.make-column;
   }
 }
 
 // Grid Object Extra Gutters
-@each $gutter-name, $gutter-size in $objects-grid-gutter-extra {
-  .#{$objects-grid-class-mod + quote($gutter-name)} {
-    @include make-grid($gutter-size);
+@each $gutter-name, $gutter-size in $_grid-gutter-extra {
+  .#{$_grid-class-mod + quote($gutter-name)} {
+    @include grid.make-grid($gutter-size);
 
     & > &__item {
-      @include make-column($gutter-size);
+      @include grid.make-column($gutter-size);
     }
   }
 }

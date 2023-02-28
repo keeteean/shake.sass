@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- *** HELPERS IMPORTER ***
+ *** GLOBAL TOOLS ***
  ******************************************************************************
  *
- * It's just a shortcut for Helper Tools
+ * Globally used mixins and functions.
+ * It’s important not to output any CSS in the first 2 layers.
  */
 
-
-@import "2.tools/tools._helpers";
+@forward "2.tools";

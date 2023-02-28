@@ -45,7 +45,12 @@
  */
 
 
+/**
+ * Imports
+ */
+
 @use "sass:color";
+@use "tools.transitions" as transitions;
 
 
 @mixin link(
@@ -55,7 +60,7 @@
   $text-decoration: none,
   $outline: initial,
 ) {
-  @include global-transition;
+  @include transitions.global;
 
   color: $color;
 

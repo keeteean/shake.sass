@@ -8,6 +8,12 @@
 
 
 /**
+ * Imports
+ */
+@use "../tools" as *;
+
+
+/**
  ** Settings **
  */
 
@@ -15,10 +21,10 @@
  * Responsive Table
  */
 
-$components-responsive-table                  : true !default;
-$components-responsive-table-label-padding    : 0 .6em 0 0 !default;
-$components-responsive-table-label-width      : 30% !default;
-$components-responsive-table-content-width    : 67% !default;
+$_responsive-table                  : true !default;
+$_responsive-table-label-padding    : 0 .6em 0 0 !default;
+$_responsive-table-label-width      : 30% !default;
+$_responsive-table-content-width    : 67% !default;
 
 
 /**
@@ -67,7 +73,7 @@ $components-responsive-table-content-width    : 67% !default;
  * 6. Hide the labels in each cell.
  */
 
-@if $components-responsive-table == true {
+@if $_responsive-table == true {
   .c-table {
     max-width: 100%;
     padding-block: 0;
@@ -99,9 +105,9 @@ $components-responsive-table-content-width    : 67% !default;
 
       .c-table__cell-label {
         display: inline-block;
-        width: $components-responsive-table-label-width; // 2.
-        padding-block: $components-responsive-table-label-padding;
-        padding-inline: $components-responsive-table-label-padding;
+        width: $_responsive-table-label-width; // 2.
+        padding-block: $_responsive-table-label-padding;
+        padding-inline: $_responsive-table-label-padding;
         vertical-align: top;
 
         @include breakpoint(medium) {
@@ -119,7 +125,7 @@ $components-responsive-table-content-width    : 67% !default;
 
       .c-table__cell-content {
         display: inline-block;
-        max-width: $components-responsive-table-content-width;
+        max-width: $_responsive-table-content-width;
 
         @include breakpoint(medium) {
           display: block;

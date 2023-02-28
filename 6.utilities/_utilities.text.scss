@@ -36,7 +36,7 @@
  * `1.settings/_settings.breakpoints.scss`.
  *
  * @example
- *   $utilities-text-responsive   : true;
+ *   $_text-responsive   : true;
  *
  *   <h1 class="u-text--center u-text--end@small">
  *     Heading will be aligned center on mobile and right on tablets and up.
@@ -45,11 +45,18 @@
 
 
 /**
+ * Imports
+ */
+
+@use "../settings";
+@use "../2.tools/tools.text" as *;
+
+/**
  * Settings
  */
 
-$utilities-text-responsive   : false !default;
-$utilities-text-breakpoints  : $global-breakpoints !default;
+$_text-responsive   : false !default;
+$_text-breakpoints  : settings.$breakpoints !default;
 
 
 /**
@@ -86,8 +93,8 @@ $utilities-text-breakpoints  : $global-breakpoints !default;
 
 
 // Text Responsive Utilities
-@if $utilities-text-responsive == true {
-  @each $breakpoint-name, $breakpoint-size in $utilities-text-breakpoints {
+@if $_text-responsive == true {
+  @each $breakpoint-name, $breakpoint-size in $_text-breakpoints {
     @media #{$breakpoint-size} {
       .#{"u-text--left" + $global-breakpoint-separator + $breakpoint-name} {
         @include text-align(start);

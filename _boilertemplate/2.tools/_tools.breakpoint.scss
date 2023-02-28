@@ -23,9 +23,9 @@
  *
  * Examples
  *
- * Using the global default $global-breakpoints breakpoints map.
+ * Using the global default settings.$breakpoints breakpoints map.
  * @example
- *   $global-breakpoints: (
+ *   settings.$breakpoints: (
  *     small  : "screen and (min-width: 30em)", // 480px
  *     medium : "screen and (min-width: 48px)", // 768px
  *     large  : "screen and (min-width: 64px)", // 1024px
@@ -79,7 +79,15 @@
 
 
 /**
+ * Imports
+ */
+
+@use "sass:map";
+@use "../settings";
+
+
+/**
  * Import Breakpoint Tool from Shake.sass.
  */
 
-@import "node_modules/shake.sass/2.tools/tools.breakpoint";
+@forward "node_modules/shake.sass/2.tools/tools.breakpoint";

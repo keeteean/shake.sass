@@ -34,7 +34,7 @@
  * `1.settings/_settings.breakpoints`.
  *
  * @example
- *   $utilities-visibility-responsive   : true;
+ *   $_visibility-responsive   : true;
  *
  *   <h1 class="u-hide@large">
  *     Heading will be hidden on larger screens.
@@ -43,11 +43,19 @@
 
 
 /**
+ * Imports
+ */
+
+@use "../settings";
+@use "../2.tools/tools.visibility" as *;
+
+
+/**
  * Settings
  */
 
-$utilities-visibility-responsive          : false !default;
-$utilities-visibility-breakpoints         : $global-breakpoints !default;
+$_visibility-responsive          : false !default;
+$_visibility-breakpoints         : settings.$breakpoints !default;
 
 
 /**
@@ -112,22 +120,22 @@ $utilities-visibility-breakpoints         : $global-breakpoints !default;
  * Visibility Responsive Utilities
  */
 
-@if $utilities-visibility-responsive == true {
-  @each $breakpoint-name, $breakpoint-size in $utilities-visibility-breakpoints {
+@if $_visibility-responsive == true {
+  @each $breakpoint-name, $breakpoint-size in $_visibility-breakpoints {
     @media #{$breakpoint-size} {
-      .#{"u-show" + $global-breakpoint-separator + $breakpoint-name} {
+      .#{"u-show" + settings.$breakpoint-separator + $breakpoint-name} {
         visibility: visible !important;
       }
 
-      .#{"u-hide" + $global-breakpoint-separator + $breakpoint-name} {
+      .#{"u-hide" + settings.$breakpoint-separator + $breakpoint-name} {
         visibility: hidden !important;
       }
 
-      .#{"u-visually-hide" + $global-breakpoint-separator + $breakpoint-name} {
+      .#{"u-visually-hide" + settings.$breakpoint-separator + $breakpoint-name} {
         @include visually-hidden;
       }
 
-      .#{"u-visually-hide--focusable" + $global-breakpoint-separator + $breakpoint-name} {
+      .#{"u-visually-hide--focusable" + settings.$breakpoint-separator + $breakpoint-name} {
         @include visually-hidden--focusable;
       }
     }

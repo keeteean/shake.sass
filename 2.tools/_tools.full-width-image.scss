@@ -6,9 +6,8 @@
  * Apply it to an img element or use Utility version of it.
  * You will need a parent element with relative position.
  *
- * @parameter {string} $version Choose basic if you don't use Modernizer (but
- * may you have problems in Internet Explorer and earlier versions of Microsoft
- * Edge. Better option if you use Modernizr and enabled objectfit or object-fit.
+ * @parameter {string} $fit - Object-fit property. You can use `cover` or
+ * `contain`. Default is `cover`.
  *
  * @example
  * .c-slider {
@@ -16,17 +15,24 @@
  *     position: relative;
  *
  *      img {
- *        @include full-width-image(modernizr);
+ *        @include full-width-image;
  *      }
  *   }
  * }
  */
 
-@mixin full-width-image {
+@mixin full-width-image($fit: cover) {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   object-position: center;
+
+  @if $fit == cover {
+    object-fit: cover;
+  }
+
+  @if $fit == contain {
+    object-fit: contain;
+  }
 }

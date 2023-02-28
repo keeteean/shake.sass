@@ -27,10 +27,13 @@
       true,
       {
         "ignoreAtRules": [
+          "debug",
           "each",
           "else",
+          "error",
           "extend",
           "for",
+          "forward",
           "function",
           "if",
           "include",

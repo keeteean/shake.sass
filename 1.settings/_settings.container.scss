@@ -6,10 +6,17 @@
  * See details in 4.objects/_objects.container.scss.
  */
 
+
+/**
+ * Imports
+ */
+
+@use "settings.grid" as *;
+
 /**
  * Default container
  */
-$global-container-size-default     : (
+$container-size-default     : (
   null        : 90%,
   small       : 91%,
   medium      : 93%,
@@ -33,7 +40,7 @@ $global-container-size-default     : (
  *   );
  */
 
-$global-container-size-extra     : () !default;
+$container-size-extra     : () !default;
 
 
 /**
@@ -61,7 +68,7 @@ $global-container-size-extra     : () !default;
  *   );
  */
 
-$global-container-gutter-default  : $global-gutter-default !default;
+$container-gutter-default  : $gutter-default !default;
 
 
 /**
@@ -82,4 +89,4 @@ $global-container-gutter-default  : $global-gutter-default !default;
  *   );
  */
 
-$global-container-gutter-extra: () !default;
+$container-gutter-extra: () !default;

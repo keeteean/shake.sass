@@ -14,19 +14,19 @@
  */
 
 // Import tools
-@import "tools.box-model";
-@import "tools.breakpoint";
-@import "tools.clearfix";
-@import "tools.color";
-@import "tools.container";
-@import "tools.form";
-@import "tools.full-width-image";
-@import "tools.grid";
-@import "tools.ie";
-@import "tools.link";
-@import "tools.stretched-link";
-@import "tools.text";
-@import "tools.transitions";
-@import "tools.triangle";
-@import "tools.type";
-@import "tools.visibility";
+@forward "tools.box-model";
+@forward "tools.breakpoint";
+@forward "tools.clearfix";
+@forward "tools.color";
+@forward "tools.container";
+@forward "tools.form";
+@forward "tools.full-width-image";
+@forward "tools.grid";
+@forward "tools.ie";
+@forward "tools.link";
+@forward "tools.stretched-link";
+@forward "tools.text";
+@forward "tools.transitions";
+@forward "tools.triangle";
+@forward "tools.type";
+@forward "tools.visibility";

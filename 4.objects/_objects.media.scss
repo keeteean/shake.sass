@@ -37,7 +37,7 @@
  * It creates a default media object with 10px gutter in mobile and 20px in tablets and up.
  *
  * @example
- *   $objects-media-gutter-default: (
+ *   $_media-gutter-default: (
  *     null : 1rem,
  *     small: 2rem
  *   );
@@ -57,7 +57,7 @@
  * It creates a new gutter size named 'small' that will have 5px gutter size.
  *
  * @example
- *   $objects-media-gutter-extra: (
+ *   $_media-gutter-extra: (
  *     small: .5rem
  *   );
  *
@@ -76,7 +76,7 @@
  * It creates a new gutter size named 'small' that will have 5px gutter size in mobiles and 10px in tablets and up.
  *
  * @example
- *   $objects-media-gutter-extra: (
+ *   $_media-gutter-extra: (
  *     small: (
  *       null : .5rem,
  *       small: 1rem
@@ -98,8 +98,8 @@
  * It creates a media object that will automatically collapse in two rows when a max-width of 767px presents.
  *
  * @example
- * $objects-media-collapses-at: 767px; // This is not needed since 767px is the default value
- * $objects-media-responsive: true;
+ * $_media-collapses-at: 767px; // This is not needed since 767px is the default value
+ * $_media-responsive: true;
  *
  *   <div class="o-media o-media--responsive">
  *     <div class="o-media__fixed">
@@ -116,7 +116,7 @@
  * It creates a media object that has the fixed part on the right and the fluid on the left.
  *
  * @example
- *   $objects-media-reversed: true;
+ *   $_media-reversed: true;
  *
  *   <div class="o-media o-media--reversed">
  *     <div class="o-media__fixed">
@@ -131,6 +131,14 @@
 
 
 /**
+ * Imports
+ */
+
+@use "../2.tools/libraries";
+@use "../settings";
+
+
+/**
  * Settings
  */
 
@@ -140,16 +148,16 @@
  * @type String
  */
 
-$objects-media-fixed                : "fixed" !default;
-$objects-media-fluid                : "fluid" !default;
-$objects-media-reversed            : "reversed" !default;
-$objects-media-align-middle        : "middle" !default;
-$objects-media-align-bottom        : "bottom" !default;
-$objects-media-responsive          : "responsive" !default;
-$objects-media-class-media         : "o-media" !default;
-$objects-media-class-media-mod     : $objects-media-class-media + "--" !default;
-$objects-media-class-media-fixed    : $objects-media-class-media + "__" + $objects-media-fixed !default;
-$objects-media-class-media-fluid    : $objects-media-class-media + "__" + $objects-media-fluid !default;
+$_media-fixed                : "fixed" !default;
+$_media-fluid                : "fluid" !default;
+$_media-reversed            : "reversed" !default;
+$_media-align-middle        : "middle" !default;
+$_media-align-bottom        : "bottom" !default;
+$_media-responsive          : "responsive" !default;
+$_media-class-media         : "o-media" !default;
+$_media-class-media-mod     : $_media-class-media + "--" !default;
+$_media-class-media-fixed    : $_media-class-media + "__" + $_media-fixed !default;
+$_media-class-media-fluid    : $_media-class-media + "__" + $_media-fluid !default;
 
 
 /**
@@ -160,7 +168,7 @@ $objects-media-class-media-fluid    : $objects-media-class-media + "__" + $objec
  * @type Number | Map
  */
 
-$objects-media-gutter-default       : $global-gutter-default !default;
+$_media-gutter-default       : settings.$gutter-default !default;
 
 
 /**
@@ -171,13 +179,13 @@ $objects-media-gutter-default       : $global-gutter-default !default;
  *
  * Use a map for a single size or a nested map for a responsive size.
  *
- * Example if `$objects-media-gutter-extra: ("compact": "10px");`
+ * Example if `$_media-gutter-extra: ("compact": "10px");`
  * then `.o-media--compact` will be available for use.
  *
  * @type Map
  */
 
-$objects-media-gutter-extra         : () !default;
+$_media-gutter-extra         : () !default;
 
 
 /**
@@ -190,7 +198,7 @@ $objects-media-gutter-extra         : () !default;
  * @type Boolean
  */
 
-$objects-media-is-reversed          : false !default;
+$_media-is-reversed          : false !default;
 
 
 /**
@@ -204,7 +212,7 @@ $objects-media-is-reversed          : false !default;
  * @type Boolean
  */
 
-$objects-media-is-aligned           : false !default;
+$_media-is-aligned           : false !default;
 
 
 /**
@@ -218,7 +226,7 @@ $objects-media-is-aligned           : false !default;
  * @type Boolean
  */
 
-$objects-media-is-responsive        : false !default;
+$_media-is-responsive        : false !default;
 
 
 /**
@@ -229,28 +237,28 @@ $objects-media-is-responsive        : false !default;
  * @type Number
  */
 
-$objects-media-collapse-at          : 47.93em !default; // 767px
+$_media-collapse-at          : 47.93em !default; // 767px
 
 
-.#{$objects-media-class-media} {
+.#{$_media-class-media} {
   display: flex;
   align-items: flex-start;
 
-  & > .#{$objects-media-class-media-fixed} {
-    @include _generate-unit("padding", "inline-end", $objects-media-gutter-default);
+  & > .#{$_media-class-media-fixed} {
+    @include libraries.generate-unit("padding", "inline-end", $_media-gutter-default);
   }
 
-  & > .#{$objects-media-class-media-fluid} {
+  & > .#{$_media-class-media-fluid} {
     flex: 1;
   }
 }
 
 // Flex Media Object Reversed
-@if $objects-media-is-reversed == true {
-  .#{$objects-media-class-media-mod + $objects-media-reversed} {
-    & > .#{$objects-media-class-media-fixed} {
-      @include _generate-unit("padding", "inline-start", $objects-media-gutter-default);
-      @include _generate-unit("padding", "inline-end", 0);
+@if $_media-is-reversed == true {
+  .#{$_media-class-media-mod + $_media-reversed} {
+    & > .#{$_media-class-media-fixed} {
+      @include libraries.generate-unit("padding", "inline-start", $_media-gutter-default);
+      @include libraries.generate-unit("padding", "inline-end", 0);
 
       order: 1;
     }
@@ -258,36 +266,36 @@ $objects-media-collapse-at          : 47.93em !default; // 767px
 }
 
 // Media Object Aligned
-@if $objects-media-is-aligned == true {
-  .#{$objects-media-class-media-mod + $objects-media-align-middle} {
+@if $_media-is-aligned == true {
+  .#{$_media-class-media-mod + $_media-align-middle} {
     align-items: center;
   }
 
-  .#{$objects-media-class-media-mod + $objects-media-align-bottom} {
+  .#{$_media-class-media-mod + $_media-align-bottom} {
     align-items: flex-end;
   }
 }
 
 // Responsive Media Object
-@if $objects-media-is-responsive == true {
-  @media screen and (max-width: $objects-media-collapse-at) {
-    .#{$objects-media-class-media-mod + $objects-media-responsive} {
+@if $_media-is-responsive == true {
+  @media screen and (max-width: $_media-collapse-at) {
+    .#{$_media-class-media-mod + $_media-responsive} {
       display: block;
 
-      & > .#{$objects-media-class-media-fixed},
-      & > .#{$objects-media-class-media-fluid} {
+      & > .#{$_media-class-media-fixed},
+      & > .#{$_media-class-media-fluid} {
         display: block;
         width: 100%;
         padding-inline: 0;
       }
 
-      & > .#{$objects-media-class-media-fixed} {
-        @if $objects-media-is-reversed == true {
-          @include _generate-unit("margin", "block-start", $objects-media-gutter-default);
+      & > .#{$_media-class-media-fixed} {
+        @if $_media-is-reversed == true {
+          @include libraries.generate-unit("margin", "block-start", $_media-gutter-default);
         }
 
         @else {
-          @include _generate-unit("margin", "block-end", $objects-media-gutter-default);
+          @include libraries.generate-unit("margin", "block-end", $_media-gutter-default);
         }
       }
     }
@@ -295,16 +303,16 @@ $objects-media-collapse-at          : 47.93em !default; // 767px
 }
 
 // Media Object Sizes
-@each $media-gutter-name, $media-gutter-size in $objects-media-gutter-extra {
-  .#{$objects-media-class-media-mod + $media-gutter-name} {
+@each $media-gutter-name, $media-gutter-size in $_media-gutter-extra {
+  .#{$_media-class-media-mod + $media-gutter-name} {
     // Media Object Responsive
-    @if $objects-media-is-responsive == true {
-      @media screen and (max-width: $objects-media-collapse-at) {
-        &.#{$objects-media-class-media-mod + $objects-media-responsive} {
+    @if $_media-is-responsive == true {
+      @media screen and (max-width: $_media-collapse-at) {
+        &.#{$_media-class-media-mod + $_media-responsive} {
           display: block;
 
-          & > .#{$objects-media-class-media-fixed} {
-            @include _generate-unit("margin", "block-end", $media-gutter-size);
+          & > .#{$_media-class-media-fixed} {
+            @include libraries.generate-unit("margin", "block-end", $media-gutter-size);
 
             padding-inline: 0;
           }
@@ -313,27 +321,27 @@ $objects-media-collapse-at          : 47.93em !default; // 767px
     }
 
     // Media Object Reserved
-    @if $objects-media-is-reversed == true {
+    @if $_media-is-reversed == true {
       // Media Object Reserved with Extra Sizes
-      &.#{$objects-media-class-media-mod + $objects-media-reversed} {
-        @media screen and (min-width: ($objects-media-collapse-at + 1)) {
-          & > .#{$objects-media-class-media-fixed} {
-            @include _generate-unit("padding", "inline-start", $media-gutter-size);
-            @include _generate-unit("padding", "inline-end", 0);
+      &.#{$_media-class-media-mod + $_media-reversed} {
+        @media screen and (min-width: ($_media-collapse-at + 1)) {
+          & > .#{$_media-class-media-fixed} {
+            @include libraries.generate-unit("padding", "inline-start", $media-gutter-size);
+            @include libraries.generate-unit("padding", "inline-end", 0);
           }
         }
       }
 
-      & > .#{$objects-media-class-media-fixed} {
-        @include _generate-unit("padding", "inline-end", $media-gutter-size);
+      & > .#{$_media-class-media-fixed} {
+        @include libraries.generate-unit("padding", "inline-end", $media-gutter-size);
       }
 
       // Media Object Reserved and Responsive with Extra Sizes
-      &.#{$objects-media-class-media-mod + $objects-media-reversed + ":not(." + $objects-media-class-media-mod + $objects-media-responsive + ")"} {
-        @media screen and (max-width: $objects-media-collapse-at) {
-          & > .#{$objects-media-class-media-fixed} {
-            @include _generate-unit("padding", "inline-start", $media-gutter-size);
-            @include _generate-unit("padding", "inline-end", 0);
+      &.#{$_media-class-media-mod + $_media-reversed + ":not(." + $_media-class-media-mod + $_media-responsive + ")"} {
+        @media screen and (max-width: $_media-collapse-at) {
+          & > .#{$_media-class-media-fixed} {
+            @include libraries.generate-unit("padding", "inline-start", $media-gutter-size);
+            @include libraries.generate-unit("padding", "inline-end", 0);
           }
         }
       }

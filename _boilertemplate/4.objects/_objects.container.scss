@@ -27,7 +27,7 @@
  * container named 'large' with 40px padding.
  *
  * @example
- *   $objects-container-gutter-extra: (
+ *   $_container-gutter-extra: (
  *     small: 1rem,
  *     large: 4rem
  *   );
@@ -37,7 +37,7 @@
  * tablets and up.
  *
  * @example
- *   $objects-container-gutter-default: (
+ *   $_container-gutter-default: (
  *     null : 1rem,
  *     small: 2rem
  *   );
@@ -47,7 +47,7 @@
  * in mobile and 40px padding in tablets and up.
  *
  * @example
- *   $objects-container-gutter-default: (
+ *   $_container-gutter-default: (
  *     large: (
  *       null : 2rem,
  *       small: 4rem
@@ -59,11 +59,18 @@
  * max-width of 1024px in tablets and up.
  *
  * @example
- *   $objects-container-size-default: (
+ *   $_container-size-default: (
  *     null : 32rem,
  *     small: 102.4rem
  *   );
  */
+
+
+/**
+ * Imports
+ */
+
+@use "../settings";
 
 
 /**
@@ -74,8 +81,8 @@
  * Namespace settings
  */
 
-$objects-container-class          : "o-container";
-$objects-container-class-mod      : $objects-container-class + "--";
+$_container-class          : "o-container" !default;
+$_container-class-mod      : $_container-class + "--" !default;
 
 
 /**
@@ -88,13 +95,13 @@ $objects-container-class-mod      : $objects-container-class + "--";
  * Each gutter size will be available as a BEM modifier that will be named
  * according to the gutter name.
  *
- * Example if `$objects-container-gutter-extra: (large: 30px);`
+ * Example if `$_container-gutter-extra: (large: 30px);`
  * then `.o-container--large` will be available for use.
  *
  * @type Map
  *
  * @example
- *   $objects-container-gutter-extra: (
+ *   $_container-gutter-extra: (
  *     large: (
  *       null : 2rem,
  *       small: 4rem
@@ -104,7 +111,7 @@ $objects-container-class-mod      : $objects-container-class + "--";
  *   <div class"o-container--large">...</div>
  */
 
-$objects-container-gutter-extra   : ();
+$_container-gutter-extra   : settings.$container-gutter-extra !default;
 
 
 /**
@@ -116,13 +123,13 @@ $objects-container-gutter-extra   : ();
  * Each gutter size will be available as a BEM modifier that will be named
  * according to the container size name.
  *
- * Example if `$objects-container-size-extra: (large: 1600px);`
+ * Example if `$_container-size-extra: (large: 1600px);`
  * then `.o-container--large` will be available for use.
  *
  * @type Map
  *
  * @example
- *   $objects-container-size-extra: (
+ *   $_container-size-extra: (
  *     large: (
  *       null : 30rem,
  *       small: 120rem
@@ -132,11 +139,11 @@ $objects-container-gutter-extra   : ();
  *   <div class"o-container--large">...</div>
  */
 
-$objects-container-size-extra     : ();
+$_container-size-extra     : settings.$container-size-extra !default;
 
 
 /**
  * Import Container Object from Shake.sass.
  */
 
-@import "node_modules/shake.sass/4.objects/objects.container";
+@use "node_modules/shake.sass/4.objects/objects.container" as container;
