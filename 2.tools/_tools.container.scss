@@ -141,6 +141,6 @@ $_container-size-default     : settings.$container-size-default;
   @include container-padding($padding);
   @include container-size($size);
 
-  width: 100%;
+  inline-size: 100%;
   margin-inline: auto;
 }

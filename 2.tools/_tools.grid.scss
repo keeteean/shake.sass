@@ -231,8 +231,8 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
 
   flex-basis: auto;
   box-sizing: inherit;
-  width: 100%;
-  min-width: 0;
+  inline-size: 100%;
+  min-inline-size: 0;
 }
 
 /**
@@ -262,7 +262,7 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
 
 @mixin column-size($column, $all-columns) {
   flex: 0 0 math.percentage(math.div($column, $all-columns));
-  max-width: math.percentage(math.div($column, $all-columns));
+  max-inline-size: math.percentage(math.div($column, $all-columns));
 }
 
 

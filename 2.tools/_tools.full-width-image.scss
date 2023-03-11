@@ -26,8 +26,8 @@
 @mixin full-width-image($fit: cover) {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-position: center;
 
   @if $fit == cover {

@@ -34,8 +34,8 @@
   overflow: hidden !important;
   clip: rect(.1rem .1rem .1rem .1rem) !important; /* IE6, IE7 */
   clip: rect(.1rem, .1rem, .1rem, .1rem) !important;
-  width: .1rem !important;
-  height: .1rem !important;
+  inline-size: .1rem !important;
+  block-size: .1rem !important;
 }
 
 
@@ -64,8 +64,8 @@
     position: static !important;
     overflow: visible !important;
     clip: auto !important;
-    width: auto !important;
-    height: auto !important;
+    inline-size: auto !important;
+    block-size: auto !important;
     white-space: normal !important;
   }
 }
