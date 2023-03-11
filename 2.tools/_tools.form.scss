@@ -8,46 +8,10 @@
 
 
 /**
- * Placeholder mixin
- *
- * With it you can theming input placeholders easily for any browsers.
- *
- * @example
- *   @use "../tools";
- *
- *  @include tools.input-placeholder {
- *    color: grey;
- *  }
- */
-
-@mixin input-placeholder {
-  &.placeholder {
-    @content;
-  }
-
-  &::-moz-placeholder {
-    @content;
-  }
-
-  &::-webkit-input-placeholder {
-    @content;
-  }
-
-  &:-moz-placeholder {
-    @content;
-  }
-
-  &:-ms-input-placeholder {
-    @content;
-  }
-}
-
-
-/**
  * Webkit autofill mixin
  *
  * With it you can theming autofilled inputs easily.
- * You must declare the font color, other rules optionally.
+ * You must declare the font color; other rules optionally.
  *
  * @example
  *   @use "../settings";
