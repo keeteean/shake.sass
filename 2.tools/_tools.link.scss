@@ -24,7 +24,9 @@
  * for other states, no `text-decoration`, no `:focus` style:
  *
  * a {
- *    @include link($color-link);
+ *   @use "../tools";
+ *
+ *    @include tools.link($color-link);
  * }
  *
  *
@@ -32,7 +34,7 @@
  * `text-decoration: underlined`, no `:focus` style:
  *
  * a {
- *   @include link($color-link, dark, visited, underlined);
+ *   @include tools.link($color-link, dark, visited, underlined);
  * }
  *
  *
@@ -40,7 +42,7 @@
  * `text-decoration`, given a `:focus` style:
  *
  * a {
- *   @include link($color-link, light, none, none, .8rem solid $color-outline);
+ *   @include tools.link($color-link, light, none, none, .8rem solid $color-outline);
  * }
  */
 
@@ -60,7 +62,7 @@
   $text-decoration: none,
   $outline: initial,
 ) {
-  @include transitions.global;
+  @include transitions.global-transition;
 
   color: $color;
 

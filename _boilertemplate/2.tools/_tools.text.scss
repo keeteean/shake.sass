@@ -11,10 +11,18 @@
 
 
 /**
+ * Imports
+ */
+
+@use "node_modules/2.tools/tools.text" as text;
+
+
+/**
  * Text-align Mixin
  *
  * @parameter {string} $align - Align value ex.: left.
- * @parameter {string} $last - Optional, align value for justify aligned last line.
+ * @parameter {string} $last - Optional, align value for justify aligned last
+ * line.
  *
  *
  * Examples
@@ -22,17 +30,25 @@
  * Simple text align.
  *
  * @example
+ *   @use "../tools";
+ *
  *   .c-button {
- *     @include text-align(center);
+ *     @include tools.text-align(center);
  *   }
  *
  * Align last line of a justify text.
  *
  * @example
+ *   @use "../tools";
+ *
  *   .section__lead {
- *     @include text-align(justify, left);
+ *     @include tools.text-align(justify, left);
  *   }
  */
+
+@mixin text-align($align, $last: null) {
+  @include text.text-align($align, $last);
+}
 
 
 /**
@@ -49,10 +65,16 @@
  * @link https://picturepan2.github.io/spectre/utilities/text.html
  *
  * @example
+ *   @use "../tools";
+ *
  *   .article__lead {
- *     @include text-ellipsis;
+ *     @include tools.text-ellipsis;
  *   }
  */
+
+@mixin text-ellipsis {
+  @include text.text-ellipsis;
+}
 
 
 /**
@@ -66,10 +88,16 @@
  * @link https://picturepan2.github.io/spectre/utilities/text.html
  *
  * @example
+ *   @use "../tools";
+ *
  *   .article__lead {
- *     @include text-clip;
+ *     @include tools.text-clip;
  *   }
  */
+
+@mixin text-clip {
+  @include text.text-clip;
+}
 
 
 /**
@@ -83,14 +111,13 @@
  * @link https://picturepan2.github.io/spectre/utilities/text.html
  *
  * @example
+ *   @use "../tools";
+ *
  *   .article__body {
- *     @include text-break;
+ *     @include tools.text-break;
  *   }
  */
 
-
-/**
- * Import Text Tool from Shake.sass.
- */
-
-@forward "node_modules/shake.sass/2.tools/tools.text";
+@mixin text-break {
+  @include text.text-break;
+}

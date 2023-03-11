@@ -72,8 +72,8 @@
  * Namespace settings
  */
 
-$_grid-class          : "o-grid";
-$_grid-class-mod      : $_grid-class + "--";
+$_grid-class          : "o-grid" !default;
+$_grid-class-mod      : $_grid-class + "--" !default;
 
 
 /**
@@ -119,4 +119,4 @@ $_grid-gutter-extra    : settings.$grid-gutter-extra !default;
  * Import Grid Object from Shake.sass.
  */
 
-@use "node_modules/shake.sass/4.objects/objects.grid" as grid;
+@use "node_modules/shake.sass/4.objects/objects.grid" as o-grid;

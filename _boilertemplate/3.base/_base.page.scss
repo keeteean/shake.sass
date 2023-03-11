@@ -34,7 +34,7 @@ $body-background-color      : settings.$color-background !default;
  * Import Page Element from Shake.sass.
  */
 
-@use "node_modules/shake.sass/3.base/base.page" as page;
+@use "node_modules/shake.sass/3.base/base.page" as b-page;
 
 
 /**

@@ -3,18 +3,48 @@
  *** TRANSITIONS TOOL ***
  ******************************************************************************
  *
+ * Globally used transitions declarations. It's imported to all css files.
+ * For keyframe animations @see tools.animations
  */
-
 
 /**
  * Imports
  */
 
 @use "../settings";
+@use "node_modules/2.tools/tools.transitions" as transitions;
+
+/**
+ * Global transition
+ *
+ * @example
+ *   @use "../tools";
+ *
+ *   .c-button {
+ *     @include tools.global-transition;
+ *   }
+ */
+
+@mixin global-transition {
+  @include transitions.global-transition;
+}
 
 
 /**
- * Import Transitions Tool from Shake.sass.
+ * Button transition
  */
 
-@forward "node_modules/shake.sass/2.tools/tools.transitions";
+@mixin button-transition {
+  transition: all 300ms ease;
+
+  &:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba(settings.$color-black, .2);
+  }
+
+  &:active,
+  &:focus {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgba(settings.$color-black, .2);
+  }
+}

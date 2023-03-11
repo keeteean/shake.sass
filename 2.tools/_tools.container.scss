@@ -104,8 +104,10 @@ $_container-size-default     : settings.$container-size-default;
  * Default container
  *
  * @example
+ *   @use "../tools";
+ *
  *   .section__container {
- *      @include make-container;
+ *      @include tools.make-container;
  *   }
  *
  * Custom container
@@ -115,6 +117,8 @@ $_container-size-default     : settings.$container-size-default;
  * `$_container-size-default` ones too.
  *
  * @example
+ *   @use "../tools";
+ *
  *   $_container-gutter-gallery : (
  *     null   : 1.2rem,
  *     medium : 2.4rem
@@ -125,11 +129,10 @@ $_container-size-default     : settings.$container-size-default;
  *   );
  *
  *   .gallery__container {
- *     @include make-container(
+ *     @include tools.make-container(
  *       $padding: $_container-gutter-gallery,
  *       $size: $_container-size-gallery
  *     )
- *   }
  */
 
 @mixin make-container(

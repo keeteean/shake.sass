@@ -70,9 +70,9 @@ $_link-outline              : none !default;
 
 /**
  * The base typography for <body> element has already been set:
- * - font-family: $global-font-family
+ * - font-family: settings.$primary-font-family
  * - font-weight: 400
- * - font-size: $global-font-size
+ * - font-size: settings.$default-font-size
  */
 
 
@@ -80,7 +80,7 @@ $_link-outline              : none !default;
  * Import Type element from Shake.sass.
  */
 
-@use "node_modules/shake.sass/3.base/base.type" as type;
+@use "node_modules/shake.sass/3.base/base.type" as b-type;
 
 
 /**

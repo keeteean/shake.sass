@@ -23,13 +23,9 @@
  * Imports
  */
 
-@use "libraries";
 @use "../settings";
+@use "node_modules/2.tools/tools.container" as container;
 
-
-/**
- * Settings
- */
 
 /**
  * Default container gutter
@@ -41,7 +37,7 @@
  * @type Number | List | Map
  */
 
-$tools-container-gutter-default   : settings.$container-gutter-default;
+$_container-gutter-default   : settings.$container-gutter-default;
 
 
 /**
@@ -53,7 +49,7 @@ $tools-container-gutter-default   : settings.$container-gutter-default;
  * @type String | Map
  */
 
-$tools-container-size-default     : settings.$container-size-default;
+$_container-size-default     : settings.$container-size-default;
 
 
 /**
@@ -66,6 +62,9 @@ $tools-container-size-default     : settings.$container-size-default;
  * @access private
  */
 
+@mixin container-padding($size) {
+  @include container.container-padding($size);
+}
 
 /**
  * Container size
@@ -76,6 +75,10 @@ $tools-container-size-default     : settings.$container-size-default;
  * @parameter {number | map} $size - Max-width values.
  * @access private
  */
+
+@mixin container-size($size) {
+  @include container.container-size($size);
+}
 
 
 /**
@@ -96,36 +99,40 @@ $tools-container-size-default     : settings.$container-size-default;
  * Default container
  *
  * @example
+ *   @use "../tools";
+ *
  *   .section__container {
- *      @include make-container;
+ *      @include tools.make-container;
  *   }
  *
  * Custom container
  *
  * You can define custom paddings and sizes (widths) but you can use the
- * default `$tools-container-gutter-default` and
- * `$tools-container-size-default` ones too.
+ * default `$_container-gutter-default` and
+ * `$_container-size-default` ones too.
  *
  * @example
- *   $tools-container-gutter-gallery : (
+ *   @use "../tools";
+ *
+ *   $_container-gutter-gallery : (
  *     null   : 1.2rem,
  *     medium : 2.4rem
  *   );
- *   $tools-container-size-gallery : (
+ *   $_container-size-gallery : (
  *     null   : 100%,
  *     medium : 102.4rem
  *   );
  *
  *   .gallery__container {
- *     @include make-container(
- *       $padding: $tools-container-gutter-gallery,
- *       $size: $tools-container-size-gallery
+ *     @include tools.make-container(
+ *       $padding: $_container-gutter-gallery,
+ *       $size: $_container-size-gallery
  *     )
  */
 
-
-/**
- * Import Container Tool from Shake.sass.
- */
-
-@forward "node_modules/shake.sass/2.tools/tools.container";
+@mixin make-container(
+  $padding: $_container-gutter-default,
+  $size: $_container-size-default
+) {
+  @include container.make-container($padding, $size);
+}

@@ -33,7 +33,10 @@
  * Use it wherever you need it.
  *
  * @example
- *  @include type($sizes, $breakpoints: settings.$breakpoints);
+ *   @use "../settings";
+ *   @use "../tools";
+ *
+ *   @include tools.type($sizes, $breakpoints: settings.$breakpoints);
  *
  *
  * Type mixin accepts two parameters:
@@ -49,27 +52,38 @@
  * Examples
  *
  * Font size typography
+ *
  * It will create a font size on `<h1>` tag that will have 16px font-size.
  *
  * @example
+ *   @use "../tools";
+ *
  *   h1 {
- *     @include type(1.6rem);
+ *     @include tools.type(1.6rem);
  *   }
  *
  * Font size and line height typography
- * It will create a font size on `<h1>` tag that will have 16px font-size and 20px line-height.
+ *
+ * It will create a font size on `<h1>` tag that will have 16px font-size and
+ * 20px line-height.
  *
  * @example
+ *   @use "../tools";
+ *
  *   h1 {
- *     @include type(1.6rem 2rem);
+ *     @include tools.type(1.6rem 2rem);
  *   }
  *
  * Responsive font size typography
- * It will create a font size on `<h1>` tag that will have 12px font-size on mobiles and 16px on tablets and up.
+ *
+ * It will create a font size on `<h1>` tag that will have 12px font-size on
+ * mobiles and 16px on tablets and up.
  *
  * @example
+ *   @use "../tools";
+ *
  *   h1 {
- *     @include type(
+ *     @include tools.type(
  *       (
  *         null : 1.2rem,
  *         small: 1.6rem
@@ -78,12 +92,16 @@
  *   }
  *
  * Responsive font size typography with line height
- * It will create a font size on `<h1>` tag that will have 12px font-size and 16px line-height on
- * mobiles and 16px font-size and 20px line-height on tablets and up.
+ *
+ * It will create a font size on `<h1>` tag that will have 12px font-size and
+ * 16px line-height on mobiles and 16px font-size and 20px line-height on
+ * tablets and up.
  *
  * @example
+ *   @use "../tools";
+ *
  *   h1 {
- *     @include type(
+ *     @include tools.type(
  *       (
  *         null : (1.2rem, 1.6rem),
  *         small: (1.6rem, 2rem)
@@ -104,8 +122,10 @@
  * You can set this globally too in `3.base/_base.reset.scss`.
  *
  * @example
+ *   @use "../tools";
+ *
  *   h1 {
- *     @include font-smooth;
+ *     @include tools.font-smooth;
  *   }
  */
 

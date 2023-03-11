@@ -4,6 +4,17 @@
  ******************************************************************************
  *
  * Easily theming anchor elements.
+ */
+
+/**
+ * Imports
+ */
+
+@use "node_modules/2.tools/tools.link" as link;
+
+
+/**
+ * Link
  *
  * @parameter {string} $color - Text color of the link.
  * @parameter {string} $type - The type of the color.
@@ -24,7 +35,9 @@
  * for other states, no `text-decoration`, no `:focus` style:
  *
  * a {
- *    @include link($color-link);
+ *   @use "../tools";
+ *
+ *    @include tools.link($color-link);
  * }
  *
  *
@@ -32,7 +45,7 @@
  * `text-decoration: underlined`, no `:focus` style:
  *
  * a {
- *   @include link($color-link, dark, visited, underlined);
+ *   @include tools.link($color-link, dark, visited, underlined);
  * }
  *
  *
@@ -40,21 +53,16 @@
  * `text-decoration`, given a `:focus` style:
  *
  * a {
- *   @include link($color-link, light, none, none, .8rem solid $color-outline);
+ *   @include tools.link($color-link, light, none, none, .8rem solid $color-outline);
  * }
  */
 
-
-/**
- * Imports
- */
-
-@use "sass:color";
-@use "tools.transitions" as transitions;
-
-
-/**
- * Import Link Tool from Shake.sass.
- */
-
-@forward "node_modules/shake.sass/2.tools/tools.link";
+@mixin link(
+  $color,
+  $type: light,
+  $visited: none,
+  $text-decoration: none,
+  $outline: initial
+) {
+  @include link.link($color, $type, $visited, $text-decoration, $outline);
+}

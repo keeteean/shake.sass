@@ -28,7 +28,8 @@
  *     </div>
  *   </div>
  *
- * Note: Shake.sass has not `.u-position-relative` class, it just show witch element has
+ * Note: Shake.sass has not `.u-position-relative` class, it just show witch
+ * element has
  * `position: relative;` property.
  *
  * It's built on and you can use it as mixin too:
@@ -40,4 +41,4 @@
  * Import Stretched Link Utility from Shake.sass.
  */
 
-@use "node_modules/shake.sass/6.utilities/utilities.stretched-link" as stretched-link;
+@use "node_modules/shake.sass/6.utilities/utilities.stretched-link" as u-stretched-link;

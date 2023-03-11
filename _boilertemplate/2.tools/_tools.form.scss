@@ -8,15 +8,10 @@
 
 
 /**
- * Placeholder mixin
- *
- * With it you can theming input placeholders easily for any browsers.
- *
- * @example
- *  @include input-placeholder {
- *    color: grey;
- *  }
+ * Imports
  */
+
+@use "node_modules/2.tools/tools.form" as form;
 
 
 /**
@@ -26,14 +21,16 @@
  * You must declare the font color, other rules optionally.
  *
  * @example
- *  @include autofill($color-primary) {
- *    background: lighten($color-primary, 30%);
+ *   @use "../settings";
+ *   @use "../tools";
+ *
+ *   @include tools.autofill(settings.$color-primary) {
+ *     background: lighten(settings.$color-primary, 30%);
  *  }
  */
 
-
-/**
- * Import Form Tool from Shake.sass.
- */
-
-@forward "node_modules/shake.sass/2.tools/tools.form";
+@mixin autofill($color) {
+  @include form.autofill($color) {
+    @content;
+  }
+}

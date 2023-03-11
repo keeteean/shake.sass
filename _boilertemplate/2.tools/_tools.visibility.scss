@@ -11,6 +11,13 @@
 
 
 /**
+ * Imports
+ */
+
+@use "node_modules/2.tools/tools.visibility" as visibility;
+
+
+/**
  * Visually Hidden
  *
  * Use visually-hidden mixin to hide elements on all devices except screen
@@ -22,10 +29,16 @@
  * @link https://www.iotacss.com/docs/utilities/display
  *
  * @example
+ *   @use "../tools";
+ *
  *   .page__title {
- *     @include visually-hidden;
+ *     @include tools.visually-hidden;
  *   }
  */
+
+@mixin visually-hidden {
+  @include visibility.visually-hidden;
+}
 
 
 /**
@@ -39,14 +52,14 @@
  * borrowed from HTML5 Boilerplate
  *
  * @example
+ *   @use "../tools";
+ *
  *   .skip-navigation {
  *      @include visually-hidden;
  *      @include visually-hidden--focusable;
  *   }
  */
 
-
-/**
- * Import Visibility Tool from Shake.sass.
- */
-@forward "node_modules/shake.sass/2.tools/tools.visibility";
+@mixin visually-hidden--focusable {
+  @include visibility.visually-hidden--focusable;
+}

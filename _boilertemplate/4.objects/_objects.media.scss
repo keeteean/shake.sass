@@ -34,7 +34,8 @@
  *
  * Media Object with responsive gutter size
  *
- * It creates a default media object with 10px gutter in mobile and 20px in tablets and up.
+ * It creates a default media object with 10px gutter in mobile and 20px in
+ * tablets and up.
  *
  * @example
  *   $_media-gutter-default: (
@@ -73,7 +74,8 @@
  *
  * Media Object with extra responsive gutter size
  *
- * It creates a new gutter size named 'small' that will have 5px gutter size in mobiles and 10px in tablets and up.
+ * It creates a new gutter size named 'small' that will have 5px gutter size in
+ * mobiles and 10px in tablets and up.
  *
  * @example
  *   $_media-gutter-extra: (
@@ -95,11 +97,12 @@
  *
  * Media Object that collapses under 767px width breakpoints
  *
- * It creates a media object that will automatically collapse in two rows when a max-width of 767px presents.
+ * It creates a media object that will automatically collapse in two rows when a
+ * max-width of 767px presents.
  *
  * @example
- * $_media-collapses-at: 767px; // This is not needed since 767px is the default value
- * $_media-responsive: true;
+ * $_media-collapses-at: 767px; // This is not needed since 767px is the default
+ * value $_media-responsive: true;
  *
  *   <div class="o-media o-media--responsive">
  *     <div class="o-media__fixed">
@@ -113,7 +116,8 @@
  *
  * Media object with reversed columns
  *
- * It creates a media object that has the fixed part on the right and the fluid on the left.
+ * It creates a media object that has the fixed part on the right and the fluid on
+ * the left.
  *
  * @example
  *   $_media-reversed: true;
@@ -243,4 +247,4 @@ $_media-collapse-at          : 47.93em !default; // 767px
  * Import Media Object from Shake.sass.
  */
 
-@use "node_modules/shake.sass/4.objects/objects.media" as media;
+@use "node_modules/shake.sass/4.objects/objects.media" as o-media;

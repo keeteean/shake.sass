@@ -19,11 +19,13 @@
  * **IMPORTANT!** Don't use grid mixins alone only together, or it will cause
  * wrong paddings and even broke your layout! So please don't use just
  * `make-grid` or `make-column` alone only both together. In case of you don't
- * need the exact column withs (e.x. `25%`), just write custom flexbox rules.
+ * need the exact column with (e.x. `25%`), just write custom flexbox rules.
  *
  * Let's see a semantic example for a typical responsive entry lister:
  *
  * @example
+ *   index.html
+ *
  *   <div class="o-container">
  *     <ul class="entry__list">
  *       <li class="entry">an entry</li>
@@ -34,28 +36,31 @@
  *     </ul>
  *   </div>
  *
+ *   style.scss
+ *   @use "../tools";
+ *
  *   .entry__list {
- *     @include make-grid();
+ *     @include tools.make-grid();
  *     flex-direction: row;
  *   }
  *
  *   .entry {
- *     @include make-column();
- *     @include breakpoint(medium) {
- *       @include column-size(6,12);
+ *     @include tools.make-column();
+ *     @include tools.breakpoint(medium) {
+ *       @include tools.column-size(6,12);
  *     }
 
- *     @include breakpoint(large) {
- *       @include column-size(4,12);
+ *     @include tools.breakpoint(large) {
+ *       @include tools.column-size(4,12);
  *     }
 
  *     &--double {
- *       @include breakpoint(medium) {
- *         @include column-size(6,12);
+ *       @include tools.breakpoint(medium) {
+ *         @include tools.column-size(6,12);
  *       }
 
- *       @include breakpoint(large) {
- *         @include column-size(8,12);
+ *       @include tools.breakpoint(large) {
+ *         @include tools.column-size(8,12);
  *       }
  *     }
  *   }
@@ -66,9 +71,8 @@
  * Imports
  */
 
-@use "sass:math";
-@use "libraries";
 @use "../settings";
+@use "node_modules/2.tools/tools.grid" as grid;
 
 
 /**
@@ -107,13 +111,17 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  * we divide that by 2 for two sides.
  *
  * @example
+ *   @use "../tools";
+ *
  *   .entry__list {
- *     @include make-grid();
+ *     @include tools.make-grid();
  *   }
  *
  * Grid with custom responsive gutters
  *
  * @example
+ *   @use "../tools";
+ *
  *   $_grid-gutter-extra: (
  *       null    : .6rem,
  *       medium  : 1.2rem,
@@ -121,23 +129,31 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  *   );
  *
  *   .entry__list {
- *     @include make-grid($_grid-gutter-extra);
+ *     @include tools.make-grid($_grid-gutter-extra);
  *   }
  *
  * Grid with simple, non-responsive gutters
  *
  * @example
+ *   @use "../tools";
+ *
  *   .entry__list {
- *     @include make-grid(1.5rem);
+ *     @include tools.make-grid(1.5rem);
  *   }
  *
  * Grid without any gutters (collapsed)
  *
  * @example
+ *   @use "../tools";
+ *
  *   .entry__list {
- *     @include make-grid(0);
+ *     @include tools.make-grid(0);
  *   }
  */
+
+@mixin make-grid($gutter: $_grid-gutter-default) {
+  @include grid.make-grid($gutter);
+}
 
 
 /**
@@ -164,13 +180,17 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  * we divide that by 2 for two sides.
  *
  * @example
+ *   @use "../tools";
+ *
  *   .entry {
- *     @include make-column();
+ *     @include tools.make-column();
  *   }
  *
  * Columns with custom responsive gutters
  *
  * @example
+ *   @use "../tools";
+ *
  *   $_grid-gutter-extra: (
  *       null    : .6rem,
  *       medium  : 1.2rem,
@@ -178,23 +198,31 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  *   );
  *
  *   .entry {
- *     @include make-column($_grid-gutter-extra);
+ *     @include tools.make-column($_grid-gutter-extra);
  *   }
  *
  * Columns with simple, non responsive gutters
  *
  * @example
+ *   @use "../tools";
+ *
  *   .entry {
- *     @include make-column(1.5rem);
+ *     @include tools.make-column(1.5rem);
  *   }
  *
  * Columns without any gutters (collapsed)
  *
  * @example
+ *   @use "../tools";
+ *
  *   .entry {
- *     @include make-column(0);
+ *     @include tools.make-column(0);
  *   }
  */
+
+@mixin make-column($gutter: $_grid-gutter-default) {
+  @include grid.make-column($gutter);
+}
 
 
 /**
@@ -214,11 +242,17 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  *
  *
  * @example
+ *   @use "../tools";
+ *
  *   .entry {
- *     @include make-column();
- *     @include column-size(4,12);
+ *     @include tools.make-column();
+ *     @include tools.column-size(4,12);
  *   }
  */
+
+@mixin column-size($column, $all-columns) {
+  @include grid.column-size($column, $all-columns);
+}
 
 
 /**
@@ -245,28 +279,29 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  * Push the column on left side
  *
  * @example
+ *   @use "../tools";
+ *
  *   .entry {
- *     @include make-column();
- *     @include column-size(3,12);
+ *     @include tools.make-column();
+ *     @include tools.column-size(3,12);
  *
  *     &--center {
- *       @include column-offset(3,12);
+ *       @include tools.column-offset(3,12);
  *     }
  *   }
  *
  * Pull the column on right side
  *
  * @example
+ *   @use "../tools";
+ *
  *   .article__column--center {
- *     @include make-column();
- *     @include column-size(3,12);
- *     @include column-offset(3,12, end);
+ *     @include tools.make-column();
+ *     @include tools.column-size(3,12);
+ *     @include tools.column-offset(3,12, end);
  *   }
  */
 
-
-/**
- * Import Grid Tool from Shake.sass.
- */
-
-@forward "node_modules/shake.sass/2.tools/tools.grid";
+@mixin column-offset($column, $all-columns, $position: start) {
+  @include grid.column-offset($column, $all-columns, $position);
+}

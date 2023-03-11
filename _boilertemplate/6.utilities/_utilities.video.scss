@@ -19,10 +19,13 @@
  *
  * @example
  *   <div class="u-video-responsive u-video-responsive--4-3">
- *     <iframe src="..." width="..." height="..." frameborder="0" allowfullscreen></iframe>
+ *     <iframe src="..." width="..." height="..." frameborder="0"
+ *       allowfullscreen>
+ *     </iframe>
  *   </div>
  *
- * For responsive `<video>` elements, you can add the `.u-video-responsive` class directly.
+ * For responsive `<video>` elements, you can add the `.u-video-responsive`
+ * class directly.
  *
  * @example
  *   <video class="u-video-responsive" src="...">...</video>
@@ -33,4 +36,4 @@
  * Import Video Utility from Shake.sass.
  */
 
-@use "node_modules/shake.sass/6.utilities/utilities.video" as video;
+@use "node_modules/shake.sass/6.utilities/utilities.video" as u-video;

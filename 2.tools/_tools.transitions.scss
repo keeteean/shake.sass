@@ -15,8 +15,16 @@
 
 /**
  * Global transition
+ *
+ * @example
+ *   @use "../tools";
+ *
+ *   .c-button {
+ *     @include tools.global-transition;
+ *   }
  */
-@mixin global {
+
+@mixin global-transition {
   transition: settings.$transition-property settings.$transition-timing settings.$transition-easing;
 
   @if settings.$prefers-reduced-motion {

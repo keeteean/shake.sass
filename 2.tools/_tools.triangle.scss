@@ -7,10 +7,12 @@
  *
  * Borrowed from bourbon
  * @link https://www.bourbon.io/docs/latest#triangle
- * *
+ *
  * @example
+ *   @use "../tools";
+ *
  *   .button__arrow {
- *     @include make-triangle(right, 1.5rem, 1rem, $color-secondary);
+ *     @include tools.make-triangle(right, 1.5rem, 1rem, $color-secondary);
  *   }
  */
 

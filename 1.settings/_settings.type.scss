@@ -3,7 +3,10 @@
  *** TYPE SETTINGS ***
  ******************************************************************************
  *
- * Global typography settings.
+ * Global typography settings:
+ * - Font-family declarations
+ * - Line-height declarations
+ * - Font-size declarations
  */
 
 
@@ -60,7 +63,7 @@ $line-height         : 1.2 !default;
  * @example
  *   breakpoint-name: ( font-size, optional-line-height )
  *
- * Breakpoint names come from $global-breakpoints declared in
+ * Breakpoint names come from $breakpoints declared in
  * `1.settings/_settings.breakpoints`.
  *
  * 'null' means no breakpoint (default)

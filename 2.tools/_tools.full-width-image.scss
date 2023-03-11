@@ -10,15 +10,17 @@
  * `contain`. Default is `cover`.
  *
  * @example
- * .c-slider {
- *   &__slide {
- *     position: relative;
+ *   @use "../tools";
  *
- *      img {
- *        @include full-width-image;
- *      }
+ *   .c-slider {
+ *     &__slide {
+ *       position: relative;
+ *
+ *       img {
+ *         @include tools.full-width-image(contain);
+ *       }
+ *     }
  *   }
- * }
  */
 
 @mixin full-width-image($fit: cover) {

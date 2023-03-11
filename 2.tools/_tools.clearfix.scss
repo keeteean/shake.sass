@@ -15,8 +15,10 @@
  *
  *
  * @example
- *   .o-grid {
- *     @include clearfix;
+ *   @use "../tools";
+ *
+ *   .entries {
+ *     @include tools.clearfix;
  *   }
  */
 

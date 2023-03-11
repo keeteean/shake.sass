@@ -45,7 +45,7 @@
         ]
       }
     ],
-    "color-function-notation": "modern",
+    "color-function-notation": null,
     "comment-empty-line-before": null,
     "custom-property-pattern": "^[a-z][-_a-z0-9IE]*$",
     "declaration-block-no-redundant-longhand-properties": null,
@@ -96,7 +96,7 @@
     "unit-allowed-list": [
       "ch",
       "deg",
-      "dpcm",
+      "dpi",
       "em",
       "ex",
       "fr",

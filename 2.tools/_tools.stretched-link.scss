@@ -15,17 +15,26 @@
  * contains a link with included `stretched-link` mixin is clickable.
  *
  * @example
+ *   @use "../tools";
+ *
  *   .o-media {
  *     position: relative;
  *
  *     &__link {
- *       @include stretched-link;
+ *       @include tools.stretched-link;
  *     }
  *   }
  *
  * You can use it as utility class too:
  * @see 6.utilities/_utilities.stretched-link.scss
  */
+
+
+/**
+ * Imports
+ */
+
+@use "../settings";
 
 
 @mixin stretched-link {
@@ -38,7 +47,8 @@
     // Just in case `pointer-events: none` is set on a parent
     pointer-events: auto;
 
+    // stylelint-disable-next-line max-line-length
     // IE10 bugfix, see https://stackoverflow.com/questions/16947967/ie10-hover-pseudo-class-doesnt-work-without-background-color
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(settings.$color-dark, 0);
   }
 }

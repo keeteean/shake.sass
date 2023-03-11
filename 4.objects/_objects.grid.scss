@@ -72,8 +72,8 @@
  * Namespace settings
  */
 
-$_grid-class          : "o-grid";
-$_grid-class-mod      : $_grid-class + "--";
+$_grid-class          : "o-grid" !default;
+$_grid-class-mod      : $_grid-class + "--" !default;
 
 
 /**

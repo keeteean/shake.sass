@@ -8,6 +8,18 @@
  *
  * Borrowed from Bootstrap 4
  * @link https://getbootstrap.com/docs/4.3/utilities/stretched-link
+ */
+
+
+/**
+ * Imports
+ */
+
+@use "node_modules/2.tools/tools.stretched-link" as stretched-link;
+
+
+/**
+ * Stretched link
  *
  * Include `stretched-link` mixin to a link (`<a>` element) to make its
  * containing block clickable via a `::after` pseudo element.
@@ -15,11 +27,13 @@
  * contains a link with included `stretched-link` mixin is clickable.
  *
  * @example
+ *   @use "../tools";
+ *
  *   .o-media {
  *     position: relative;
  *
  *     &__link {
- *       @include stretched-link;
+ *       @include tools.stretched-link;
  *     }
  *   }
  *
@@ -27,9 +41,6 @@
  * @see 6.utilities/_utilities.stretched-link.scss
  */
 
-
-/**
- * Import Stretched link from Shake.sass.
- */
-
-@forward "node_modules/shake.sass/2.tools/tools.stretched-link";
+@mixin stretched-link {
+  @include stretched-link.stretched-link;
+}

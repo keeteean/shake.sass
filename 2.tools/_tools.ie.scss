@@ -11,6 +11,8 @@
  * Internet Explorer 10-11 mixin
  *
  * @example
+ *   @use "../tools";
+ *
  *  @include ie {
  *    overflow: visible;
  *  }

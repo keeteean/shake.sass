@@ -5,12 +5,17 @@
  *
  * Generates a triangle pointing in a specified direction.
  *
+ *
+ * Triangle mixin
+ *
  * Borrowed from bourbon
  * @link https://www.bourbon.io/docs/latest#triangle
- * *
+ *
  * @example
+ *   @use "../tools";
+ *
  *   .button__arrow {
- *     @include make-triangle(right, 1.5rem, 1rem, $color-secondary);
+ *     @include tools.make-triangle(right, 1.5rem, 1rem, $color-secondary);
  *   }
  */
 
@@ -19,7 +24,7 @@
  * Imports
  */
 
-@use "validators";
+@use "node_modules/2.tools/tools.triangle" as triangle;
 
 
 /**
@@ -35,13 +40,10 @@
  * @parameter {number (with unit)} $height
  *   Height of the triangle.
  *
- * @parameter {color} $color
+ * @parameter {string} $color
  *   Color of the triangle.
  */
 
-
-/**
- * Import Css Triangle Tool from Shake.sass.
- */
-
-@forward "node_modules/shake.sass/2.tools/tools.triangle";
+@mixin make-triangle($direction, $width, $height, $color) {
+  @include triangle.make-triangle($direction, $width, $height, $color);
+}

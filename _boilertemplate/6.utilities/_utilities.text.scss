@@ -10,8 +10,8 @@
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://www.iotacss.com/docs/utilities/text
  *
- * @require {map} $global-breakpoints <1.settings/_settings.breakpoints.scss>
- * @require {string} $global-breakpoint-separator
+ * @require {map} $breakpoints <1.settings/_settings.breakpoints.scss>
+ * @require {string} $breakpoint-separator
  * <1.settings/_settings.breakpoints.scss>
  * @require {mixin} text-align <2.tools/_tools.text.scss>
  *
@@ -63,4 +63,4 @@ $_text-breakpoints  : settings.$breakpoints !default;
  * Import Text Utility from Shake.sass
  */
 
-@use "node_modules/shake.sass/6.utilities/utilities.text" as text;
+@use "node_modules/shake.sass/6.utilities/utilities.text" as u-text;

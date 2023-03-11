@@ -25,6 +25,9 @@
  *
  * Using the global default settings.$breakpoints breakpoints map.
  * @example
+ *   @use "../settings";
+ *   @use "../tools";
+ *
  *   settings.$breakpoints: (
  *     small  : "screen and (min-width: 30em)", // 480px
  *     medium : "screen and (min-width: 48px)", // 768px
@@ -36,7 +39,7 @@
  *   .c-header {
  *      margin-right: 3rem;
  *
- *      @include breakpoint(small) {
+ *      @include tools.breakpoint(small) {
  *        margin-right: 0;
  *      }
  *   }
@@ -49,10 +52,13 @@
  *   );
  *
  * @example
+ *   @use "../settings";
+ *   @use "../tools";
+ *
  *   .c-header {
  *     margin-right: 3rem;
  *
- *     @include breakpoint(xlarge, $my-breakpoints) {
+ *     @include tools.breakpoint(xlarge, settings.$my-breakpoints) {
  *       margin-right: 0;
  *     }
  *   }
@@ -68,10 +74,13 @@
  *   );
  *
  * @example
+ *   @use "../settings";
+ *   @use "../tools";
+ *
  *   .c-header {
  *     margin-right: 3rem;
  *
- *     @include breakpoint($portrait) {
+ *     @include tools.breakpoint(settings.$portrait) {
  *       margin-right: 0;
  *     }
  *   }

@@ -4,6 +4,8 @@
  ******************************************************************************
  *
  * Theming SVG icons.
+ * Set the stroke and fill color of the `svg.c-icon` component with
+ * `currentColor` value.
  */
 
 
@@ -11,4 +13,4 @@
  * Import Icon Component from Shake.sass.
  */
 
-@use "node_modules/shake.sass/5.components/components.icon" as icon;
+@use "node_modules/shake.sass/5.components/components.icon" as c-icon;

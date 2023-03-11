@@ -8,18 +8,25 @@
 
 
 /**
+ * Imports
+ */
+
+@use "node_modules/2.tools/tools.color" as color;
+
+
+/**
  * Simple color and background color generator
  *
  * Add color then background color from Sass variables.
  *
  *
  * @example
- *  @include colors($body-color, $body-background);
+ *   @use "../settings";
+ *   @use "../tools";
+ *
+ *  @include tools.colors(settings.$color-text, settings.$color-background);
  */
 
-
-/**
- * Import Color Tool from Shake.sass.
- */
-
-@forward "node_modules/shake.sass/2.tools/tools.color";
+@mixin colors($color, $background-color) {
+  @include color.colors($color, $background-color);
+}

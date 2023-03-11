@@ -10,8 +10,8 @@
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://www.iotacss.com/docs/utilities/text
  *
- * @require {map} $global-breakpoints <1.settings/_settings.breakpoints.scss>
- * @require {string} $global-breakpoint-separator
+ * @require {map} $breakpoints <1.settings/_settings.breakpoints.scss>
+ * @require {string} $breakpoint-separator
  * <1.settings/_settings.breakpoints.scss>
  * @require {mixin} text-align <2.tools/_tools.text.scss>
  *

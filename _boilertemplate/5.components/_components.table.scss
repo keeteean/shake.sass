@@ -8,13 +8,7 @@
 
 
 /**
- * Imports
- */
-@use "../tools" as *;
-
-
-/**
- ** Settings **
+ * Settings
  */
 
 /**
@@ -68,4 +62,4 @@ $_responsive-table-content-width    : 67% !default;
  * Import Table Component from Shake.sass.
  */
 
-@use "node_modules/shake.sass/5.components/components.table" as table;
+@use "node_modules/shake.sass/5.components/components.table" as c-table;
