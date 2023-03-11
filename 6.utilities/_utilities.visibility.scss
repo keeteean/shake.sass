@@ -67,6 +67,15 @@ $_visibility-breakpoints         : settings.$breakpoints !default;
  */
 
 .u-show {
+  display: block !important;
+}
+
+
+/**
+ * Visible
+ */
+
+.u-visible {
   visibility: visible !important;
 }
 
@@ -76,6 +85,15 @@ $_visibility-breakpoints         : settings.$breakpoints !default;
  */
 
 .u-hide {
+  display: none !important;
+}
+
+
+/**
+ * Invisible
+ */
+
+.u-invisible {
   visibility: hidden !important;
 }
 
@@ -124,10 +142,18 @@ $_visibility-breakpoints         : settings.$breakpoints !default;
   @each $breakpoint-name, $breakpoint-size in $_visibility-breakpoints {
     @media #{$breakpoint-size} {
       .#{"u-show" + settings.$breakpoint-separator + $breakpoint-name} {
+        display: block !important;
+      }
+
+      .#{"u-visible" + settings.$breakpoint-separator + $breakpoint-name} {
         visibility: visible !important;
       }
 
       .#{"u-hide" + settings.$breakpoint-separator + $breakpoint-name} {
+        display: none !important;
+      }
+
+      .#{"u-invisible" + settings.$breakpoint-separator + $breakpoint-name} {
         visibility: hidden !important;
       }
 
