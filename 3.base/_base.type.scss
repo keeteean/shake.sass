@@ -24,24 +24,41 @@
  * Global selected text
  */
 
-$_selected-text             : true !default;
-$_selected-text-color       : settings.$color-light !default;
-$_selected-text-background  : settings.$color-tertiary !default;
+$_selected-text                     : true !default;
+$_selected-text-color               : settings.$color-light !default;
+$_selected-text-background          : settings.$color-tertiary !default;
 
 
 /**
  * Paragraph margins
  */
 
-$_paragraph-margins         : true !default;
-$_paragraph-margin-size     : 1em !default;
+$_paragraph-margins                 : true !default;
+$_paragraph-margin-size             : 1em !default;
 
 
 /**
  * Inline and Code Blocks
  */
 
-$_code-tab-size             : 2 !default;
+$_code-tab-size                     : 2 !default;
+
+
+/**
+ * Classless typography settings
+ */
+
+// Responsive font-size
+$_classless-headings-fontsize       : true !default;
+
+// Heading font-family
+$_classless-headings-fontfamily     : true !default;
+
+// Margins and padding for ordered and ordered lists
+$_classless-lists-margins-paddings  : true !default;
+
+// link element (see details below)
+$_classless-link-element            : true !default;
 
 
 /**
@@ -49,19 +66,19 @@ $_code-tab-size             : 2 !default;
  */
 
 // :link, :visited states
-$_link-color                : settings.$color-primary !default;
+$_link-color                        : settings.$color-primary !default;
 
 // link color type @see link mixin in 2.tools/_link
-$_link-type                 : light !default;
+$_link-type                         : light !default;
 
 // :visited state effect @see link mixin in 2.tools/_link
-$_link-visited              : visited !default;
+$_link-visited                      : visited !default;
 
 // underlined links
-$_link-text-decoration      : none !default;
+$_link-text-decoration              : none !default;
 
 // outlined links in :focus state
-$_link-outline              : none !default;
+$_link-outline                      : none !default;
 
 
 /**
@@ -131,14 +148,16 @@ var {
  * Global Link Element
  */
 
-a:not([class]) {
-  @include tools.link(
-    $_link-color,
-    $_link-type,
-    $_link-visited,
-    $_link-text-decoration,
-    $_link-outline
-  );
+@if $_classless-link-element == true {
+  a:not([class]) {
+    @include tools.link(
+      $_link-color,
+      $_link-type,
+      $_link-visited,
+      $_link-text-decoration,
+      $_link-outline
+    );
+  }
 }
 
 
@@ -146,37 +165,41 @@ a:not([class]) {
  * Default Heading
  */
 
-h1:not([class]),
-h2:not([class]),
-h3:not([class]),
-h4:not([class]),
-h5:not([class]),
-h6:not([class]) {
-  font-family: settings.$heading-font-family;
+@if $_classless-headings-fontfamily == true {
+  h1:not([class]),
+  h2:not([class]),
+  h3:not([class]),
+  h4:not([class]),
+  h5:not([class]),
+  h6:not([class]) {
+    font-family: settings.$heading-font-family;
+  }
 }
 
-h1:not([class]) {
-  @include tools.type(settings.$heading1-font-size);
-}
+@if $_classless-headings-fontsize == true {
+  h1:not([class]) {
+    @include tools.type(settings.$heading1-font-size);
+  }
 
-h2:not([class]) {
-  @include tools.type(settings.$heading2-font-size);
-}
+  h2:not([class]) {
+    @include tools.type(settings.$heading2-font-size);
+  }
 
-h3:not([class]) {
-  @include tools.type(settings.$heading3-font-size);
-}
+  h3:not([class]) {
+    @include tools.type(settings.$heading3-font-size);
+  }
 
-h4:not([class]) {
-  @include tools.type(settings.$heading4-font-size);
-}
+  h4:not([class]) {
+    @include tools.type(settings.$heading4-font-size);
+  }
 
-h5:not([class]) {
-  @include tools.type(settings.$heading5-font-size);
-}
+  h5:not([class]) {
+    @include tools.type(settings.$heading5-font-size);
+  }
 
-h6:not([class]) {
-  @include tools.type(settings.$heading6-font-size);
+  h6:not([class]) {
+    @include tools.type(settings.$heading6-font-size);
+  }
 }
 
 
@@ -184,9 +207,11 @@ h6:not([class]) {
  * Global List Elements
  */
 
-ul:not([class]),
-ol:not([class]) {
-  margin-block: 1em;
-  margin-inline: 0;
-  padding-inline-start: 1.1em;
+@if $_classless-lists-margins-paddings == true {
+  ul:not([class]),
+  ol:not([class]) {
+    margin-block: 1em;
+    margin-inline: 0;
+    padding-inline-start: 1.1em;
+  }
 }
