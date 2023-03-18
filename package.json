@@ -1,6 +1,6 @@
 {
   "name": "shake.sass",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Shake is a small Sass framework what follows the BEM Methodology and has inspired by ITCSS (Inverted Triangle CSS) and Atomic Design. Many techniques has been borrowed from other css frameworks like iotaCSS, Spectre.css or Bootstrap.",
   "license": "MIT",
   "repository": {

@@ -1,6 +1,6 @@
 /**
  ******************************************************************************
- *** BASE RESET ***
+ *** RESET TOOLS ***
  ******************************************************************************
  *
  * Improved Normalize.css with some goodness:
@@ -30,7 +30,7 @@
  */
 
 @use "../settings";
-@use "../2.tools/tools.reset" as reset;
+@use "node_modules/shake.sass/2.tools/tools.reset" as reset;
 
 /**
  *** Settings ***
@@ -88,8 +88,6 @@ $_font-antialiasing: false !default;
 /**
  * Bullets remover from HTML unordered (`ul`) and ordered (`ol`) lists.
  * Set it to false if you don't want to use bullets.
- * Encourages the use of `ul`or `ol` for any listed elements in any styles,
- * like a navigation menu and not only for bullet lists.
  *
  * @type Boolean
  */
@@ -156,14 +154,18 @@ $_html5-form-elements: true !default;
  * 5. Makes font thickness to look the same in Firefox and Webkit.
  */
 
-@include reset.document($_font-antialiasing);
+@mixin document($font-antialiasing: $_font-antialiasing) {
+  @include reset.document($font-antialiasing);
+}
 
 
 /**
  * Sets box-sizing to all elements and before and after
  */
 
-@include reset.box-sizing;
+@mixin box-sizing {
+  @include reset.box-sizing;
+}
 
 
 /**
@@ -171,7 +173,9 @@ $_html5-form-elements: true !default;
  */
 
 // Simple reset of element margin and padding
-@include reset.sections;
+@mixin sections {
+  @include reset.sections;
+}
 
 
 /**
@@ -183,7 +187,9 @@ $_html5-form-elements: true !default;
  * For IE9-, please use HTML5Shiv https://github.com/aFarkas/html5shiv.
  */
 
-@include reset.main;
+@mixin main {
+  @include reset.main;
+}
 
 
 /**
@@ -191,7 +197,9 @@ $_html5-form-elements: true !default;
  * 2. Show the overflow in Edge and IE.
  */
 
-@include reset.hr;
+@mixin hr {
+  @include reset.hr;
+}
 
 
 /**
@@ -202,7 +210,9 @@ $_html5-form-elements: true !default;
  * 2. Reset font-weight of all heading elements.
  */
 
-@include reset.heading-fontsize($_heading-size);
+@mixin heading-fontsize($heading-size: $_heading-size) {
+  @include reset.heading-fontsize($heading-size);
+}
 
 
 /**
@@ -214,7 +224,9 @@ $_html5-form-elements: true !default;
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
 
-@include reset.anchor;
+@mixin anchor {
+  @include reset.anchor;
+}
 
 
 /**
@@ -222,21 +234,27 @@ $_html5-form-elements: true !default;
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 
-@include reset.abbr;
+@mixin abbr {
+  @include reset.abbr;
+}
 
 
 /**
  * Modify default styling of address.
  */
 
-@include reset.address;
+@mixin address {
+  @include reset.address;
+}
 
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
 
-@include reset.bold;
+@mixin bold {
+  @include reset.bold;
+}
 
 
 /**
@@ -245,7 +263,9 @@ $_html5-form-elements: true !default;
  * 3. Removed italic style from <var>.
  */
 
-@include reset.code($_code-font-family);
+@mixin code($font-family: $_code-font-family) {
+  @include reset.code($font-family);
+}
 
 
 /**
@@ -254,7 +274,9 @@ $_html5-form-elements: true !default;
  * 2. Add the correct font size in all browsers.
  */
 
-@include reset.small($_small-size);
+@mixin small($small-size: $_small-size) {
+  @include reset.small($small-size);
+}
 
 
 /**
@@ -262,20 +284,19 @@ $_html5-form-elements: true !default;
  * browsers.
  */
 
-@include reset.index-elements;
+@mixin index-elements {
+  @include reset.index-elements;
+}
 
 
 /**
- * Remove bullets from HTML unformatted (`ul`) and ordered (`ol`) lists width
- * CSS classes. Encourages the use of `ul` or `ol` for any listed elements in
- * any styles, like a navigation menu and not only for bullet lists.
+ * Bullets remover from HTML unordered (`ul`) and ordered (`ol`) lists.
  *
  * Opinionated and disabled by default.
  */
 
-ul[class],
-ol[class] {
-  @include reset.list-bullets($_list-bullets);
+@mixin list-bullets($list-bullets: $_list-bullets) {
+  @include reset.list-bullets($list-bullets);
 }
 
 
@@ -284,7 +305,9 @@ ol[class] {
  * 2. Ensure tables fill up as much space as possible.
  */
 
-@include reset.table($_table-normalize);
+@mixin table($table-normalize: $_table-normalize) {
+  @include reset.table($table-normalize);
+}
 
 
 /**
@@ -297,35 +320,44 @@ ol[class] {
  * 3. Optionally make all images full width to fill the parent container
  */
 
-@include reset.images($_full-width-images);
+@mixin images($full-width: $_full-width-images) {
+  @include reset.images($full-width);
+}
 
 
 /**
  * Add the correct display in iOS 4-7.
  */
 
-@include reset.audio;
+@mixin audio {
+  @include reset.audio;
+}
 
 
 /**
  * Hide the overflow in IE.
  */
 
-@include reset.svg;
+@mixin svg {
+  @include reset.svg;
+}
 
 
 /**
  * Normalizing html4 form elements
  */
 
-@include reset.form-elements($_form-elements);
-
+@mixin form-elements($form-elements: $_form-elements) {
+  @include reset.form-elements($form-elements);
+}
 
 /**
  *** Normalizing of html5 form elements ***
  */
 
-@include reset.html5-form-elements($_html5-form-elements);
+@mixin html5-form-elements($html5-form-elements: $_html5-form-elements) {
+  @include reset.html5-form-elements($html5-form-elements);
+}
 
 
 /**
@@ -338,14 +370,18 @@ ol[class] {
  * 1. Add the correct display in Edge, IE, and Firefox.
  */
 
-@include reset.details-menu;
+@mixin details-menu {
+  @include reset.details-menu;
+}
 
 
 /**
  * Add the correct display in all browsers.
  */
 
-@include reset.summary;
+@mixin summary {
+  @include reset.summary;
+}
 
 
 /**
@@ -356,4 +392,6 @@ ol[class] {
  * Add the correct display in IE.
  */
 
-@include reset.template;
+@mixin template {
+  @include reset.template;
+}

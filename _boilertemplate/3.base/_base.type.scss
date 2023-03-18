@@ -85,21 +85,172 @@ $_link-outline                      : none !default;
  * Base typography
  */
 
-/**
- * The base typography for <body> element has already been set:
- * - font-family: settings.$primary-font-family
- * - font-weight: 400
- * - font-size: settings.$default-font-size
- */
+html {
+  -webkit-tap-highlight-color: transparent;
+  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+  @include tools.type(settings.$default-font-size);
+
+  font-family: settings.$primary-font-family;
+  font-weight: 400;
+}
 
 
 /**
- * Import Type element from Shake.sass.
+ * Type elements
  */
 
-@use "node_modules/shake.sass/3.base/base.type" as b-type;
+/**
+ * Styling selected text
+ */
+
+@if $_selected-text {
+  ::selection {
+    @include tools.colors($_selected-text-color, $_selected-text-background);
+  }
+}
 
 
 /**
- * Theming other inline text html elements.
+ * Paragraph Element
  */
+
+@if $_paragraph-margins {
+  p {
+    &:not(:last-child) {
+      margin-block-end: $_paragraph-margin-size;
+    }
+  }
+}
+
+
+/**
+ * Inline code
+ *
+ * for code block:
+ * @see 5.components/components.code
+ */
+
+code,
+var,
+kbd {
+  @include tools.label-base;
+
+  letter-spacing: $_code-letter-spacing;
+  font-size: $_code-font-size;
+}
+
+code,
+kbd,
+pre,
+samp,
+var {
+  font-family: settings.$code-font-family;
+}
+
+code,
+var {
+  @include tools.font-smooth;
+  @include tools.label-variant(
+    settings.$color-turquoise--dark,
+    settings.$color-grey--light-1
+  );
+
+  font-weight: 700;
+}
+
+kbd {
+  @include tools.label-variant(
+    settings.$color-text,
+    settings.$color-grey--light-1
+  );
+}
+
+pre[class*="language-"] {
+  white-space: normal;
+}
+
+code[class*="language-"] {
+  white-space: pre-wrap;
+}
+
+
+/**
+ * Global Link Element
+ */
+
+@if $_classless-link-element {
+  a:not([class]) {
+    @include tools.link(
+      $_link-color,
+      $_link-type,
+      $_link-visited,
+      $_link-text-decoration,
+      $_link-outline
+    );
+  }
+}
+
+a {
+  @include tools.global-transition;
+
+  text-decoration: none;
+}
+
+
+/**
+ * Default Heading
+ */
+
+@if $_classless-headings-fontfamily {
+  h1:not([class]),
+  h2:not([class]),
+  h3:not([class]),
+  h4:not([class]),
+  h5:not([class]),
+  h6:not([class]) {
+    font-family: settings.$heading-font-family;
+  }
+}
+
+@if $_classless-headings-fontsize {
+  h1:not([class]) {
+    @include tools.type(settings.$heading1-font-size);
+  }
+
+  h2:not([class]) {
+    @include tools.type(settings.$heading2-font-size);
+  }
+
+  h3:not([class]) {
+    @include tools.type(settings.$heading3-font-size);
+  }
+
+  h4:not([class]) {
+    @include tools.type(settings.$heading4-font-size);
+  }
+
+  h5:not([class]) {
+    @include tools.type(settings.$heading5-font-size);
+  }
+
+  h6:not([class]) {
+    @include tools.type(settings.$heading6-font-size);
+  }
+}
+
+
+/**
+ * Global List Elements
+ */
+
+@if $_classless-lists-margins-paddings {
+  ul:not([class]),
+  ol:not([class]) {
+    margin-block: 1em;
+    margin-inline: 0;
+    padding-inline-start: 1.1em;
+  }
+}

@@ -106,7 +106,7 @@ body {
  * Styling selected text
  */
 
-@if $_selected-text == true {
+@if $_selected-text {
   ::selection {
     @include tools.colors($_selected-text-color, $_selected-text-background);
   }
@@ -117,7 +117,7 @@ body {
  * Paragraph Element
  */
 
-@if $_paragraph-margins == true {
+@if $_paragraph-margins {
   p {
     &:not(:last-child) {
       margin-block-end: $_paragraph-margin-size;
@@ -148,7 +148,7 @@ var {
  * Global Link Element
  */
 
-@if $_classless-link-element == true {
+@if $_classless-link-element {
   a:not([class]) {
     @include tools.link(
       $_link-color,
@@ -165,7 +165,7 @@ var {
  * Default Heading
  */
 
-@if $_classless-headings-fontfamily == true {
+@if $_classless-headings-fontfamily {
   h1:not([class]),
   h2:not([class]),
   h3:not([class]),
@@ -176,7 +176,7 @@ var {
   }
 }
 
-@if $_classless-headings-fontsize == true {
+@if $_classless-headings-fontsize {
   h1:not([class]) {
     @include tools.type(settings.$heading1-font-size);
   }
@@ -207,7 +207,7 @@ var {
  * Global List Elements
  */
 
-@if $_classless-lists-margins-paddings == true {
+@if $_classless-lists-margins-paddings {
   ul:not([class]),
   ol:not([class]) {
     margin-block: 1em;

@@ -145,8 +145,23 @@ $_container-gutter-extra   : settings.$container-gutter-extra !default;
 $_container-size-extra     : settings.$container-size-extra !default;
 
 
-/**
- * Import Container Object from Shake.sass.
- */
+// Default Container Object
+.#{$_container-class} {
+  @include container.make-container;
+}
 
-@use "node_modules/shake.sass/4.objects/objects.container" as o-container;
+// Container Object Extra Gutters
+@each $gutter-name, $gutter-size in $_container-gutter-extra {
+  .#{$_container-class-mod + quote($gutter-name)} {
+    @include container.container-padding($gutter-size);
+  }
+}
+
+// Container Object Extra Sizes
+@each $size-name, $size-value in $_container-size-extra {
+  .#{$_container-class-mod + quote($size-name)} {
+    @include container.container-size($size-value);
+
+    margin-inline: auto;
+  }
+}

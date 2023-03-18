@@ -116,7 +116,26 @@ $_grid-gutter-extra    : settings.$grid-gutter-extra !default;
 
 
 /**
- * Import Grid Object from Shake.sass.
+ * Grid Object
  */
 
-@use "node_modules/shake.sass/4.objects/objects.grid" as o-grid;
+// Default Grid Object
+.#{$_grid-class} {
+  @include grid.make-grid;
+
+  & > &__item {
+    @include grid.make-column;
+  }
+}
+
+// Grid Object Extra Gutters
+@each $gutter-name, $gutter-size in $_grid-gutter-extra {
+  .#{$_grid-class-mod + quote($gutter-name)} {
+    @include grid.make-grid($gutter-size);
+
+    & > &__item {
+      @include grid.make-column($gutter-size);
+    }
+  }
+}
+
