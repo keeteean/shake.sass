@@ -66,6 +66,11 @@
  *   }
  */
 
+
+/**
+ * Imports
+ */
+
 @use "sass:math";
 @use "libraries";
 @use "../settings";
@@ -234,6 +239,7 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
   inline-size: 100%;
   min-inline-size: 0;
 }
+
 
 /**
  * Set Column size
