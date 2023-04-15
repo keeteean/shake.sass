@@ -24,8 +24,12 @@
  *   }
  */
 
-@mixin global-transition {
-  transition: settings.$transition-property settings.$transition-timing settings.$transition-easing;
+@mixin global-transition(
+  $property: settings.$transition-property,
+  $timing: settings.$transition-timing,
+  $easing: settings.$transition-easing
+) {
+  transition: $property $timing $easing;
 
   @if settings.$prefers-reduced-motion {
     @media screen and (prefers-reduced-motion: reduce) {
