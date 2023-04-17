@@ -142,6 +142,7 @@ $_html5-form-elements: true !default;
  *
  * Reset the appearance of the button element:
  *   - Remove the border, padding, appearance and background,
+ *  - Set the the color to currentColor,
  *  - Set cursor to pointer.
  *
  * @type Boolean
@@ -735,6 +736,7 @@ $_button-element: false !default;
     button {
       padding: 0;
       cursor: pointer;
+      color: currentColor;
       border: 0;
       background: none;
       appearance: none;
