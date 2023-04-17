@@ -175,7 +175,7 @@ $_button-element: false !default;
     text-rendering: optimizeLegibility; // 2
     /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-text-size-adjust: 100%; // 3
-    min-height: 100%; // 4
+    min-block-size: 100%; // 4
 
     @if $font-antialiasing {
       -webkit-font-smoothing: antialiased; // 5
@@ -262,7 +262,7 @@ $_button-element: false !default;
   hr {
     overflow: visible; // 2
     box-sizing: content-box; // 1
-    height: 0; // 1
+    block-size: 0; // 1
   }
 }
 
@@ -442,7 +442,7 @@ $_button-element: false !default;
 @mixin table($table-normalize: $_table-normalize) {
   @if $table-normalize {
     table {
-      width: 100%; // 2
+      inline-size: 100%; // 2
       border-spacing: 0; // 1
       border-collapse: collapse; // 1
     }
@@ -464,13 +464,13 @@ $_button-element: false !default;
   img,
   object,
   svg {
-    max-width: 100%; // 2
-    height: auto; // 2
+    max-inline-size: 100%; // 2
+    block-size: auto; // 2
     vertical-align: middle; // 2
     border-style: none; // stylelint-disable-line
 
     @if $full-width {
-      width: 100%; // 3
+      inline-size: 100%; // 3
     }
   }
 }
@@ -483,7 +483,7 @@ $_button-element: false !default;
 @mixin audio {
   audio:not([controls]) {
     display: none;
-    height: 0;
+    block-size: 0;
   }
 }
 
@@ -619,7 +619,7 @@ $_button-element: false !default;
     legend {
       display: table; // 1
       box-sizing: border-box; // 1
-      max-width: 100%; // 1
+      max-inline-size: 100%; // 1
       padding-block: 0; // 3
       padding-inline: 0; // 3
       white-space: normal; // 1
@@ -646,7 +646,7 @@ $_button-element: false !default;
     // Correct the cursor style of increment and decrement buttons in Chrome.
     [type="number"]::-webkit-inner-spin-button,
     [type="number"]::-webkit-outer-spin-button {
-      height: auto;
+      block-size: auto;
     }
 
 

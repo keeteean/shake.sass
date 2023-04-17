@@ -60,7 +60,7 @@ $_responsive-table-content-width    : 67% !default;
 
 @if $_responsive-table == true {
   .c-table {
-    max-width: 100%;
+    max-inline-size: 100%;
     padding-block: 0;
     padding-inline: 0;
     empty-cells: show;
@@ -90,7 +90,7 @@ $_responsive-table-content-width    : 67% !default;
 
       .c-table__cell-label {
         display: inline-block;
-        width: $_responsive-table-label-width; // 2.
+        inline-size: $_responsive-table-label-width; // 2.
         padding-block: $_responsive-table-label-padding;
         padding-inline: $_responsive-table-label-padding;
         vertical-align: top;
@@ -110,11 +110,11 @@ $_responsive-table-content-width    : 67% !default;
 
       .c-table__cell-content {
         display: inline-block;
-        max-width: $_responsive-table-content-width;
+        max-inline-size: $_responsive-table-content-width;
 
         @include breakpoint(medium) {
           display: block;
-          max-width: none;
+          max-inline-size: none;
         }
       }
     }
@@ -133,7 +133,7 @@ $_responsive-table-content-width    : 67% !default;
     tbody {
       tr {
         display: block;
-        width: 100%;
+        inline-size: 100%;
 
         @include breakpoint(medium) {
           display: table-row;
@@ -142,10 +142,10 @@ $_responsive-table-content-width    : 67% !default;
 
       th,
       td {
-        width: 100%;
+        inline-size: 100%;
 
         @include breakpoint(medium) {
-          width: auto;
+          inline-size: auto;
         }
       }
     }

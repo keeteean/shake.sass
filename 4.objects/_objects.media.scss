@@ -288,7 +288,7 @@ $_media-collapse-at          : 47.93em !default; // 767px
       & > .#{$_media-class-media-fixed},
       & > .#{$_media-class-media-fluid} {
         display: block;
-        width: 100%;
+        inline-size: 100%;
         padding-inline: 0;
       }
 

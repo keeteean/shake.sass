@@ -1,6 +1,6 @@
 {
   "name": "shake.sass",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "Shake is a small Sass framework what follows the BEM Methodology and has inspired by ITCSS (Inverted Triangle CSS) and Atomic Design. Many techniques has been borrowed from other css frameworks like iotaCSS, Spectre.css or Bootstrap.",
   "license": "MIT",
   "repository": {
@@ -30,14 +30,15 @@
     "start": "sass  --no-source-map --watch styles.scss:styles.css"
   },
   "devDependencies": {
+    "postcss-scss": "^4.0.6",
     "sass": "^1.57.1",
-    "stylelint": "^14.9.0",
+    "stylelint": "^15.5.0",
     "stylelint-config-property-sort-order-smacss": "^9.0.0",
-    "stylelint-config-standard": "^26.0.0",
-    "stylelint-config-standard-scss": "^4.0.0",
-    "stylelint-order": "^5.0.0",
-    "stylelint-scss": "^4.2.0",
-    "stylelint-use-logical": "^2.0.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-standard-scss": "^8.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^4.6.0",
+    "stylelint-use-logical": "^2.1.0",
     "yarn": "^1.22.19"
   },
   "dependencies": {

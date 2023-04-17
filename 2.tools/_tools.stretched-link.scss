@@ -40,8 +40,8 @@
 @mixin stretched-link {
   &::after {
     position: absolute;
-    inset: 0;
     z-index: 1;
+    inset: 0;
     content: "";
 
     // Just in case `pointer-events: none` is set on a parent
