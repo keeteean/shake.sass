@@ -233,7 +233,8 @@ $_button-element: false !default;
   figure,
   hr,
   fieldset,
-  legend {
+  legend,
+  menu {
     margin-block: 0;
     margin-inline: 0;
     padding-block: 0;
