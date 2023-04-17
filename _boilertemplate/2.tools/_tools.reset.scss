@@ -11,6 +11,7 @@
  *       - list bullets remover,
  *       - table element,
  *       - form elements,
+ *       - button element,
  *       - font antialiasing
  *   - best practices
  *   - no static values
@@ -135,6 +136,20 @@ $_form-elements: true !default;
  */
 
 $_html5-form-elements: true !default;
+
+
+/**
+ * Button element reset
+ *
+ * Reset the appearance of the button element:
+ *   - Remove the border, padding, appearance and background,
+ *  - Set the the color to currentColor,
+ *  - Set cursor to pointer.
+ *
+ * @type Boolean
+ */
+
+$_button-element: false !default;
 
 
 /**
@@ -381,6 +396,15 @@ $_html5-form-elements: true !default;
 
 @mixin summary {
   @include reset.summary;
+}
+
+
+/**
+ * Reset default appearance of the button element
+ */
+
+@mixin button($button-element: $_button-element) {
+  @include reset.button($button-element);
 }
 
 
