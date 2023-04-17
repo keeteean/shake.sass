@@ -87,12 +87,12 @@ $_font-antialiasing: false !default;
 
 
 /**
- * Bullets remover from HTML unordered (`ul`) and ordered (`ol`) lists.
- * Set it to false if you don't want to use bullets.
- * Encourages the use of `ul`or `ol` for any listed elements in any styles,
- * like a navigation menu and not only for bullet lists.
+ * Remove bullets from HTML unformatted (`ul`), ordered (`ol`) lists and menu
+ * element with CSS classes. Encourages the use of `ul`, `ol` and `menu` for
+ * any listed elements in any styles, like a navigation menu and not only for
+ * bullet lists.
  *
- * @type Boolean
+ * Opinionated and disabled by default.
  */
 
 $_list-bullets: true !default;
@@ -281,15 +281,17 @@ $_button-element: false !default;
 
 
 /**
- * Remove bullets from HTML unformatted (`ul`) and ordered (`ol`) lists width
- * CSS classes. Encourages the use of `ul` or `ol` for any listed elements in
- * any styles, like a navigation menu and not only for bullet lists.
+ * Remove bullets from HTML unformatted (`ul`), ordered (`ol`) lists and menu
+ * element with CSS classes. Encourages the use of `ul`, `ol` and `menu` for
+ * any listed elements in any styles, like a navigation menu and not only for
+ * bullet lists.
  *
  * Opinionated and disabled by default.
  */
 
 ul[class],
-ol[class] {
+ol[class],
+menu[class] {
   @include reset.list-bullets($_list-bullets);
 }
 

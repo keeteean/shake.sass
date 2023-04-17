@@ -87,8 +87,12 @@ $_font-antialiasing: false !default;
 
 
 /**
- * Bullets remover from HTML unordered (`ul`) and ordered (`ol`) lists.
- * Set it to false if you don't want to use bullets.
+ * Remove bullets from HTML unformatted (`ul`), ordered (`ol`) lists and menu
+ * element with CSS classes. Encourages the use of `ul`, `ol` and `menu` for
+ * any listed elements in any styles, like a navigation menu and not only for
+ * bullet lists.
+ *
+ * Opinionated and disabled by default.
  *
  * @type Boolean
  */
@@ -305,7 +309,10 @@ $_button-element: false !default;
 
 
 /**
- * Bullets remover from HTML unordered (`ul`) and ordered (`ol`) lists.
+ * Remove bullets from HTML unformatted (`ul`), ordered (`ol`) lists and menu
+ * element with CSS classes. Encourages the use of `ul`, `ol` and `menu` for
+ * any listed elements in any styles, like a navigation menu and not only for
+ * bullet lists.
  *
  * Opinionated and disabled by default.
  */
