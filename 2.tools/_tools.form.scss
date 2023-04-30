@@ -6,12 +6,11 @@
  * Form related mixins and functions.
  */
 
-
 /**
  * Webkit autofill mixin
  *
  * With it you can theming autofilled inputs easily.
- * You must declare the font color; other rules optionally.
+ * You must declare the font color, other rules optionally.
  *
  * @example
  *   @use "../settings";
@@ -21,7 +20,6 @@
  *     background: lighten(settings.$color-primary, 30%);
  *  }
  */
-
 @mixin autofill($color) {
   &:-webkit-autofill {
     @content;

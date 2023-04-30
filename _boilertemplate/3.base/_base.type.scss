@@ -6,15 +6,12 @@
  * Theming text elements.
  */
 
-
 /**
  * Imports
  */
-
 @use "sass:color";
 @use "../settings";
 @use "../tools";
-
 
 /**
  * Settings
@@ -23,68 +20,59 @@
 /**
  * Global selected text
  */
-
-$_selected-text                     : true !default;
-$_selected-text-color               : settings.$color-light !default;
-$_selected-text-background          : settings.$color-tertiary !default;
-
+$selected-text: true !default;
+$selected-text-color: settings.$color-light !default;
+$selected-text-background: settings.$color-primary !default;
 
 /**
  * Paragraph margins
  */
-
-$_paragraph-margins                 : true !default;
-$_paragraph-margin-size             : 1em !default;
-
+$paragraph-margins: true !default;
+$paragraph-margin-size: 1em !default;
 
 /**
  * Inline and Code Blocks
  */
-
-$_code-tab-size                     : 2 !default;
-
+$code-tab-size: 2 !default;
 
 /**
  * Classless typography settings
  */
 
 // Responsive font-size
-$_classless-headings-fontsize       : true !default;
+$classless-headings-fontsize: true !default;
 
 // Heading font-family
-$_classless-headings-fontfamily     : true !default;
+$classless-headings-fontfamily: true !default;
 
 // Margins and padding for ordered and ordered lists
-$_classless-lists-margins-paddings  : true !default;
+$classless-lists-margins-paddings: true !default;
 
 // link element (see details below)
-$_classless-link-element            : true !default;
-
+$classless-link-element: true !default;
 
 /**
  * Global Link Element
  */
 
 // :link, :visited states
-$_link-color                        : settings.$color-primary !default;
+$link-color: settings.$color-primary !default;
 
 // link color type @see link mixin in 2.tools/_link
-$_link-type                         : light !default;
+$link-type: light !default;
 
 // :visited state effect @see link mixin in 2.tools/_link
-$_link-visited                      : visited !default;
+$link-visited: visited !default;
 
 // underlined links
-$_link-text-decoration              : none !default;
+$link-text-decoration: none !default;
 
 // outlined links in :focus state
-$_link-outline                      : none !default;
-
+$link-outline: none !default;
 
 /**
  * Base typography
  */
-
 html {
   -webkit-tap-highlight-color: transparent;
   font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
@@ -97,7 +85,6 @@ body {
   font-weight: 400;
 }
 
-
 /**
  * Type elements
  */
@@ -105,106 +92,53 @@ body {
 /**
  * Styling selected text
  */
-
-@if $_selected-text {
+@if $selected-text {
   ::selection {
-    @include tools.colors($_selected-text-color, $_selected-text-background);
+    @include tools.colors($selected-text-color, $selected-text-background);
   }
 }
-
 
 /**
  * Paragraph Element
  */
-
-@if $_paragraph-margins {
+@if $paragraph-margins {
   p {
     &:not(:last-child) {
-      margin-block-end: $_paragraph-margin-size;
+      margin-block-end: $paragraph-margin-size;
     }
   }
 }
 
-
 /**
- * Inline code
- *
- * for code block:
- * @see 5.components/components.code
+ * Code and Preformatted Elements
  */
-
-code,
-var,
-kbd {
-  @include tools.label-base;
-
-  letter-spacing: $_code-letter-spacing;
-  font-size: $_code-font-size;
-}
-
 code,
 kbd,
 pre,
 samp,
 var {
-  font-family: settings.$code-font-family;
+  text-align: start;
+  word-spacing: normal;
+  word-wrap: normal;
+  word-break: normal;
+  tab-size: $code-tab-size;
+  hyphens: none;
 }
-
-code,
-var {
-  @include tools.font-smooth;
-  @include tools.label-variant(
-    settings.$color-turquoise--dark,
-    settings.$color-grey--light-1
-  );
-
-  font-weight: 700;
-}
-
-kbd {
-  @include tools.label-variant(
-    settings.$color-text,
-    settings.$color-grey--light-1
-  );
-}
-
-pre[class*="language-"] {
-  white-space: normal;
-}
-
-code[class*="language-"] {
-  white-space: pre-wrap;
-}
-
 
 /**
  * Global Link Element
  */
-
-@if $_classless-link-element {
+@if $classless-link-element {
   a:not([class]) {
-    @include tools.link(
-      $_link-color,
-      $_link-type,
-      $_link-visited,
-      $_link-text-decoration,
-      $_link-outline
-    );
+    @include tools.link($link-color, $link-type, $link-visited, $link-text-decoration, $link-outline);
   }
 }
-
-a {
-  @include tools.global-transition;
-
-  text-decoration: none;
-}
-
 
 /**
  * Default Heading
  */
 
-@if $_classless-headings-fontfamily {
+@if $classless-headings-fontfamily {
   h1:not([class]),
   h2:not([class]),
   h3:not([class]),
@@ -215,7 +149,7 @@ a {
   }
 }
 
-@if $_classless-headings-fontsize {
+@if $classless-headings-fontsize {
   h1:not([class]) {
     @include tools.type(settings.$heading1-font-size);
   }
@@ -241,14 +175,13 @@ a {
   }
 }
 
-
 /**
  * Global List Elements
  */
-
-@if $_classless-lists-margins-paddings {
+@if $classless-lists-margins-paddings {
   ul:not([class]),
-  ol:not([class]) {
+  ol:not([class]),
+  menu:not([class]) {
     margin-block: 1em;
     margin-inline: 0;
     padding-inline-start: 1.1em;

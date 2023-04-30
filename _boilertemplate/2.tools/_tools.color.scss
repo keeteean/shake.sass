@@ -6,13 +6,10 @@
  * Mixins and functions for color calculations, generations.
  */
 
-
 /**
  * Imports
  */
-
 @use "node_modules/2.tools/tools.color" as color;
-
 
 /**
  * Simple color and background color generator
@@ -27,6 +24,12 @@
  *  @include tools.colors(settings.$color-text, settings.$color-background);
  */
 
+/**
+ * Colors mixin
+ *
+ * @parameter {string} $color - Color variable.
+ * @parameter {string} $background-color - Background color variable.
+ */
 @mixin colors($color, $background-color) {
   @include color.colors($color, $background-color);
 }

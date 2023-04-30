@@ -6,13 +6,10 @@
  * Form related mixins and functions.
  */
 
-
 /**
  * Imports
  */
-
 @use "node_modules/2.tools/tools.form" as form;
-
 
 /**
  * Webkit autofill mixin
@@ -28,7 +25,6 @@
  *     background: lighten(settings.$color-primary, 30%);
  *  }
  */
-
 @mixin autofill($color) {
   @include form.autofill($color) {
     @content;

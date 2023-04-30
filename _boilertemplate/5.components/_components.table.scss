@@ -6,6 +6,10 @@
  * Css class based table themings, like responsive table.
  */
 
+/**
+  * Imports
+ */
+@use "../tools";
 
 /**
  * Settings
@@ -14,12 +18,10 @@
 /**
  * Responsive Table
  */
-
-$_responsive-table                  : true !default;
-$_responsive-table-label-padding    : 0 .6em 0 0 !default;
-$_responsive-table-label-width      : 30% !default;
-$_responsive-table-content-width    : 67% !default;
-
+$responsive-table: true !default;
+$responsive-table-label-padding: 0 0.6em 0 0 !default;
+$responsive-table-label-width: 30% !default;
+$responsive-table-content-width: 67% !default;
 
 /**
  * Responsive Table Component
@@ -28,6 +30,9 @@ $_responsive-table-content-width    : 67% !default;
  * There is no any styling only layout needed properties.
  * @see `3.base/_base.table.scss` for base theming `<table>` element.
  * @link https://github.com/filamentgroup/tablesaw
+ *
+ * @require {boolean} $base-table-normalize Should be true!
+ * <3.base/_base.reset.scss>
  *
  * @example
  *   <table class="c-table">
@@ -55,10 +60,16 @@ $_responsive-table-content-width    : 67% !default;
  *       </tr>
  *     </tbody>
  *   </table>
+ *
+ * 1. Show the table cells as a block level element.
+ * 2. Make the label elements a percentage width.
+ * 3. For grouped headers, have a different style to visually separate the
+ *    levels by classing the first label in each col group.
+ * 4. Avoid double strokes when stacked.
+ * 5. Show the table header rows.
+ * 6. Hide the labels in each cell.
  */
-
-
-@if $_responsive-table == true {
+@if $responsive-table == true {
   .c-table {
     max-inline-size: 100%;
     padding-block: 0;
@@ -73,7 +84,7 @@ $_responsive-table-content-width    : 67% !default;
 
     // Theming table rows.
     tr {
-      @include breakpoint(medium) {
+      @include tools.breakpoint(medium) {
         display: table-row;
       }
     }
@@ -84,35 +95,35 @@ $_responsive-table-content-width    : 67% !default;
       display: block; // 1.
       text-align: start;
 
-      @include breakpoint(medium) {
+      @include tools.breakpoint(medium) {
         display: table-cell; // 5.
       }
 
       .c-table__cell-label {
         display: inline-block;
-        inline-size: $_responsive-table-label-width; // 2.
-        padding-block: $_responsive-table-label-padding;
-        padding-inline: $_responsive-table-label-padding;
+        inline-size: $responsive-table-label-width; // 2.
+        padding-block: $responsive-table-label-padding;
+        padding-inline: $responsive-table-label-padding;
         vertical-align: top;
 
-        @include breakpoint(medium) {
+        @include tools.breakpoint(medium) {
           display: none !important; // 6.
         }
       }
 
       .c-table__cell-label--top {
         display: block; // 3.
-        margin-block: .4em; // 3.
+        margin-block: 0.4em; // 3.
         margin-inline: 0; // 3.
-        padding-block: .4em; // 3.
+        padding-block: 0.4em; // 3.
         padding-inline: 0; // 3.
       }
 
       .c-table__cell-content {
         display: inline-block;
-        max-inline-size: $_responsive-table-content-width;
+        max-inline-size: $responsive-table-content-width;
 
-        @include breakpoint(medium) {
+        @include tools.breakpoint(medium) {
           display: block;
           max-inline-size: none;
         }
@@ -124,7 +135,7 @@ $_responsive-table-content-width    : 67% !default;
       td {
         display: none;
 
-        @include breakpoint(medium) {
+        @include tools.breakpoint(medium) {
           display: table-cell; // 5.
         }
       }
@@ -135,7 +146,7 @@ $_responsive-table-content-width    : 67% !default;
         display: block;
         inline-size: 100%;
 
-        @include breakpoint(medium) {
+        @include tools.breakpoint(medium) {
           display: table-row;
         }
       }
@@ -144,7 +155,7 @@ $_responsive-table-content-width    : 67% !default;
       td {
         inline-size: 100%;
 
-        @include breakpoint(medium) {
+        @include tools.breakpoint(medium) {
           inline-size: auto;
         }
       }
@@ -154,7 +165,7 @@ $_responsive-table-content-width    : 67% !default;
     th:empty {
       display: none;
 
-      @include breakpoint(medium) {
+      @include tools.breakpoint(medium) {
         display: table-cell;
       }
     }
@@ -163,7 +174,7 @@ $_responsive-table-content-width    : 67% !default;
   // Theming table head
   th.c-table__group {
     tbody & {
-      margin-block-start: -.1rem; // 4.
+      margin-block-start: -0.1rem; // 4.
     }
 
     .c-table__cell-label {
@@ -171,4 +182,3 @@ $_responsive-table-content-width    : 67% !default;
     }
   }
 }
-

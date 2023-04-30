@@ -6,14 +6,11 @@
  * See details in 4.objects/_objects.grid.scss
  */
 
-
 /**
  * Gutter Sizes
  */
-
-$gutter--small : 2rem !default;
+$gutter--small: 2rem !default;
 $gutter--medium: 3rem !default;
-
 
 /**
  * Default gutters
@@ -23,12 +20,11 @@ $gutter--medium: 3rem !default;
  *
  * @type Number | List | Map
  */
-
+// prettier-ignore
 $gutter-default: (
-  null         : $gutter--small,
-  medium       : $gutter--medium
+  null    : $gutter--small,
+  medium  : $gutter--medium
 ) !default;
-
 
 /**
  * Additional grid gutters
@@ -49,5 +45,4 @@ $gutter-default: (
  *     )
  *   );
  */
-
 $grid-gutter-extra: () !default;

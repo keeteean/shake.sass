@@ -35,13 +35,15 @@
  * @require {mixin} stretched-link 2.tools/_tools.stretched-link.scss
  */
 
-
 /**
  * Imports
  */
 
 @use "../2.tools/_tools.stretched-link" as *;
 
+/**
+ * Stretched Link Utility
+ */
 .u-stretched-link {
   @include stretched-link;
 }

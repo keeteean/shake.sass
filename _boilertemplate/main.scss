@@ -7,7 +7,6 @@
  *
  */
 
-
 /**
  * Settings
  *
@@ -16,9 +15,7 @@
  * Local configurations should be contained into the modules (objects,
  * components, etc.) that are related to.
  */
-
 @use "settings";
-
 
 /**
  * Tools
@@ -26,9 +23,7 @@
  * Globally used mixins and functions.
  * It’s important not to output any CSS in the first 2 layers.
  */
-
 @use "tools";
-
 
 /**
  * Base
@@ -44,12 +39,9 @@
  *
  * This is the first layer which generates actual CSS.
  */
-
 @use "3.base/base.reset" as b-reset;
-
 @use "3.base/base.page" as b-page;
 @use "3.base/base.type" as b-type;
-
 
 /**
  * Objects
@@ -63,11 +55,9 @@
  * can range from something as simple as a .wrapper element, to layout systems,
  * through to things.
  */
-
 @use "4.objects/objects.container" as o-container;
 @use "4.objects/objects.grid" as o-grid;
 @use "4.objects/objects.media" as o-media;
-
 
 /**
  * Components
@@ -78,11 +68,9 @@
  * They contain cosmetic CSS and they can be directly overwritten to fit your
  * UI Kit style.
  */
-
 @use "5.components/components.icon" as c-icon;
 @use "5.components/components.page" as c-page;
 @use "5.components/components.table" as c-table;
-
 
 /**
  * Utilities
@@ -93,7 +81,6 @@
  * sure they override all element styles when used and not be overridden from
  * other sources.
  */
-
 @use "6.utilities/utilities.clearfix" as u-clearfix;
 @use "6.utilities/utilities.full-width-image" as u-full-width-image;
 @use "6.utilities/utilities.stretched-link" as u-stretched-link;

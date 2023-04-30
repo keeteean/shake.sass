@@ -17,11 +17,10 @@
 /**
  * Imports
  */
-
 @use "node_modules/2.tools/tools.clearfix" as clearfix;
 
 /**
- * Clearfix
+ * Clearfix mixin
  *
  * @example
  *   @use "../tools";
@@ -30,7 +29,6 @@
  *     @include tools.clearfix;
  *   }
  */
-
 @mixin clearfix {
   @include clearfix.clearfix;
 }

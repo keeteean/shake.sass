@@ -6,7 +6,7 @@
  * The clearfix utility is used on elements that need to automatically clear
  * their child elements.
  *
- * based on iota.css
+ * Based on iota.css.
  * @author Dimitris Psaropoulos <info@harby.me>
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://www.iotacss.com/docs/utilities/clearfix
@@ -21,12 +21,16 @@
  *  </div>
 */
 
-
 /**
  * Imports
  */
 @use "../2.tools/_tools.clearfix" as *;
 
+/**
+ * Clearfix Utility
+ *
+ * Note: for legacy reasons the `.clearfix` class is present too.
+ */
 .u-clearfix {
   @include clearfix;
 }

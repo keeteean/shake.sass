@@ -15,15 +15,14 @@
  *
  *
  * @example
- *   @use "../tools";
- *
- *   .entries {
- *     @include tools.clearfix;
+ *   .o-grid {
+ *     @include clearfix;
  *   }
  */
 
-
-// Clearfix mixin
+/**
+ * Clearfix mixin
+ */
 @mixin clearfix {
   &::after {
     display: table;

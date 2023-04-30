@@ -18,14 +18,11 @@
  * containers
  */
 
-
 /**
  * Imports
  */
-
 @use "libraries";
 @use "../settings";
-
 
 /**
  * Settings
@@ -40,9 +37,7 @@
  *
  * @type Number | List | Map
  */
-
-$_container-gutter-default   : settings.$container-gutter-default;
-
+$container-gutter-default: settings.$container-gutter-default;
 
 /**
  * Default container size
@@ -52,9 +47,7 @@ $_container-gutter-default   : settings.$container-gutter-default;
  *
  * @type String | Map
  */
-
-$_container-size-default     : settings.$container-size-default;
-
+$container-size-default: settings.$container-size-default;
 
 /**
  * Container padding
@@ -63,13 +56,10 @@ $_container-size-default     : settings.$container-size-default;
  *
  * @type Mixin
  * @parameter {number | map} $size - Padding values.
- * @access private
  */
-
 @mixin container-padding($size) {
   @include libraries.generate-unit("padding", "inline", $size);
 }
-
 
 /**
  * Container size
@@ -78,13 +68,10 @@ $_container-size-default     : settings.$container-size-default;
  *
  * @type Mixin
  * @parameter {number | map} $size - Max-width values.
- * @access private
  */
-
 @mixin container-size($size) {
   @include libraries.generate-unit("max", "width", $size);
 }
-
 
 /**
  * Container mixin
@@ -113,31 +100,28 @@ $_container-size-default     : settings.$container-size-default;
  * Custom container
  *
  * You can define custom padding and sizes (widths) but you can use the
- * default `$_container-gutter-default` and
- * `$_container-size-default` ones too.
+ * default `$container-gutter-default` and
+ * `$container-size-default` ones too.
  *
  * @example
  *   @use "../tools";
  *
- *   $_container-gutter-gallery : (
+ *   $container-gutter-gallery : (
  *     null   : 1.2rem,
  *     medium : 2.4rem
  *   );
- *   $_container-size-gallery : (
+ *   $container-size-gallery : (
  *     null   : 100%,
  *     medium : 102.4rem
  *   );
  *
  *   .gallery__container {
  *     @include tools.make-container(
- *       $padding: $_container-gutter-gallery,
- *       $size: $_container-size-gallery
+ *       $padding: $container-gutter-gallery,
+ *       $size: $container-size-gallery
  *     )
  */
-
-@mixin make-container(
-  $padding: $_container-gutter-default,
-  $size: $_container-size-default) {
+@mixin make-container($padding: $container-gutter-default, $size: $container-size-default) {
   @include container-padding($padding);
   @include container-size($size);
 

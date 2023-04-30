@@ -6,21 +6,20 @@
  * See details in 4.objects/_objects.container.scss.
  */
 
-
 /**
  * Imports
  */
-
 @use "settings.grid" as *;
 
 /**
  * Default container
  */
-$container-size-default     : (
-  null        : 90%,
-  small       : 91%,
-  medium      : 93%,
-  large       : 129.6rem
+// prettier-ignore
+$container-size-default: (
+  null    : 90%,
+  small   : 91%,
+  medium  : 93%,
+  large   : 129.6rem
 ) !default;
 
 /**
@@ -32,16 +31,14 @@ $container-size-default     : (
  * @type Map
  *
  * @example
- *   $global-container-size-extra: (
+ *   $container-size-extra: (
  *     large: (
  *       null : 30rem,
  *       small: 120rem
  *     )
  *   );
  */
-
-$container-size-extra     : () !default;
-
+$container-size-extra: () !default;
 
 /**
  * Default container gutters
@@ -68,8 +65,7 @@ $container-size-extra     : () !default;
  *   );
  */
 
-$container-gutter-default  : $gutter-default !default;
-
+$container-gutter-default: $gutter-default !default;
 
 /**
  * Additional container gutters
@@ -81,12 +77,11 @@ $container-gutter-default  : $gutter-default !default;
  * @type Map
  *
  * @example
- *   $global-container-gutter-extra: (
+ *   $container-gutter-extra: (
  *     large: (
  *       null : 2rem,
  *       small: 4rem
  *     )
  *   );
  */
-
 $container-gutter-extra: () !default;

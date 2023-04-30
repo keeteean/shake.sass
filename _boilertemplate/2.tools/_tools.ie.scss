@@ -6,13 +6,10 @@
  * Media query only for Microsoft Internet Explorer browsers.
  */
 
-
 /**
  * Imports
  */
-
 @use "node_modules/2.tools/tools.ie" as ie;
-
 
 /**
  * Internet Explorer 10-11 mixin
@@ -24,7 +21,6 @@
  *    overflow: visible;
  *  }
  */
-
 @mixin ie {
   @include ie.ie {
     @content;

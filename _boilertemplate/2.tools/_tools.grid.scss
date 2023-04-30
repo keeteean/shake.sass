@@ -66,26 +66,21 @@
  *   }
  */
 
-
 /**
  * Imports
  */
-
 @use "../settings";
 @use "node_modules/2.tools/tools.grid" as grid;
-
 
 /**
  * Settings
  *
  * We use the default global gutters for gaps between columns. But you can
- * define additional gutters. There is an empty `$_grid-gutter-extra`
+ * define additional gutters. There is an empty `$grid-gutter-extra`
  * Sass map for that, but if you need, you can create more.
  */
-
-$_grid-gutter-default     : settings.$gutter-default;
-$_grid-gutter-extra       : settings.$grid-gutter-extra;
-
+$grid-gutter-default: settings.$gutter-default;
+$grid-gutter-extra: settings.$grid-gutter-extra;
 
 /**
  * Create Grid
@@ -122,14 +117,14 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  * @example
  *   @use "../tools";
  *
- *   $_grid-gutter-extra: (
+ *   $grid-gutter-extra: (
  *       null    : .6rem,
  *       medium  : 1.2rem,
  *       large   : 2.4rem
  *   );
  *
  *   .entry__list {
- *     @include tools.make-grid($_grid-gutter-extra);
+ *     @include tools.make-grid($grid-gutter-extra);
  *   }
  *
  * Grid with simple, non-responsive gutters
@@ -150,11 +145,9 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  *     @include tools.make-grid(0);
  *   }
  */
-
-@mixin make-grid($gutter: $_grid-gutter-default) {
+@mixin make-grid($gutter: $grid-gutter-default) {
   @include grid.make-grid($gutter);
 }
-
 
 /**
  * Create Columns for Grid
@@ -191,14 +184,14 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  * @example
  *   @use "../tools";
  *
- *   $_grid-gutter-extra: (
+ *   $grid-gutter-extra: (
  *       null    : .6rem,
  *       medium  : 1.2rem,
  *       large   : 2.4rem
  *   );
  *
  *   .entry {
- *     @include tools.make-column($_grid-gutter-extra);
+ *     @include tools.make-column($grid-gutter-extra);
  *   }
  *
  * Columns with simple, non responsive gutters
@@ -219,11 +212,9 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  *     @include tools.make-column(0);
  *   }
  */
-
-@mixin make-column($gutter: $_grid-gutter-default) {
+@mixin make-column($gutter: $grid-gutter-default) {
   @include grid.make-column($gutter);
 }
-
 
 /**
  * Set Column size
@@ -249,11 +240,9 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  *     @include tools.column-size(4,12);
  *   }
  */
-
 @mixin column-size($column, $all-columns) {
   @include grid.column-size($column, $all-columns);
 }
-
 
 /**
  * Column offset
@@ -301,7 +290,6 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  *     @include tools.column-offset(3,12, end);
  *   }
  */
-
 @mixin column-offset($column, $all-columns, $position: start) {
   @include grid.column-offset($column, $all-columns, $position);
 }

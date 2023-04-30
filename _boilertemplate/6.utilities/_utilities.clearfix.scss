@@ -6,7 +6,7 @@
  * The clearfix utility is used on elements that need to automatically clear
  * their child elements.
  *
- * based on iota.css
+ * Based on iota.css.
  * @author Dimitris Psaropoulos <info@harby.me>
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://www.iotacss.com/docs/utilities/clearfix
@@ -21,9 +21,7 @@
  *  </div>
 */
 
-
 /**
  * Import Clearfix Utility from Shake.sass.
  */
-
 @use "node_modules/shake.sass/6.utilities/utilities.clearfix" as u-clearfix;

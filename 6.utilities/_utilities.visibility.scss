@@ -6,16 +6,15 @@
  * Control the visibility, without modifying the display, of elements with
  * visibility utilities.
  *
- * based on iota.css
+ * Based on iota.css.
  * @author Dimitris Psaropoulos <info@harby.me>
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://www.iotacss.com/docs/utilities/display
  *
- * @require {map} $breakpoints <1.settings/_settings.breakpoints.scss>
- * @require {string} $breakpoint-separator
+ * @require {map} $global-breakpoints <1.settings/_settings.breakpoints.scss>
+ * @require {string} $global-breakpoint-separator
  * <1.settings/_settings.breakpoints.scss>
  * @require {mixin} visually-hidden <2.tools/_tools.visibility.scss>
- *
  *
  * Examples
  *
@@ -34,29 +33,25 @@
  * `1.settings/_settings.breakpoints`.
  *
  * @example
- *   $_visibility-responsive   : true;
+ *   $utilities-visibility-responsive   : true;
  *
  *   <h1 class="u-hide@large">
  *     Heading will be hidden on larger screens.
  *   </h1>
  */
 
-
 /**
  * Imports
  */
-
 @use "../settings";
 @use "../2.tools/tools.visibility" as *;
-
 
 /**
  * Settings
  */
-
-$_visibility-responsive          : false !default;
-$_visibility-breakpoints         : settings.$breakpoints !default;
-
+$responsive: false !default;
+$breakpoints: settings.$breakpoints !default;
+$breakpoint-separator: settings.$breakpoint-separator !default;
 
 /**
  * Visibility Utilities
@@ -65,38 +60,16 @@ $_visibility-breakpoints         : settings.$breakpoints !default;
 /**
  * Show
  */
-
 .u-show {
-  display: block !important;
-}
-
-
-/**
- * Visible
- */
-
-.u-visible {
   visibility: visible !important;
 }
-
 
 /**
  * Hide
  */
-
 .u-hide {
-  display: none !important;
-}
-
-
-/**
- * Invisible
- */
-
-.u-invisible {
   visibility: hidden !important;
 }
-
 
 /**
  * Hide only visually
@@ -111,11 +84,9 @@ $_visibility-breakpoints         : settings.$breakpoints !default;
  *     Page title
  *   </h1>
  */
-
 .u-visually-hide {
   @include visually-hidden;
 }
-
 
 /**
  * Focusable Visually hide
@@ -128,40 +99,37 @@ $_visibility-breakpoints         : settings.$breakpoints !default;
  *     Skip to main content
  *   </a>
  */
-
 .u-visually-hide--focusable {
   @include visually-hidden--focusable;
 }
 
-
 /**
  * Visibility Responsive Utilities
  */
-
-@if $_visibility-responsive == true {
-  @each $breakpoint-name, $breakpoint-size in $_visibility-breakpoints {
+@if $responsive == true {
+  @each $breakpoint-name, $breakpoint-size in $breakpoints {
     @media #{$breakpoint-size} {
-      .#{"u-show" + settings.$breakpoint-separator + $breakpoint-name} {
+      .#{"u-show" + $breakpoint-separator + $breakpoint-name} {
         display: block !important;
       }
 
-      .#{"u-visible" + settings.$breakpoint-separator + $breakpoint-name} {
+      .#{"u-visible" + $breakpoint-separator + $breakpoint-name} {
         visibility: visible !important;
       }
 
-      .#{"u-hide" + settings.$breakpoint-separator + $breakpoint-name} {
+      .#{"u-hide" + $breakpoint-separator + $breakpoint-name} {
         display: none !important;
       }
 
-      .#{"u-invisible" + settings.$breakpoint-separator + $breakpoint-name} {
+      .#{"u-invisible" + $breakpoint-separator + $breakpoint-name} {
         visibility: hidden !important;
       }
 
-      .#{"u-visually-hide" + settings.$breakpoint-separator + $breakpoint-name} {
+      .#{"u-visually-hide" + $breakpoint-separator + $breakpoint-name} {
         @include visually-hidden;
       }
 
-      .#{"u-visually-hide--focusable" + settings.$breakpoint-separator + $breakpoint-name} {
+      .#{"u-visually-hide--focusable" + $breakpoint-separator + $breakpoint-name} {
         @include visually-hidden--focusable;
       }
     }

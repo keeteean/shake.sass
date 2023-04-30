@@ -6,7 +6,7 @@
  * Video utility to make responsive videos.
  * Images, SVGs are responsive by default!
  *
- * Based on Spectre.css
+ * Based on Spectre.css.
  * @author Yan Zhu <picturepan2@hotmail.com>
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://picturepan2.github.io/spectre/elements/media.html
@@ -19,18 +19,14 @@
  *
  * @example
  *   <div class="u-video-responsive u-video-responsive--4-3">
- *     <iframe src="..." width="..." height="..." frameborder="0"
- *       allowfullscreen>
- *     </iframe>
+ *     <iframe src="..." width="..." height="..." frameborder="0" allowfullscreen></iframe>
  *   </div>
  *
- * For responsive `<video>` elements, you can add the `.u-video-responsive`
- * class directly.
+ * For responsive `<video>` elements, you can add the `.u-video-responsive` class directly.
  *
  * @example
  *   <video class="u-video-responsive" src="...">...</video>
  */
-
 
 /**
  * Video responsive
@@ -73,22 +69,18 @@ video.u-video-responsive {
   }
 }
 
-
 /**
  * Video ratio: 4:3
  */
-
 .u-video-responsive--4-3 {
   &::before {
     padding-block-end: 75%;
   }
 }
 
-
 /**
  * Video ratio: 1:1 (square)
  */
-
 .u-video-responsive--1-1 {
   &::before {
     padding-block-end: 100%;

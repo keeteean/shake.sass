@@ -29,13 +29,10 @@
  * @see 6.utilities/_utilities.stretched-link.scss
  */
 
-
 /**
  * Imports
  */
-
 @use "../settings";
-
 
 @mixin stretched-link {
   &::after {

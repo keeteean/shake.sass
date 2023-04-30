@@ -34,28 +34,23 @@
  * `1.settings/_settings.breakpoints`.
  *
  * @example
- *   $_visibility-responsive   : true;
+ *   $visibility-responsive   : true;
  *
  *   <h1 class="u-hide@large">
  *     Heading will be hidden on larger screens.
  *   </h1>
  */
 
-
 /**
  * Imports
  */
-
 @use "../settings";
-
 
 /**
  * Settings
  */
-
-$_visibility-responsive          : false !default;
-$_visibility-breakpoints         : settings.$breakpoints !default;
-
+$visibility-responsive: false !default;
+$visibility-breakpoints: settings.$breakpoints !default;
 
 /**
  * Hide only visually
@@ -71,7 +66,6 @@ $_visibility-breakpoints         : settings.$breakpoints !default;
  *   </h1>
  */
 
-
 /**
  * Focusable Visually hide
  *
@@ -84,9 +78,7 @@ $_visibility-breakpoints         : settings.$breakpoints !default;
  *   </a>
  */
 
-
 /**
  * Import Visibility Utility from Shake.sass.
  */
-
 @use "node_modules/shake.sass/6.utilities/utilities.visibility" as u-visibility;

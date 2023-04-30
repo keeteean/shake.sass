@@ -25,7 +25,6 @@
  * @see normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
  */
 
-
 /**
  * Imports
  */
@@ -47,8 +46,7 @@
  * @type Boolean
  */
 
-$_heading-size: true !default;
-
+$heading-size: true !default;
 
 /**
  * Small element font size
@@ -60,8 +58,7 @@ $_heading-size: true !default;
  * @type Boolean
  */
 
-$_small-size: true !default;
-
+$small-size: true !default;
 
 /**
  * Code font family
@@ -71,8 +68,7 @@ $_small-size: true !default;
  * @type String
  */
 
-$_code-font-family: settings.$font-family--monospace !default;
-
+$code-font-family: settings.$code-font-family !default;
 
 /**
  * Font Antialiasing
@@ -83,8 +79,7 @@ $_code-font-family: settings.$font-family--monospace !default;
  * @type Boolean
  */
 
-$_font-antialiasing: false !default;
-
+$font-antialiasing: false !default;
 
 /**
  * Remove bullets from HTML unformatted (`ul`), ordered (`ol`) lists and menu
@@ -96,18 +91,14 @@ $_font-antialiasing: false !default;
  *
  * @type Boolean
  */
-
-$_list-bullets: true !default;
-
+$list-bullets: true !default;
 
 /**
  * Table normalizer
  *
  * @type Boolean
  */
-
-$_table-normalize: true !default;
-
+$table-normalize: true !default;
 
 /**
  * Full width images
@@ -116,9 +107,7 @@ $_table-normalize: true !default;
  *
  * @type Boolean
  */
-
-$_full-width-images: false !default;
-
+$full-width-images: false !default;
 
 /**
  * HTML4 Form Elements
@@ -127,9 +116,7 @@ $_full-width-images: false !default;
  *
  * @type Boolean
  */
-
-$_form-elements: true !default;
-
+$form-elements: true !default;
 
 /**
  * HTML5 Form Elements
@@ -138,9 +125,7 @@ $_form-elements: true !default;
  *
  * @type Boolean
  */
-
-$_html5-form-elements: true !default;
-
+$html5-form-elements: true !default;
 
 /**
  * Button element reset
@@ -152,9 +137,7 @@ $_html5-form-elements: true !default;
  *
  * @type Boolean
  */
-
-$_button-element: false !default;
-
+$button-element: false !default;
 
 /**
  *** Document ***
@@ -172,20 +155,16 @@ $_button-element: false !default;
  *    Ensure the page always fills at least the entire height of the viewport.
  * 5. Makes font thickness to look the same in Firefox and Webkit.
  */
-
-@mixin document($font-antialiasing: $_font-antialiasing) {
+@mixin document($font-antialiasing: $font-antialiasing) {
   @include reset.document($font-antialiasing);
 }
-
 
 /**
  * Sets box-sizing to all elements and before and after
  */
-
 @mixin box-sizing {
   @include reset.box-sizing;
 }
-
 
 /**
  *** Sections ***
@@ -196,7 +175,6 @@ $_button-element: false !default;
   @include reset.sections;
 }
 
-
 /**
  *** Grouping content ***
  */
@@ -205,21 +183,17 @@ $_button-element: false !default;
  * Fixes the issues of main HTML5 tag with even earlier versions of IE.
  * For IE9-, please use HTML5Shiv https://github.com/aFarkas/html5shiv.
  */
-
 @mixin main {
   @include reset.main;
 }
-
 
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-
 @mixin hr {
   @include reset.hr;
 }
-
 
 /**
  * 1. Sets heading font-size to be equal to the content font-size. Encourages
@@ -228,11 +202,9 @@ $_button-element: false !default;
  *    Opinionated and disabled by default.
  * 2. Reset font-weight of all heading elements.
  */
-
-@mixin heading-fontsize($heading-size: $_heading-size) {
+@mixin heading-fontsize($heading-size: $heading-size) {
   @include reset.heading-fontsize($heading-size);
 }
-
 
 /**
  *** Text-level semantics ***
@@ -242,71 +214,57 @@ $_button-element: false !default;
  * 1. Removes default grey background in IE10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
-
 @mixin anchor {
   @include reset.anchor;
 }
-
 
 /**
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-
 @mixin abbr {
   @include reset.abbr;
 }
 
-
 /**
  * Modify default styling of address.
  */
-
 @mixin address {
   @include reset.address;
 }
 
-
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-
 @mixin bold {
   @include reset.bold;
 }
-
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  * 3. Removed italic style from <var>.
  */
-
-@mixin code($font-family: $_code-font-family) {
+@mixin code($font-family: $code-font-family) {
   @include reset.code($font-family);
 }
-
 
 /**
  * 1. Sets small tag's font-size to be equal to the content font-size for
  *    semantic reasons.
  * 2. Add the correct font size in all browsers.
  */
-
-@mixin small($small-size: $_small-size) {
+@mixin small($small-size: $small-size) {
   @include reset.small($small-size);
 }
-
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in all
  * browsers.
  */
-
 @mixin index-elements {
   @include reset.index-elements;
 }
-
 
 /**
  * Remove bullets from HTML unformatted (`ul`), ordered (`ol`) lists and menu
@@ -316,21 +274,17 @@ $_button-element: false !default;
  *
  * Opinionated and disabled by default.
  */
-
-@mixin list-bullets($list-bullets: $_list-bullets) {
+@mixin list-bullets($list-bullets: $list-bullets) {
   @include reset.list-bullets($list-bullets);
 }
-
 
 /**
  * 1. Removes default border spacing and collapse.
  * 2. Ensure tables fill up as much space as possible.
  */
-
-@mixin table($table-normalize: $_table-normalize) {
+@mixin table($table-normalize: $table-normalize) {
   @include reset.table($table-normalize);
 }
-
 
 /**
  *** Embedded content ***
@@ -341,46 +295,37 @@ $_button-element: false !default;
  * 2. Helps images to properly behave in responsive layouts
  * 3. Optionally make all images full width to fill the parent container
  */
-
-@mixin images($full-width: $_full-width-images) {
+@mixin images($full-width: $full-width-images) {
   @include reset.images($full-width);
 }
-
 
 /**
  * Add the correct display in iOS 4-7.
  */
-
 @mixin audio {
   @include reset.audio;
 }
 
-
 /**
  * Hide the overflow in IE.
  */
-
 @mixin svg {
   @include reset.svg;
 }
 
-
 /**
  * Normalizing html4 form elements
  */
-
-@mixin form-elements($form-elements: $_form-elements) {
+@mixin form-elements($form-elements: $form-elements) {
   @include reset.form-elements($form-elements);
 }
 
 /**
  *** Normalizing of html5 form elements ***
  */
-
-@mixin html5-form-elements($html5-form-elements: $_html5-form-elements) {
+@mixin html5-form-elements($html5-form-elements: $html5-form-elements) {
   @include reset.html5-form-elements($html5-form-elements);
 }
-
 
 /**
  *** Interactive ***
@@ -391,29 +336,23 @@ $_button-element: false !default;
  *
  * 1. Add the correct display in Edge, IE, and Firefox.
  */
-
 @mixin details-menu {
   @include reset.details-menu;
 }
 
-
 /**
  * Add the correct display in all browsers.
  */
-
 @mixin summary {
   @include reset.summary;
 }
 
-
 /**
  * Reset default appearance of the button element
  */
-
-@mixin button($button-element: $_button-element) {
+@mixin button($button-element: $button-element) {
   @include reset.button($button-element);
 }
-
 
 /**
  *** Scripting ***
@@ -422,7 +361,6 @@ $_button-element: false !default;
 /**
  * Add the correct display in IE.
  */
-
 @mixin template {
   @include reset.template;
 }

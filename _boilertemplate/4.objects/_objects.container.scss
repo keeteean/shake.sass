@@ -10,7 +10,7 @@
  * `2.tools/_tools.container.scss`. Here we add a css class for that.
  * You can setup here for additional container sizes and paddings.
  *
- * based on iota.css
+ * Based on iota.css.
  * @author Dimitris Psaropoulos <info@harby.me>
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://www.iotacss.com/docs/objects/container
@@ -22,7 +22,6 @@
  * @require {mixin} container-size <2.tools/_tools.container.scss> - container
  * with custom size (max-width)
  *
- *
  * Examples
  *
  * Container with extra gutter sizes
@@ -30,7 +29,7 @@
  * container named 'large' with 40px padding.
  *
  * @example
- *   $_container-gutter-extra: (
+ *   $gutter-extra: (
  *     small: 1rem,
  *     large: 4rem
  *   );
@@ -40,7 +39,7 @@
  * tablets and up.
  *
  * @example
- *   $_container-gutter-default: (
+ *   $gutter-default: (
  *     null : 1rem,
  *     small: 2rem
  *   );
@@ -50,7 +49,7 @@
  * in mobile and 40px padding in tablets and up.
  *
  * @example
- *   $_container-gutter-default: (
+ *   $gutter-default: (
  *     large: (
  *       null : 2rem,
  *       small: 4rem
@@ -62,20 +61,17 @@
  * max-width of 1024px in tablets and up.
  *
  * @example
- *   $_container-size-default: (
+ *   $size-default: (
  *     null : 32rem,
  *     small: 102.4rem
  *   );
  */
 
-
 /**
  * Imports
  */
-
 @use "../settings";
-@use "../2.tools/tools.container" as container;
-
+@use "../2.tools/_tools.container" as container;
 
 /**
  * Settings
@@ -84,10 +80,8 @@
 /**
  * Namespace settings
  */
-
-$_container-class          : "o-container" !default;
-$_container-class-mod      : $_container-class + "--" !default;
-
+$class: "o-container" !default;
+$class-mod: $class + "--" !default;
 
 /**
  * Additional container gutters
@@ -99,13 +93,13 @@ $_container-class-mod      : $_container-class + "--" !default;
  * Each gutter size will be available as a BEM modifier that will be named
  * according to the gutter name.
  *
- * Example if `$_container-gutter-extra: (large: 30px);`
+ * Example if `$gutter-extra: (large: 30px);`
  * then `.o-container--large` will be available for use.
  *
  * @type Map
  *
  * @example
- *   $_container-gutter-extra: (
+ *   $gutter-extra: (
  *     large: (
  *       null : 2rem,
  *       small: 4rem
@@ -114,9 +108,7 @@ $_container-class-mod      : $_container-class + "--" !default;
  *
  *   <div class"o-container--large">...</div>
  */
-
-$_container-gutter-extra   : settings.$container-gutter-extra !default;
-
+$gutter-extra: settings.$container-gutter-extra !default;
 
 /**
  * Additional container sizes
@@ -127,13 +119,13 @@ $_container-gutter-extra   : settings.$container-gutter-extra !default;
  * Each gutter size will be available as a BEM modifier that will be named
  * according to the container size name.
  *
- * Example if `$_container-size-extra: (large: 1600px);`
+ * Example if `$size-extra: (large: 1600px);`
  * then `.o-container--large` will be available for use.
  *
  * @type Map
  *
  * @example
- *   $_container-size-extra: (
+ *   $size-extra: (
  *     large: (
  *       null : 30rem,
  *       small: 120rem
@@ -142,25 +134,23 @@ $_container-gutter-extra   : settings.$container-gutter-extra !default;
  *
  *   <div class"o-container--large">...</div>
  */
-
-$_container-size-extra     : settings.$container-size-extra !default;
-
+$size-extra: settings.$container-size-extra !default;
 
 // Default Container Object
-.#{$_container-class} {
+.#{$class} {
   @include container.make-container;
 }
 
 // Container Object Extra Gutters
-@each $gutter-name, $gutter-size in $_container-gutter-extra {
-  .#{$_container-class-mod + quote($gutter-name)} {
+@each $gutter-name, $gutter-size in $gutter-extra {
+  .#{$class-mod + quote($gutter-name)} {
     @include container.container-padding($gutter-size);
   }
 }
 
 // Container Object Extra Sizes
-@each $size-name, $size-value in $_container-size-extra {
-  .#{$_container-class-mod + quote($size-name)} {
+@each $size-name, $size-value in $size-extra {
+  .#{$class-mod + quote($size-name)} {
     @include container.container-size($size-value);
 
     margin-inline: auto;

@@ -10,7 +10,6 @@
 /**
  * Imports
  */
-
 @use "../settings";
 @use "node_modules/2.tools/tools.transitions" as transitions;
 
@@ -24,7 +23,6 @@
  *     @include tools.global-transition;
  *   }
  */
-
 @mixin global-transition(
   $property: settings.$transition-property,
   $timing: settings.$transition-timing,
@@ -33,22 +31,20 @@
   @include transitions.global-transition($property, $timing, $easing);
 }
 
-
 /**
  * Button transition
  */
-
 @mixin button-transition {
   transition: all 300ms ease;
 
   &:hover {
-    transform: translateY(-.3rem);
-    box-shadow: 0 1rem 2rem rgba(settings.$color-black, .2);
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(settings.$color-black, 0.2);
   }
 
   &:active,
   &:focus {
-    transform: translateY(-.1rem);
-    box-shadow: 0 .5rem 1rem rgba(settings.$color-black, .2);
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(settings.$color-black, 0.2);
   }
 }

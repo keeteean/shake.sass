@@ -7,7 +7,6 @@
  *
  */
 
-
 /**
  * Settings
  *
@@ -19,7 +18,6 @@
 
 @forward "settings";
 
-
 /**
  * Tools
  *
@@ -28,7 +26,6 @@
  */
 
 @forward "tools";
-
 
 /**
  * Base
@@ -50,7 +47,6 @@
 @use "3.base/base.page" as b-page;
 @use "3.base/base.type" as b-type;
 
-
 /**
  * Objects
  *
@@ -68,7 +64,6 @@
 @use "4.objects/objects.grid" as o-grid;
 @use "4.objects/objects.media" as o-media;
 
-
 /**
  * Components
  *
@@ -82,7 +77,6 @@
 @use "5.components/components.icon" as c-icon;
 @use "5.components/components.page" as c-page;
 @use "5.components/components.table" as c-table;
-
 
 /**
  * Utilities

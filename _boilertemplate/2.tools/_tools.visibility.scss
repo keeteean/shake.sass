@@ -9,13 +9,10 @@
  * @see 6.utilities/_utilities.visibility.scss for BEM based class named version
  */
 
-
 /**
  * Imports
  */
-
 @use "node_modules/2.tools/tools.visibility" as visibility;
-
 
 /**
  * Visually Hidden
@@ -35,11 +32,9 @@
  *     @include tools.visually-hidden;
  *   }
  */
-
 @mixin visually-hidden {
   @include visibility.visually-hidden;
 }
-
 
 /**
  * Focusable Visually hidden
@@ -59,7 +54,6 @@
  *      @include visually-hidden--focusable;
  *   }
  */
-
 @mixin visually-hidden--focusable {
   @include visibility.visually-hidden--focusable;
 }

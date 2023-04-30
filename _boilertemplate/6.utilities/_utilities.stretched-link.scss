@@ -36,9 +36,7 @@
  * @require {mixin} stretched-link 2.tools/_tools.stretched-link.scss
  */
 
-
 /**
  * Import Stretched Link Utility from Shake.sass.
  */
-
 @use "node_modules/shake.sass/6.utilities/utilities.stretched-link" as u-stretched-link;

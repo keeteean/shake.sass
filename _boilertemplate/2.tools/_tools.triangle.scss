@@ -19,13 +19,10 @@
  *   }
  */
 
-
 /**
  * Imports
  */
-
 @use "node_modules/2.tools/tools.triangle" as triangle;
-
 
 /**
  * Make Triangle mixin
@@ -43,7 +40,6 @@
  * @parameter {string} $color
  *   Color of the triangle.
  */
-
 @mixin make-triangle($direction, $width, $height, $color) {
   @include triangle.make-triangle($direction, $width, $height, $color);
 }

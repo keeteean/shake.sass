@@ -25,11 +25,9 @@
  * @see normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
  */
 
-
 /**
  * Imports
  */
-
 @use "../settings";
 
 /**
@@ -45,9 +43,7 @@
  *
  * @type Boolean
  */
-
-$_heading-size: true !default;
-
+$heading-size: true !default;
 
 /**
  * Small element font size
@@ -58,9 +54,7 @@ $_heading-size: true !default;
  *
  * @type Boolean
  */
-
-$_small-size: true !default;
-
+$small-size: true !default;
 
 /**
  * Code font family
@@ -69,9 +63,7 @@ $_small-size: true !default;
  *
  * @type String
  */
-
-$_code-font-family: settings.$font-family--monospace !default;
-
+$code-font-family: settings.$code-font-family !default;
 
 /**
  * Font Antialiasing
@@ -81,9 +73,7 @@ $_code-font-family: settings.$font-family--monospace !default;
  *
  * @type Boolean
  */
-
-$_font-antialiasing: false !default;
-
+$font-antialiasing: false !default;
 
 /**
  * Remove bullets from HTML unformatted (`ul`), ordered (`ol`) lists and menu
@@ -95,18 +85,14 @@ $_font-antialiasing: false !default;
  *
  * @type Boolean
  */
-
-$_list-bullets: true !default;
-
+$list-bullets: true !default;
 
 /**
  * Table normalizer
  *
  * @type Boolean
  */
-
-$_table-normalize: true !default;
-
+$table-normalize: true !default;
 
 /**
  * Full width images
@@ -115,9 +101,7 @@ $_table-normalize: true !default;
  *
  * @type Boolean
  */
-
-$_full-width-images: false !default;
-
+$full-width-images: false !default;
 
 /**
  * HTML4 Form Elements
@@ -126,9 +110,7 @@ $_full-width-images: false !default;
  *
  * @type Boolean
  */
-
-$_form-elements: true !default;
-
+$form-elements: true !default;
 
 /**
  * HTML5 Form Elements
@@ -137,9 +119,7 @@ $_form-elements: true !default;
  *
  * @type Boolean
  */
-
-$_html5-form-elements: true !default;
-
+$html5-form-elements: true !default;
 
 /**
  * Button element reset
@@ -151,9 +131,7 @@ $_html5-form-elements: true !default;
  *
  * @type Boolean
  */
-
-$_button-element: false !default;
-
+$button-element: false !default;
 
 /**
  *** Document ***
@@ -172,8 +150,7 @@ $_button-element: false !default;
  * 5. Makes font thickness to look the same in Firefox and Webkit.
  * 6. Fixes a Chromium bug: https://bugs.chromium.org/p/chromium/issues/detail?id=633805
  */
-
-@mixin document($font-antialiasing: $_font-antialiasing) {
+@mixin document($font-antialiasing: $font-antialiasing) {
   html {
     overflow-y: scroll; // 4
     box-sizing: border-box; // 1
@@ -193,11 +170,9 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  * Sets box-sizing to all elements and before and after
  */
-
 @mixin box-sizing {
   * {
     &,
@@ -207,7 +182,6 @@ $_button-element: false !default;
     }
   }
 }
-
 
 /**
  *** Sections ***
@@ -242,7 +216,6 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  *** Grouping content ***
  */
@@ -251,19 +224,16 @@ $_button-element: false !default;
  * Fixes the issues of main HTML5 tag with even earlier versions of IE.
  * For IE9-, please use HTML5Shiv https://github.com/aFarkas/html5shiv.
  */
-
 @mixin main {
   main {
     display: block;
   }
 }
 
-
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-
 @mixin hr {
   hr {
     overflow: visible; // 2
@@ -272,7 +242,6 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  * 1. Sets heading font-size to be equal to the content font-size. Encourages
  *    the use of different heading elements to define the position of the
@@ -280,8 +249,7 @@ $_button-element: false !default;
  *    Opinionated and disabled by default.
  * 2. Reset font-weight of all heading elements.
  */
-
-@mixin heading-fontsize($heading-size: $_heading-size) {
+@mixin heading-fontsize($heading-size: $heading-size) {
   @if $heading-size {
     h1,
     h2,
@@ -295,7 +263,6 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  *** Text-level semantics ***
  */
@@ -304,19 +271,16 @@ $_button-element: false !default;
  * 1. Removes default grey background in IE10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
-
 @mixin anchor {
   a {
     background-color: transparent; // 1
     /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-text-decoration-skip: objects; // 2
 
-
     /**
      * Remove the outline on focused links when they are also active or hovered
      * in all browsers (opinionated).
      */
-
     &:active,
     &:hover {
       outline-width: 0;
@@ -324,12 +288,10 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-
 @mixin abbr {
   abbr[title] {
     text-decoration: underline; // 2
@@ -338,22 +300,18 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  * Modify default styling of address.
  */
-
 @mixin address {
   address {
     font-style: normal;
   }
 }
 
-
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-
 @mixin bold {
   b,
   strong {
@@ -361,14 +319,13 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  * 3. Removed italic style from <var>.
  */
 
-@mixin code($font-family: $_code-font-family) {
+@mixin code($font-family: $code-font-family) {
   code,
   kbd,
   pre,
@@ -383,31 +340,25 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  * 1. Sets small tag's font-size to be equal to the content font-size for
  *    semantic reasons.
  * 2. Add the correct font size in all browsers.
  */
-
-@mixin small($small-size: $_small-size) {
+@mixin small($small-size: $small-size) {
   small {
     @if $small-size {
       font-size: inherit; // 1
-    }
-
-    @else {
+    } @else {
       font-size: 80%; // 2
     }
   }
 }
 
-
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in all
  * browsers.
  */
-
 @mixin index-elements {
   sub,
   sup {
@@ -418,14 +369,13 @@ $_button-element: false !default;
   }
 
   sub {
-    inset-block-end: -.25em;
+    inset-block-end: -0.25em;
   }
 
   sup {
-    inset-block-start: -.5em;
+    inset-block-start: -0.5em;
   }
 }
-
 
 /**
  * Remove bullets from HTML unformatted (`ul`), ordered (`ol`) lists and menu
@@ -435,20 +385,17 @@ $_button-element: false !default;
  *
  * Opinionated and disabled by default.
  */
-
-@mixin list-bullets($list-bullets: $_list-bullets) {
+@mixin list-bullets($list-bullets: $list-bullets) {
   @if $list-bullets == false {
     list-style: none;
   }
 }
 
-
 /**
  * 1. Removes default border spacing and collapse.
  * 2. Ensure tables fill up as much space as possible.
  */
-
-@mixin table($table-normalize: $_table-normalize) {
+@mixin table($table-normalize: $table-normalize) {
   @if $table-normalize {
     table {
       inline-size: 100%; // 2
@@ -457,7 +404,6 @@ $_button-element: false !default;
     }
   }
 }
-
 
 /**
  *** Embedded content ***
@@ -468,8 +414,7 @@ $_button-element: false !default;
  * 2. Helps images to properly behave in responsive layouts
  * 3. Optionally make all images full width to fill the parent container
  */
-
-@mixin images($full-width: $_full-width-images) {
+@mixin images($full-width: $full-width-images) {
   img,
   object,
   svg {
@@ -484,11 +429,9 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  * Add the correct display in iOS 4-7.
  */
-
 @mixin audio {
   audio:not([controls]) {
     display: none;
@@ -496,29 +439,24 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  * Hide the overflow in IE.
  */
-
 @mixin svg {
   svg:not(:root) {
     overflow: hidden;
   }
 }
 
-
 /**
  * Normalizing html4 form elements
  */
-
-@mixin form-elements($form-elements: $_form-elements) {
+@mixin form-elements($form-elements: $form-elements) {
   @if $form-elements {
     /**
      * 1. Change the font styles in all browsers (opinionated).
      * 2. Remove the margin in Firefox and Safari.
      */
-
     button,
     input,
     optgroup,
@@ -531,48 +469,40 @@ $_button-element: false !default;
       line-height: inherit; // 1
     }
 
-
     /**
      * Show the overflow in IE.
      *
      * 1. Show the overflow in Edge.
      */
-
     button,
     input {
       overflow: visible; // 1
     }
-
 
     /**
      * Remove the inheritance of text transform in Edge, Firefox, and IE.
      *
      * 1. Remove the inheritance of text transform in Firefox.
      */
-
     button,
     select {
       text-transform: none; // 1
     }
 
-
     /**
      * 1. Remove the padding in IE 10.
      */
-
     [type="checkbox"],
     [type="radio"] {
       padding-block: 0; // 1
       padding-inline: 0; // 1
     }
 
-
     /**
      * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
      *    controls in Android 4.
      * 2. Correct the inability to style clickable types in iOS and Safari.
      */
-
     button,
     html [type="button"], // 1
     [type="reset"],
@@ -581,11 +511,9 @@ $_button-element: false !default;
       -webkit-appearance: button; // 2
     }
 
-
     /**
      * Remove the inner border and padding in Firefox.
      */
-
     button::-moz-focus-inner,
     [type="button"]::-moz-focus-inner,
     [type="reset"]::-moz-focus-inner,
@@ -595,18 +523,15 @@ $_button-element: false !default;
       border-style: none; // stylelint-disable-line
     }
 
-
     /**
      * Restore the focus styles unset by the previous rule.
      */
-
     button:-moz-focusring,
     [type="button"]:-moz-focusring,
     [type="reset"]:-moz-focusring,
     [type="submit"]:-moz-focusring {
-      outline: .1rem dotted ButtonText;
+      outline: 0.1rem dotted ButtonText;
     }
-
 
     /**
      * 1. Change the border, margin, and padding in all browsers (opinionated)..
@@ -617,14 +542,12 @@ $_button-element: false !default;
       border-inline: 0; // 1
     }
 
-
     /**
      * 1. Correct the text wrapping in Edge and IE.
      * 2. Correct the color inheritance from `fieldset` elements in IE.
      * 3. Remove the padding so developers are not caught out when they zero out
      *    `fieldset` elements in all browsers.
      */
-
     legend {
       display: table; // 1
       box-sizing: border-box; // 1
@@ -635,11 +558,9 @@ $_button-element: false !default;
       color: inherit; // 2
     }
 
-
     /**
      * Remove the default vertical scrollbar in IE 10+.
      */
-
     textarea {
       overflow: auto;
     }
@@ -649,8 +570,7 @@ $_button-element: false !default;
 /**
  *** Normalizing of html5 form elements ***
  */
-
-@mixin html5-form-elements($html5-form-elements: $_html5-form-elements) {
+@mixin html5-form-elements($html5-form-elements: $html5-form-elements) {
   @if $html5-form-elements {
     // Correct the cursor style of increment and decrement buttons in Chrome.
     [type="number"]::-webkit-inner-spin-button,
@@ -658,52 +578,43 @@ $_button-element: false !default;
       block-size: auto;
     }
 
-
     /**
      * 1. Correct the odd appearance in Chrome and Safari.
      * 2. Correct the outline style in Safari.
      */
-
     [type="search"] {
       /* stylelint-disable-next-line property-no-vendor-prefix */
       -webkit-appearance: textfield; // 1
-      outline-offset: -.2rem; // 2
+      outline-offset: -0.2rem; // 2
     }
-
 
     /**
      * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
      */
-
     [type="search"]::-webkit-search-cancel-button,
     [type="search"]::-webkit-search-decoration {
       /* stylelint-disable-next-line property-no-vendor-prefix */
       -webkit-appearance: none;
     }
 
-
     /**
      * 1. Correct the inability to style clickable types in iOS and Safari.
      * 2. Change font properties to `inherit` in Safari.
      */
-
     ::-webkit-file-upload-button {
       /* stylelint-disable-next-line property-no-vendor-prefix */
       -webkit-appearance: button; // 1
       font: inherit; // 2
     }
 
-
     /**
      * Add the correct vertical alignment in Chrome, Firefox, and Opera.
      */
-
     progress {
       vertical-align: baseline; // 1
     }
   }
 }
-
 
 /**
  *** Interactive ***
@@ -714,7 +625,6 @@ $_button-element: false !default;
  *
  * 1. Add the correct display in Edge, IE, and Firefox.
  */
-
 @mixin details-menu {
   details, // 1
   menu {
@@ -722,11 +632,9 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  * Add the correct display in all browsers.
  */
-
 @mixin summary {
   summary {
     display: list-item;
@@ -734,12 +642,10 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  * Reset default appearance of the button element
  */
-
-@mixin button($button-element: $_button-element) {
+@mixin button-element($button-element: $button-element) {
   @if $button-element {
     button {
       padding: 0;
@@ -752,7 +658,6 @@ $_button-element: false !default;
   }
 }
 
-
 /**
  *** Scripting ***
  */
@@ -760,7 +665,6 @@ $_button-element: false !default;
 /**
  * Add the correct display in IE.
  */
-
 @mixin template {
   template {
     display: none;

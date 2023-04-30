@@ -100,8 +100,8 @@ Afterward, you need to modify all paths in this way:
 Finally, here you can turn off by commenting out the unneeded modules. But be
 careful, you may need some essential modules, like:
 
-- 1.settings/_index.scss
-- 2.tools/_index.scss
+- 1.settings/\_index.scss
+- 2.tools/\_index.scss
 
 An example main sass file:
 
@@ -156,12 +156,12 @@ The best if you import only the needed tools to your component like:
 .c-header {
   &__logo {
     @include grid.make-column(1.5rem);
-    @include grid.column-size(10,12);
-    @include grid.column-offset(1,12);
+    @include grid.column-size(10, 12);
+    @include grid.column-offset(1, 12);
 
     @include breakpoint(large) {
-      @include grid.column-size(2,12);
-      @include grid.column-offset(0,12);
+      @include grid.column-size(2, 12);
+      @include grid.column-offset(0, 12);
     }
   }
 }

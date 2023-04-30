@@ -8,12 +8,14 @@
  * borrowed from bourbon
  *
  * @type Function
+ */
+
+/**
+ * Is Color Function
  *
  * @parameter {string | number | map} $color - The given css value.
  * @return {boolean}
- * @access private
  */
-
 @function is-color($color) {
   @return (type-of($color) == color) or ($color == "currentColor");
 }

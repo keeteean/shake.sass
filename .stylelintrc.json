@@ -1,26 +1,14 @@
 {
-  "extends": [
-    "stylelint-config-standard-scss"
-  ],
-  "plugins": [
-    "stylelint-scss",
-    "stylelint-order",
-    "stylelint-use-logical"
-  ],
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier"],
+  "plugins": ["stylelint-scss", "stylelint-order", "stylelint-use-logical"],
+  "customSyntax": "postcss-scss",
   "rules": {
     "alpha-value-notation": "number",
     "at-rule-empty-line-before": [
       "always",
       {
-        "except": [
-          "first-nested",
-          "blockless-after-same-name-blockless"
-        ],
-        "ignore": [
-          "after-comment",
-          "inside-block",
-          "blockless-after-blockless"
-        ]
+        "except": ["first-nested", "blockless-after-same-name-blockless"],
+        "ignore": ["after-comment", "inside-block", "blockless-after-blockless"]
       }
     ],
     "at-rule-no-unknown": [
@@ -50,9 +38,7 @@
     "custom-property-pattern": "^[a-z][-_a-z0-9IE]*$",
     "declaration-block-no-redundant-longhand-properties": null,
     "declaration-property-value-disallowed-list": {
-      "/^border/": [
-        "none"
-      ]
+      "/^border/": ["none"]
     },
     "function-linear-gradient-no-nonstandard-direction": null,
     "function-url-quotes": null,
@@ -63,66 +49,36 @@
     "max-line-length": [
       120,
       {
-        "ignorePattern": [
-          "/^@import\\s+/",
-          "/font-family/"
-        ]
+        "ignorePattern": ["/^@import\\s+/", "/font-family/"]
       }
     ],
     "max-nesting-depth": [
       3,
       {
-        "ignoreAtRules": [
-          "for",
-          "include",
-          "media"
-        ]
+        "ignoreAtRules": ["for", "include", "media"]
       }
     ],
     "media-feature-name-no-unknown": [
       true,
       {
-        "ignoreMediaFeatureNames": [
-          "prefers-reduced-motion",
-          "/device-pixel-ratio$/"
-        ]
+        "ignoreMediaFeatureNames": ["prefers-reduced-motion", "/device-pixel-ratio$/"]
       }
     ],
     "number-max-precision": 5,
-    "number-leading-zero": "never",
     "selector-class-pattern": "^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
     "selector-max-id": 0,
-    "string-quotes": "double",
-    "unit-allowed-list": [
-      "ch",
-      "deg",
-      "dpi",
-      "em",
-      "ex",
-      "fr",
-      "ms",
-      "rem",
-      "%",
-      "s",
-      "vw",
-      "vh"
-    ],
+    "unit-allowed-list": ["ch", "deg", "dpi", "em", "ex", "fr", "ms", "rem", "%", "s", "vw", "vh"],
     "value-keyword-case": [
       "lower",
       {
         "camelCaseSvgKeywords": true,
-        "ignoreProperties": [
-          "--font-family",
-          "font-family"
-        ]
+        "ignoreProperties": ["--font-family", "font-family"]
       }
     ],
     "csstools/use-logical": [
       "always",
       {
-        "except": [
-          "float"
-        ]
+        "except": ["float"]
       }
     ],
     "order/order": [

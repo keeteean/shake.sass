@@ -5,10 +5,9 @@
  *
  * Global typography settings:
  * - Font-family declarations
- * - Line-height declarations
  * - Font-size declarations
+ * - Text color declarations
  */
-
 
 /**
  * Font family settings
@@ -18,44 +17,24 @@
  */
 
 // System (sans-serif) font-stack
-$font-family--system: -apple-system,
-  system-ui,
-  "BlinkMacSystemFont",
-  "Segoe UI",
-  "Roboto",
-  "Helvetica Neue",
-  "Arial",
-  sans-serif,
-  "Apple Color Emoji",
-  "Segoe UI Emoji",
-  "Segoe UI Symbol",
-  "Noto Color Emoji" !default;
+$font-family--system: -apple-system, system-ui, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial",
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
-// Monospace font-stack: required by 3.base/_base.reset
-$font-family--monospace: "SFMono-Regular",
-  "Menlo",
-  "Monaco",
-  "Segoe UI Mono",
-  "Consolas",
-  "Liberation Mono",
-  "Courier New",
-  monospace !default;
-
+// Monospace font-stack
+$font-family--monospace: "SFMono-Regular", "Menlo", "Monaco", "Segoe UI Mono", "Consolas", "Liberation Mono",
+  "Courier New", monospace !default;
 
 /**
  * Font-stacks by functions
  */
-
-$primary-font-family         : $font-family--system !default;
-$heading-font-family         : $primary-font-family !default;
-
+$primary-font-family: $font-family--system !default;
+$heading-font-family: $primary-font-family !default;
+$code-font-family: $font-family--monospace !default; // required by reset
 
 /**
  * Line-height
  */
-
-$line-height         : 1.2 !default;
-
+$line-height: 1.2 !default;
 
 /**
  * Responsive font sizes
@@ -69,9 +48,10 @@ $line-height         : 1.2 !default;
  * 'null' means no breakpoint (default)
  */
 
-// Body (default) Font-size
-// We use this to set the default font size and line-height
-// for the `<body>` element in `3.base/_3.base.type`.
+/** Body (default) Font-size
+ * We use this to set the default font size and line-height
+ * for the `<body>` element in `3.base/_3.base.type`.
+ */
 $default-font-size: (
   null: (
     1.4rem,
@@ -81,7 +61,6 @@ $default-font-size: (
     1.6rem
   )
 ) !default;
-
 
 /**
  * Heading Font Sizes

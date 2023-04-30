@@ -8,11 +8,10 @@
  * @author Krisztian Pinter <krisz@keeteean.com>
  */
 
-
 /**
  * Square mixin
  *
- * Use it, when you need similar width and height with square shape.
+ * Use it, when you need the same width and height with square shape.
  *
  * @parameter {string} $value - Amount of desired width and height in any unit.
  *
@@ -21,12 +20,10 @@
  *
  *   @include tools.square(6rem);
  */
-
 @mixin square($value) {
   inline-size: $value;
   block-size: $value;
 }
-
 
 /**
  * Rounding mixin
@@ -39,22 +36,17 @@
  *   @use "../tools";
  *
  *  input {
- *    @include tools.round(.4rem);
+ *    @include tools.rounded(.4rem);
  *  }
  */
-
-@mixin round($radius) {
-  border-start-start-radius: $radius;
-  border-start-end-radius: $radius;
-  border-end-end-radius: $radius;
-  border-end-start-radius: $radius;
+@mixin rounded($radius) {
+  border-radius: $radius;
 }
-
 
 /**
  * Circle mixin
  *
- * Use it, when you need similar width and height width circle shape.
+ * Use it, when you need the same width and height width circle shape.
  *
  * @parameter {string} $value - Amount of desired width and height in any unit.
  *
@@ -63,12 +55,8 @@
  *
  *   @include circle(6rem);
  */
-
 @mixin circle($value) {
   inline-size: $value;
   block-size: $value;
-  border-start-start-radius: calc($value * .5);
-  border-start-end-radius: calc($value * .5);
-  border-end-end-radius: calc($value * .5);
-  border-end-start-radius: calc($value * .5);
+  border-radius: calc($value * 0.5);
 }
