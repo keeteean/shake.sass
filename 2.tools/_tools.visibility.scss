@@ -9,7 +9,6 @@
  * @see 6.utilities/_utilities.visibility.scss for BEM based class named version
  */
 
-
 /**
  * Visually Hidden
  *
@@ -28,16 +27,14 @@
  *     @include tools.visually-hidden;
  *   }
  */
-
 @mixin visually-hidden {
   position: absolute !important;
   overflow: hidden !important;
-  clip: rect(.1rem .1rem .1rem .1rem) !important; /* IE6, IE7 */
-  clip: rect(.1rem, .1rem, .1rem, .1rem) !important;
-  inline-size: .1rem !important;
-  block-size: .1rem !important;
+  clip: rect(0.1rem 0.1rem 0.1rem 0.1rem) !important; /* IE6, IE7 */
+  clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem) !important;
+  inline-size: 0.1rem !important;
+  block-size: 0.1rem !important;
 }
-
 
 /**
  * Focusable Visually hidden
@@ -57,7 +54,6 @@
  *      @include visually-hidden--focusable;
  *   }
  */
-
 @mixin visually-hidden--focusable {
   &:active,
   &:focus {

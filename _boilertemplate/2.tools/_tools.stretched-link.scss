@@ -10,13 +10,10 @@
  * @link https://getbootstrap.com/docs/4.3/utilities/stretched-link
  */
 
-
 /**
  * Imports
  */
-
 @use "node_modules/2.tools/tools.stretched-link" as stretched-link;
-
 
 /**
  * Stretched link
@@ -40,7 +37,6 @@
  * You can use it as utility class too:
  * @see 6.utilities/_utilities.stretched-link.scss
  */
-
 @mixin stretched-link {
   @include stretched-link.stretched-link;
 }

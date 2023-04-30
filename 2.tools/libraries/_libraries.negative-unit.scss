@@ -7,30 +7,36 @@
  *
  * borrowed from iota.css
  * @author Dimitris Psaropoulos <info@harby.me>
- * @type Function
  *
- * @parameter {string | number | map} $values - The given css value.
- * @access private
+ * @type Function
  */
-
 
 /**
  * Imports
  */
-
 @use "sass:map";
 @use "../validators";
 
+/**
+ * Negative Units Function
+ *
+ * @parameter {string | number | map} $values - The given css value.
+ */
 @function negative-unit($values) {
   @if validators.is-map($values) {
     @each $key, $value in $values {
-      $values: map.merge($values, ($key: ($value * -1)));
+      $values: map.merge(
+        $values,
+        (
+          $key: (
+            $value * -1
+          )
+        )
+      );
     }
 
     @return $values;
-  }
-
-  @else {
+  } @else {
     @return -$values;
   }
 }

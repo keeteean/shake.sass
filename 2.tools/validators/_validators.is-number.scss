@@ -7,12 +7,15 @@
  *
  * borrowed from iota.css
  * @author Dimitris Psaropoulos <info@harby.me>
- * @type Function
  *
- * @parameter {string | number | map} $number - The given css value.
- * @access private
+ * @type Function
  */
 
+/**
+ * Is Number Function
+ *
+ * @parameter {string | number | map} $number - The given css value.
+ */
 @function is-number($number) {
   @return type-of($number) == "number";
 }

@@ -9,13 +9,10 @@
  * @see 6.utilities/_utilities.text.scss for BEM based class named version
  */
 
-
 /**
  * Imports
  */
-
 @use "node_modules/2.tools/tools.text" as text;
-
 
 /**
  * Text-align Mixin
@@ -45,11 +42,9 @@
  *     @include tools.text-align(justify, left);
  *   }
  */
-
 @mixin text-align($align, $last: null) {
   @include text.text-align($align, $last);
 }
-
 
 /**
  * Text Overflow behaviors
@@ -71,11 +66,9 @@
  *     @include tools.text-ellipsis;
  *   }
  */
-
 @mixin text-ellipsis {
   @include text.text-ellipsis;
 }
-
 
 /**
  * Text Clip
@@ -94,11 +87,9 @@
  *     @include tools.text-clip;
  *   }
  */
-
 @mixin text-clip {
   @include text.text-clip;
 }
-
 
 /**
  * Text Break
@@ -117,7 +108,6 @@
  *     @include tools.text-break;
  *   }
  */
-
 @mixin text-break {
   @include text.text-break;
 }

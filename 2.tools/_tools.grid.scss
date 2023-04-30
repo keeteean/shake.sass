@@ -66,27 +66,22 @@
  *   }
  */
 
-
 /**
  * Imports
  */
-
 @use "sass:math";
 @use "libraries";
 @use "../settings";
-
 
 /**
  * Settings
  *
  * We use the default global gutters for gaps between columns. But you can
- * define additional gutters. There is an empty `$_grid-gutter-extra`
+ * define additional gutters. There is an empty `$grid-gutter-extra`
  * Sass map for that, but if you need, you can create more.
  */
-
-$_grid-gutter-default     : settings.$gutter-default;
-$_grid-gutter-extra       : settings.$grid-gutter-extra;
-
+$grid-gutter-default: settings.$gutter-default;
+$grid-gutter-extra: settings.$grid-gutter-extra;
 
 /**
  * Create Grid
@@ -123,14 +118,14 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  * @example
  *   @use "../tools";
  *
- *   $_grid-gutter-extra: (
+ *   $grid-gutter-extra: (
  *       null    : .6rem,
  *       medium  : 1.2rem,
  *       large   : 2.4rem
  *   );
  *
  *   .entry__list {
- *     @include tools.make-grid($_grid-gutter-extra);
+ *     @include tools.make-grid($grid-gutter-extra);
  *   }
  *
  * Grid with simple, non-responsive gutters
@@ -151,21 +146,14 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  *     @include tools.make-grid(0);
  *   }
  */
-
-@mixin make-grid($gutter: $_grid-gutter-default) {
-  @include libraries.generate-unit(
-    "margin",
-    "inline",
-    libraries.negative-unit($gutter),
-    half
-  );
+@mixin make-grid($gutter: $grid-gutter-default) {
+  @include libraries.generate-unit("margin", "inline", libraries.negative-unit($gutter), half);
 
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
   list-style: none;
 }
-
 
 /**
  * Create Columns for Grid
@@ -202,14 +190,14 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  * @example
  *   @use "../tools";
  *
- *   $_grid-gutter-extra: (
+ *   $grid-gutter-extra: (
  *       null    : .6rem,
  *       medium  : 1.2rem,
  *       large   : 2.4rem
  *   );
  *
  *   .entry {
- *     @include tools.make-column($_grid-gutter-extra);
+ *     @include tools.make-column($grid-gutter-extra);
  *   }
  *
  * Columns with simple, non responsive gutters
@@ -230,8 +218,7 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  *     @include tools.make-column(0);
  *   }
  */
-
-@mixin make-column($gutter: $_grid-gutter-default) {
+@mixin make-column($gutter: $grid-gutter-default) {
   @include libraries.generate-unit("padding", "inline", $gutter, half);
 
   flex-basis: auto;
@@ -239,7 +226,6 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
   inline-size: 100%;
   min-inline-size: 0;
 }
-
 
 /**
  * Set Column size
@@ -265,12 +251,10 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  *     @include tools.column-size(4,12);
  *   }
  */
-
 @mixin column-size($column, $all-columns) {
   flex: 0 0 math.percentage(math.div($column, $all-columns));
   max-inline-size: math.percentage(math.div($column, $all-columns));
 }
-
 
 /**
  * Column offset
@@ -318,13 +302,10 @@ $_grid-gutter-extra       : settings.$grid-gutter-extra;
  *     @include tools.column-offset(3,12, end);
  *   }
  */
-
 @mixin column-offset($column, $all-columns, $position: start) {
   @if $position == start {
     margin-inline-start: math.percentage(math.div($column, $all-columns));
-  }
-
-  @else if $position == end {
+  } @else if $position == end {
     margin-inline-end: math.percentage(math.div($column, $all-columns));
   }
 }

@@ -5,13 +5,11 @@
  *
  */
 
-
 /**
  * Imports
  */
 
 @use "../settings";
-
 
 /**
  * Global transition
@@ -23,7 +21,6 @@
  *     @include tools.global-transition;
  *   }
  */
-
 @mixin global-transition(
   $property: settings.$transition-property,
   $timing: settings.$transition-timing,

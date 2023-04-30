@@ -4,13 +4,12 @@
  ******************************************************************************
  */
 
-
 /**
  * Default breakpoints
  *
  * Default global breakpoints map. These are the default breakpoints map that
  * will be shared across all shake modules. You can change it also locally to
- * each module.
+ * each module. Don't forget you have to use only pixels or ems here!
  *
  * @type Map
  *
@@ -18,9 +17,8 @@
  *   @include breakpoint(medium) {
  * }
  *
- * @see more examples in 2.tools/_tools.breakpoints.scss
  */
-
+// prettier-ignore
 $breakpoints: (
   small  : "screen and (min-width: 30em)",  // 480px
   medium : "screen and (min-width: 48em)",  // 768px
@@ -29,15 +27,13 @@ $breakpoints: (
   xxlarge: "screen and (min-width: 87.5em)" // 1400px
 ) !default;
 
-
 /**
  * Default breakpoint suffix
  *
  * Global breakpoint suffix naming setting.
- * All breakpoint specific styles have a `@breakpointName` suffix by default.
+ * All breakpoint specific styles have a `@breakpoint-name` suffix by default.
  * The `\` character is used to escape the `@` character.
  *
  * @type String
  */
-
 $breakpoint-separator: \@ !default;

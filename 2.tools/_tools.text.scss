@@ -9,7 +9,6 @@
  * @see 6.utilities/_utilities.text.scss for BEM based class named version
  */
 
-
 /**
  * Text-align Mixin
  *
@@ -38,19 +37,15 @@
  *     @include tools.text-align(justify, left);
  *   }
  */
-
 @mixin text-align($align, $last: null) {
   @if $last {
     text-align: $align !important; // for Edge
     text-align-last: $last !important;
     hyphens: auto;
-  }
-
-  @else {
+  } @else {
     text-align: $align !important;
   }
 }
-
 
 /**
  * Text Overflow behaviors
@@ -72,13 +67,11 @@
  *     @include tools.text-ellipsis;
  *   }
  */
-
 @mixin text-ellipsis {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
 
 /**
  * Text Clip
@@ -97,7 +90,6 @@
  *     @include tools.text-clip;
  *   }
  */
-
 @mixin text-clip {
   overflow: hidden;
   white-space: nowrap;
@@ -121,7 +113,6 @@
  *     @include tools.text-break;
  *   }
  */
-
 @mixin text-break {
   word-wrap: break-word;
   word-break: break-word;

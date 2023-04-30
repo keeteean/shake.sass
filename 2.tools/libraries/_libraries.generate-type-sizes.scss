@@ -11,20 +11,20 @@
  * @type Mixin
  *
  * @require {Mixin} extract-type-sizes <2.tools/libraries/_extract-type-sizes.scss>
- *
- * @parameter {map | string} $values - font-sizes
- * @parameter {map} $breakpoints - given breakpoint map
- * @access private
  */
-
 
 /**
  * Imports
  */
-
 @use "sass:map";
 @use "libraries.extract-type-sizes" as validators;
 
+/**
+ * Generate Type Sizes Mixin
+ *
+ * @parameter {map | string} $values - font-sizes
+ * @parameter {map} $breakpoints - given breakpoint map
+ */
 @mixin generate-type-sizes($values, $breakpoints) {
   @if type-of($values) == "map" {
     @each $breakpoint, $sizes in $values {

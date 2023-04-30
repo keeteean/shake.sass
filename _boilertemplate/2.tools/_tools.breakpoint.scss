@@ -9,27 +9,7 @@
  *
  * @require {map} breakpoint settings <1.settings/_settings.breakpoints.scss>
  *
- *
  * Use it wherever you need it.
- */
-
-
-/**
- * Imports
- */
-
-@use "../settings";
-@use "node_modules/2.tools/tools.breakpoint" as breakpoint;
-
-
-/**
- * Breakpoint
- *
- * @parameter {map} $breakpoint-size
- *   Size of the breakpoint you want to use from the $breakpoint-sizes map.
- *
- * @parameter {map} $breakpoint-sizes
- *   A Sass map that contains all the breakpoints
  *
  * @example
  *   @include breakpoint($breakpoint-size, $breakpoint-sizes);
@@ -99,6 +79,24 @@
  *   }
  */
 
+/**
+ * Imports
+ */
+@use "../settings";
+@use "node_modules/2.tools/tools.breakpoint" as breakpoint;
+
+/**
+ * Breakpoint Mixin
+ *
+ * @parameter {map} $breakpoint-size
+ *   Size of the breakpoint you want to use from the $breakpoint-sizes map.
+ *
+ * @parameter {map} $breakpoint-sizes
+ *   A Sass map that contains all the breakpoints
+ *
+ * @example
+ *   @include breakpoint($breakpoint-size, $breakpoint-sizes);
+ */
 @mixin breakpoint($size, $breakpoints: settings.$breakpoints) {
   @include breakpoint.breakpoint($size, $breakpoints) {
     @content;

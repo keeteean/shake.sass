@@ -7,12 +7,15 @@
  *
  * borrowed from iota.css
  * @author Dimitris Psaropoulos <info@harby.me>
- * @type Function
  *
- * @parameter {string | number | map} $number - The given css value.
- * @access private
+ * @type Function
  */
 
+/**
+ * Is Sass Map Function
+ *
+ * @parameter {string | number | map} $map - The given css value.
+ */
 @function is-map($map) {
   @return type-of($map) == "map";
 }

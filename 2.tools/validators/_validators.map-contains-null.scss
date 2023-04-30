@@ -7,12 +7,15 @@
  *
  * borrowed from iota.css
  * @author Dimitris Psaropoulos <info@harby.me>
- * @type Function
  *
- * @parameter {map} $map - The given Sass map.
- * @access private
+ * @type Function
  */
 
+/**
+ * Does Sass Map Contain a Null Key Function
+ *
+ * @parameter {map} $map - The given Sass map.
+ */
 @function map-contains-null($map) {
   @each $key, $value in $map {
     @if $key {

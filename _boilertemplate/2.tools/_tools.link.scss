@@ -3,18 +3,16 @@
  *** LINK TOOL ***
  ******************************************************************************
  *
- * Easily theming anchor elements.
+ * Robust theming anchor elements.
  */
 
 /**
  * Imports
  */
-
 @use "node_modules/2.tools/tools.link" as link;
 
-
 /**
- * Link
+ * Link mixin
  *
  * @parameter {string} $color - Text color of the link.
  * @parameter {string} $type - The type of the color.
@@ -56,13 +54,6 @@
  *   @include tools.link($color-link, light, none, none, .8rem solid $color-outline);
  * }
  */
-
-@mixin link(
-  $color,
-  $type: light,
-  $visited: none,
-  $text-decoration: none,
-  $outline: initial
-) {
+@mixin link($color, $type: light, $visited: none, $text-decoration: none, $outline: initial) {
   @include link.link($color, $type, $visited, $text-decoration, $outline);
 }

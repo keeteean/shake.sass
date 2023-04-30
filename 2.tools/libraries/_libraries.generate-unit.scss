@@ -15,24 +15,24 @@
  * @require {Function} _is-number <2.tools/validators/_is-number.scss>
  * @require {Function} _is-map <2.tools/validators/_is-map.scss>
  * @require {Function} _map-contains-null <2.tools/validators/_map-contains-null.scss>
+ */
+
+/**
+ * Imports
+ */
+@use "sass:map";
+@use "../validators";
+@use "../tools.breakpoint" as *;
+
+/**
+ * Generate Unit Mixin
  *
  * @parameter {string} $property - A css property ex.: padding.
  * @parameter {string} $suffix - Sub-property of $property, ex.: left.
  * @parameter {map | number} $units - Values for combined $property and $suffix.
  * @parameter {string} $half - Should divide values from $unites by 2 or not.
- * Default is `null` (not), if you need this, just type `half` in the end.
- * @access private
+ *   Default is `null` (not), if you need this, just type `half` in the end.
  */
-
-
-/**
- * Imports
- */
-
-@use "sass:map";
-@use "../validators";
-@use "../tools.breakpoint" as *;
-
 @mixin generate-unit($property, $suffix, $units, $half: null) {
   $suffix: if($suffix, #{"-" + $suffix}, "");
 
@@ -45,11 +45,9 @@
       @if $breakpoint-name {
         @if $half == half {
           @include breakpoint($breakpoint-name) {
-            #{$property + $suffix}: $size * .5;
+            #{$property + $suffix}: $size * 0.5;
           }
-        }
-
-        @else {
+        } @else {
           @include breakpoint($breakpoint-name) {
             #{$property + $suffix}: $size;
           }
@@ -59,10 +57,8 @@
 
     @if validators.map-contains-null($units) {
       @if $half == half {
-        #{$property + $suffix}: map.get($units, null) * .5;
-      }
-
-      @else {
+        #{$property + $suffix}: map.get($units, null) * 0.5;
+      } @else {
         #{$property + $suffix}: map.get($units, null);
       }
     }

@@ -5,7 +5,7 @@
  *
  * The text utility contains helper classes for easier control text blocks.
  *
- * based on iota.css
+ * Based on iota.css.
  * @author Dimitris Psaropoulos <info@harby.me>
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://www.iotacss.com/docs/utilities/text
@@ -36,31 +36,25 @@
  * `1.settings/_settings.breakpoints.scss`.
  *
  * @example
- *   $_text-responsive   : true;
+ *   $text-responsive   : true;
  *
  *   <h1 class="u-text--center u-text--end@small">
  *     Heading will be aligned center on mobile and right on tablets and up.
  *   </h1>
  */
 
-
 /**
  * Imports
  */
-
 @use "../settings";
-
 
 /**
  * Settings
  */
-
-$_text-responsive   : false !default;
-$_text-breakpoints  : settings.$breakpoints !default;
-
+$text-responsive: false !default;
+$text-breakpoints: settings.$breakpoints !default;
 
 /**
  * Import Text Utility from Shake.sass
  */
-
 @use "node_modules/shake.sass/6.utilities/utilities.text" as u-text;

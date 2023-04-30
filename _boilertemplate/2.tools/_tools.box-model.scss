@@ -8,18 +8,15 @@
  * @author Krisztian Pinter <krisz@keeteean.com>
  */
 
-
 /**
  * Imports
  */
-
 @use "node_modules/2.tools/tools.box-model" as box-model;
-
 
 /**
  * Square mixin
  *
- * Use it, when you need similar width and height with square shape.
+ * Use it, when you need the same width and height with square shape.
  *
  * @parameter {string} $value - Amount of desired width and height in any unit.
  *
@@ -28,11 +25,9 @@
  *
  *   @include tools.square(6rem);
  */
-
 @mixin square($value) {
   @include box-model.square($value);
 }
-
 
 /**
  * Rounding mixin
@@ -45,18 +40,17 @@
  *   @use "../tools";
  *
  *  input {
- *    @include tools.round(.4rem);
+ *    @include tools.rounded(.4rem);
  *  }
  */
-
-@mixin round($radius) {
-  @include box-model.round($radius);
+@mixin rounded($radius) {
+  @include box-model.rounded($radius);
 }
 
 /**
  * Circle mixin
  *
- * Use it, when you need similar width and height width circle shape.
+ * Use it, when you need the same width and height width circle shape.
  *
  * @parameter {string} $value - Amount of desired width and height in any unit.
  *
@@ -65,7 +59,6 @@
  *
  *   @include circle(6rem);
  */
-
 @mixin circle($value) {
   @include box-model.circle($value);
 }

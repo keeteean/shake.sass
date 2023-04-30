@@ -5,7 +5,7 @@
  *
  * The text utility contains helper classes for easier control text blocks.
  *
- * based on iota.css
+ * Based on iota.css.
  * @author Dimitris Psaropoulos <info@harby.me>
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://www.iotacss.com/docs/utilities/text
@@ -36,28 +36,25 @@
  * `1.settings/_settings.breakpoints.scss`.
  *
  * @example
- *   $_text-responsive   : true;
+ *   $text-responsive   : true;
  *
  *   <h1 class="u-text--center u-text--end@small">
  *     Heading will be aligned center on mobile and right on tablets and up.
  *   </h1>
  */
 
-
 /**
  * Imports
  */
-
 @use "../settings";
 @use "../2.tools/tools.text" as *;
 
 /**
  * Settings
  */
-
-$_text-responsive   : false !default;
-$_text-breakpoints  : settings.$breakpoints !default;
-
+$responsive: false !default;
+$breakpoints: settings.$breakpoints !default;
+$breakpoint-separator: settings.$breakpoint-separator !default;
 
 /**
  * Text Utilities
@@ -91,36 +88,37 @@ $_text-breakpoints  : settings.$breakpoints !default;
   @include text-align(justify, center);
 }
 
-
-// Text Responsive Utilities
-@if $_text-responsive == true {
-  @each $breakpoint-name, $breakpoint-size in $_text-breakpoints {
+/**
+ * Text Responsive Utilities
+ */
+@if $responsive == true {
+  @each $breakpoint-name, $breakpoint-size in $breakpoints {
     @media #{$breakpoint-size} {
-      .#{"u-text--left" + $global-breakpoint-separator + $breakpoint-name} {
+      .#{"u-text--left" + $breakpoint-separator + $breakpoint-name} {
         @include text-align(start);
       }
 
-      .#{"u-text--right" + $global-breakpoint-separator + $breakpoint-name} {
+      .#{"u-text--right" + $breakpoint-separator + $breakpoint-name} {
         @include text-align(end);
       }
 
-      .#{"u-text--center" + $global-breakpoint-separator + $breakpoint-name} {
+      .#{"u-text--center" + $breakpoint-separator + $breakpoint-name} {
         @include text-align(center);
       }
 
-      .#{"u-text--justify" + $global-breakpoint-separator + $breakpoint-name} {
+      .#{"u-text--justify" + $breakpoint-separator + $breakpoint-name} {
         @include text-align(justify);
       }
 
-      .#{"u-text--justify-left" + $global-breakpoint-separator + $breakpoint-name} {
+      .#{"u-text--justify-left" + $breakpoint-separator + $breakpoint-name} {
         @include text-align(justify, start);
       }
 
-      .#{"u-text--justify-right" + $global-breakpoint-separator + $breakpoint-name} {
+      .#{"u-text--justify-right" + $breakpoint-separator + $breakpoint-name} {
         @include text-align(justify, end);
       }
 
-      .#{"u-text--justify-center" + $global-breakpoint-separator + $breakpoint-name} {
+      .#{"u-text--justify-center" + $breakpoint-separator + $breakpoint-name} {
         @include text-align(justify, center);
       }
     }

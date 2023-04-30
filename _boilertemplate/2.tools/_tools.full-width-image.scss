@@ -5,14 +5,14 @@
  *
  * Apply it to an img element or use Utility version of it.
  * You will need a parent element with relative position.
+ *
+ * @author Krisztian Pinter <krisz@keeteean.com>
  */
 
 /**
  * Imports
  */
-
 @use "node_modules/2.tools/tools.full-width-image" as full-width-image;
-
 
 /**
  * Full width image
@@ -34,6 +34,11 @@
  *   }
  */
 
+/**
+ * Full Width Image mixin
+ * @parameter {string} $fit - Object-fit property. You can use `cover` or
+ *   `contain`. Default is `cover`.
+ */
 @mixin full-width-image($fit: cover) {
   @include full-width-image.full-width-image($fit);
 }

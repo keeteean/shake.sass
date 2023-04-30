@@ -86,15 +86,24 @@
  *   }
  */
 
-
 /**
  * Imports
  */
-
 @use "sass:map";
 @use "../settings";
 
-
+/**
+ * Breakpoint Mixin
+ *
+ * @parameter {map} $breakpoint-size
+ *   Size of the breakpoint you want to use from the $breakpoint-sizes map.
+ *
+ * @parameter {map} $breakpoint-sizes
+ *   A Sass map that contains all the breakpoints
+ *
+ * @example
+ *   @include breakpoint($breakpoint-size, $breakpoint-sizes);
+ */
 @mixin breakpoint($size, $breakpoints: settings.$breakpoints) {
   $breakpoint-found: map.has-key($breakpoints, $size);
 
@@ -104,18 +113,14 @@
     @media #{$breakpoint} {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @if map.has-key($size, null) {
       $breakpoint: map.get($size, null);
 
       @media #{$breakpoint} {
         @content;
       }
-    }
-
-    @else {
+    } @else {
       @warn "Breakpoint size " + #{$size} + " doesn't exist.";
     }
   }

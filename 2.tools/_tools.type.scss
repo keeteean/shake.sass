@@ -6,14 +6,11 @@
  * Inline typography related mixins.
  */
 
-
 /**
  * Imports
  */
-
 @use "libraries";
 @use "../settings";
-
 
 /**
  * Responsive Type Tool
@@ -21,7 +18,7 @@
  * Type tool contains a mixin that helps you create smart, flexible and
  * responsive typography.
  *
- * some parts borrowed from iota.css
+ * Some parts borrowed from iota.css.
  * @author Dimitris Psaropoulos <info@harby.me>
  * @author Krisztian Pinter <krisz@keeteean.com>
  * @link https://www.iotacss.com/docs/tools/type
@@ -109,11 +106,9 @@
  *     );
  *   }
  */
-
 @mixin type($value, $breakpoints: settings.$breakpoints) {
   @include libraries.generate-type-sizes($value, $breakpoints);
 }
-
 
 /**
  * Font Antialiasing
@@ -128,7 +123,6 @@
  *     @include tools.font-smooth;
  *   }
  */
-
 @mixin font-smooth {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
