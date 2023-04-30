@@ -11,7 +11,7 @@
 /**
  * Imports
  */
-@use "node_modules/2.tools/tools.box-model" as box-model;
+@use "node_modules/shake.sass/2.tools/tools.box-model" as box-model;
 
 /**
  * Square mixin
@@ -27,24 +27,6 @@
  */
 @mixin square($value) {
   @include box-model.square($value);
-}
-
-/**
- * Rounding mixin
- *
- * Use it, when you need to achieve the same four rounded corners.
- *
- * @parameter {string} $radius - The radius value for all four corners.
- *
- * @example
- *   @use "../tools";
- *
- *  input {
- *    @include tools.rounded(.4rem);
- *  }
- */
-@mixin rounded($radius) {
-  @include box-model.rounded($radius);
 }
 
 /**

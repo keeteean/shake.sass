@@ -350,8 +350,8 @@ $button-element: false !default;
 /**
  * Reset default appearance of the button element
  */
-@mixin button($button-element: $button-element) {
-  @include reset.button($button-element);
+@mixin button-element($button-element: $button-element) {
+  @include reset.button-element($button-element);
 }
 
 /**
