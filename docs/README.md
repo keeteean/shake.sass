@@ -22,11 +22,9 @@ Some highlighted functions:
 - Modular and enhanced normalize.css
 - Prepared document settings, ex: font size, links
 - Media-query generator
-- A very light grid generator
 - Container generator
 - Responsive table
 - Responsive video
-- Responsive media object
 
 ## Getting Started
 
@@ -91,10 +89,10 @@ Afterward, you need to modify all paths in this way:
 
 ```scss
 // an old path
-@use "2.tools/tools.grid";
+@use "2.tools/tools.container";
 
 // replaced with
-@use "node_modules/shake.sass/2.tools/tools.grid";
+@use "node_modules/shake.sass/2.tools/tools.container";
 ```
 
 Finally, here you can turn off by commenting out the unneeded modules. But be
@@ -150,20 +148,14 @@ The best if you import only the needed tools to your component like:
 
 ```scss
 @use "../settings";
-@use "../2.tools/tools.breakpoint" as *;
-@use "../2.tools/tools.grid" as grid;
+@use "../2.tools/tools.breakpoint" as breakpoint;
+@use "../2.tools/tools.container" as container;
 
-.c-header {
-  &__logo {
-    @include grid.make-column(1.5rem);
-    @include grid.column-size(10, 12);
-    @include grid.column-offset(1, 12);
-
-    @include breakpoint(large) {
-      @include grid.column-size(2, 12);
-      @include grid.column-offset(0, 12);
-    }
-  }
+.gallery__container {
+  @include container.make-container(
+    $padding: 3rem,
+    $size: 120rem
+  )
 }
 ```
 

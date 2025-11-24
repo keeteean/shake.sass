@@ -11,11 +11,16 @@
  */
 
 /**
+ * Imports
+ */
+@use "sass:meta";
+
+/**
  * Is Color Function
  *
  * @parameter {string | number | map} $color - The given css value.
  * @return {boolean}
  */
 @function is-color($color) {
-  @return (type-of($color) == color) or ($color == "currentColor");
+  @return (meta.type-of($color) == color) or ($color == "currentColor");
 }

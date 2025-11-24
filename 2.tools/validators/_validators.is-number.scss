@@ -12,10 +12,15 @@
  */
 
 /**
+ * Imports
+ */
+@use "sass:meta";
+
+/**
  * Is Number Function
  *
  * @parameter {string | number | map} $number - The given css value.
  */
 @function is-number($number) {
-  @return type-of($number) == "number";
+  @return meta.type-of($number) == "number";
 }

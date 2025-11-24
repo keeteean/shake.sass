@@ -13,6 +13,9 @@
 
 /**
  * Default container
+ *
+ * IMPORTANT! If you don't need map (multiple values for container size), use a
+ * single value, not use a map with only the `null` key!
  */
 // prettier-ignore
 $container-size-default: (

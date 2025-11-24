@@ -19,6 +19,7 @@
 /**
  * Imports
  */
+@use "sass:list";
 @use "validators";
 
 /**
@@ -38,7 +39,7 @@
  *   Color of the triangle.
  */
 @mixin make-triangle($direction, $width, $height, $color) {
-  @if not index("up" "up-right" "right" "down-right" "down" "down-left" "left" "up-left", $direction) {
+  @if not list.index("up" "up-right" "right" "down-right" "down" "down-left" "left" "up-left", $direction) {
     @error "Direction must be `up`, `up-right`, `right`, `down-right`, `down`, `down-left`, `left` or `up-left`.";
   } @else if not validators.is-color($color) {
     @error "`#{$color}` is not a valid color for the `$color` argument in the `triangle` mixin.";

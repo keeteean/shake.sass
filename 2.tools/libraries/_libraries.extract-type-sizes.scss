@@ -22,7 +22,7 @@
  * @parameter {map} $sizes - font-sizes and line-heights
  */
 @mixin extract-type-sizes($sizes) {
-  @if length($sizes) == 2 {
+  @if list.length($sizes) == 2 {
     font-size: list.nth($sizes, 1);
     line-height: list.nth($sizes, 2);
   } @else {

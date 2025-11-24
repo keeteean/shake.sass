@@ -1,7 +1,8 @@
 {
-  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier"],
+  "extends": ["stylelint-config-standard-scss"],
   "plugins": ["stylelint-scss", "stylelint-order", "stylelint-use-logical"],
   "customSyntax": "postcss-scss",
+  "defaultSeverity": "warning",
   "rules": {
     "alpha-value-notation": "number",
     "at-rule-empty-line-before": [
@@ -33,6 +34,12 @@
         ]
       }
     ],
+    "no-invalid-position-declaration": [
+      true,
+      {
+        "ignoreAtRules": ["if", "mixin"]
+      }
+    ],
     "color-function-notation": null,
     "comment-empty-line-before": null,
     "custom-property-pattern": "^[a-z][-_a-z0-9IE]*$",
@@ -42,16 +49,8 @@
     },
     "function-linear-gradient-no-nonstandard-direction": null,
     "function-url-quotes": null,
-    "function-whitespace-after": null,
     "hue-degree-notation": "number",
     "import-notation": "string",
-    "max-empty-lines": 2,
-    "max-line-length": [
-      120,
-      {
-        "ignorePattern": ["/^@import\\s+/", "/font-family/"]
-      }
-    ],
     "max-nesting-depth": [
       3,
       {

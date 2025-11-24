@@ -30,8 +30,7 @@
 @mixin visually-hidden {
   position: absolute !important;
   overflow: hidden !important;
-  clip: rect(0.1rem 0.1rem 0.1rem 0.1rem) !important; /* IE6, IE7 */
-  clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem) !important;
+  clip-path: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem) !important;
   inline-size: 0.1rem !important;
   block-size: 0.1rem !important;
 }
@@ -59,7 +58,7 @@
   &:focus {
     position: static !important;
     overflow: visible !important;
-    clip: auto !important;
+    clip-path: auto !important;
     inline-size: auto !important;
     block-size: auto !important;
     white-space: normal !important;

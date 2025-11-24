@@ -22,7 +22,7 @@
  * Imports
  */
 @use "libraries";
-@use "../settings";
+@use "../1.settings/settings.container" as settings;
 
 /**
  * Settings
@@ -70,7 +70,7 @@ $container-size-default: settings.$container-size-default;
  * @parameter {number | map} $size - Max-width values.
  */
 @mixin container-size($size) {
-  @include libraries.generate-unit("max", "width", $size);
+  @include libraries.generate-unit("max", "inline-size", $size);
 }
 
 /**
@@ -120,6 +120,7 @@ $container-size-default: settings.$container-size-default;
  *       $padding: $container-gutter-gallery,
  *       $size: $container-size-gallery
  *     )
+ *   }
  */
 @mixin make-container($padding: $container-gutter-default, $size: $container-size-default) {
   @include container-padding($padding);
@@ -128,3 +129,4 @@ $container-size-default: settings.$container-size-default;
   inline-size: 100%;
   margin-inline: auto;
 }
+

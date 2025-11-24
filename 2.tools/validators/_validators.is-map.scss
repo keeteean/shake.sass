@@ -12,10 +12,15 @@
  */
 
 /**
+ * Imports
+ */
+@use "sass:meta";
+
+/**
  * Is Sass Map Function
  *
  * @parameter {string | number | map} $map - The given css value.
  */
 @function is-map($map) {
-  @return type-of($map) == "map";
+  @return meta.type-of($map) == "map";
 }
