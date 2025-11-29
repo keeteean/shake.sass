@@ -25,6 +25,11 @@ $selected-text-color: settings.$color-light !default;
 $selected-text-background: settings.$color-primary !default;
 
 /**
+ * Focus color
+ */
+$focus-color: settings.$color-primary !default;
+
+/**
  * Paragraph margins
  */
 $paragraph-margins: true !default;
@@ -96,6 +101,14 @@ body {
   ::selection {
     @include tools.colors($selected-text-color, $selected-text-background);
   }
+}
+
+/**
+ * Styling the default focus state
+ */
+:focus-visible {
+  outline: 0.2rem solid $focus-color;
+  outline-offset: 0.5rem;
 }
 
 /**

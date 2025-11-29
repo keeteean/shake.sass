@@ -70,6 +70,7 @@
 /**
  * Imports
  */
+@use "sass:string";
 @use "../settings";
 @use "../2.tools/_tools.container" as container;
 
@@ -143,14 +144,14 @@ $size-extra: settings.$container-size-extra !default;
 
 // Container Object Extra Gutters
 @each $gutter-name, $gutter-size in $gutter-extra {
-  .#{$class-mod + quote($gutter-name)} {
+  .#{$class-mod + string.quote($gutter-name)} {
     @include container.container-padding($gutter-size);
   }
 }
 
 // Container Object Extra Sizes
 @each $size-name, $size-value in $size-extra {
-  .#{$class-mod + quote($size-name)} {
+  .#{$class-mod + string.quote($size-name)} {
     @include container.container-size($size-value);
 
     margin-inline: auto;
