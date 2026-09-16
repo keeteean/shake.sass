@@ -36,7 +36,24 @@
 @mixin generate-unit($property, $suffix, $units, $half: null) {
   $suffix: if($suffix, #{"-" + $suffix}, "");
 
-    // Then handle all responsive properties in separate blocks // This ensures declarations are properly grouped before nested rules
+  // Handle simple number case
+  @if validators.is-number($units) {
+    #{$property + $suffix}: $units;
+  }
+
+  // Handle map case
+  @if validators.is-map($units) {
+    // First handle the null/default value (non-responsive), so it acts as
+    // the base value and the responsive breakpoints below can override it.
+    @if validators.map-contains-null($units) {
+      @if $half == half {
+        #{$property + $suffix}: map.get($units, null) * 0.5;
+      } @else {
+        #{$property + $suffix}: map.get($units, null);
+      }
+    }
+
+    // Then handle all responsive properties in separate media query blocks
     @each $breakpoint-name, $size in $units {
       @if $breakpoint-name {
         @include breakpoint($breakpoint-name) {
@@ -48,22 +65,6 @@
             #{$property + $suffix}: $size;
           }
         }
-      }
-    }
-
-  // Handle simple number case
-  @if validators.is-number($units) {
-    #{$property + $suffix}: $units;
-  }
-
-  // Handle map case
-  @if validators.is-map($units) {
-    // First handle the null/default value (non-responsive)
-    @if validators.map-contains-null($units) {
-      @if $half == half {
-        #{$property + $suffix}: map.get($units, null) * 0.5;
-      } @else {
-        #{$property + $suffix}: map.get($units, null);
       }
     }
   }
