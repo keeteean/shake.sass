@@ -148,7 +148,6 @@ $button-element: false !default;
  *    scrollbars naturally.
  *    Ensure the page always fills at least the entire height of the viewport.
  * 5. Makes font thickness to look the same in Firefox and Webkit.
- * 6. Fixes a Chromium bug: https://bugs.chromium.org/p/chromium/issues/detail?id=633805
  */
 @mixin document($font-antialiasing: $font-antialiasing) {
   html {
@@ -163,10 +162,6 @@ $button-element: false !default;
       -webkit-font-smoothing: antialiased; // 5
       -moz-osx-font-smoothing: grayscale; // 5
     }
-  }
-
-  body {
-    transform: translate3d(0, 0, 0); // 6
   }
 }
 

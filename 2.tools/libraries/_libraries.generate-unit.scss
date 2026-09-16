@@ -41,6 +41,16 @@
   }
 
   @if validators.is-map($units) {
+    // First handle the null/default value (non-responsive), so it acts as
+    // the base value and the responsive breakpoints below can override it.
+    @if validators.map-contains-null($units) {
+      @if $half == half {
+        #{$property + $suffix}: map.get($units, null) * 0.5;
+      } @else {
+        #{$property + $suffix}: map.get($units, null);
+      }
+    }
+
     @each $breakpoint-name, $size in $units {
       @if $breakpoint-name {
         @if $half == half {
@@ -52,14 +62,6 @@
             #{$property + $suffix}: $size;
           }
         }
-      }
-    }
-
-    @if validators.map-contains-null($units) {
-      @if $half == half {
-        #{$property + $suffix}: map.get($units, null) * 0.5;
-      } @else {
-        #{$property + $suffix}: map.get($units, null);
       }
     }
   }
